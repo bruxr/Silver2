@@ -1,3 +1,8 @@
+# The base class for all Quasar fetchers/scrapers/accessors.
+# Provides get & post methods for accessing websites
+# and returns the unmodified response string.
+#
+# TODO: add support for custom headers
 class Quasar::Fetcher
 
   # Sends a GET request to a URL
