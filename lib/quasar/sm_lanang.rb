@@ -1,4 +1,4 @@
-# A Quasar Fetcher for SM City Davao Cinemas
+# A Quasar Fetcher for SM Lanang Premiere Cinemas
 # Instantiate and invoke get_schedules() to 
 # return an array of screening times.
 # 
