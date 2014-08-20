@@ -40,4 +40,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'mysql2'
+gem 'curb'
 
+# Dev gems
+gem 'awesome_print', group: [:development, :test]
