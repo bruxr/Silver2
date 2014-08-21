@@ -4,7 +4,6 @@
 # 
 # TODO: find out how ayala displays 3d movies
 require "nokogiri"
-require 'awesome_print'
 class Quasar::Abreeza < Quasar::Fetcher
 
   def get_schedules
