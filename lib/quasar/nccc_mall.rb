@@ -2,7 +2,6 @@
 # Instantiate and invoke get_schedules() to 
 # return an array of screening times.
 require "nokogiri"
-require 'awesome_print'
 class Quasar::NcccMall < Quasar::Fetcher
 
   def get_schedules
