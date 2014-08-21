@@ -41,6 +41,7 @@ gem 'spring',        group: :development
 
 gem 'mysql2'
 gem 'curb'
+gem 'nokogiri'
 
 # Dev gems
 gem 'awesome_print', group: [:development, :test]
