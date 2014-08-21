@@ -8,8 +8,8 @@
 class Quasar::SmLanang < Quasar::SmFetcher
 
   def initialize
+    super
     @branch_code = 'SMLA'
-    @schedules = []
   end
 
 end

@@ -8,8 +8,8 @@
 class Quasar::SmCityDavao < Quasar::SmFetcher
 
   def initialize
+    super
     @branch_code = 'SMCD'
-    @schedules = []
   end
 
 end

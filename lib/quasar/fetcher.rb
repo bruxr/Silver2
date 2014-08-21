@@ -5,6 +5,13 @@
 # TODO: add support for custom headers
 class Quasar::Fetcher
 
+  attr_reader :schedules
+
+  # Setups an empty array as schedules
+  def initialize
+    @schedules = []
+  end
+
   # Sends a GET request to a URL
   def get(url, data = {}, headers = {})
 
