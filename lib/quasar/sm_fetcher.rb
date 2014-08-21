@@ -29,9 +29,9 @@ class Quasar::SmFetcher < Quasar::Fetcher
           sked[:price] = screening['Price'].to_f
           sked[:time] = Time.zone.parse screening['StartTime']
           if screening['FilmFormat'] == 'F2D'
-            sked[:format] = :2D
+            sked[:format] = '2D'
           elsif screening['FilmFormat'] == 'F3D'
-            sked[:format] = :3D
+            sked[:format] = '3D'
           end
           sked[:ticket_url] = "http://smcinema.com/movies/buy-tickets/?mctkey=#{screening['MctKey']}"
           movie[:schedules] << sked
