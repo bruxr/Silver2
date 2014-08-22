@@ -25,7 +25,7 @@ class Quasar::NcccMall < Quasar::Fetcher
 
         # Build movie hash
         movie = {}
-        movie[:name] = title.gsub(/\s(2|3)D$/, '')
+        movie[:name] = title.gsub(/\s(?:2|3)D$/, '')
         movie[:schedules] = []
 
         # Extract the rating
