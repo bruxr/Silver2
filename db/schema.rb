@@ -11,6 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140822033912) do
+
+  create_table "cinemas", force: true do |t|
+    t.string   "name",                                                    null: false
+    t.string   "slug",                                                    null: false
+    t.decimal  "latitude",   precision: 15, scale: 10, default: 0.0,      null: false
+    t.decimal  "longitude",  precision: 15, scale: 10, default: 0.0,      null: false
+    t.string   "status",                               default: "active", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "movies", force: true do |t|
+    t.string   "title",                       null: false
+    t.string   "slug",                        null: false
+    t.text     "plot"
+    t.integer  "runtime"
+    t.float    "rt_score",         limit: 24
+    t.float    "imdb_score",       limit: 24
+    t.float    "metacritic_score", limit: 24
+    t.float    "aggregate_score",  limit: 24
+    t.text     "poster",                      null: false
+    t.text     "trailer"
+    t.string   "mtrcb_rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schedules", id: false, force: true do |t|
+    t.integer  "movie_id",                                 null: false
+    t.integer  "cinema_id",                                null: false
+    t.datetime "screening_time",                           null: false
+    t.string   "format",                    default: "2D", null: false
+    t.text     "ticket_url"
+    t.float    "ticket_price",   limit: 24
+  end
 
 end
