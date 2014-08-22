@@ -17,7 +17,7 @@ class Quasar::Fetcher
 
     url << '?' << data.to_query unless data.empty?
       
-    http = Curl.get url
+    http = Curl.get(url)
     return http.body_str
 
   end
