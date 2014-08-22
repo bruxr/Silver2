@@ -35,6 +35,7 @@ module Quasar
               sked[:format] = '3D'
             end
             sked[:ticket_url] = "http://smcinema.com/movies/buy-tickets/?mctkey=#{screening['MctKey']}"
+            movie[:rating] = screening['MtrcbRating']
             movie[:schedules] << sked
           end
         end

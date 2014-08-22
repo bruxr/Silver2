@@ -28,6 +28,9 @@ module Quasar
         # Find the <table> for this movie
         table = movie_title.parent.parent
 
+        # Extract the MTRCB rating
+        movie[:rating] = table.search('.SEARCH_RATING').first.content.sub('Rating: ', '')
+
         # Determine the cinema
         cinema_name = table.search('.CINEMA_NUMBER').first.content
 
