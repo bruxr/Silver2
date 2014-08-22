@@ -60,8 +60,8 @@ class Quasar::NcccMall < Quasar::Fetcher
         start_date.upto(end_date) do |date|
           
           # Loop through the screening times, then build the screening hash
-          div.content.scan(/\d{1,2}\:\d{2,2}/) do |time|
-            screening_time = date.to_s.concat(" #{time} PM")
+          screening_times.each do |time|
+            screening_time = date.to_s.concat(" #{time}")
             screening = {
               cinema_name: cinema_name,
               price: nil,
