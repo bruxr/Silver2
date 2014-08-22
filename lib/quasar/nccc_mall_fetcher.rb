@@ -1,10 +1,12 @@
+module Quasar
 # A Quasar Fetcher for NCCC Mall of Davao Cinemas
 # Instantiate and invoke get_schedules() to 
 # return an array of screening times.
-require "nokogiri"
-class Quasar::NcccMall < Quasar::Fetcher
+class NcccMallFetcher < Fetcher
 
   def get_schedules
+
+    require 'nokogiri'
 
     resp = get('http://nccc.com.ph/main/page/cinema')
     doc = Nokogiri::HTML(resp)
