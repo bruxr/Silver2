@@ -43,6 +43,7 @@ gem 'spring',        group: :development
 gem 'mysql2'
 gem 'httparty'
 gem 'nokogiri'
+gem 'redis-rails'
 
 # Dev gems
 gem 'awesome_print', group: [:development, :test]
