@@ -41,7 +41,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'mysql2'
-gem 'curb'
+gem 'httparty'
 gem 'nokogiri'
 
 # Dev gems

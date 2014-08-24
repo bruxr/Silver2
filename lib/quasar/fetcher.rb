@@ -17,17 +17,27 @@ module Quasar
     def get(url, data = {}, headers = {})
 
       url << '?' << data.to_query unless data.empty?
-        
-      http = Curl.get(url)
-      return http.body_str
+      
+      @client = HTTParty.get(url)
+      if @client.code == 200
+        return @client.body
+      else
+        raise Quasar::FetcherError.new("Failed to access #{url}. Server returned code #{@client.code}.")
+      end
 
     end
 
     # Sends a POST request to a URL
     def post(url, data = {}, headers = {})
       
-      http = Curl.post url, data
-      return http.body_str
+      opts = {body: data}
+
+      @client = HTTParty.post(url, opts)
+      if @client.code == 200
+        return @client.body
+      else
+        raise Quasar::FetcherError.new("Failed to access #{url}. Server returned code #{@client.code}.")
+      end
 
     end
 
