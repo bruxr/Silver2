@@ -7,7 +7,7 @@ class Schedule < ActiveRecord::Base
   validates :movie, presence: true
 
   validates :format, inclusion: {
-    in: %w(2D 3D IMAX)
+    in: %w(2D 3D IMAX),
     message: "%{value} is not a valid film format."
   }
 
