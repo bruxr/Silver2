@@ -29,7 +29,7 @@ module Quasar
 
             # Build movie hash
             movie = {}
-            movie[:name] = title.gsub(/\s(?:2|3)D$/, '')
+            movie[:name] = title.gsub(/\s(?:2|3)D\z/, '')
             movie[:schedules] = []
 
             # Extract the rating
