@@ -47,11 +47,12 @@ module Quasar
               end
 
               # Translate Film formats
-              # TODO: How about IMAX formats?
               if screening['FilmFormat'] == 'F2D'
                 sked[:format] = '2D'
               elsif screening['FilmFormat'] == 'F3D'
                 sked[:format] = '3D'
+              elsif screening['FilmFormat'] == 'F3D' and screening['CinemaType'] == 'IMAX'
+                sked[:format] = 'IMAX'
               end
 
               # Add the rest of the schedule info
