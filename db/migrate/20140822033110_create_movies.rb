@@ -3,7 +3,7 @@ class CreateMovies < ActiveRecord::Migration
     create_table :movies do |t|
       t.string :title, null: false, index: true
       t.string :slug, null: false, unique: true
-      t.text :plot
+      t.text :overview
       t.integer :runtime
       t.float :rt_score
       t.float :imdb_score
