@@ -1,5 +1,5 @@
 class Cinema < ActiveRecord::Base
 
-  has_many :movies, through: :schedules
+  has_many :schedules, inverse_of: :cinema, dependent: :destroy
 
 end
