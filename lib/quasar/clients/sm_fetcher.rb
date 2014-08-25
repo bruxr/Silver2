@@ -41,10 +41,12 @@ module Quasar
               
               # Translate SM's custom ratings to the official MTRCB ones
               # Raise a ignorable Exception if they use an unknown one. 
-              if ratings[screening['MtrcbRating']].nil? 
-                raise Exception.new("SM Fetcher: Unknown MTRCB rating #{screening['MtrcbRating']}, skipping it instead.")
-              else
-                movie[:rating] = ratings[screening['MtrcbRating']]
+              if ! screening['MtrcbRating'].empty?
+                if ratings[screening['MtrcbRating']].nil? 
+                  raise Exception.new("SM Fetcher: Unknown MTRCB rating #{screening['MtrcbRating']}, skipping it instead.")
+                else
+                  movie[:rating] = ratings[screening['MtrcbRating']]
+                end
               end
 
               # Translate Film formats
