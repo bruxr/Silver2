@@ -17,7 +17,7 @@ class Schedule < ActiveRecord::Base
     message: "is not a valid URL."
   }
 
-  validates :price, numericality: {
+  validates :ticket_price, numericality: {
     only_integer: true,
     greater_than_or_equal_to: 0,
     allow_nil: true
