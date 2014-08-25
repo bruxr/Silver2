@@ -16,6 +16,14 @@ module Quasar
 
         @schedules = []
 
+        # Create a MTRCB ratings translation hash
+        # because SM doesn't use the complete words.
+        ratings = {}
+        ratings['PG13'] = 'PG-13'
+        ratings['R13'] = 'R-13'
+        ratings['R16'] = 'R-16'
+        ratings['R18'] = 'R-18'
+
         movies = get_movies @branch_code
         movies.each do |item|
           
@@ -27,18 +35,32 @@ module Quasar
           
           screenings.each do |cinema, schedules|
             schedules.each do |screening|
+              
               sked = {}
-              sked[:cinema_name] = screening['CinemaName']
-              sked[:price] = screening['Price'].to_f
-              sked[:time] = Time.zone.parse screening['StartTime']
+              
+              # Translate SM's custom ratings to the official MTRCB ones
+              # Raise a ignorable Exception if they use an unknown one. 
+              if ratings[screening['MtrcbRating']].nil? 
+                raise Exception.new("SM Fetcher: Unknown MTRCB rating #{screening['MtrcbRating']}, skipping it instead.")
+              else
+                movie[:rating] = ratings[screening['MtrcbRating']]
+              end
+
+              # Translate Film formats
+              # TODO: How about IMAX formats?
               if screening['FilmFormat'] == 'F2D'
                 sked[:format] = '2D'
               elsif screening['FilmFormat'] == 'F3D'
                 sked[:format] = '3D'
               end
+
+              # Add the rest of the schedule info
+              sked[:cinema_name] = screening['CinemaName']
+              sked[:price] = screening['Price'].to_f
+              sked[:time] = Time.zone.parse screening['StartTime']
               sked[:ticket_url] = "http://smcinema.com/movies/buy-tickets/?mctkey=#{screening['MctKey']}"
-              movie[:rating] = screening['MtrcbRating']
               movie[:schedules] << sked
+
             end
           end
 
