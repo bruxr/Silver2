@@ -12,6 +12,7 @@ class CreateMovies < ActiveRecord::Migration
       t.text :poster, null: false
       t.text :trailer
       t.string :mtrcb_rating
+      t.int :tmdb_id
       t.timestamps
     end
   end
