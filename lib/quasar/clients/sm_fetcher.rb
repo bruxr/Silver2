@@ -19,7 +19,8 @@ module Quasar
         # Create a MTRCB ratings translation hash
         # because SM doesn't use the complete words.
         ratings = {}
-        ratings['PG13'] = 'PG-13'
+        ratings['G'] = 'G'
+        ratings['PG'] = 'PG'
         ratings['R13'] = 'R-13'
         ratings['R16'] = 'R-16'
         ratings['R18'] = 'R-18'
