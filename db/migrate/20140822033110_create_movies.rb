@@ -9,10 +9,11 @@ class CreateMovies < ActiveRecord::Migration
       t.float :imdb_score
       t.float :metacritic_score
       t.float :aggregate_score
-      t.text :poster, null: false
+      t.text :poster
       t.text :trailer
       t.string :mtrcb_rating
-      t.int :tmdb_id
+      t.integer :tmdb_id
+      t.string :status, null: false, default: 'incomplete'
       t.timestamps
     end
   end

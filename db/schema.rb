@@ -25,17 +25,19 @@ ActiveRecord::Schema.define(version: 20140822033912) do
   end
 
   create_table "movies", force: true do |t|
-    t.string   "title",                       null: false
-    t.string   "slug",                        null: false
-    t.text     "plot"
+    t.string   "title",                                              null: false
+    t.string   "slug",                                               null: false
+    t.text     "overview"
     t.integer  "runtime"
     t.float    "rt_score",         limit: 24
     t.float    "imdb_score",       limit: 24
     t.float    "metacritic_score", limit: 24
     t.float    "aggregate_score",  limit: 24
-    t.text     "poster",                      null: false
+    t.text     "poster"
     t.text     "trailer"
     t.string   "mtrcb_rating"
+    t.integer  "tmdb_id"
+    t.string   "status",                      default: "incomplete", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
