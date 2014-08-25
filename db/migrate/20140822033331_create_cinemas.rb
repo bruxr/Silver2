@@ -6,7 +6,7 @@ class CreateCinemas < ActiveRecord::Migration
       t.decimal :latitude, null: false, precision: 15, scale: 10, default: 0.0
       t.decimal :longitude, null: false, precision: 15, scale: 10, default: 0.0
       t.string :status, null: false, default: 'active'
-      t.string :fetcher, null: false
+      t.string :fetcher
       t.timestamps
     end
   end

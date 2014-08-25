@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140822033912) do
     t.decimal  "latitude",   precision: 15, scale: 10, default: 0.0,      null: false
     t.decimal  "longitude",  precision: 15, scale: 10, default: 0.0,      null: false
     t.string   "status",                               default: "active", null: false
-    t.string   "fetcher",                                                 null: false
+    t.string   "fetcher"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
