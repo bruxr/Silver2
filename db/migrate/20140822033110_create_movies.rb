@@ -13,6 +13,7 @@ class CreateMovies < ActiveRecord::Migration
       t.text :trailer
       t.string :mtrcb_rating
       t.integer :tmdb_id
+      t.string :imdb_id
       t.string :status, null: false, default: 'incomplete'
       t.timestamps
     end

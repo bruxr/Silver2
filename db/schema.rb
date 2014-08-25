@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140822033912) do
     t.text     "trailer"
     t.string   "mtrcb_rating"
     t.integer  "tmdb_id"
+    t.string   "imdb_id"
     t.string   "status",                      default: "incomplete", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
