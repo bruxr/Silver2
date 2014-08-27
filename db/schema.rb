@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140827015729) do
     t.string   "format",                    default: "2D", null: false
     t.text     "ticket_url"
     t.float    "ticket_price",   limit: 24
+    t.string   "room",                                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
