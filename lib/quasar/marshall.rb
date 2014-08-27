@@ -67,8 +67,36 @@ module Quasar
             })
           end
 
-          movie_obj.save
+          # Save our movie & schedules if they are valid
+          if movie_obj.valid?
+            movie_obj.save
 
+          # Otherwise, log errors so we can take a look later
+          else
+            log_movie_errors(movie_obj)
+          end
+
+        end
+
+      end
+
+      # Logs a movie model's errors to our log file
+      def log_movie_errors(movie)
+
+        # Movie object errors
+        unless movie.errors.empty?
+          movie.errors.each do |error|
+            Rails.logger.warn("Failed to save movie (#{movie.attributes.inspect}: #{error}")
+          end
+        end
+
+        # Schedule errors
+        movie.schedules.each do |sked|
+          unless sked.errors.empty?
+            sked.errors.each do |error|
+              Rails.logger.warn("Failed to save schedule (#{sked.attributes.inspect}: #{error}")
+            end
+          end
         end
 
       end
