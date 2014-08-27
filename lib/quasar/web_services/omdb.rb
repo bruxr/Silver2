@@ -17,7 +17,8 @@ module Quasar
               if item['Type'] == 'movie'
                 result = {
                   title: item['Title'],
-                  id: item['imdbID']
+                  id: item['imdbID'],
+                  url: "http://www.imdb.com/title/#{item['imdbID']}"
                 }
                 break
               end

@@ -29,7 +29,8 @@ module Quasar
           if resp['count'] > 0
             result = {
               id: resp['results'][0]['name'],
-              title: resp['results'][0]['name']
+              title: resp['results'][0]['name'],
+              url: resp['results'][0]['url']
             }
           end
         end

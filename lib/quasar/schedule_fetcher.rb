@@ -53,9 +53,19 @@ module Quasar
           fixed_title = sanitizer.sanitize(info[:title], tags: [])
           movie_obj = Movie.find_or_initialize_by(title: fixed_title)
 
-          # Add the MTRCB rating if this is a new record
-          if movie_obj.new_record? && !movie[:rating].nil?
-            movie_obj.mtrcb_rating = movie[:rating]
+          # For new movies
+          if movie_obj.new_record? 
+
+            # Add the MTRCB rating
+            unless movie[:rating].nil?
+              movie_obj.mtrcb_rating = movie[:rating]
+            end
+
+            # Add the sources
+            info[:sources].each do |source|
+              add_movie_source(movie_obj, source)
+            end
+
           end
 
           # Process our schedules
@@ -86,6 +96,17 @@ module Quasar
 
         end
 
+      end
+
+      # Adds an external source reference to our movie model
+      # source should be a hash of 'name' for the source name
+      # and 'id' for the ID the source uses for the movie
+      def add_movie_source(movie, source)
+        movie.sources.build({
+          name: source[:name],
+          external_id: source[:id],
+          url: source[:url]
+        })
       end
 
       # Adds the schedule to our movie model

@@ -20,14 +20,21 @@ module Quasar
       # Check cache if we already have searched for this title
       result = Rails.cache.fetch(cache_key) do
 
-        result = {}
+        result = {
+          title: nil,
+          sources: []
+        }
 
         # Search TMDB
         tmdb = Quasar::WebServices::Tmdb.new(ENV['TMDB_API_KEY'])
         tmdb_res = tmdb.find_title(title)
         unless tmdb_res.nil?
           result[:title] = tmdb_res[:title]
-          result[:tmdb_id] = tmdb_res[:id]
+          result[:sources] << {
+            name: 'tmdb',
+            id: tmdb_res[:id],
+            url: tmdb_res[:url]
+          }
         end
 
         # and Rotten Tomatoes
@@ -35,7 +42,11 @@ module Quasar
         rt_res = rt.find_title(title)
         unless rt_res.nil?
           result[:title] = rt_res[:title] if result[:title].nil?
-          result[:rt_id] = rt_res[:id]
+          result[:sources] << {
+            name: 'rt',
+            id: rt_res[:id],
+            url: rt_res[:url]
+          }
         end
 
         # and OMDB
@@ -43,7 +54,11 @@ module Quasar
         omdb_res = omdb.find_title(title)
         unless omdb_res.nil?
           result[:title] = omdb_res[:title] if result[:title].nil?
-          result[:omdb_id] = omdb_res[:id]
+          result[:sources] << {
+            name: 'omdb',
+            id: omdb_res[:id],
+            url: omdb_res[:url]
+          }
         end
 
         # then Metacritic.
@@ -53,13 +68,21 @@ module Quasar
         unless result[:title].nil?
           mc_res = metacritic.find_title(result[:title])
           unless mc_res.nil?
-            result[:metacritic_id] = mc_res[:id]
+            result[:sources] << {
+              name: 'metacritic',
+              id: mc_res[:id],
+              url: mc_res[:url]
+            }
           end
         else
           mc_res = metacritic.find_title(title)
           unless mc_res.nil?
             result[:title] = mc_res[:title]
-            result[:metacritic_id] = mc_res[:id]
+            result[:sources] << {
+              name: 'metacritic',
+              id: mc_res[:id],
+              url: mc_res[:url]
+            }
           end
         end
 

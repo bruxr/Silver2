@@ -25,7 +25,8 @@ module Quasar
           if resp['total'] > 0
             result = {
               title: resp['movies'][0]['title'],
-              id: resp['movies'][0]['id'].to_i
+              id: resp['movies'][0]['id'].to_i,
+              url: resp['movies'][0]['links']['alternate']
             }
           else
             result = nil
