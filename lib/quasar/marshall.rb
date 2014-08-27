@@ -89,7 +89,7 @@ module Quasar
         
         ticket_url = sked[:ticket_url] unless sked[:ticket_url].nil?
         price = sked[:price] unless sked[:price].nil?
-        
+
         movie.schedules.build({
           cinema: @cinema,
           screening_time: sked[:time],
@@ -106,7 +106,7 @@ module Quasar
 
         # Movie object errors
         unless movie.errors.empty?
-          movie.errors.each do |error|
+          movie.errors.full_messages.each do |error|
             Rails.logger.warn("Failed to save movie (#{movie.attributes.inspect}: #{error}")
           end
         end
@@ -114,7 +114,7 @@ module Quasar
         # Schedule errors
         movie.schedules.each do |sked|
           unless sked.errors.empty?
-            sked.errors.each do |error|
+            sked.errors.full_messages.each do |error|
               Rails.logger.warn("Failed to save schedule (#{sked.attributes.inspect}: #{error}")
             end
           end
