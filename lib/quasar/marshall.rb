@@ -54,17 +54,21 @@ module Quasar
             movie_obj.mtrcb_rating = movie[:rating]
           end
 
-          # Add our schedules
+          # Process our schedules
           movie[:schedules].each do |sked|
-            ticket_url = sked[:ticket_url] unless sked[:ticket_url].nil?
-            price = sked[:price] unless sked[:price].nil?
-            movie_obj.schedules.build({
-              cinema: @cinema,
-              screening_time: sked[:time],
-              format: sked[:format],
-              ticket_url: ticket_url,
-              ticket_price: price
-            })
+
+            # If this is a new movie, just add the schedules
+            if movie_obj.new_record?
+              add_schedule(movie_obj, sked)
+
+            # If it already exists, check if the schedule exists
+            # first before adding
+            else
+              unless Schedule.existing?(movie_obj, @cinema, sked[:time], sked[:cinema_name])
+                add_schedule(movie, sked)
+              end
+            end
+
           end
 
           # Save our movie & schedules if they are valid
@@ -77,6 +81,23 @@ module Quasar
           end
 
         end
+
+      end
+
+      # Adds the schedule to our movie model
+      def add_schedule(movie, sked)
+        
+        ticket_url = sked[:ticket_url] unless sked[:ticket_url].nil?
+        price = sked[:price] unless sked[:price].nil?
+        
+        movie.schedules.build({
+          cinema: @cinema,
+          screening_time: sked[:time],
+          format: sked[:format],
+          ticket_url: ticket_url,
+          ticket_price: price,
+          room: sked[:cinema_name]
+        })
 
       end
 
