@@ -45,7 +45,8 @@ ActiveRecord::Schema.define(version: 20140827015729) do
     t.string   "format",                    default: "2D", null: false
     t.text     "ticket_url"
     t.float    "ticket_price",   limit: 24
-    t.datetime "created"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "scores", force: true do |t|
