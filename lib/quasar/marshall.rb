@@ -67,7 +67,7 @@ module Quasar
             })
           end
 
-          #movie_obj.save
+          movie_obj.save
 
         end
 
