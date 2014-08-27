@@ -38,6 +38,11 @@ module Quasar
             blocks = div.inner_html.split('<br>')
             movie[:rating] = blocks[1]
 
+            # If rating is PG-13, convert it to PG to match MTRCB's ratings
+            if movie[:rating] == 'PG-13'
+              movie[:rating] = 'PG'
+            end
+
             # Determine the format based on the title's suffix
             # (They're suffixed with a 2D or 3D depending on the format)
             if title =~ /3D$/
