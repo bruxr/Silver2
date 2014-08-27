@@ -10,6 +10,8 @@ module Quasar
     # a popup login to buy tickets.
     class SmFetcher < Fetcher
 
+      @@endpoint = 'https://smcinema.com/ajaxMovies.php'
+
       # Returns an array of screening times for
       # movies available to a branch
       def get_schedules()
@@ -40,6 +42,11 @@ module Quasar
 
       protected
 
+        # Returns TRUE if we got redirected back to the homepage
+        def redirected_to_homepage?
+          @client.request.last_uri.to_s == 'https://www.smcinema.com/index.php'
+        end
+
         # Returns the movies available under a branch
         # (e.g. SMCD for SM City Davao)
         def get_movies(branch_code)
@@ -48,8 +55,12 @@ module Quasar
             method: 'listMovies',
             branch_code: branch_code
           }
-          resp = post 'http://smcinema.com/ajaxMovies.php', data
-          JSON.parse resp
+          resp = post(@@endpoint, data)
+          if redirected_to_homepage?
+            raise Quasar::ScrapingError('Failed to access SM Cinema API, got redirected to the home page.', 'SM Fetcher')
+          else
+            JSON.parse resp
+          end
 
         end
 
@@ -62,8 +73,12 @@ module Quasar
             branch_code: branch_code,
             movie_name: movie_name
           }
-          resp = post 'http://smcinema.com/ajaxMovies.php', data
-          JSON.parse resp
+          resp = post(@@endpoint, data)
+          if redirected_to_homepage?
+            raise Quasar::ScrapingError('Failed to access SM Cinema API, got redirected to the home page.', 'SM Fetcher')
+          else
+            JSON.parse resp
+          end
 
         end
 
