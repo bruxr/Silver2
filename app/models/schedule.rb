@@ -24,4 +24,21 @@ class Schedule < ActiveRecord::Base
     allow_nil: true
   }
 
+  # Convenience function for
+  # checking if a schedule already exists
+  # with the provided details.
+  def self.existing?(movie, cinema, time, room)
+    
+    movie = movie.id if movie.instance_of?(Movie)
+    cinema = cinema.id if cinema.instance_of(Cinema)
+
+    where({
+      movie_id: movie,
+      cinema_id: cinema,
+      screening_time: time,
+      room: room
+    }).exists?
+
+  end
+
 end
