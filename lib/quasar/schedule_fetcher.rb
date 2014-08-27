@@ -1,9 +1,13 @@
 module Quasar
   
-  # Quasar Marshalls convert the schedule array provided
-  # by fetchers into actual models and then recorded
-  # into the database.
-  class Marshall
+  # Grabs schedules from our cinemas and then saves
+  # those schedules to the database.
+  #
+  # For new movies, this class creates "stub records"
+  # which are temporary movie records and then schedules
+  # an updater afterwards which will grabe movie information
+  # from our sources.
+  class ScheduleFetcher
 
     attr_reader :schedules
 
