@@ -45,7 +45,7 @@ module Quasar
 
             # Determine the format based on the title's suffix
             # (They're suffixed with a 2D or 3D depending on the format)
-            if title =~ /3D$/
+            if title =~ /3D\z/
               format = '3D'
             else
               format = '2D'
