@@ -14,17 +14,19 @@ module Quasar
 
       # Convenience method for searching TMDB for
       # a movie title, returns TMDB's movie title
-      # and it's ID.
+      # and it's ID or nil if nothing is returned.
       def find_title(title)
         
         data = { query: title }
 
         resp = get('/search/movie', data)
         unless resp.nil?
-          res = {
-            id: resp['results'][0]['id'].to_i,
-            title: resp['results'][0]['title']
-          }
+          unless resp['results'].empty?
+            res = {
+              id: resp['results'][0]['id'].to_i,
+              title: resp['results'][0]['title']
+            }
+          end
         end
 
       end
