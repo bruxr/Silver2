@@ -9,6 +9,8 @@ module Quasar
     class Abreeza < Fetcher
 
       def get_schedules
+
+        @schedules = []
         
         require 'nokogiri'
 

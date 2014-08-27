@@ -8,6 +8,8 @@ module Quasar
 
       def get_schedules
 
+        @schedules = []
+
         require 'nokogiri'
 
         resp = get('http://nccc.com.ph/main/page/cinema')
