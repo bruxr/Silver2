@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140822033912) do
+ActiveRecord::Schema.define(version: 20140827015729) do
 
   create_table "cinemas", force: true do |t|
     t.string   "name",                                                    null: false
@@ -25,20 +25,15 @@ ActiveRecord::Schema.define(version: 20140822033912) do
   end
 
   create_table "movies", force: true do |t|
-    t.string   "title",                                              null: false
-    t.string   "slug",                                               null: false
+    t.string   "title",                                             null: false
+    t.string   "slug",                                              null: false
     t.text     "overview"
     t.integer  "runtime"
-    t.float    "rt_score",         limit: 24
-    t.float    "imdb_score",       limit: 24
-    t.float    "metacritic_score", limit: 24
-    t.float    "aggregate_score",  limit: 24
+    t.float    "aggregate_score", limit: 24
     t.text     "poster"
     t.text     "trailer"
     t.string   "mtrcb_rating"
-    t.integer  "tmdb_id"
-    t.string   "imdb_id"
-    t.string   "status",                      default: "incomplete", null: false
+    t.string   "status",                     default: "incomplete", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,6 +45,17 @@ ActiveRecord::Schema.define(version: 20140822033912) do
     t.string   "format",                    default: "2D", null: false
     t.text     "ticket_url"
     t.float    "ticket_price",   limit: 24
+    t.datetime "created"
+  end
+
+  create_table "scores", force: true do |t|
+    t.integer  "movie_id",                                   null: false
+    t.string   "external_movie_id",                          null: false
+    t.string   "source",                                     null: false
+    t.float    "score",             limit: 24, default: 0.0, null: false
+    t.text     "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
