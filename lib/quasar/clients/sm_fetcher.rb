@@ -18,15 +18,6 @@ module Quasar
 
         @schedules = []
 
-        # Create a MTRCB ratings translation hash
-        # because SM doesn't use the complete words.
-        ratings = {}
-        ratings['G'] = 'G'
-        ratings['PG'] = 'PG'
-        ratings['R13'] = 'R-13'
-        ratings['R16'] = 'R-16'
-        ratings['R18'] = 'R-18'
-
         movies = get_movies @branch_code
 
         # Check if we have an error first
@@ -85,6 +76,15 @@ module Quasar
         # Processes each movie object returned from the API,
         # reading the items (e.g. title, format, price) we needed.
         def process_movies(movies)
+
+          # Create a MTRCB ratings translation hash
+          # because SM doesn't use the complete words.
+          ratings = {}
+          ratings['G'] = 'G'
+          ratings['PG'] = 'PG'
+          ratings['R13'] = 'R-13'
+          ratings['R16'] = 'R-16'
+          ratings['R18'] = 'R-18'
 
           movies.each do |item|
           
