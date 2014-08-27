@@ -65,7 +65,7 @@ module Quasar
             # first before adding
             else
               unless Schedule.existing?(movie_obj, @cinema, sked[:time], sked[:cinema_name])
-                add_schedule(movie, sked)
+                add_schedule(movie_obj, sked)
               end
             end
 
