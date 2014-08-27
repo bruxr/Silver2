@@ -51,7 +51,7 @@ module Quasar
         # since the services up top are more accurate.
         metacritic = Quasar::WebServices::Metacritic.new(ENV['MASHAPE_API_KEY'])
         unless result[:title].nil?
-          mc_res = metacritic.get_details(result[:title])
+          mc_res = metacritic.find_title(result[:title])
           unless mc_res.nil?
             result[:metacritic_id] = mc_res[:id]
           end
