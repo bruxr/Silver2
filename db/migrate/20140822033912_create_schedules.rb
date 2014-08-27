@@ -5,6 +5,7 @@ class CreateSchedules < ActiveRecord::Migration
       t.string :format, null: false, default: '2D'
       t.text :ticket_url
       t.float :ticket_price
+      t.datetime :created
     end
   end
 end
