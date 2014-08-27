@@ -58,7 +58,7 @@ module Quasar
         else
           mc_res = metacritic.find_title(title)
           unless mc_res.nil?
-            result[:title] = mc_res[:title] if result[:title].nil?
+            result[:title] = mc_res[:title]
             result[:metacritic_id] = mc_res[:id]
           end
         end
