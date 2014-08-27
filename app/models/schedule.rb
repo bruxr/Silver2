@@ -30,7 +30,7 @@ class Schedule < ActiveRecord::Base
   def self.existing?(movie, cinema, time, room)
     
     movie = movie.id if movie.instance_of?(Movie)
-    cinema = cinema.id if cinema.instance_of(Cinema)
+    cinema = cinema.id if cinema.instance_of?(Cinema)
 
     where({
       movie_id: movie,
