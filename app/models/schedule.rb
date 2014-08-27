@@ -6,6 +6,8 @@ class Schedule < ActiveRecord::Base
   belongs_to :movie, inverse_of: :schedules
   validates :movie, presence: true
 
+  validates :screening_time, presence: true
+
   validates :format, inclusion: {
     in: %w(2D 3D IMAX),
     message: "%{value} is not a valid film format."
