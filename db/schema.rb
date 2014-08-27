@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827015729) do
+ActiveRecord::Schema.define(version: 20140827062245) do
 
   create_table "cinemas", force: true do |t|
     t.string   "name",                                                    null: false
@@ -50,14 +50,12 @@ ActiveRecord::Schema.define(version: 20140827015729) do
     t.datetime "updated_at"
   end
 
-  create_table "scores", force: true do |t|
-    t.integer  "movie_id",                                   null: false
-    t.string   "external_movie_id",                          null: false
-    t.string   "source",                                     null: false
-    t.float    "score",             limit: 24, default: 0.0, null: false
-    t.text     "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "sources", force: true do |t|
+    t.integer "movie_id",               null: false
+    t.string  "name",                   null: false
+    t.string  "external_id",            null: false
+    t.text    "url",                    null: false
+    t.float   "score",       limit: 24
   end
 
 end

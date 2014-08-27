@@ -3,6 +3,8 @@ class Movie < ActiveRecord::Base
 
   has_many :schedules, inverse_of: :movie, dependent: :destroy
 
+  has_many :sources, inverse_of: :movie, dependent: :destroy
+
   validates :title, presence: true
 
   validates :mtrcb_rating, inclusion: {
