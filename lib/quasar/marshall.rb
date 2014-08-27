@@ -50,7 +50,7 @@ module Quasar
           movie_obj = Movie.find_or_initialize_by(title: fixed_title)
 
           # Add the MTRCB rating if this is a new record
-          if movie_obj.new_record? and ! movie[:rating].nil?
+          if movie_obj.new_record? && !movie[:rating].nil?
             movie_obj.mtrcb_rating = movie[:rating]
           end
 
