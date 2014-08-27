@@ -12,13 +12,15 @@ module Quasar
         resp = query({s: title})
         result = nil
         unless resp.nil?
-          resp['Search'].each do |item|
-            if item['Type'] == 'movie'
-              result = {
-                title: item['Title'],
-                id: item['imdbID']
-              }
-              break
+          unless resp['Search'].nil?
+            resp['Search'].each do |item|
+              if item['Type'] == 'movie'
+                result = {
+                  title: item['Title'],
+                  id: item['imdbID']
+                }
+                break
+              end
             end
           end
         end
