@@ -22,6 +22,11 @@ module Quasar
 
       # Do the dance!
       url = find_movie_page(title)
+
+      # If we can't find a movie page, stop.
+      return nil if url.nil?
+
+      # Continue dancing :)
       trailers = parse_movie_page(url)
       trailers = remove_trailers_not_from('YouTube', trailers)
 
@@ -74,14 +79,16 @@ module Quasar
         results = @google.search(title, {siteSearch: 'hd-trailers.net'})
         unless results.nil?
 
-          if results['error'].nil?
+          if results['error'].nil? && results['totalResults'].to_i > 0
             results['items'].each do |result|
               if result['link'] =~ /\Ahttp\:\/\/www\.hd\-trailers\.net\/movie\/[^\/]+\/\z/
                 url = result['link']
               end
             end
           else
-            Rails.logger.warn("TrailerFinder: Failed to do search for movie #{title}. Google error #{results['error']['message']} (#{results['error']['code']})")
+            msg = "TrailerFinder: Failed to do search for movie #{title}."
+            msg.concat(" Google error #{results['error']['message']} (#{results['error']['code']})") unless results['error'].nil?
+            Rails.logger.warn(msg)
           end
 
         end
