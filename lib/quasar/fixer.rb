@@ -134,8 +134,8 @@ module Quasar
         unless result.nil?
           details = {
             overview: result['Plot'],
-            runtime: result['Runtime'].gsub('min', '').to_i,
-            genres: result['Genre'].split(', '),
+            runtime: result['Runtime'].gsub('min', '') unless result['Runtime'].nil?,
+            genres: result['Genre'].split(', ') unless result['Genre'].nil?,
             poster: result['Poster']
           }
         end
