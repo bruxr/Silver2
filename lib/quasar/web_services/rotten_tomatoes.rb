@@ -45,6 +45,26 @@ module Quasar
         result = query("/movies/#{id}")
       end
 
+      # Returns the movie's rating in Rotten Tomatoes.
+      # Set actual to TRUE to return the 0-100 score
+      # instead of converted 0-10.
+      # Take note that this combines both the critics
+      # and the audience score.
+      def get_score(id, audiences = false)
+
+        details = get_details(id)
+
+        # If we got an error, end early.
+        if details.nil?
+          nil
+        else
+          critics = details['ratings']['critics_score'].to_f / 10
+          audience = details['ratings']['audience_score'].to_f / 10
+          (critics + audience) / 2
+        end
+
+      end
+
       # Generic API querying method.
       # Provide the method (with leading forward-slash)
       # and corresponding parameters to acccess the API. 

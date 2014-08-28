@@ -64,6 +64,26 @@ module Quasar
 
       end
 
+      # Returns a movie's score in Metacritic.
+      # Set actual to true to return the actual
+      # metacritic score, otherwise it'll return
+      # a score in the range of 0-10
+      def get_score(id, actual = false)
+
+        resp = get_details(id)
+
+        # If we didn't get anything, return a nil
+        return nil if resp.nil?
+
+        score = resp['score'].to_i
+        if actual
+          score
+        else
+          score / 10
+        end
+
+      end
+
       # Generic API querying method.
       # Provide the method with the leading forward slash
       # and parameters if necessary.

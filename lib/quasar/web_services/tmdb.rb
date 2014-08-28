@@ -48,6 +48,19 @@ module Quasar
 
       end
 
+      # Returns the movie's score in TMDB.
+      def get_score(id)
+
+        details = get_details(id)
+
+        if details.nil?
+          nil
+        else
+          details['vote_average'].to_f
+        end
+
+      end
+
       # Accesses TMDB's API. Pass the method
       # with a leading forward slash (e.g. /job/list)
       # then a hash of params if needed.

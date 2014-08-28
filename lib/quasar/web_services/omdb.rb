@@ -47,6 +47,22 @@ module Quasar
 
       end
 
+      # Returns a movie's rating in IMDB.
+      def get_score(id)
+
+        resp = get_details(id)
+
+        # Nil for error
+        if resp.nil?
+          return nil
+
+        # The score for success
+        else
+          return resp['imdbRating'].to_f
+        end
+
+      end
+
       # Generic query method. Just provide a params hash
       # and it'll take care of the rest :)
       #
