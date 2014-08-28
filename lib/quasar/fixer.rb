@@ -132,12 +132,11 @@ module Quasar
         omdb = Quasar::WebServices::Omdb.new
         result = omdb.get_details(srcs[:omdb])
         unless result.nil?
-          details = {
-            overview: result['Plot'],
-            runtime: result['Runtime'].gsub('min', '') unless result['Runtime'].nil?,
-            genres: result['Genre'].split(', ') unless result['Genre'].nil?,
-            poster: result['Poster']
-          }
+          details = {}
+          details[:overview] = result['Plot']
+          details[:runtime] = result['Runtime'].gsub('min', '') unless result['Runtime'].nil?
+          details[:genres] = result['Genre'].split(', ') unless result['Genre'].nil?
+          details[:poster] = result['Poster']
         end
       end
 
