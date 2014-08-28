@@ -36,6 +36,15 @@ module Quasar
 
         resp = query({i: id})
 
+        # Replace N/A with nils
+        resp.each do |key, value|
+          if value == 'N/A'
+            resp[key] = nil
+          end
+        end
+
+        resp
+
       end
 
       # Generic query method. Just provide a params hash
