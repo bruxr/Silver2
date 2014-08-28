@@ -92,26 +92,63 @@ module Quasar
 
     end
 
-    # Grabs extended movie details from TMDB.
-    # Provide a TMDB movie ID to return a hash of
-    # movie information
-    def get_details(movie_id)
+    # Attempts to find extended movie information like
+    # plot, runtime, cast etc.
+    #
+    # Pass in an array of sources hash e.g.
+    # [
+    #   { name: 'metacritic', id: "The Amazing Spider Man" },
+    #   { name: 'omdb', id: 'tt12345' }
+    # ]
+    def get_details(sources)
 
-      cache_key = "movie_details:#{movie_id}"
+      details = nil
 
-      unless Rails.cache.exist?(cache_key)
-        data = {language: 'en'}
-        details = @tmdb.get("/movie/#{movie_id}", data)
-
-        unless details.nil?
-          Rails.cache.write(cache_key, details)
-          details
-        else
-          raise Exception.new("Quasar Fixer Error: Failed to get details for movie with ID #{movie_id}")
+      # Convert our array to a hash
+      if sources.instance_of?(Array)
+        srcs = {}
+        sources.each do |h|
+          srcs[h[:name].to_sym] = h[:id]
         end
-      else
-        details = Rails.cache.read(cache_key)
       end
+
+      # Check if we have TMDB first and we can get details from it
+      if !srcs[:tmdb].nil?
+        tmdb = Quasar::WebServices::Tmdb.new(ENV['TMDB_API_KEY'])
+        result = tmdb.get_details(srcs[:tmdb])
+        unless result.nil?
+          details = {
+            overview: result['overview'],
+            runtime: result['runtime'].to_i,
+            genres: result['genres'].map{ |genre| genre.values }.flatten,
+            poster: tmdb.image(result['poster_path']),
+            homepage: result['homepage'],
+            tagline: result['tagline'],
+            backdrop: tmdb.image(result['backdrop_path'])
+          }
+        end
+      # Otherwise, use OMDB
+      elsif !srcs[:omdb].nil?
+        omdb = Quasar::WebServices::Omdb.new
+        result = omdb.get_details(srcs[:omdb])
+        unless result.nil?
+          details = {
+            overview: result['Plot'],
+            runtime: result['Runtime'].gsub('min', '').to_i,
+            genres: result['Genre'].split(', '),
+            poster: result['Poster']
+          }
+        end
+      end
+
+      details
+
+    end
+
+    # Finds a high resolution trailer for title
+    def find_trailer(title)
+
+      
 
     end
 

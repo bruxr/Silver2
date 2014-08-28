@@ -12,6 +12,13 @@ module Quasar
         @api_key = api_key
       end
 
+      # Builds image URLs for backdrops & posters.
+      def image(image, size = 'original')
+
+        "https://image.tmdb.org/t/p/#{size}#{image}"
+
+      end
+
       # Convenience method for searching TMDB for
       # a movie title, returns TMDB's movie title
       # ID and URL or nil if nothing is returned.
@@ -29,6 +36,15 @@ module Quasar
             }
           end
         end
+
+      end
+
+      # Convenience method for grabbing details
+      # for a specific movie using the given
+      # movie ID.
+      def get_details(id)
+
+        get("/movie/#{id}")
 
       end
 

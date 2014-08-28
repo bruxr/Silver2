@@ -30,6 +30,14 @@ module Quasar
 
       end
 
+      # Returns a wealth of information about a movie
+      # using its IMDB movie ID
+      def get_details(id)
+
+        resp = query({i: id})
+
+      end
+
       # Generic query method. Just provide a params hash
       # and it'll take care of the rest :)
       #
