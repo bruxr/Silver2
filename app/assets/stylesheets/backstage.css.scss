@@ -1,3 +1,144 @@
-// Place all the styles related to the Backstage controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$red: #e74c3c;
+$brand-primary: $red;
+$thumbnail-border-radius: 0;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// Make all images responsive
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+// Layout
+html, body {
+  background: #eee;
+  height: 100%;
+}
+
+#wrap {
+  background: #fff;
+  margin: 30px auto;
+  padding: 30px;
+}
+
+// Headers
+header {
+  border-bottom: 3px solid $red;
+  margin: 0 0 40px 0;
+  padding-bottom: 20px;
+}
+
+#logo {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+#main-nav {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  a {
+    color: #999;
+
+    &:hover {
+      color: $red;
+      text-decoration: none;
+    }
+
+    &.active {
+      color: $red;
+      font-weight: bold;
+    }
+  }
+}
+
+// Page Header
+.page-header {
+  border-bottom: 3px solid $red;
+  margin: 20px 0 40px 0;
+  padding-bottom: 20px;
+
+  h2 {
+    display: inline-block;
+    font-size: 36px;
+  }
+}
+
+// Sections
+section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+#stats .section-title {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+// Stats
+.stat-title {
+  color: #999;
+  font-size: $font-size-base + 2;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: -10px;
+  margin-top: 0;
+}
+
+.stat-value {
+  font-size: 72px;
+  font-weight: bold;
+}
+
+// Movies
+.movie {
+  margin-bottom: 20px;
+}
+
+.movie-thumb {
+  border: 0;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.movie-title {
+  font-size: $font-size-base + 3;
+  margin-top: 10px;
+}
+
+.movie-stats {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    color: #555;
+    font-size: $font-size-base - 1;
+    margin-bottom: 5px;
+  }
+
+  .fa {
+    //width: 15px;
+  }
+
+  .movie-stat-value {
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    width: 20px;
+  }
+}

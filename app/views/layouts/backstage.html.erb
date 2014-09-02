@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Silver</title>
+  
+  <title>Silver Backstage</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <%= stylesheet_link_tag('backstage', media: 'all') %>
+  
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
-<%= yield %>
+  <div id="wrap" class="container">
+
+    <header>
+      <h1 id="logo">/Backstage</h1>
+      <ul id="main-nav">
+        <li><a href="#stats" class="active">Stats</a></li>
+        <li><a href="#movies">Movies</a></li>
+        <li><a href="#cinemas">Cinemas</a></li>
+        <li><a href="#schedules">Schedules</a></li>
+      </ul>
+    </header>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+
+  </div>
 
 </body>
 </html>
