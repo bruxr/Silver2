@@ -104,21 +104,24 @@ header {
     color: #777;
   }
 
-  .fa {
-    color: $blue;
-    font-size: 3em;
-  }
-
 }
 
 // Overview
 #overview {
   margin: 0 auto;
 
-  .page-header h2 {
-    font-size: 2em;
-    margin-bottom: .5em;
-    margin-top: .5em;
+  .page-header {
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: .5em;
+      margin-top: .5em;
+    }
+
+    .fa {
+      color: $blue;
+      font-size: 4em;
+    }
   }
 
   .timeline {
@@ -209,4 +212,13 @@ header {
   .timeline-content {
     flex: 1;
   }
+}
+
+// Media Grids
+.media-grid {
+  display: flex;
+}
+
+.media {
+  width: 20%;
 }
