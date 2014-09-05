@@ -41,10 +41,10 @@ module Quasar
         # Returns TRUE if we received an error
         def received_error?
           body = JSON.parse(@client.body)
-          if body['error'].nil?
-            false
-          else
+          if body.is_a?(Hash) && body.has_key?('error')
             true
+          else
+            false
           end
         end
 
@@ -113,7 +113,7 @@ module Quasar
           ratings['R18'] = 'R-18'
 
           movies.each do |item|
-          
+
             movie = {}
             movie[:name] = item['movie_name']
             movie[:schedules] = []
