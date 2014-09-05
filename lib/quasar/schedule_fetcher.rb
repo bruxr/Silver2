@@ -22,11 +22,14 @@ module Quasar
     # Performs the processing of schedules
     # and recording to the database.
     def perform
-      
-      @fetcher = @klass.new
-      @schedules = @fetcher.get_schedules
 
-      process_movies
+      unless @cinema.fetcher.nil?
+        @fetcher = @klass.new
+        @schedules = @fetcher.get_schedules
+        process_movies
+      else
+        Rails.logger.warn("ScheduleFetcher: Scraper for #{@cinema.name} is nil.")
+      end
 
     end
 
