@@ -1,0 +1,38 @@
+<div id="wrap">
+
+  <header class="row">
+    
+    <div class="md-2">
+      <h1 id="logo">Backstage</h1>
+    </div>
+
+    <div class="md-10 align-right">
+      Avatar
+    </div>
+
+  </header>
+
+  <div id="app-area" class="row">
+    
+    <nav id="main-menu" class="md-2">
+      
+      <section id="main">
+        <ul class="menu">
+          <li class="active">
+            {{#link-to 'index'}}<i class="fa fa-dashboard"></i> Overview{{/link-to}}
+          </li>
+          <li>{{#link-to 'movies'}}<i class="fa fa-film"></i> Movies{{/link-to}}</li>
+          <li>{{#link-to 'cinemas'}}<i class="fa fa-map-marker"></i> Cinemas{{/link-to}}</li>
+          <li>{{#link-to 'schedules'}}<i class="fa fa-calendar"></i> Schedules{{/link-to}}</li>
+        </ul>
+      </section>
+
+    </nav>
+
+    <div id="content" class="md-10">
+      {{{outlet}}}
+    </div>
+
+  </div>
+
+</div>
