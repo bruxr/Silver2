@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :movies
 
-  get 'backstage' => 'backstage#index'
+  get 'backstage/(*path)' => 'backstage#index', as: 'backstage'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
