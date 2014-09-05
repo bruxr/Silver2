@@ -22,7 +22,7 @@ module Quasar
 
         # Check if we have an error first
         if movies[0] == 'error'
-          raise Quasar::ScrapingError("SM Cinema API returned an error: #{movies[1]}")
+          Rails.logger.error("SM Cinema API returned an error: #{movies[1]}")
         else
           process_movies(movies)
         end
@@ -38,6 +38,22 @@ module Quasar
           @client.request.last_uri.to_s == 'https://www.smcinema.com/index.php'
         end
 
+        # Returns TRUE if we received an error
+        def received_error?
+          body = JSON.parse(@client.body)
+          if body['error'].nil?
+            false
+          else
+            true
+          end
+        end
+
+        # Returns the error message
+        def get_error_message
+          body = JSON.parse(@client.body)
+          body['error']
+        end
+
         # Returns the movies available under a branch
         # (e.g. SMCD for SM City Davao)
         def get_movies(branch_code)
@@ -48,7 +64,12 @@ module Quasar
           }
           resp = post(@@endpoint, data)
           if redirected_to_homepage?
-            raise Quasar::ScrapingError('Failed to access SM Cinema API, got redirected to the home page.', 'SM Fetcher')
+            Rails.logger.error('Failed to access SM Cinema API, got redirected to the home page.', 'SM Fetcher')
+            []
+          elsif received_error?
+            message = get_error_message
+            Rails.logger.error("Failed to access SM Cinema API - #{message}")
+            []
           else
             JSON.parse resp
           end
@@ -66,7 +87,12 @@ module Quasar
           }
           resp = post(@@endpoint, data)
           if redirected_to_homepage?
-            raise Quasar::ScrapingError('Failed to access SM Cinema API, got redirected to the home page.', 'SM Fetcher')
+            Rails.logger.error('Failed to access SM Cinema API, got redirected to the home page.', 'SM Fetcher')
+            []
+          elsif received_error?
+            message = get_error_message
+            Rails.logger.error("Failed to access SM Cinema API - #{message}")
+            []
           else
             JSON.parse resp
           end
