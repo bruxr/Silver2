@@ -5,6 +5,9 @@ class MoviesController < ApplicationController
   # GET /movies.json
   def index
     @movies = Movie.all
+    respond_to do |format|
+      format.json { render json: @movies.to_json(root: false) }
+    end
   end
 
   # GET /movies/1
