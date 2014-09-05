@@ -1,0 +1,68 @@
+// Variables
+$grid-unit-size: percentage(100/12);
+
+// Layout
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+.fill {
+  flex: 1;
+}
+
+.md-1 {
+  width: $grid-unit-size;
+}
+
+.md-2 {
+  width: $grid-unit-size * 2;
+}
+
+.md-3 {
+  width: $grid-unit-size * 3;
+}
+
+.md-4 {
+  width: $grid-unit-size * 4;
+}
+
+.md-5 {
+  width: $grid-unit-size * 5;
+}
+
+.md-6 {
+  width: $grid-unit-size * 6;
+}
+
+.md-7 {
+  width: $grid-unit-size * 7;
+}
+
+.md-8 {
+  width: $grid-unit-size * 8;
+}
+
+.md-9 {
+  width: $grid-unit-size * 9;
+}
+
+.md-10 {
+  width: $grid-unit-size * 10;
+}
+
+.md-11 {
+  width: $grid-unit-size * 11;
+}
+
+.md-12 {
+  width: $grid-unit-size * 12;
+}

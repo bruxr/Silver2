@@ -1,144 +1,212 @@
-$red: #e74c3c;
-$brand-primary: $red;
-$thumbnail-border-radius: 0;
+@import "normalize";
+@import "grids";
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+$blue: #3498db;
+$midnight: #2c3e50;
 
-// Make all images responsive
-img {
-  height: auto;
-  max-width: 100%;
+// Typography
+body {
+  color: $midnight;
+  font: .95em "Open Sans", Arial, sans-serif;
 }
 
-// Layout
-html, body {
-  background: #eee;
-  height: 100%;
+a {
+  color: $blue;
+  text-decoration: none;
+  transition: color .25s;
 }
 
-#wrap {
-  background: #fff;
-  margin: 30px auto;
-  padding: 30px;
+a:hover {
+  color: darken($blue, 15%);
 }
 
-// Headers
+// Alignment
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+// Header
 header {
-  border-bottom: 3px solid $red;
-  margin: 0 0 40px 0;
-  padding-bottom: 20px;
+  background: #fcfcfc;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 2px #f9f9f9;
+  padding: 0 20px;
 }
 
 #logo {
-  display: inline-block;
-  margin-right: 40px;
+  color: $midnight;
+  font-size: 1.5em;
+  font-weight: 400;
 }
 
-#main-nav {
-  display: inline-block;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+// App Area
+#app-area {
+  padding-top: 20px;
+}
 
-  li {
-    display: inline-block;
-    margin-right: 20px;
-  }
+// Menu
+#main-menu {
+  padding-right: 10px;
 
-  a {
-    color: #999;
+  .menu {
+    list-style-type: none;
+    padding: 0;
 
-    &:hover {
-      color: $red;
-      text-decoration: none;
+    li {
+      margin-bottom: 5px;
+      padding-left: 15px;
     }
 
-    &.active {
-      color: $red;
-      font-weight: bold;
+    a {
+      color: $midnight;
+      display: block;
+      padding: 3px 0;
+
+      &:hover {
+        color: lighten($midnight, 15%);
+      }
+    }
+
+    i {
+      text-align: center;
+      width: 30px;
+    }
+
+    li.active {
+      border-left: 5px solid $blue;
+      padding-left: 10px;
+
+      a {
+        color: #3498db;
+      }
     }
   }
 }
 
-// Page Header
+// Content
+#content {
+  padding: 20px;
+}
+
+// Page header
 .page-header {
-  border-bottom: 3px solid $red;
-  margin: 20px 0 40px 0;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 
   h2 {
-    display: inline-block;
-    font-size: 36px;
+    font-size: 2em;
+    font-weight: 400;
+    margin: .5em 0;
   }
-}
 
-// Sections
-section {
-  margin-bottom: 80px;
-}
-
-.section-title {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 40px;
-  padding-bottom: 20px;
-}
-
-#stats .section-title {
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-}
-
-// Stats
-.stat-title {
-  color: #999;
-  font-size: $font-size-base + 2;
-  font-weight: normal;
-  text-transform: uppercase;
-  margin-bottom: -10px;
-  margin-top: 0;
-}
-
-.stat-value {
-  font-size: 72px;
-  font-weight: bold;
-}
-
-// Movies
-.movie {
-  margin-bottom: 20px;
-}
-
-.movie-thumb {
-  border: 0;
-  margin-bottom: 10px;
-  padding: 0;
-}
-
-.movie-title {
-  font-size: $font-size-base + 3;
-  margin-top: 10px;
-}
-
-.movie-stats {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-
-  li {
-    color: #555;
-    font-size: $font-size-base - 1;
-    margin-bottom: 5px;
+  .sub {
+    color: #777;
   }
 
   .fa {
-    //width: 15px;
+    color: $blue;
+    font-size: 3em;
   }
 
-  .movie-stat-value {
-    display: inline-block;
-    font-weight: bold;
-    text-align: center;
-    width: 20px;
+}
+
+// Overview
+#overview {
+  margin: 0 auto;
+
+  .page-header h2 {
+    font-size: 2em;
+  }
+
+  .timeline {
+    margin-top: 40px;
+  }
+}
+
+#stats {
+  margin: 40px auto 0 auto;
+  width: 50%;
+
+  .stat-value { 
+    font-size: 2.25em;
+    font-weight: 400;
+  }
+
+  .stat-title {
+    color: #777;
+    font-size: 1em;
+    font-weight: normal;
+  }
+}
+
+.timeline{
+  position: relative;
+
+  &:before {
+    background: #ddd;
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    width: 2px;
+  }
+
+  .timeline-item {
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 10px;
+    position: relative;
+    text-align: left;
+    width: 48%;
+
+    &:before {
+      border: 1px solid #fff;
+      content: " ";
+      display: block;
+      height: 12px;
+      left: 0;
+      position: absolute;
+      top: 13px;
+      width: 12px;
+    }
+
+    &.right {
+      margin-left: 52%;
+    }
+
+    time {
+      color: #777;
+      display: block;
+      font-size: .75em;
+      margin-bottom: .25em;
+    }
+
+    a {
+      color: $midnight;
+    }
+
+    .timeline-item-title {
+      color: $blue;
+      font-weight: bold;
+    }
+  }
+
+  .timeline-image {
+    display: flex;
+    align-items: center;
+    width: 10%;
+
+    .fa {
+      color: $blue;
+      font-size: 2em;
+    }
+  }
+
+  .timeline-content {
+    flex: 1;
   }
 }

@@ -7,28 +7,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <%= stylesheet_link_tag('backstage', media: 'all') %>
-  
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
   <%= csrf_meta_tags %>
 
 </head>
 <body>
 
-  <div id="wrap" class="container">
+  <div id="wrap">
 
-    <header>
-      <h1 id="logo">/Backstage</h1>
-      <ul id="main-nav">
-        <li><a href="#stats" class="active">Stats</a></li>
-        <li><a href="#movies">Movies</a></li>
-        <li><a href="#cinemas">Cinemas</a></li>
-        <li><a href="#schedules">Schedules</a></li>
-      </ul>
+    <header class="row">
+      
+      <div class="md-2">
+        <h1 id="logo">Backstage</h1>
+      </div>
+
+      <div class="md-10 align-right">
+        Avatar
+      </div>
+
     </header>
 
-    <div id="content">
-      <%= yield %>
+    <div id="app-area" class="row">
+      
+      <nav id="main-menu" class="md-2">
+        
+        <section id="main">
+          <ul class="menu">
+            <li class="active"><a href="#"><i class="fa fa-dashboard"></i> Overview</a></li>
+            <li><a href="#"><i class="fa fa-film"></i> Movies</a></li>
+            <li><a href="#"><i class="fa fa-map-marker"></i> Cinemas</a></li>
+            <li><a href="#"><i class="fa fa-calendar"></i> Schedules</a></li>
+          </ul>
+        </section>
+
+      </nav>
+
+      <div id="content" class="md-10">
+        <%= yield %>
+      </div>
+
     </div>
 
   </div>
