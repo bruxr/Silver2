@@ -10,7 +10,7 @@ module Quasar
     # a popup login to buy tickets.
     class SmFetcher < Fetcher
 
-      @@endpoint = 'https://smcinema.com/ajaxMovies.php'
+      @@endpoint = 'https://www.smcinema.com/ajaxMovies.php'
 
       # Returns an array of screening times for
       # movies available to a branch
