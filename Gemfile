@@ -43,6 +43,7 @@ gem 'redis-rails'
 
 # Frontend stuff
 gem 'autoprefixer-rails'
+gem 'ember-rails'
 
 # Dev gems
 gem 'awesome_print', group: [:development, :test]
