@@ -44,6 +44,7 @@ gem 'devise'
 
 # Frontend stuff
 gem 'autoprefixer-rails'
+gem 'compass-rails'
 gem 'ember-rails'
 
 # Dev gems
