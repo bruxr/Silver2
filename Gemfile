@@ -40,6 +40,7 @@ gem 'mysql2'
 gem 'httparty'
 gem 'nokogiri'
 gem 'redis-rails'
+gem 'devise'
 
 # Frontend stuff
 gem 'autoprefixer-rails'
