@@ -13,13 +13,13 @@
   <%= csrf_meta_tags %>
 
 </head>
-<body>
+<body class="user-session">
 
-  <div class="row">
-    <div class="md-4 md-off-4">
-      <%= yield %>
-    </div>
+  <div id="content">
+    <%= yield %>
   </div>
+
+  <%= javascript_include_tag('backstage-basics.js') %>
 
 </body>
 </html>

@@ -1,13 +1,28 @@
-@import "normalize";
-@import "grids";
-
 $blue: #3498db;
 $midnight: #2c3e50;
+$default-font: "Open Sans", Arial, sans-serif;
+$default-font-color: $midnight;
+
+@import "compass/css3";
+@import "normalize";
+@import "grids";
+@import "backstage/forms";
+@import "utils";
+
+// Layout
+html, body {
+  height: 100%;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
 
 // Typography
 body {
   color: $midnight;
-  font: .95em "Open Sans", Arial, sans-serif;
+  font: .95em $default-font;
 }
 
 a {
@@ -221,4 +236,23 @@ header {
 
 .media {
   width: 20%;
+}
+
+// User session pages
+body.user-session {
+
+  #content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px #eee;
+    margin: 10% auto 0 auto;
+    padding: 20px;
+    width: 35%;
+  }
+
+  .page-header {
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
 }

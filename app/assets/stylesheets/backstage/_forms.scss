@@ -1,0 +1,84 @@
+.form-group, .form-buttons {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type=text], input[type=password], input[type=email] {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: $default-font-color;
+  font: 0.95em $default-font;
+  padding: 8px 5px;
+  transition: border-color .5s ease;
+
+  &:focus {
+    border-color: $blue;
+    box-shadow: 0 0 5px rgba($blue, 0.25);
+    outline: 0;
+  }
+
+  &.block-level {
+    display: block;
+    width: 100%;
+  }
+}
+
+.btn {
+  background: $blue;
+  border: 0;
+  border-radius: 3px;
+  //box-shadow: inset 0 1px 0 rgba(white, 0.25);
+  color: #fff;
+  cursor: pointer;
+  font: 0.95em $default-font;
+  padding: 8px 10px;
+  transition: background-color .25s ease;
+
+  &:hover {
+    background-color: lighten($blue, 5%);
+  }
+
+  &:active, &:focus {
+    outline: 0; // remove weird outline on mac
+  }
+
+  &.block-level {
+    display: block;
+    width: 100%;
+  }
+
+  &.lg {
+    padding: 12px 15px;
+  }
+}
+
+.icheck-item {
+  background-image: image-url('checkboxes.png');
+  cursor: pointer;
+  display: inline-block;
+  height: 22px;
+  vertical-align: middle;
+  width: 22px;
+
+  &.checked {
+    background-position: -22px 0;
+  }
+}
+
+.error {
+  background-color: lighten(#e74c3c, 40%);
+  color: #e74c3c;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  .fa {
+    margin-right: 5px;
+  }
+}
