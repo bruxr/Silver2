@@ -5,7 +5,6 @@
 //= require ember-data
 //= require ./ember/backstage/app
 //= require ./ember/backstage/router
-//= require ./ember/store
 //= require_tree ./ember/models
 //= require_tree ./ember/backstage/routes
 //= require_tree ./ember/backstage/templates
