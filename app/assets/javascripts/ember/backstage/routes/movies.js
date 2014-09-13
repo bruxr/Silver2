@@ -1,5 +1,5 @@
 Silver.MoviesRoute = Ember.Route.extend({
   model: function() {
-    this.store.find('movie');
+    return this.store.findAll('movie');
   }
 });
