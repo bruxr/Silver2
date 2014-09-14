@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140908072604) do
     t.integer  "runtime"
     t.float    "aggregate_score", limit: 24
     t.text     "poster"
+    t.text     "backdrop"
     t.text     "trailer"
     t.string   "mtrcb_rating"
     t.string   "status",                     default: "incomplete", null: false

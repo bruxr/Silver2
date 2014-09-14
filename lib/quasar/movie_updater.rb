@@ -30,7 +30,7 @@ module Quasar
 
       # Update the model if we have info,
       # otherwise log a warning.
-      keys = [:overview, :runtime, :poster, :trailer]
+      keys = [:overview, :runtime, :poster, :trailer, :backdrop]
       unless details.nil?
 
         # Save each detail, skipping if it is already set.

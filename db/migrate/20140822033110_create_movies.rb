@@ -7,6 +7,7 @@ class CreateMovies < ActiveRecord::Migration
       t.integer :runtime
       t.float :aggregate_score
       t.text :poster
+      t.text :backdrop
       t.text :trailer
       t.string :mtrcb_rating
       t.string :status, null: false, default: 'incomplete'
