@@ -30,7 +30,7 @@ namespace :silver do
   end
 
   desc "Adds a new user that can access the backstage"
-  task :register do
+  task :register => :environment do
     puts("Setting up a new user")
     user = User.new
     loop do
@@ -41,8 +41,10 @@ namespace :silver do
       unless user.valid?
         puts("Please try again.")
         user.errors.full_messages.each do |error|
-          puts(" - #{error}")
+          puts("  - #{error}")
         end
+      else
+        user.save
       end
       break if user.valid?
     end
