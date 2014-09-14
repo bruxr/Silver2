@@ -4,16 +4,28 @@ namespace :silver do
   task :setup do
     Rake::Task["db:seed"].invoke
     Rake::Task["silver:fetch"].invoke
+    Rake::Task["silver:update"].invoke
     Rake::Task["silver:register"].invoke
     puts("Silver is ready!")
   end
 
   desc "Grabs movie schedules from sources"
   task :fetch => :environment do
-    puts("Fetching schedules...")
-    Cinema.all.each do |cinema|
-      puts("- #{cinema.name}")
+    cinemas = Cinema.where("fetcher != NULL")
+    puts("Fetching schedules for #{cinemas.count} cinema/s...")
+    cinemas.all.each do |cinema|
+      puts("  - #{cinema.name}")
       Quasar::ScheduleFetcher.new(cinema).perform
+    end
+  end
+
+  desc "Updates movies that contains incomplete information"
+  task :update => :environment do
+    movies = Movie.where('status', 'incomplete')
+    puts("Updating #{movies.count} movie/s...")
+    movies.each do |movie|
+      puts("  - #{movie.title}")
+      Quasar::MovieUpdater.new(movie).perform
     end
   end
 
