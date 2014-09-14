@@ -11,7 +11,7 @@ namespace :silver do
 
   desc "Grabs movie schedules from sources"
   task :fetch => :environment do
-    cinemas = Cinema.where("fetcher != NULL")
+    cinemas = Cinema.where("fetcher != ''")
     puts("Fetching schedules for #{cinemas.count} cinema/s...")
     cinemas.all.each do |cinema|
       puts("  - #{cinema.name}")
