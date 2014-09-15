@@ -31,13 +31,14 @@ namespace :silver do
 
   desc "Adds a new user that can access the backstage"
   task :register => :environment do
+    require 'io/console'
     puts("Setting up a new user")
     user = User.new
     loop do
       puts("Type in the user's email address:")
       user.email = STDIN.gets.strip
       puts("Password:")
-      user.password = STDIN.gets.strip
+      user.password = STDIN.noecho(&:gets).chomp
       unless user.valid?
         puts("Please try again.")
         user.errors.full_messages.each do |error|
