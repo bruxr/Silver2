@@ -54,6 +54,21 @@ module Quasar
           body['error']
         end
 
+        # Common method for querying the SM Cinema API
+        # Pass in the data payload as a hash.
+        def query(data)
+
+          response = post(@@endpoint, data)
+          if redirected_to_homepage?
+            raise Quasar::Exceptions::UnexpectedUrl.new(@@endpoint, "Failed to access SM Cinema API, got redirected to the home page.")
+          elsif received_error?
+            raise Quasar::Exceptions::SiteError.new(@response, "SM Cinema API error: #{get_error_message()}")
+          else
+            JSON.parse(response)
+          end
+
+        end
+
         # Returns the movies available under a branch
         # (e.g. SMCD for SM City Davao)
         def get_movies(branch_code)
@@ -62,17 +77,7 @@ module Quasar
             method: 'listMovies',
             branch_code: branch_code
           }
-          resp = post(@@endpoint, data)
-          if redirected_to_homepage?
-            Rails.logger.error('Failed to access SM Cinema API, got redirected to the home page.', 'SM Fetcher')
-            []
-          elsif received_error?
-            message = get_error_message
-            Rails.logger.error("Failed to access SM Cinema API - #{message}")
-            []
-          else
-            JSON.parse resp
-          end
+          query(data)
 
         end
 
@@ -85,17 +90,7 @@ module Quasar
             branch_code: branch_code,
             movie_name: movie_name
           }
-          resp = post(@@endpoint, data)
-          if redirected_to_homepage?
-            Rails.logger.error('Failed to access SM Cinema API, got redirected to the home page.', 'SM Fetcher')
-            []
-          elsif received_error?
-            message = get_error_message
-            Rails.logger.error("Failed to access SM Cinema API - #{message}")
-            []
-          else
-            JSON.parse resp
-          end
+          query(data)
 
         end
 
