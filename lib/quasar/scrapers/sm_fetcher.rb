@@ -8,7 +8,7 @@ module Quasar
     # 
     # TODO: find a way on how to buy tickets b/c sm requires
     # a popup login to buy tickets.
-    class SmFetcher < Fetcher
+    class SmFetcher < Quasar::Scrapers::Base
 
       @@endpoint = 'https://www.smcinema.com/ajaxMovies.php'
 
