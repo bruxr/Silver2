@@ -1,5 +1,5 @@
 module Quasar
-  module Clients
+  module Scrapers
 
     # A Quasar Fetcher for SM Lanang Premiere Cinemas
     # Instantiate and invoke get_schedules() to 

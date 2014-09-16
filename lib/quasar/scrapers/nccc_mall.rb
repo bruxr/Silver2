@@ -1,11 +1,12 @@
 module Quasar
-  module Clients
+  module Scrapers
 
     # A Quasar Fetcher for NCCC Mall of Davao Cinemas
     # Instantiate and invoke get_schedules() to 
     # return an array of screening times.
-    class NcccMall < Fetcher
+    class NcccMall < Quasar::Scrapers::Base
 
+      # Grabs schedules from NCCC's cinema page
       def get_schedules
 
         @schedules = []

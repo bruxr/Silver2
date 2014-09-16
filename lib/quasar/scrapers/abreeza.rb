@@ -1,13 +1,14 @@
 module Quasar
-  module Clients
+  module Scrapers
 
-    # A Quasar Fetcher for Abreeza Cinemas
+    # Abreeza Cinemas scraper
     # Instantiate and invoke get_schedules() to 
     # return an array of screening times.
     # 
     # TODO: find out how ayala displays 3d movies
-    class Abreeza < Fetcher
+    class Abreeza < Quasar::Scrapers::Base
 
+      # Grabs schedules from Sureseat's Abreeza page.
       def get_schedules
 
         @schedules = []
@@ -19,7 +20,7 @@ module Quasar
           day: '',
           time: '#'
         }
-        resp = get 'http://www.sureseats.com/theaters/search.asp', data
+        resp = get('http://www.sureseats.com/theaters/search.asp', data)
         doc = Nokogiri::HTML resp
 
         # Loop through each movie title

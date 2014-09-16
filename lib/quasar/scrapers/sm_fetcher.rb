@@ -1,5 +1,5 @@
 module Quasar
-  module Clients
+  module Scrapers
 
     # The base class of all Quasar Fetchers for SM Cinemas.
     # Provides common methods for accessing the
