@@ -11,7 +11,7 @@ module Quasar
   # the provided methods to access URLs.
   # A @response variable (HTTParty::Response) is available afterwards for
   # inspecting response headers and status code.
-  class Web_Client
+  class WebClient
     include HTTParty
 
     # Performs a GET request.
