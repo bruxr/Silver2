@@ -9,6 +9,7 @@ module Quasar
     class Tmdb < Quasar::WebClient
 
       @@api_endpoint = 'https://api.themoviedb.org/3'
+      @@images_base_url = 'https://image.tmdb.org/t/p'
 
       def initialize(api_key)
         @api_key = api_key
@@ -17,7 +18,7 @@ module Quasar
       # Builds image URLs for backdrops & posters.
       def image(image, size = 'original')
 
-        "https://image.tmdb.org/t/p/#{size}#{image}"
+        @@images_base_url << "/#{size}#{image}"
 
       end
 
