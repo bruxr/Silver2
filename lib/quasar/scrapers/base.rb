@@ -4,7 +4,7 @@ module Quasar
     # The base class for all Quasar scrapers.
     # Just defines that a schedules variable
     # is available.
-    class Base
+    class Base < Quasar::WebClient
 
       attr_reader :schedules
 
