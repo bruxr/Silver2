@@ -4,7 +4,7 @@ module Quasar
     # Simple API for accessing Google Custom Search
     # Initialize with an engine ID (cx, cref) and
     # project API Key to use (key)
-    class Google
+    class Google < Quasar::WebClient
 
       @@endpoint = 'https://www.googleapis.com/customsearch/v1'
 
@@ -22,12 +22,8 @@ module Quasar
           key: @api_key
         }
         params = params.merge(defaults)
-        url = "#{@@endpoint}?" << params.to_query
-        client = HTTParty.get(url)
-        
-        if client.code == 200
-          JSON.parse(client.body)
-        end
+        response = get(@@endpoint, params)
+        JSON.parse(response)
 
       end
 

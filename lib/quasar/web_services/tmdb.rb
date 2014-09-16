@@ -6,7 +6,7 @@ module Quasar
     # get() with the method name and the params
     # you need. Tmdb will automatically add
     # the API key.
-    class Tmdb
+    class Tmdb < Quasar::WebClient
 
       def initialize(api_key)
         @api_key = api_key

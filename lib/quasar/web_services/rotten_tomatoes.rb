@@ -7,7 +7,7 @@ module Quasar
     #
     # query() is also available as a generic
     # API access method.
-    class RottenTomatoes
+    class RottenTomatoes < Quasar::WebClient
 
       @@endpoint = 'http://api.rottentomatoes.com/api/public/v1.0'
 
@@ -70,24 +70,16 @@ module Quasar
       # and corresponding parameters to acccess the API. 
       # format (JSON only) and API will be added automatically.
       #
-      # Escape strings when needed!
-      #
       # Example:
       # query('/movies', {q: 'iron+man'}) for movie search
       # query('/movies/714976247') for a specific movie
-      def query(method, data = nil)
+      def query(method, data = {})
 
-        data = {} if data.nil?
         data['apikey'] = @api_key
-        data_str = data.to_query
 
-        url = "#{@@endpoint}#{method}.json?#{data_str}"
-        client = HTTParty.get(url)
-        if client.code == 200
-          resp = JSON.parse(client.body)
-        else
-          nil
-        end
+        url = "#{@@endpoint}#{method}.json"
+        response = get(url, data)
+        JSON.parse(response)
 
       end
 

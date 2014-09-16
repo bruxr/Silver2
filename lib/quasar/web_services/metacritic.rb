@@ -6,7 +6,7 @@ module Quasar
     #
     # Instantiate with a Mashape API Key
     # then invoke the necessary methods.
-    class Metacritic
+    class Metacritic < Quasar::WebClient
 
       @@endpoint = 'https://byroredux-metacritic.p.mashape.com'
 
@@ -89,24 +89,14 @@ module Quasar
       # and parameters if necessary.
       #
       # API key will be added to the headers automatically.
-      def query(method, data = nil)
+      def query(method, data = {})
 
-        data = {} if data.nil?
-        options = {
-          body: data,
-          headers: {
-            'X-Mashape-Key' => @api_key
-          }
-        }
+        headers = {}
+        headers['X-Mashape-Key'] = @api_key
+        
         url = "#{@@endpoint}#{method}"
-        client = HTTParty.post(url, options)
-        if client.code == 200
-          result = JSON.parse(client.body)
-        else
-          result = nil
-        end
-
-        result
+        response = post(url, data, headers)
+        JSON.parse(response)
 
       end
 

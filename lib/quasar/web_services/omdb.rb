@@ -2,7 +2,7 @@ module Quasar
   module WebServices
 
     # Lightweight client to the OMDB API (http://www.omdbapi.com)
-    class Omdb
+    class Omdb < Quasar::WebClient
 
       @@endpoint = 'http://www.omdbapi.com'
 
@@ -69,14 +69,8 @@ module Quasar
       # Params reference: http://www.omdbapi.com/
       def query(data)
 
-        data = data.to_query
-        url = "#{@@endpoint}?#{data}"
-        client = HTTParty.get(url)
-        if client.code == 200
-          resp = JSON.parse(client.body)
-        else
-          resp = nil
-        end
+        response = get(@@endpoint, data)
+        JSON.parse(response)
 
       end
 
