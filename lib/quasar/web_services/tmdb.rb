@@ -8,6 +8,8 @@ module Quasar
     # the API key.
     class Tmdb < Quasar::WebClient
 
+      @@api_endpoint = 'https://api.themoviedb.org/3'
+
       def initialize(api_key)
         @api_key = api_key
       end
@@ -26,7 +28,7 @@ module Quasar
         
         data = { query: title }
 
-        resp = get('/search/movie', data)
+        resp = query('/search/movie', data)
         unless resp.nil?
           unless resp['results'].empty?
             res = {
@@ -44,7 +46,7 @@ module Quasar
       # movie ID.
       def get_details(id)
 
-        get("/movie/#{id}")
+        query("/movie/#{id}")
 
       end
 
@@ -61,49 +63,16 @@ module Quasar
 
       end
 
-      # Accesses TMDB's API. Pass the method
-      # with a leading forward slash (e.g. /job/list)
-      # then a hash of params if needed.
-      # I'll add the API Key automatically.
-      def get(method, params = nil)
+      # Common query method to access the API.
+      def query(method, params = {})
 
-        query(method, params)
-        if @last_client.code == 200
-          return @last_response
-        end
+        params[:api_key] = @api_key
+        url = "#{@@api_endpoint}#{method}".concat(params.to_query)
+
+        response = get(url, params)
+        JSON.parse(response)
 
       end
-
-      # Performs the same as get() but raises
-      # an exception if TMDB returned an HTTP
-      # status code other than 200.
-      def get!(method, params = nil)
-
-        query(method, params)
-        if @last_client.code == 200
-          return @last_response
-        else
-          raise "TMDB API Error (HTTP #{@last_client.status}) - @last_response['status_message'] (Code @last_response['status_code'])"
-        end
-
-      end
-
-      private
-
-        # Common query method used by get and get! to
-        # access the TMDB API.
-        def query(method, params = nil)
-
-          endpoint = 'http://api.themoviedb.org/3'
-          params = {} if params.nil?
-
-          params[:api_key] = @api_key
-          url = "#{endpoint}#{method}?".concat(params.to_query)
-
-          @last_client = HTTParty.get(url)
-          @last_response = JSON.parse(@last_client.body)
-
-        end
 
     end
 
