@@ -24,5 +24,16 @@ module Quasar
       end
     end
 
+    # Raised when a HTTP request resolves to a non HTTP 200 "OK" response.
+    # Pass in a HTTParty::Response object:
+    # raise SiteError.new(response), "Received 500 Server Error."
+    class HTTPError < SiteError
+      attr_reader :response
+
+      def initialize(response)
+        @response = response
+      end
+    end
+
   end
 end

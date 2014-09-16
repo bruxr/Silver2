@@ -25,7 +25,12 @@ module Quasar
       }
 
       @response = self.class.get(url, options)
-      @response.body
+      if @response.code == 200
+        @response.body
+      else
+        message = Rack::Utils::HTTP_STATUS_CODES[@response.code]
+        raise Quasar::Exceptions::HTTPError.new(@response), "Received HTTP @response.code #{message}"
+      end
 
     end
 
@@ -40,7 +45,12 @@ module Quasar
       }
 
       @response = self.class.post(url, options)
-      @response.body
+      if @response.code == 200
+        @response.body
+      else
+        message = Rack::Utils::HTTP_STATUS_CODES[@response.code]
+        raise Quasar::Exceptions::HTTPError.new(@response), "Received HTTP @response.code #{message}"
+      end
 
     end
 
