@@ -39,7 +39,7 @@ module Quasar
     # Pass a headers hash for any custom headers you may need.
     def post(url, data = {}, headers = {})
       
-      opts = {
+      options = {
         body: data,
         headers: headers
       }
