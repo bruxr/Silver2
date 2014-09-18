@@ -68,7 +68,7 @@ module Quasar
       def query(method, params = {})
 
         params[:api_key] = @api_key
-        url = "#{@@api_endpoint}#{method}".concat(params.to_query)
+        url = "#{@@api_endpoint}#{method}"
 
         response = get(url, params)
         JSON.parse(response)
