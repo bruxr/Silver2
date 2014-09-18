@@ -16,7 +16,7 @@ module Quasar
     # Pass in a cinema model to start.
     def initialize(cinema)
       @cinema = cinema
-      @klass = "Quasar::Clients::#{cinema.fetcher}".constantize
+      @klass = "Quasar::Scrapers::#{cinema.fetcher}".constantize
     end
 
     # Performs the processing of schedules
