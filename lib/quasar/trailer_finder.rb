@@ -78,7 +78,7 @@ module Quasar
       else
         results = @google.search(title, {siteSearch: 'hd-trailers.net'})
         unless results.nil?
-          if results['error'].nil? && results['items'].size > 0
+          if results['error'].nil? && !results['items'].nil?
             results['items'].each do |result|
               if result['link'] =~ /\Ahttp\:\/\/www\.hd\-trailers\.net\/movie\/[^\/]+\/\z/
                 url = result['link']
