@@ -28,7 +28,7 @@ module Quasar
         @schedules = @fetcher.get_schedules
         process_movies
       else
-        Rails.logger.warn("ScheduleFetcher: Scraper for #{@cinema.name} is nil.")
+        raise "Cannot fetch schedules for #{@cinema.name}. Scraper is nil."
       end
 
     end
