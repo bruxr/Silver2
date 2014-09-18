@@ -51,7 +51,7 @@ module Quasar
 
           begin
             process_movie(movie)
-          catch ex
+          rescue
             Rails.logger.error("Failed to process movie when updating for cinema schedules. Attributes: #{movie.attributes.inspect}")
           end
 
