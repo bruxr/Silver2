@@ -28,7 +28,7 @@ module Quasar
           when 'tmdb'
             service = Quasar::WebServices::Tmdb.new(ENV['TMDB_API_KEY'])
           else
-            Rails.logger.warn("Unknown web service #{source.name}.")
+            raise "Cannot update scores for an unknown web service: #{source.name}."
         end
 
         unless service.nil?
