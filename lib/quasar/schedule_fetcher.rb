@@ -41,63 +41,67 @@ module Quasar
 
         # Setup sanitizer
         require 'html/sanitizer'
-        sanitizer = HTML::Sanitizer.new
+        @sanitizer = HTML::Sanitizer.new
 
         # Setup Fixer
-        fixer = Quasar::Fixer.new
+        @fixer = Quasar::Fixer.new
 
+        # Process each schedule
         @schedules.each do |movie|
 
-          # Clean and normalize title
-          title = sanitizer.sanitize(movie[:name], tags: [])
-          info = fixer.find_movie(title)
-
-          # Initialize a new movie record
-          fixed_title = sanitizer.sanitize(info[:title], tags: [])
-          movie_obj = Movie.find_or_initialize_by(title: fixed_title)
-
-          # For new movies
-          if movie_obj.new_record? 
-
-            # Add the MTRCB rating
-            unless movie[:rating].nil?
-              movie_obj.mtrcb_rating = movie[:rating]
-            end
-
-            # Add the sources
-            info[:sources].each do |source|
-              add_movie_source(movie_obj, source)
-            end
-
-          end
-
-          # Process our schedules
-          movie[:schedules].each do |sked|
-
-            # If this is a new movie, just add the schedules
-            if movie_obj.new_record?
-              add_schedule(movie_obj, sked)
-
-            # If it already exists, check if the schedule exists
-            # first before adding
-            else
-              unless Schedule.existing?(movie_obj, @cinema, sked[:time], sked[:cinema_name])
-                add_schedule(movie_obj, sked)
-              end
-            end
-
-          end
-
-          # Save our movie & schedules if they are valid
-          if movie_obj.valid?
-            movie_obj.save
-
-          # Otherwise, log errors so we can take a look later
-          else
-            log_movie_errors(movie_obj)
+          begin
+            process_movie(movie)
+          catch ex
+            Rails.logger.error("Failed to process movie when updating for cinema schedules. Attributes: #{movie.attributes.inspect}")
           end
 
         end
+
+      end
+
+      def process_movie(movie)
+
+        # Clean and normalize title
+        title = @sanitizer.sanitize(movie[:name], tags: [])
+        info = @fixer.find_movie(title)
+
+        # Initialize a new movie record
+        fixed_title = @sanitizer.sanitize(info[:title], tags: [])
+        movie_obj = Movie.find_or_initialize_by(title: fixed_title)
+
+        # For new movies
+        if movie_obj.new_record? 
+
+          # Add the MTRCB rating
+          unless movie[:rating].nil?
+            movie_obj.mtrcb_rating = movie[:rating]
+          end
+
+          # Add the sources
+          info[:sources].each do |source|
+            add_movie_source(movie_obj, source)
+          end
+
+        end
+
+        # Process our schedules
+        movie[:schedules].each do |sked|
+
+          # If this is a new movie, just add the schedules
+          if movie_obj.new_record?
+            add_schedule(movie_obj, sked)
+
+          # If it already exists, check if the schedule exists
+          # first before adding
+          else
+            unless Schedule.existing?(movie_obj, @cinema, sked[:time], sked[:cinema_name])
+              add_schedule(movie_obj, sked)
+            end
+          end
+
+        end
+
+        movie_obj.save!
 
       end
 
