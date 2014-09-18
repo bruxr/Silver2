@@ -85,9 +85,12 @@ module Quasar
               end
             end
           else
-            msg = "TrailerFinder: Failed to do search for movie #{title}."
-            msg.concat(" Google error #{results['error']['message']} (#{results['error']['code']})") unless results['error'].nil?
-            Rails.logger.warn(msg)
+            # Catch errors returned by Google
+            unless results['error'].nil?
+              raise Quasar::Exceptions::SiteError, "Failed to find a trailer for #{title}. Google error #{results['error']['message']} (#{results['error']['code']})"
+            else
+              raise Quasar::Exceptions::SiteError, "Google search failed to find a trailer for #{title}."
+            end
           end
 
         end
@@ -95,7 +98,7 @@ module Quasar
 
       # If we didn't find anything, log it
       if url.nil?
-        Rails.logger.warn("TrailerFinder: Failed to find a HDT movie page for #{title}")
+        raise Quasar::Exceptions::NothingFound, "Failed to find a HDT movie page for #{title}"
 
       # if we found something and we're in dev, cache it
       else
@@ -115,13 +118,12 @@ module Quasar
       def parse_movie_page(url)
 
         # Fetch the page
-        client = HTTParty.get(url)
-        page = client.body
+        client = Quasar::WebClient.new
+        page = client.get(url)
 
         # Return nil immediately if the fetch failed
-        if client.code != 200 || page.nil?
-          Rails.logger.warn("HTTParty: Failed to fetch #{url}. HTTP #{client.code}")
-          return nil
+        if page.nil?
+          raise Quasar::Exceptions::SiteError("Failed to fetch #{url}, page is nil.")
         end
 
         require 'nokogiri'
@@ -129,8 +131,7 @@ module Quasar
 
         # If we have no table, return nil
         if doc.search('.bottomTable').empty?
-          Rails.logger.warn("TrailerFinder: Failed to get trailers table at #{url}")
-          return nil
+          raise Quasar::Exceptions::ParsingError.new(url), "Cannot find trailers table."
         else
           table = doc.search('.bottomTable').first
         end

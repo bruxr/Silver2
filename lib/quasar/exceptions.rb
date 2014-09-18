@@ -12,6 +12,22 @@ module Quasar
       end
     end
 
+    # Raised when a parser failed to find an item in a page.
+    # Pass in the page url:
+    # raise ParsingError.new('http://www.google.com'), "Where is the love?"
+    class ParsingError < SiteError
+      attr_reader :url
+
+      def initialize(url = nil)
+        @url = url
+      end
+    end
+
+    # Generic error that is raised when we can't find something
+    # we needed. (e.g. Movie title not found)
+    class NothingFound < SiteError
+    end
+
     # Raised when a HTTP request received a page that 
     # it doesn't expect. (e.g. got redirected to another page)
     # Pass in the URL when raising the error:
