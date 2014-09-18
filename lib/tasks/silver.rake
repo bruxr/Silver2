@@ -21,7 +21,7 @@ namespace :silver do
 
   desc "Updates movies that contains incomplete information"
   task :update => :environment do
-    movies = Movie.where('status', 'incomplete')
+    movies = Movie.where(status: 'incomplete').all
     puts("Updating #{movies.count} movie/s...")
     movies.each do |movie|
       puts("  - #{movie.title}")
