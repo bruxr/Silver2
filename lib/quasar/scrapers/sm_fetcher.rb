@@ -35,7 +35,7 @@ module Quasar
 
         # Returns TRUE if we got redirected back to the homepage
         def redirected_to_homepage?
-          @client.request.last_uri.to_s == 'https://www.smcinema.com/index.php'
+          @response.request.last_uri.to_s == 'https://www.smcinema.com/index.php'
         end
 
         # Returns TRUE if we received an error
