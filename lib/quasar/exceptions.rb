@@ -4,10 +4,11 @@ module Quasar
     # Generic class for errors when accessing websites.
     # Pass in a HTTParty::Response object if it's available:
     # raise SiteError.new(response), "Failed to access website!"
-    class SiteError < IOError
+    class SiteError < StandardError
       attr_reader :response
 
-      def initialize(response = nil)
+      def initialize(message, response = nil)
+        super(message)
         @response = response unless response.nil?
       end
     end
@@ -18,7 +19,8 @@ module Quasar
     class ParsingError < SiteError
       attr_reader :url
 
-      def initialize(url = nil)
+      def initialize(message, url = nil)
+        super(message)
         @url = url
       end
     end
@@ -35,7 +37,8 @@ module Quasar
     class UnexpectedUrl < SiteError
       attr_reader :url
 
-      def initialize(url)
+      def initialize(message, url)
+        super(message)
         @url = url
       end
     end
@@ -46,7 +49,8 @@ module Quasar
     class HTTPError < SiteError
       attr_reader :response
 
-      def initialize(response)
+      def initialize(message, response)
+        super(message)
         @response = response
       end
     end
