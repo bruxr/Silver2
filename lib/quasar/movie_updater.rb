@@ -24,9 +24,15 @@ module Quasar
       fixer = Quasar::Fixer.new
       details = fixer.get_details(sources)
 
-      # Add the trailer
-      tf = Quasar::TrailerFinder.new(ENV['G_CSE_ID'], ENV['G_API_KEY'])
-      details[:trailer] = tf.find_trailer(@movie.title)
+      # Try to find a trailer
+      begin
+        tf = Quasar::TrailerFinder.new(ENV['G_CSE_ID'], ENV['G_API_KEY'])
+        details[:trailer] = tf.find_trailer(@movie.title)
+
+      # If we cannot find a trailer for this movie, log and then move on.
+      rescue Quasar::Exceptions::NothingFound => e
+        Rails.logger.warn("Failed to find a trailer for \"#{@movie.title}\"")
+      end
 
       # Update the model if we have info,
       # otherwise log a warning.

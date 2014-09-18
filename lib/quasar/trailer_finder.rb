@@ -78,27 +78,34 @@ module Quasar
       else
         results = @google.search(title, {siteSearch: 'hd-trailers.net'})
         unless results.nil?
-          if results['error'].nil? && !results['items'].nil?
-            results['items'].each do |result|
-              if result['link'] =~ /\Ahttp\:\/\/www\.hd\-trailers\.net\/movie\/[^\/]+\/\z/
-                url = result['link']
+
+          # Good search and we have no errors
+          if results['error'].nil? 
+
+            # If we have no results, raise a nothing found error
+            if results['items'].nil?
+              raise Quasar::Exceptions::NothingFound, "Cannot find a HDT movie page for \"#{title}\"."
+            # Otherwise, take note of the url.
+            else
+              results['items'].each do |result|
+                if result['link'] =~ /\Ahttp\:\/\/www\.hd\-trailers\.net\/movie\/[^\/]+\/\z/
+                  url = result['link']
+                end
               end
             end
+
+          # Got google errors.
           else
-            # Catch errors returned by Google
-            unless results['error'].nil?
-              raise Quasar::Exceptions::SiteError, "Failed to find a trailer for #{title}. Google error #{results['error']['message']} (#{results['error']['code']})"
-            else
-              raise Quasar::Exceptions::SiteError, "Google search failed to find a trailer for #{title}."
-            end
+            raise Quasar::Exceptions::SiteError, "Failed to find a trailer for \"#{title}\". Google error #{results['error']['message']} (#{results['error']['code']})"
           end
 
         end
+
       end
 
       # If we didn't find anything, log it
       if url.nil?
-        raise Quasar::Exceptions::NothingFound, "Failed to find a HDT movie page for #{title}"
+        raise Quasar::Exceptions::NothingFound, "Failed to find a HDT movie page for \"#{title}\""
 
       # if we found something and we're in dev, cache it
       else
