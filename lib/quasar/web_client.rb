@@ -29,7 +29,7 @@ module Quasar
         @response.body
       else
         message = Rack::Utils::HTTP_STATUS_CODES[@response.code]
-        raise Quasar::Exceptions::HTTPError.new(@response), "Received HTTP @response.code #{message}"
+        raise Quasar::Exceptions::HTTPError.new(@response), "Received HTTP #{@response.code} #{message} for #{url}."
       end
 
     end
@@ -49,7 +49,7 @@ module Quasar
         @response.body
       else
         message = Rack::Utils::HTTP_STATUS_CODES[@response.code]
-        raise Quasar::Exceptions::HTTPError.new(@response), "Received HTTP @response.code #{message}"
+        raise Quasar::Exceptions::HTTPError.new(@response), "Received HTTP #{@response.code} #{message} for #{url}."
       end
 
     end
