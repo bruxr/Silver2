@@ -55,5 +55,9 @@ module Quasar
       end
     end
 
+    # Raised when we reach API limits.
+    class ReachedLimit < SiteError
+    end
+
   end
 end
