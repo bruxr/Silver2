@@ -40,7 +40,7 @@ module Quasar
 
         # Returns TRUE if we received an error
         def received_error?
-          body = JSON.parse(@client.body)
+          body = JSON.parse(@response)
           if body.is_a?(Hash) && body.has_key?('error')
             true
           else
@@ -50,7 +50,7 @@ module Quasar
 
         # Returns the error message
         def get_error_message
-          body = JSON.parse(@client.body)
+          body = JSON.parse(@response)
           body['error']
         end
 
