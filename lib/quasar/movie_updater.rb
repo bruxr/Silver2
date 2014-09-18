@@ -52,7 +52,7 @@ module Quasar
         @movie.save
 
       else
-        Rails.logger.warn("Movie Update: Failed to find information about \"#{@movie.title}\"")
+        raise "Failed to update movie \"#{@movie.title}\""
       end
 
     end
