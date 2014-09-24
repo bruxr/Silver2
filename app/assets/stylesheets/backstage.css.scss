@@ -136,6 +136,7 @@ header {
 
     @include respond-to(large) {
       border: none;
+      padding-bottom: 10px;
     }
   }
 
