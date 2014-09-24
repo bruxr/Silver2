@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+@mixin icon-styles {
   font-family: 'ultra-icons-line-vol-1';
   speak: none;
   font-style: normal;
@@ -17,10 +17,12 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  @include icon-styles;
 }
 
 .icon-svg2:before {
