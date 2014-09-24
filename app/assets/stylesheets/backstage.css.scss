@@ -40,6 +40,10 @@ a:hover {
 header {
   background: #fff;
   box-shadow: 0 3px 3px rgba(black, .13);
+
+  @include respond-to(large) {
+    display: flex
+  }
 }
 
 #logo {
