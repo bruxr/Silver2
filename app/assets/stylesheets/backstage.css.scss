@@ -15,6 +15,10 @@ html, body {
   height: 100%;
 }
 
+#wrap {
+  min-height: 100%;
+}
+
 img { // Make images responsive by default
   height: auto;
   max-width: 100%;
@@ -106,6 +110,13 @@ header {
   position: fixed;
   top: 0;
   width: 80%;
+
+  @include respond-to(large) {
+    position: static;
+    left: auto;
+    top: auto;
+    width: 20%;
+  }
 
   nav {
     margin-top: 15px;
@@ -200,6 +211,12 @@ header {
 }
 
 // Content
+#content {
+  @include respond-to(large) {
+    display: flex;
+  }
+}
+
 #content-pane {
   padding: 15px;
 }
