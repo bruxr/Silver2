@@ -151,6 +151,24 @@ header {
   }
 }
 
+#search-form-mobile {
+  background-color: darken($green, 15%);
+  height: 60px;
+
+  form {
+    display: flex;
+  }
+
+  input {
+    border-radius: 2em;
+    border: 0;
+    display: inline-block;
+    margin: 0 15px;
+    padding: 5px 10px;
+    width: 100%;
+  }
+}
+
 // Left pane toggle on mobile
 @media only screen and (max-width: $break-large) {
 
