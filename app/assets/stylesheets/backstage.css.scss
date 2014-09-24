@@ -165,6 +165,10 @@ header {
   background-color: darken($green, 15%);
   height: 60px;
 
+  @include respond-to(large) {
+    display: none;
+  }
+
   form {
     display: flex;
   }
