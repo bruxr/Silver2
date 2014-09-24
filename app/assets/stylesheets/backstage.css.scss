@@ -107,6 +107,48 @@ header {
   top: 0;
   width: 80%;
   @include transition(left 0.2s ease);
+
+  nav {
+    margin-top: 2em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .menu-title {
+    border-bottom: 1px solid #3a3a3a;
+    color: #bbb;
+    margin: 0;
+    padding: 1em .5em 1em 1.5em;
+    font-size: .9em;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0 0 0 0;
+    padding: 0;
+  }
+
+  li {
+  }
+
+  a {
+    border-bottom: 1px solid #3a3a3a;
+    color: #6c6c6c;
+    display: block;
+    padding: 1em .5em 1em 1.5em;
+
+    &.active {
+      color: #fff;
+    }
+  }
+
+  i {
+    margin-right: .5em;
+  }
 }
 
 // Left pane toggle on mobile
