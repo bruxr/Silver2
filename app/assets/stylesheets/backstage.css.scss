@@ -89,11 +89,22 @@ header {
 
 #search-form {
   display: none;
+  margin-top: 7px;
 
   @include respond-to(large) {
     display: block;
     width: 50%;
   }
+}
+
+#search-form input {
+  background-color: #eee;
+  border-radius: 2em;
+  border: 0;
+  display: inline-block;
+  margin: 0 15px;
+  padding: 10px 15px;
+  width: 45%;
 }
 
 #user-menu {
