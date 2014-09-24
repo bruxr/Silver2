@@ -1,0 +1,28 @@
+// Breakpoints (based on Pure)
+$break-small: 35.5em;
+$break-medium: 48em;
+$break-large: 64em;
+$break-xlarge: 80em;
+
+// Mixin
+// Usage:
+// .my-element {
+//   width: 100%;
+//   
+//   @include respond-to(large) { width: 50%; }
+//   @include respond-to(xlarge) { width: 25%; }
+// }
+@mixin respond-to($media) {
+  @if $media == small {
+    @media only screen and (min-width: $break-small) { @content }
+  }
+  @else if $media == medium {
+    @media only screen and (min-width: $break-medium) { @content }
+  }
+  @else if $media == large {
+    @media only screen and (min-width: $break-large) { @content }
+  }
+  @else if $media == xlarge {
+    @media only screen and (min-width: $break-xlarge) { @content }
+  }
+}
