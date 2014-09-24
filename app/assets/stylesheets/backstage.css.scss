@@ -39,6 +39,11 @@ a:hover {
   color: darken($blue, 15%);
 }
 
+// Forms
+input:focus {
+  outline: 0;
+}
+
 // Header
 header {
   background: #fff;
