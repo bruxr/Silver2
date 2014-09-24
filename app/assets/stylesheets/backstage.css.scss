@@ -67,8 +67,23 @@ header {
   }
 }
 
-#search-form, #user-menu {
+#search-form {
   display: none;
+
+  @include respond-to(large) {
+    display: block;
+    width: 50%;
+  }
+}
+
+#user-menu {
+  display: none;
+
+  @include respond-to(large) {
+    display: block;
+    text-align: right;
+    width: 25%;
+  }
 }
 
 // App Area
