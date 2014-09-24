@@ -136,42 +136,6 @@ header {
   padding-top: 20px;
 }
 
-// Menu
-#main-menu {
-  padding-right: 10px;
-
-  .menu {
-    list-style-type: none;
-    padding: 0;
-
-    li {
-      margin-bottom: 5px;
-    }
-
-    a {
-      border-left: 0px solid transparent;
-      color: $midnight;
-      display: block;
-      padding: 3px 0 3px 15px;
-
-      &:hover {
-        color: $blue;
-      }
-
-      &.active {
-        color: $blue;
-        border-left: 5px solid $blue;
-        padding-left: 10px;
-      }
-    }
-
-    i {
-      text-align: center;
-      width: 30px;
-    }
-  }
-}
-
 // Content
 #content-pane {
   padding: 15px;
