@@ -56,6 +56,10 @@ header {
       text-indent: -9999px;
     }
   }
+
+  @include respond-to(large) {
+    width: 20%;
+  }
 }
 
 #toggle-mobile-menu {
