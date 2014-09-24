@@ -65,6 +65,10 @@ header {
   left: 15px;
   position: absolute;
   top: 18px;
+
+  @include respond-to(large) {
+    display: none;
+  }
 }
 
 #search-form {
