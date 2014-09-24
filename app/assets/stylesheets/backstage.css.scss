@@ -6,9 +6,9 @@ $default-font-color: #444;
 
 @import "compass/css3";
 @import "normalize";
-@import "grids";
-@import "backstage/forms";
+@import "media-queries";
 @import "utils";
+@import "ultra-icons";
 
 // Layout
 html, body {
@@ -43,12 +43,23 @@ header {
 }
 
 #logo {
-  margin: 0;
-  padding: 0;
+  background-color: $green;
 
-  a {
-    display: block;
+  h1 {
+    margin: 0;
+    padding: 0;
+
+    a {
+      background: image-url("logo-white.png") center no-repeat;
+      display: block;
+      height: 60px;
+      text-indent: -9999px;
+    }
   }
+}
+
+#search-form, #user-menu {
+  display: none;
 }
 
 // App Area
