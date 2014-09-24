@@ -133,6 +133,10 @@ header {
     font-size: .9em;
     font-weight: normal;
     text-transform: uppercase;
+
+    @include respond-to(large) {
+      border: none;
+    }
   }
 
   ul {
@@ -164,6 +168,11 @@ header {
       i {
         color: $green;
       }
+    }
+
+    @include respond-to(large) {
+      border: none;
+      padding: 10px 15px
     }
   }
 
