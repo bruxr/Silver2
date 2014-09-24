@@ -151,8 +151,20 @@ header {
     display: block;
     padding: 15px;
 
-    &.active {
+    &:hover {
       color: #fff;
+
+      i {
+        color: $green;
+      }
+    }
+
+    &.active, &.active:hover {
+      color: #fff;
+
+      i {
+        color: $green;
+      }
     }
   }
 
