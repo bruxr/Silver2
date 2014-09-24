@@ -7,15 +7,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <%= stylesheet_link_tag('backstage', media: 'all') %>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
 
   <%= csrf_meta_tags %>
 
 </head>
 <body>
 
-  <%= javascript_include_tag('backstage') %>
+  <div id="wrap">
+    
+    <header class="row">
+      
+      <div class="grid-1-4">
+        <h1 id="logo"><a href="/">Silver</a></h1>
+      </div>
+
+      <div class="grid-1-2">
+        <form action="" method="get" id="search-form">
+          <input type="search" name="q" placeholder="Search the Hivemind">
+        </form>
+      </div>
+
+      <div class="grid-1-4 align-right">
+        <a href="#" class="user-menu"><img src="https://www.gravatar.com/avatar/dce5d961f6d2060241e38ea075e4bfd8?size=48&amp;default=mm" alt="Brux"></a>
+      </div>
+
+    </header>
+
+    <div id="content" class="row">
+      
+      <div id="left-pane" class="grid-1-4">
+        
+        <nav id="main-menu">
+          <h3 class="menu-title">Main</h3>
+          <ul>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Cinemas</a></li>
+            <li><a href="#">Schedules</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </nav>
+
+        <nav id="extra-menu">
+          <h3 class="menu-title">Filter</h3>
+          <ul>
+            <li><a href="#">Now Showing</a></li>
+            <li><a href="#">Past</a></li>
+            <li><a href="#">All</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div id="content-pane">
+        
+        <div class="page-header">
+          <h2>Now Showing</h2>
+          <small>Listing 2 of 64 movies</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </body>
 </html>

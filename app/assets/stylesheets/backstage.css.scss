@@ -1,7 +1,8 @@
 $blue: #3498db;
 $midnight: #2c3e50;
-$default-font: "Open Sans", Arial, sans-serif;
-$default-font-color: $midnight;
+$green: #1abc9c;
+$default-font: "Lato", "Helvetica Neue", Arial, sans-serif;
+$default-font-color: #444;
 
 @import "compass/css3";
 @import "normalize";
@@ -14,14 +15,14 @@ html, body {
   height: 100%;
 }
 
-img {
+img { // Make images responsive by default
   height: auto;
   max-width: 100%;
 }
 
 // Typography
 body {
-  color: $midnight;
+  color: $default-font-color;
   font: .95em $default-font;
 }
 
@@ -46,25 +47,16 @@ a:hover {
 
 // Header
 header {
-  background: #fcfcfc;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 2px #f9f9f9;
-  padding: 0 20px;
+  background: #fff;
+  box-shadow: 0 3px 3px rgba(black, .13);
 }
 
 #logo {
-  color: $midnight;
-  font-size: 1.5em;
-  font-weight: 400;
-  margin: 10px 0;
+  margin: 0;
+  padding: 0;
 
   a {
     display: block;
-  }
-
-  img {
-    display: block;
-    width: 90px;
   }
 }
 
