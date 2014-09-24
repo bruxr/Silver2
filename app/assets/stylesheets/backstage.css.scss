@@ -109,9 +109,9 @@ header {
   @include transition(left 0.2s ease);
 
   nav {
-    margin-top: 2em;
+    margin-top: 15px;
 
-    &:first-child {
+    &:nth-child(2) {
       margin-top: 0;
     }
   }
