@@ -16,6 +16,8 @@ html, body {
 }
 
 #wrap {
+  display: flex;
+  flex-direction: column;
   min-height: 100%;
 }
 
@@ -136,7 +138,6 @@ header {
   width: 80%;
 
   @include respond-to(large) {
-    position: static;
     left: auto;
     top: auto;
     width: 20%;
@@ -268,6 +269,7 @@ header {
 #content {
   @include respond-to(large) {
     display: flex;
+    flex: 1;
   }
 }
 
@@ -275,8 +277,9 @@ header {
   padding: 15px;
 
   @include respond-to(large) {
-    padding-top: 30px;
     flex: 1;
+    margin-left: 20%;
+    padding-top: 30px;
   }
 }
 
