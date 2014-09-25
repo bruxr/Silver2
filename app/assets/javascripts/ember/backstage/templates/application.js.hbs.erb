@@ -1,36 +1,65 @@
 <div id="wrap">
-
-  <header class="row">
     
-    <div class="md-2">
-      <h1 id="logo"><a href="/backstage"><%= image_tag('logo.png') %></a></h1>
+  <header>
+    
+    <div id="logo">
+      <a href="#" id="toggle-mobile-menu"><i class="icon-menu"></i></a>
+      <h1>{{#link-to 'index'}}Silver{{/link-to}}</h1>
     </div>
 
-    <div class="md-10 align-right">
-      Avatar
+    <div id="search-form">
+      <form action="" method="get">
+        <input type="search" name="q" placeholder="Search Silver&hellip;">
+        <button><i class="icon-search"></i></button>
+      </form>
+    </div>
+
+    <div id="user-menu">
+      <a href="#"><img src="https://www.gravatar.com/avatar/dce5d961f6d2060241e38ea075e4bfd8?size=48&amp;default=mm" alt="Brux" class="gravatar"></a>
     </div>
 
   </header>
 
-  <div id="app-area" class="row">
+  <div id="content">
     
-    <nav id="main-menu" class="md-2">
+    <div id="left-pane">
       
-      <section id="main">
-        <ul class="menu">
-          <li class="active">
-            {{#link-to 'index'}}<i class="fa fa-dashboard"></i> Overview{{/link-to}}
-          </li>
-          <li>{{#link-to 'movies'}}<i class="fa fa-film"></i> Movies{{/link-to}}</li>
-          <li>{{#link-to 'cinemas'}}<i class="fa fa-map-marker"></i> Cinemas{{/link-to}}</li>
-          <li>{{#link-to 'schedules'}}<i class="fa fa-calendar"></i> Schedules{{/link-to}}</li>
+      <div id="search-form-mobile">
+        <form action="" method="get">
+          <input type="search" name="q" placeholder="Search Silver">
+        </form>
+      </div>
+
+      <nav id="main-menu">
+        <h3 class="menu-title">Main</h3>
+        <ul>
+          <li>{{#link-to 'movies'}}<i class="icon-film"></i> Movies{{/link-to}}</li>
+          <li>{{#link-to 'cinemas'}}<i class="icon-marker"></i> Cinemas{{/link-to}}</li>
+          <li>{{#link-to 'schedules'}}<i class="icon-calendar"></i> Schedules{{/link-to}}</li>
+          <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
         </ul>
-      </section>
+      </nav>
 
-    </nav>
+      <nav id="extra-menu">
+        <h3 class="menu-title">Filter</h3>
+        <ul>
+          <li><a href="#" class="active"><i class="icon-flag"></i> Now Showing</a></li>
+          <li><a href="#"><i class="icon-watch"></i> Past</a></li>
+          <li><a href="#"><i class="icon-circle"></i> All</a></li>
+        </ul>
+      </nav>
 
-    <div id="content" class="md-10">
+    </div>
+
+    <div id="content-pane">
+      
+      <div class="page-header">
+        <h2>Now Showing</h2>
+        <small>Listing 2 of 64 movies</small>
+      </div>
+
       {{{outlet}}}
+
     </div>
 
   </div>
