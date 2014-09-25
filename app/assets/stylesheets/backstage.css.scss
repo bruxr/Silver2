@@ -136,6 +136,17 @@ header {
     text-align: right;
     width: 25%;
   }
+
+  a {
+    display: block;
+    margin-top: 11px;
+  }
+
+  .gravatar {
+    border-radius: 50px;
+    height: 38px;
+    width: 38px;
+  }
 }
 
 // Left Pane
