@@ -91,7 +91,7 @@ header {
 
 #search-form {
   display: none;
-  margin-top: 7px;
+  margin-top: 10px;
 
   @include respond-to(large) {
     display: block;
