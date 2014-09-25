@@ -132,6 +132,7 @@ header {
   display: none;
 
   @include respond-to(large) {
+    display: block;
     flex: 1;
     padding-right: 30px;
     text-align: right;
