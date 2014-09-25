@@ -99,22 +99,32 @@ header {
   }
 }
 
-#search-form input {
-  background-color: #eee;
-  border-radius: 2em;
-  border: 0;
-  display: inline-block;
-  margin: 0 15px;
-  padding: 10px 15px;
-  width: 45%;
+#search-form {
+  
+  form {
+    display: inline-block;
+    position: relative;
+    width: 60%;
+  }
 
-  &:before {
-    @include icon-styles;
-    content: "\e67b";
-    display: block;
+  input {
+    background-color: #eee;
+    border-radius: 2em;
+    border: 0;
+    display: inline-block;
+    margin: 0 15px;
+    padding: 10px 15px;
+    width: 80%;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: #777;
+    cursor: pointer;
     position: absolute;
-    left: -20px;
-    top: 0;
+    right: 45px;
+    top: 9px;
   }
 }
 
