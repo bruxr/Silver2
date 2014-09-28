@@ -62,6 +62,9 @@ namespace :silver do
       GetSchedulesJob.perform_async(cinema.id)
     end
 
+    puts("  - housekeeping jobs")
+    CacheTmdbConfigJob.perform_async
+
   end
 
 end
