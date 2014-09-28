@@ -41,6 +41,8 @@ gem 'httparty'
 gem 'nokogiri'
 gem 'redis-rails'
 gem 'devise'
+gem 'sidekiq'
+gem 'sidetiq'
 
 # Frontend stuff
 gem 'autoprefixer-rails'
