@@ -22,6 +22,13 @@ module Quasar
 
       end
 
+      # Returns TMDB configuration.
+      def get_configuration
+
+        query('/configuration')
+
+      end
+
       # Convenience method for searching TMDB for
       # a movie title, returns TMDB's movie title
       # ID and URL or nil if nothing is returned.
