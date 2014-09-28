@@ -157,7 +157,7 @@ header {
 
 // Left Pane
 #left-pane {
-  background-color: #2c2c2c;
+  background-color: #26313c;
   height: 100%;
   left: -80%;
   position: fixed;
@@ -184,7 +184,7 @@ header {
 
   .menu-title {
     border-bottom: 1px solid #3a3a3a;
-    color: #bbb;
+    color: lighten(#26313c, 50%);
     margin: 0;
     padding: 15px;
     font-size: .9em;
@@ -210,7 +210,7 @@ header {
 
   a {
     border-bottom: 1px solid #3a3a3a;
-    color: #6c6c6c;
+    color: lighten(#26313c, 15%);
     display: block;
     padding: 15px;
 
