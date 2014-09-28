@@ -41,8 +41,11 @@ gem 'httparty'
 gem 'nokogiri'
 gem 'redis-rails'
 gem 'devise'
+
+# Background jobs
 gem 'sidekiq'
 gem 'sidetiq'
+gem 'sinatra', '>= 1.3.0', require: false
 
 # Frontend stuff
 gem 'autoprefixer-rails'
