@@ -12,17 +12,12 @@ class GetSchedulesJob
 
   # Crawls and processes the records we read from
   # the cinema's website.
-  def perform(cinema_id)
+  def perform(cinema_id, scraper)
 
-    @cinema = Cinema.find(cinema_id)
-
-    # Make sure we have a valid crawler
-    if @cinema.fetcher.nil?
-      raise "Cannot fetch schedules for #{@cinema.name}. Scraper is nil."
-    end
+    @cinema_id = cinema_id
+    @scraper = scraper
 
     # Start crawling and then process the records
-    @spider = "Quasar::Scrapers::#{@cinema.fetcher}".constantize
     @schedules = @spider.new.get_schedules
     process_movies
 
@@ -127,27 +122,6 @@ class GetSchedulesJob
         ticket_price: price,
         room: sked[:cinema_name]
       })
-
-    end
-
-    # Logs a movie model's errors to our log file
-    def log_movie_errors(movie)
-
-      # Movie object errors
-      unless movie.errors.empty?
-        movie.errors.full_messages.each do |error|
-          Rails.logger.warn("Failed to save movie (#{movie.attributes.inspect}: #{error}")
-        end
-      end
-
-      # Schedule errors
-      movie.schedules.each do |sked|
-        unless sked.errors.empty?
-          sked.errors.full_messages.each do |error|
-            Rails.logger.warn("Failed to save schedule (#{sked.attributes.inspect}: #{error}")
-          end
-        end
-      end
 
     end
 

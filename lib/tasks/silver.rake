@@ -59,7 +59,8 @@ namespace :silver do
     puts("  - fetch cinema schedules")
     cinemas = Cinema.where("fetcher != ''")
     cinemas.all.each do |cinema|
-      GetSchedulesJob.perform_async(cinema.id)
+      scraper = "Quasar::Scrapers::#{@cinema.fetcher}".constantize
+      GetSchedulesJob.perform_async(cinema.id, scraper)
     end
 
     puts("  - housekeeping jobs")
