@@ -48,13 +48,7 @@ module Quasar
 
         # Process each schedule
         @schedules.each do |movie|
-
-          begin
-            process_movie(movie)
-          rescue
-            Rails.logger.error("Failed to process movie when updating for cinema schedules. Attributes: #{movie.attributes.inspect}")
-          end
-
+          process_movie(movie)
         end
 
       end
