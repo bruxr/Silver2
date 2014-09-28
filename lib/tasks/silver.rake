@@ -51,4 +51,17 @@ namespace :silver do
     end
   end
 
+  desc "Executes background jobs and schedules recurring ones"
+  task :start_jobs => :environment do
+
+    puts("Starting Jobs:")
+
+    puts("  - fetch cinema schedules")
+    cinemas = Cinema.where("fetcher != ''")
+    cinemas.all.each do |cinema|
+      GetSchedulesJob.perform_async(cinema.id)
+    end
+
+  end
+
 end
