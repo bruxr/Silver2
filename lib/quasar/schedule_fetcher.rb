@@ -59,6 +59,14 @@ module Quasar
         title = @sanitizer.sanitize(movie[:name], tags: [])
         info = @fixer.find_movie(title)
 
+        # If we can't find the actual title, use the original one.
+        if info[:title].nil?
+          info = {
+            title: title,
+            sources: []
+          }
+        end
+
         # Initialize a new movie record
         fixed_title = @sanitizer.sanitize(info[:title], tags: [])
         movie_obj = Movie.find_or_initialize_by(title: fixed_title)
