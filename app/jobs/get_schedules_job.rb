@@ -18,6 +18,10 @@ class GetSchedulesJob
     fetcher = Quasar::SchedulesFetcher.new(cinema)
     fetcher.perform
 
+    fetcher.new_movies.each do |movie|
+      UpdateMovieJob.perform_async(movie.id)
+    end
+
   end
 
 end

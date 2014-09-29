@@ -9,12 +9,13 @@ module Quasar
   # from our sources.
   class SchedulesFetcher
 
-    attr_reader :schedules
+    attr_reader :schedules, :new_movies
 
     # Initialization/constructor.
     # Sets the source of schedules and the client class.
     # Pass in a cinema model to start.
     def initialize(cinema)
+      @new_movies = []
       @cinema = cinema
       @klass = "Quasar::Scrapers::#{cinema.fetcher}".constantize
     end
@@ -83,6 +84,9 @@ module Quasar
           info[:sources].each do |source|
             add_movie_source(movie_obj, source)
           end
+
+          # Add to the new movies array
+          @new_movies << movie_obj
 
         end
 
