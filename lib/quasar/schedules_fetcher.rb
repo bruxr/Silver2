@@ -7,7 +7,7 @@ module Quasar
   # which are temporary movie records and then schedules
   # an updater afterwards which will grabe movie information
   # from our sources.
-  class ScheduleFetcher
+  class SchedulesFetcher
 
     attr_reader :schedules
 
