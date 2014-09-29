@@ -65,6 +65,7 @@ namespace :silver do
 
     puts("  - housekeeping jobs")
     CacheTmdbConfigJob.perform_async
+    UpdateStatsJob.perform_async
 
   end
 
