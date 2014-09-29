@@ -8,7 +8,7 @@ class GetSchedulesJob
   include Sidekiq::Worker
   include Sidetiq::Schedulable
 
-  recurrence { daily.hour_of_day(6) }
+  recurrence { daily.hour_of_day(6, 12, 18, 24) }
 
   # Crawls and processes the records we read from
   # the cinema's website.
@@ -19,5 +19,5 @@ class GetSchedulesJob
     fetcher.perform
 
   end
-  
+
 end
