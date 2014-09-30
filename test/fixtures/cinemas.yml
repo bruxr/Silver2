@@ -7,18 +7,21 @@
 
 one:
   name: Abreeza
+  slug: abreeza
   latitude: 7.0914500000
   longitude: 125.6109360000
   fetcher: Abreeza
 
 two:
   name: SM Lanang Premiere
+  slug: sm-lanang-premiere
   latitude: 7.0983740000
   longitude: 125.6306450000
   fetcher: SmLanang
 
 three:
-  name: Victoriza Plaza Mall
+  name: Victoria Plaza Mall
+  slug: victoria-plaza-mall
   latitude: 7.0869860000
   longitude: 125.6119960000
   status: hidden
