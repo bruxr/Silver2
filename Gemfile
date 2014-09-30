@@ -41,6 +41,7 @@ gem 'httparty'
 gem 'nokogiri'
 gem 'redis-rails'
 gem 'devise'
+gem 'dropbox-sdk'
 
 # Background jobs
 gem 'sidekiq'

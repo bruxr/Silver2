@@ -73,4 +73,26 @@ namespace :silver do
 
   end
 
+  desc "Generates a Dropbox access token."
+  task :generate_dropbox_token do
+
+    raise "Cannot find Dropbox App key." if ENV['DROPBOX_APP_KEY'].nil?
+    raise "Cannot find Dropbox App secret." if ENV['DROPBOX_APP_SECRET'].nil?
+
+    raise "Dropbox access token already exists." unless ENV['DROPBOX_ACCESS_TOKEN'].nil?
+
+    flow = DropboxOAuth2FlowNoRedirect.new(ENV['DROPBOX_APP_KEY'], ENV['DROPBOX_APP_SECRET'])
+    authorize_url = flow.start
+
+    puts("Authorize Silver to access your dropbox by going to: ")
+    puts(authorize_url)
+    puts("Then enter the provided authorization code here:")
+    code = gets.strip
+
+    access_token, user_id = flow.finish(code)
+    puts("Finished! Put the access token below as an environment variable named \"DROPBOX_ACCESS_TOKEN\".")
+    puts(access_token)
+
+  end
+
 end

@@ -68,6 +68,8 @@ GEM
     dotenv-deployment (0.0.2)
     dotenv-rails (0.11.1)
       dotenv (= 0.11.1)
+    dropbox-sdk (1.6.4)
+      json
     ember-data-source (1.0.0.beta.9)
       ember-source
     ember-rails (0.15.0)
@@ -215,6 +217,7 @@ DEPENDENCIES
   compass-rails
   devise
   dotenv-rails
+  dropbox-sdk
   ember-rails
   httparty
   jbuilder (~> 2.0)
