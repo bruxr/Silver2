@@ -7,22 +7,28 @@ module Quasar
   # to update that movie's info.
   class MovieUpdater
 
+    # Stores them movie model and then creates a 
+    # @sources hash with the source name as key
+    # and external movie ID as values.
     def initialize(movie)
       @movie = movie
+
+      @sources = {}
+      @movie.sources.each do |source|
+        @sources[source.name] = source.external_id
+      end
     end
 
     def perform
 
-      sources = []
-      @movie.sources.each do |src|
-        sources << {
-          name: src.name,
-          id: src.external_id
-        }
+      # Find details from sources.
+      if !@sources['tmdb'].nil?
+        update_from_tmdb()
+      elsif !@sources['omdb'].nil?
+        update_from_omdb()
+      else
+        raise "No sources to use for \"#{@movie.title}\""
       end
-
-      fixer = Quasar::Fixer.new
-      details = fixer.get_details(sources)
 
       # Try to find a trailer
       begin
@@ -34,34 +40,54 @@ module Quasar
         Rails.logger.warn("Failed to find a trailer for \"#{@movie.title}\"")
       end
 
-      # Update the model if we have info,
-      # otherwise log a warning.
+      # Mark the movie as ready if all its required info is already set.
       keys = [:overview, :runtime, :poster, :trailer, :backdrop]
-      unless details.nil?
-
-        # Save each detail, skipping if it is already set.
-        keys.each do |key|
-          if !details[key].nil? && @movie.public_send(key).nil?
-            @movie.public_send("#{key}=", details[key])
-          end
+      @movie.status = 'ready'
+      keys.each do |key|
+        if @movie.public_send(key).nil?
+          @movie.status = 'incomplete'
         end
-
-        # Mark the movie as ready if all its info is set
-        # otherwise it's incomplete.
-        @movie.status = 'ready'
-        keys.each do |key|
-          if @movie.public_send(key).nil?
-            @movie.status = 'incomplete'
-          end
-        end
-
-        @movie.save
-
-      else
-        raise "Failed to update movie \"#{@movie.title}\""
       end
 
+      # Save to the database
+      @movie.save
+
     end
+
+    private
+
+      # Checks if the movie's details are in TMDB and uses those
+      # to update the movie's info.
+      def update_from_tmdb
+
+        tmdb = Quasar::WebServices::Tmdb.new(ENV['TMDB_API_KEY'])
+        result = tmdb.get_details(srcs['tmdb'])
+        unless result.nil?
+          @movie.overview = result['overview']
+          @movie.runtime = result['runtime'].to_i
+          #genres: result['genres'].map{ |genre| genre.values }.flatten,
+          @movie.poster = result['poster_path']
+          #homepage: result['homepage'],
+          #@movie.tagline = result['tagline'],
+          @movie.backdrop = result['backdrop_path']
+        end
+
+      end
+
+      # Checks if the movie's details are in OMDB and then uses those
+      # to update the movie's information.
+      def update_from_omdb
+
+        omdb = Quasar::WebServices::Omdb.new
+        result = omdb.get_details(srcs['omdb'])
+        unless result.nil?
+          @movie.overview = result['Plot']
+          @movie.runtime = result['Runtime'].gsub('min', '') unless result['Runtime'].nil?
+          #details[:genres] = result['Genre'].split(', ') unless result['Genre'].nil?
+          @movie.poster = result['Poster']
+        end
+
+      end
 
   end
 
