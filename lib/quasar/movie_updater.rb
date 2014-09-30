@@ -23,9 +23,9 @@ module Quasar
 
       # Find details from sources.
       if !@sources['tmdb'].nil?
-        update_from_tmdb()
+        update_from_tmdb(@sources['tmdb'])
       elsif !@sources['omdb'].nil?
-        update_from_omdb()
+        update_from_omdb(@sources['omdb'])
       else
         raise "No sources to use for \"#{@movie.title}\""
       end
@@ -58,10 +58,10 @@ module Quasar
 
       # Checks if the movie's details are in TMDB and uses those
       # to update the movie's info.
-      def update_from_tmdb
+      def update_from_tmdb(movie_id)
 
         tmdb = Quasar::WebServices::Tmdb.new(ENV['TMDB_API_KEY'])
-        result = tmdb.get_details(@sources['tmdb'])
+        result = tmdb.get_details(movie_id)
         unless result.nil?
           @movie.overview = result['overview']
           @movie.runtime = result['runtime'].to_i
@@ -76,10 +76,10 @@ module Quasar
 
       # Checks if the movie's details are in OMDB and then uses those
       # to update the movie's information.
-      def update_from_omdb
+      def update_from_omdb(movie_id)
 
         omdb = Quasar::WebServices::Omdb.new
-        result = omdb.get_details(@sources['omdb'])
+        result = omdb.get_details(movie_id)
         unless result.nil?
           @movie.overview = result['Plot']
           @movie.runtime = result['Runtime'].gsub('min', '') unless result['Runtime'].nil?
