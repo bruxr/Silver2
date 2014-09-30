@@ -4,3 +4,23 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
+one:
+  title: Guardians of the Galaxy
+  mtrcb_rating: R-13
+
+two:
+  title: The Amazing Spider-Man
+  mtrcb_rating: PG
+
+three:
+  title: Air Force One
+  mtrcb_rating: R-13
+
+four:
+  title: The Lord of the Rings: The Return of the King
+  mtrcb_rating: R-13
+
+five:
+  title: She's Dating the Gangster
+  mtrcb_rating: R-13

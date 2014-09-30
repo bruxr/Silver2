@@ -4,3 +4,21 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
+one:
+  name: Abreeza
+  latitude: 7.0914500000
+  longitude: 125.6109360000
+  fetcher: Abreeza
+
+two:
+  name: SM Lanang Premiere
+  latitude: 7.0983740000
+  longitude: 125.6306450000
+  fetcher: SmLanang
+
+three:
+  name: Victoriza Plaza Mall
+  latitude: 7.0869860000
+  longitude: 125.6119960000
+  status: hidden

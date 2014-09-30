@@ -4,8 +4,28 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+
+one:
+  movie: one
+  name: tmdb
+  external_id: 118340
+
+two:
+  movie: one
+  name: omdb
+  external_id: tt2015381
+
+three:
+  movie: one
+  name: rt
+  external_id: 771311818
+
+four:
+  movie: one
+  name: metacritic
+  external_id: Guardians of the Galaxy
+
+five:
+  movie: two
+  name: tmdb
+  external_id: 1930
