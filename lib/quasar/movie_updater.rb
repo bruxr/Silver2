@@ -61,7 +61,7 @@ module Quasar
       def update_from_tmdb
 
         tmdb = Quasar::WebServices::Tmdb.new(ENV['TMDB_API_KEY'])
-        result = tmdb.get_details(srcs['tmdb'])
+        result = tmdb.get_details(@sources['tmdb'])
         unless result.nil?
           @movie.overview = result['overview']
           @movie.runtime = result['runtime'].to_i
@@ -79,7 +79,7 @@ module Quasar
       def update_from_omdb
 
         omdb = Quasar::WebServices::Omdb.new
-        result = omdb.get_details(srcs['omdb'])
+        result = omdb.get_details(@sources['omdb'])
         unless result.nil?
           @movie.overview = result['Plot']
           @movie.runtime = result['Runtime'].gsub('min', '') unless result['Runtime'].nil?
