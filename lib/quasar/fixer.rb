@@ -121,10 +121,10 @@ module Quasar
             overview: result['overview'],
             runtime: result['runtime'].to_i,
             genres: result['genres'].map{ |genre| genre.values }.flatten,
-            poster: tmdb.image(result['poster_path']),
+            poster: result['poster_path'],
             homepage: result['homepage'],
             tagline: result['tagline'],
-            backdrop: tmdb.image(result['backdrop_path'])
+            backdrop: result['backdrop_path']
           }
         end
       # Otherwise, use OMDB
