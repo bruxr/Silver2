@@ -33,7 +33,7 @@ module Quasar
       # Try to find a trailer
       begin
         tf = Quasar::TrailerFinder.new(ENV['G_CSE_ID'], ENV['G_API_KEY'])
-        details[:trailer] = tf.find_trailer(@movie.title)
+        @movie.trailer = tf.find_trailer(@movie.title)
 
       # If we cannot find a trailer for this movie, log and then move on.
       rescue Quasar::Exceptions::NothingFound => e
