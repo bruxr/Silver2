@@ -15,4 +15,15 @@ class Movie < ActiveRecord::Base
 
   slugify :title
 
+  # Scope for finding movies that are still "now showing".
+  # e.g. still has future schedules.
+  def self.now_showing
+    joins(:schedules).where('schedules.screening_time > ?', Time.now)
+  end
+
+  # Scope for finding movies that contains incomplete details.
+  def self.incomplete
+    where(status: 'incomplete')
+  end
+
 end
