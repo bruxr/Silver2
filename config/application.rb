@@ -22,6 +22,6 @@ module Silver
 
     config.autoload_paths << Rails.root.join('lib')
 
-    config.cache_store = :redis_store, 'redis://localhost:6379/1/cache', { expires_in: 90.minutes }
+    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
   end
 end
