@@ -102,6 +102,8 @@ module Quasar
     # ]
     def get_details(sources)
 
+      raise "Deprecated method, use Quasar::MovieUpdater instead."
+
       details = nil
 
       # Convert our array to a hash
