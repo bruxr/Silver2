@@ -8,7 +8,7 @@
 one:
   movie: one
   cinema: two
-  screening_time: 2014-09-05 18:30:00
+  screening_time: <%= Time.now - 1.day %>
   format: 2D
   ticket_url: http://buymesometickets.com/guardians-of-the-galaxy
   ticket_price: 150
@@ -17,7 +17,7 @@ one:
 two:
   movie: one
   cinema: two
-  screening_time: 2014-09-06 18:30:00
+  screening_time: <%= Time.now - 1.day - 2.hours %>
   format: 2D
   ticket_url: http://buymesometickets.com/guardians-of-the-galaxy
   ticket_price: 150
@@ -26,7 +26,7 @@ two:
 three:
   movie: two
   cinema: one
-  screening_time: 2014-09-05 13:00:00
+  screening_time: <%= Time.now - 1.week %>
   format: 3D
   ticket_url: http://buymesometickets.com/the-amazing-spider-man
   ticket_price: 250
@@ -35,7 +35,7 @@ three:
 four:
   movie: two
   cinema: two
-  screening_time: 2014-09-05 18:30:00
+  screening_time: <%= Time.now - 8.days %>
   format: 2D
   ticket_url: http://buymesometickets.com/the-amazing-spider-man
   room: Cinema 2
