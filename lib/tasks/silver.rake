@@ -27,7 +27,7 @@ namespace :silver do
       puts("  - #{movie.title}")
       begin
         Quasar::MovieUpdater.new(movie).perform
-      rescue error
+      rescue => error
         puts("    > Error: #{error.message}")
       end
     end
