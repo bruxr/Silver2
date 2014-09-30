@@ -25,7 +25,11 @@ namespace :silver do
     puts("Updating #{movies.count} movie/s...")
     movies.each do |movie|
       puts("  - #{movie.title}")
-      Quasar::MovieUpdater.new(movie).perform
+      begin
+        Quasar::MovieUpdater.new(movie).perform
+      rescue error
+        puts("    > Error: #{error.message}")
+      end
     end
   end
 
