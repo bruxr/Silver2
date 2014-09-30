@@ -9,23 +9,28 @@ one:
   movie: one
   name: tmdb
   external_id: 118340
+  url: http://www.themoviedb.org/movie/118340
 
 two:
   movie: one
   name: omdb
   external_id: tt2015381
+  url: http://www.imdb.com/title/tt2015381
 
 three:
   movie: one
   name: rt
   external_id: 771311818
+  url: http://www.rottentomatoes.com/m/guardians_of_the_galaxy
 
 four:
   movie: one
   name: metacritic
   external_id: Guardians of the Galaxy
+  url: http://www.metacritic.com/m/guardians-of-the-galaxy
 
 five:
   movie: two
   name: tmdb
   external_id: 1930
+  url: http://www.themoviedb.org/movie/1930
