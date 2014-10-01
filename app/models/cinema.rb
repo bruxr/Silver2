@@ -18,12 +18,12 @@ class Cinema < ActiveRecord::Base
   slugify :name
 
   # Scope for finding active cinemas
-  def is_active
+  def self.is_active
     where(status: 'active')
   end
 
   # Scope for finding cinemas with a scraper class
-  def has_scraper
+  def self.has_scraper
     where("fetcher != ''")
   end
 
