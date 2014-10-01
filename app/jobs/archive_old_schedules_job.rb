@@ -12,6 +12,4 @@ class ArchiveOldSchedulesJob
 
   end
 
-  private
-
 end
