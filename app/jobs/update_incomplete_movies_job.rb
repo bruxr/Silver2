@@ -14,6 +14,8 @@ class UpdateIncompleteMoviesJob
       UpdateMovieJob.perform_async(movie.id)
     end
 
+    Rails.logger.info("Successfully enqueued #{movies.count} UpdateMovieJob jobs.")
+
   end
 
 end

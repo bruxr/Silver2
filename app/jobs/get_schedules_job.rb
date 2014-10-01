@@ -20,6 +20,8 @@ class GetSchedulesJob
       UpdateMovieJob.perform_async(movie.id)
     end
 
+    Rails.logger.info("Successfully fetched new schedules for #{cinema.name}.")
+
   end
 
 end

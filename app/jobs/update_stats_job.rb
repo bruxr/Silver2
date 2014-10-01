@@ -25,6 +25,8 @@ class UpdateStatsJob
 
     Rails.cache.write('db_count', count)
 
+    Rails.logger.info("Successfully updated database stats. Total row count: #{count} rows")
+
   end
 
 end

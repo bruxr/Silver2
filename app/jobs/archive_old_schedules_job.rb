@@ -8,7 +8,8 @@ class ArchiveOldSchedulesJob
 
   def perform()
 
-    Schedule.archive_old_records
+    old_skeds = Schedule.archive_old_records
+    Rails.logger.info("Successfully archived #{old_skeds} old schedules.")
 
   end
 

@@ -9,6 +9,8 @@ class UpdateMovieJob
     updater = Quasar::MovieUpdater.new(movie)
     updater.perform
 
+    Rails.logger.info("Successfully updated movie \"#{movie.title}\".")
+
   end
 
 end

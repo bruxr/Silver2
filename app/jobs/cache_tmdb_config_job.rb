@@ -12,6 +12,8 @@ class CacheTmdbConfigJob
     config = tmdb.get_configuration
     Rails.cache.write('tmdb:config', config, { expires_in: 30.days })
 
+    Rails.logger.info("Successfully cached TMDB config.")
+
   end
 
 end
