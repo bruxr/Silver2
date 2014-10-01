@@ -4,7 +4,7 @@ class UpdateMovieJob
 
   def perform(movie_id)
 
-    movie = Movie.include(:sources).find(movie_id)
+    movie = Movie.includes(:sources).find(movie_id)
     
     if movie.sources.count > 0
       updater = Quasar::MovieUpdater.new(movie)
