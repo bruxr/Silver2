@@ -24,7 +24,7 @@ class Cinema < ActiveRecord::Base
 
   # Scope for finding cinemas with a scraper class
   def self.has_scraper
-    where("fetcher != ''")
+    where.not(fetcher: '')
   end
 
 end
