@@ -86,14 +86,19 @@ class Schedule < ActiveRecord::Base
 
       old_skeds.each do |sked|
         f.write("#{sked.movie.title},#{sked.cinema.name},#{sked.screening_time},#{sked.format},#{sked.ticket_url},#{sked.ticket_price},#{sked.room},#{sked.created_at},#{sked.updated_at}")
-        sked.destroy
       end
 
     end
 
+    # Delete all old schedules in one go
+    Schedule.old.delete_all
+
     # Upload to dropbox then write to log
     file = File.open(tmp_file, 'r')
-    dropbox.put_file(dropbox_file, file)
+    dropbox.put_file(dropbox_file, file, true)
+
+    # Cleanup
+    File.unlink(tmp_file)
     
     count
 

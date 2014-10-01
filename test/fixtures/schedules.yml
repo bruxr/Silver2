@@ -4,3 +4,46 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
+one:
+  movie: one
+  cinema: two
+  screening_time: <%= Time.now - 1.day %>
+  format: 2D
+  ticket_url: http://buymesometickets.com/guardians-of-the-galaxy
+  ticket_price: 150
+  room: Cinema 2
+
+two:
+  movie: one
+  cinema: two
+  screening_time: <%= Time.now - 1.day - 2.hours %>
+  format: 2D
+  ticket_url: http://buymesometickets.com/guardians-of-the-galaxy
+  ticket_price: 150
+  room: Cinema 2
+
+three:
+  movie: two
+  cinema: one
+  screening_time: <%= Time.now - 1.week %>
+  format: 3D
+  ticket_url: http://buymesometickets.com/the-amazing-spider-man
+  ticket_price: 250
+  room: Cinema 5
+
+four:
+  movie: two
+  cinema: two
+  screening_time: <%= Time.now - 8.days %>
+  format: 2D
+  ticket_url: http://buymesometickets.com/the-amazing-spider-man
+  room: Cinema 2
+
+five:
+  movie: four
+  cinema: two
+  screening_time: 2003-02-14 21:00:00
+  format: IMAX
+  ticket_url: http://buymesometickets.com/the-lord-of-the-rings-return-of-the-king
+  room: IMAX Cinema

@@ -4,3 +4,28 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
+one:
+  title: Guardians of the Galaxy
+  slug: guardians-of-the-galaxy
+  mtrcb_rating: R-13
+
+two:
+  title: The Amazing Spider-Man
+  slug: the-amazing-spider-man
+  mtrcb_rating: PG
+
+three:
+  title: Air Force One
+  slug: air-force-one
+  mtrcb_rating: R-13
+
+four:
+  title: "The Lord of the Rings: The Return of the King"
+  slug: the-lord-of-the-rings-the-return-of-the-king
+  mtrcb_rating: R-13
+
+five:
+  title: She's Dating the Gangster
+  slug: shes-dating-the-gangster
+  mtrcb_rating: R-13
