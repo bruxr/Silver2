@@ -60,16 +60,24 @@ class Schedule < ActiveRecord::Base
     old_skeds = Schedule.old.all
     return 0 if old_skeds.count == 0
 
+    # Our files
     tmp_file = Rails.root.join('tmp', 'sked-archive.csv')
     dropbox_file = '/schedule-archive.csv'
 
     require 'dropbox_sdk'
 
     # Download the storage file
+    # If it doesn't exist, use headers as the first content
+    # Otherwise, write the file's content to our temp file
     dropbox = DropboxClient.new(ENV['DROPBOX_ACCESS_TOKEN'])
-    contents, metadata = dropbox.get_file_and_metadata(dropbox_file)
-    File.open(tmp_file, 'w') do |f|
-      f.puts(contents)
+    begin
+      contents, metadata = dropbox.get_file_and_metadata(dropbox_file)
+    rescue DropboxError => ex
+      contents = "Movie,Cinema,Screening Time,Format,Ticket URL,Ticket Price, Room, Created At,Updated At" if ex.message == 'File not found'
+    ensure
+      File.open(tmp_file, 'w') do |f|
+        f.puts(contents)
+      end
     end
 
     # Grab all our old schedules and append them to the file
