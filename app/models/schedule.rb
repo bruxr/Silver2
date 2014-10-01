@@ -95,7 +95,7 @@ class Schedule < ActiveRecord::Base
 
     # Upload to dropbox then write to log
     file = File.open(tmp_file, 'r')
-    dropbox.put_file(dropbox_file, file)
+    dropbox.put_file(dropbox_file, file, true)
     
     count
 
