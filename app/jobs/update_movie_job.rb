@@ -1,5 +1,5 @@
 # Updates a movie's details like overview, posters, backdrop
-class GetSchedulesJob
+class UpdateMovieJob
   include Sidekiq::Worker
 
   def perform(movie_id)
