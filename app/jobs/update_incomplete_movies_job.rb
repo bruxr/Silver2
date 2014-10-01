@@ -3,6 +3,7 @@
 # Enqueues UpdateMovieJob's that will perform the update.
 class UpdateIncompleteMoviesJob
   include Sidekiq::Worker
+  include Sidetiq::Schedulable
 
   recurrence { daily.hour_of_day(12, 24) }
 
