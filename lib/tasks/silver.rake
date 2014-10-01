@@ -76,6 +76,8 @@ namespace :silver do
   desc "Generates a Dropbox access token."
   task :generate_dropbox_token do
 
+    require 'dropbox_sdk'
+
     raise "Cannot find Dropbox App key." if ENV['DROPBOX_APP_KEY'].nil?
     raise "Cannot find Dropbox App secret." if ENV['DROPBOX_APP_SECRET'].nil?
 
