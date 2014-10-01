@@ -76,6 +76,8 @@ namespace :silver do
   desc "Generates a Dropbox access token."
   task :generate_dropbox_token do
 
+    require 'dropbox_sdk'
+
     raise "Cannot find Dropbox App key." if ENV['DROPBOX_APP_KEY'].nil?
     raise "Cannot find Dropbox App secret." if ENV['DROPBOX_APP_SECRET'].nil?
 
@@ -87,7 +89,7 @@ namespace :silver do
     puts("Authorize Silver to access your dropbox by going to: ")
     puts(authorize_url)
     puts("Then enter the provided authorization code here:")
-    code = gets.strip
+    code = STDIN.gets.strip
 
     access_token, user_id = flow.finish(code)
     puts("Finished! Put the access token below as an environment variable named \"DROPBOX_ACCESS_TOKEN\".")
