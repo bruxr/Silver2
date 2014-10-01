@@ -89,7 +89,7 @@ namespace :silver do
     puts("Authorize Silver to access your dropbox by going to: ")
     puts(authorize_url)
     puts("Then enter the provided authorization code here:")
-    code = gets.strip
+    code = STDIN.gets.strip
 
     access_token, user_id = flow.finish(code)
     puts("Finished! Put the access token below as an environment variable named \"DROPBOX_ACCESS_TOKEN\".")
