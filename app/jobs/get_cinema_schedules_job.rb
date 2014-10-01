@@ -9,7 +9,7 @@ class GetCinemaSchedulesJob
 
   def perform()
 
-    cinemas = Cinema.is_active.has_scraper.select('id', 'fetcher').all
+    cinemas = Cinema.is_active.has_scraper.all
     cinemas.all.each do |cinema|
       scraper = "Quasar::Scrapers::#{cinema.fetcher}".constantize
       GetSchedulesJob.perform_async(cinema.id, scraper)
