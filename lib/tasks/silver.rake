@@ -58,18 +58,14 @@ namespace :silver do
   desc "Executes background jobs and schedules recurring ones"
   task :start_jobs => :environment do
 
-    puts("Starting Jobs:")
+    puts("Starting Jobs...")
 
-    puts("  - fetch cinema schedules")
-    cinemas = Cinema.where("fetcher != ''")
-    cinemas.all.each do |cinema|
-      scraper = "Quasar::Scrapers::#{cinema.fetcher}".constantize
-      GetSchedulesJob.perform_async(cinema.id, scraper)
-    end
-
-    puts("  - housekeeping jobs")
+    GetCinemaSchedulesJob.perform_async
+    UpdateIncompleteMoviesJob.perform_async
     CacheTmdbConfigJob.perform_async
+    ArchiveOldSchedulesJob.perform_async
     UpdateStatsJob.perform_async
+    UpdateMovieScoresJob.perform_async
 
   end
 
