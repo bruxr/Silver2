@@ -39,7 +39,7 @@ module Quasar
 
       end
       
-      @movie.aggregate_score = total / scores
+      @movie.aggregate_score = total / scores if scores > 0
       @movie.save
 
     end
