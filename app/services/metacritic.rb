@@ -21,18 +21,28 @@ class Metacritic < WebClient
       title: title
     }
     resp = query('/search/movie', data)
-    result = nil
-    unless resp.nil?
-      if resp['count'] > 0
-        result = {
-          id: resp['results'][0]['name'],
-          title: resp['results'][0]['name'],
-          url: resp['results'][0]['url']
-        }
+
+    # Exit early if response is nil
+    return nil if resp.nil?
+
+    use_index = 0 # Use first search result by default
+    result = {}
+
+    # Try to find the exact title on the results
+    title_dc = title.downcase
+    resp['results'].each_with_index do |search_result, index|
+      if search_result['name'].downcase == title_dc
+        use_index = index
       end
     end
 
-    result
+    # Build the result hash
+    use_result = resp['results'][use_index]
+    result = {
+      title: use_result['name'],
+      id: use_result['name'],
+      url: use_result['url']
+    }
 
   end
 
