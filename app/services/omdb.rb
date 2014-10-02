@@ -1,5 +1,5 @@
 # Lightweight client to the OMDB API (http://www.omdbapi.com)
-class Omdb < Quasar::WebClient
+class Omdb < WebClient
 
   @@endpoint = 'http://www.omdbapi.com'
 

@@ -4,7 +4,7 @@
 #
 # query() is also available as a generic
 # API access method.
-class RottenTomatoes < Quasar::WebClient
+class RottenTomatoes < WebClient
 
   @@endpoint = 'http://api.rottentomatoes.com/api/public/v1.0'
 

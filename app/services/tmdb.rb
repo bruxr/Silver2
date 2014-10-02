@@ -3,7 +3,7 @@
 # get() with the method name and the params
 # you need. Tmdb will automatically add
 # the API key.
-class Tmdb < Quasar::WebClient
+class Tmdb < WebClient
 
   @@api_endpoint = 'https://api.themoviedb.org/3'
   @@images_base_url = 'https://image.tmdb.org/t/p'

@@ -3,7 +3,7 @@
 #
 # Instantiate with a Mashape API Key
 # then invoke the necessary methods.
-class Metacritic < Quasar::WebClient
+class Metacritic < WebClient
 
   @@endpoint = 'https://byroredux-metacritic.p.mashape.com'
 
