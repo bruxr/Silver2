@@ -5,9 +5,9 @@ class Google < WebClient
 
   @@endpoint = 'https://www.googleapis.com/customsearch/v1'
 
-  def initialize(engine_id, api_key)
-    @engine_id = engine_id
-    @api_key = api_key
+  def initialize
+    @engine_id = ENV['G_CSE_ID']
+    @api_key = ENV['G_API_KEY']
   end
 
   # Performs a search query

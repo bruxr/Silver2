@@ -8,8 +8,8 @@ class RottenTomatoes < Quasar::WebClient
 
   @@endpoint = 'http://api.rottentomatoes.com/api/public/v1.0'
 
-  def initialize(api_key)
-    @api_key = api_key
+  def initialize
+    @api_key = ENV['RT_API_KEY']
   end
 
   # Searches the Rotten Tomatoes API

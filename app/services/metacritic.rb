@@ -7,8 +7,8 @@ class Metacritic < Quasar::WebClient
 
   @@endpoint = 'https://byroredux-metacritic.p.mashape.com'
 
-  def initialize(api_key)
-    @api_key = api_key
+  def initialize
+    @api_key = ENV['MASHAPE_API_KEY']
   end
 
   # Searches the API for a movie that matches the

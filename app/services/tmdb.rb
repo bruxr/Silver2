@@ -8,8 +8,8 @@ class Tmdb < Quasar::WebClient
   @@api_endpoint = 'https://api.themoviedb.org/3'
   @@images_base_url = 'https://image.tmdb.org/t/p'
 
-  def initialize(api_key)
-    @api_key = api_key
+  def initialize
+    @api_key = ENV['TMDB_API_KEY']
   end
 
   # Builds image URLs for backdrops & posters.
