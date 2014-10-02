@@ -26,4 +26,51 @@ class Movie < ActiveRecord::Base
     where(status: 'incomplete')
   end
 
+  # Fixes the movie's title that may have spelling errors, extra characters
+  def fix_title
+
+    cache_key = "fixed_titles:#{title.parameterize}"
+
+    # Check cache if we already have searched for this title
+    result = Rails.cache.fetch(cache_key) do
+
+      fixed = nil
+
+      # Search TMDB
+      tmdb = Tmdb.new
+      tmdb_res = tmdb.find_title(title)
+      unless tmdb_res.nil?
+        fixed = tmdb_res[:title]
+      end
+
+      # If we can't find it on TMDB, check Rotten Tomatoes
+      if fixed.nil?
+        rt = RottenTomatoes.new
+        rt_res = rt.find_title(title)
+        unless rt_res.nil?
+          fixed = rt_res[:title]
+        end
+      end
+
+      # If we can't find it on both TMDB & RT, check OMDB/Freebase
+      if fixed.nil?
+        omdb = Omdb.new
+        omdb_res = omdb.find_title(title)
+        unless omdb_res.nil?
+           fixed = omdb_res[:title]
+        end
+      end
+
+      # If we can't still find the title, raise an error.
+      # Otherwise update the attribute.
+      if fixed.nil?
+        raise "Failed to fix movie title: #{original}"
+      else
+        self.title = fixed
+      end
+
+    end
+
+  end
+
 end
