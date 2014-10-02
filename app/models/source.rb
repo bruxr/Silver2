@@ -24,4 +24,37 @@ class Source < ActiveRecord::Base
     message: "is not a valid URL."
   }
 
+  # Returns an array of sources that contains
+  # a movie titled with the provided param.
+  def self.find_movie_sources(title)
+
+    sources = []
+    services = [Metacritic, Omdb, RottenTomatoes, Tmdb]
+
+    # Loop through each website
+    services.each do |klass|
+      
+      service = klass.new
+      resp = service.find_title(title)
+
+      # Skip source if it didn't find anything
+      next if resp.nil?
+
+      # Source name
+      source = klass.to_s.downcase
+      source = 'rt' if source == 'rottentomatoes' # Shorten rotten tomatoes
+
+      # Build the model and then add 
+      sources << Source.new({
+        name: source,
+        external_id: resp[:id],
+        url: resp[:url]
+      });
+
+    end
+
+    sources
+
+  end
+
 end

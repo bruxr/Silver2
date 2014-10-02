@@ -3,7 +3,19 @@ class Movie < ActiveRecord::Base
 
   has_many :schedules, inverse_of: :movie, dependent: :destroy
 
-  has_many :sources, inverse_of: :movie, dependent: :destroy
+  # Declares that many web services (e.g. The Movie Database)
+  # may contain a record of this movie.
+  has_many :sources, inverse_of: :movie, dependent: :destroy do
+
+    # Searches for this movie's external sources.
+    # Take note that this will set and overwrite existing
+    # sources with the found sources.
+    def search
+      raise 'Movie title is nil.' if proxy_association.owner.title.nil?
+      proxy_association.owner.sources << Source.find_movie_sources(proxy_association.owner.title)
+    end
+
+  end
 
   validates :title, presence: true
 

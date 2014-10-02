@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MovieTest < ActiveSupport::TestCase
   
-  test 'fixing titles' do
+  test 'should correctly fix titles' do
     movie = Movie.new
     movie.title = 'The Expandables'
     movie.fix_title
