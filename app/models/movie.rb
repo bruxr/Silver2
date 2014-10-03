@@ -85,4 +85,19 @@ class Movie < ActiveRecord::Base
 
   end
 
+  # Searches for this movie's details like overview, runtime, trailer.
+  # This requires that the movie has sources.
+  def find_details
+
+    raise 'No sources to use.' if self.sources.empty?
+
+    details = %w(overview runtime poster backdrop)
+
+    result = Source.find_movie_details(self.sources)
+    details.each do |detail|
+      self.send("#{detail}=", result[detail])
+    end
+
+  end
+
 end
