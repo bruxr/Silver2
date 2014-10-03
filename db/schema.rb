@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140908072604) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cinemas", force: true do |t|
     t.string   "name",                                                    null: false
     t.string   "slug",                                                    null: false
@@ -25,38 +28,38 @@ ActiveRecord::Schema.define(version: 20140908072604) do
   end
 
   create_table "movies", force: true do |t|
-    t.string   "title",                                             null: false
-    t.string   "slug",                                              null: false
+    t.string   "title",                                  null: false
+    t.string   "slug",                                   null: false
     t.text     "overview"
     t.integer  "runtime"
-    t.float    "aggregate_score", limit: 24
+    t.float    "aggregate_score"
     t.text     "poster"
     t.text     "backdrop"
     t.text     "trailer"
     t.string   "mtrcb_rating"
-    t.string   "status",                     default: "incomplete", null: false
+    t.string   "status",          default: "incomplete", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "schedules", id: false, force: true do |t|
-    t.integer  "movie_id",                                 null: false
-    t.integer  "cinema_id",                                null: false
-    t.datetime "screening_time",                           null: false
-    t.string   "format",                    default: "2D", null: false
+    t.integer  "movie_id",                      null: false
+    t.integer  "cinema_id",                     null: false
+    t.datetime "screening_time",                null: false
+    t.string   "format",         default: "2D", null: false
     t.text     "ticket_url"
-    t.float    "ticket_price",   limit: 24
-    t.string   "room",                                     null: false
+    t.float    "ticket_price"
+    t.string   "room",                          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sources", force: true do |t|
-    t.integer "movie_id",               null: false
-    t.string  "name",                   null: false
-    t.string  "external_id",            null: false
-    t.text    "url",                    null: false
-    t.float   "score",       limit: 24
+    t.integer "movie_id",    null: false
+    t.string  "name",        null: false
+    t.string  "external_id", null: false
+    t.text    "url",         null: false
+    t.float   "score"
   end
 
   create_table "users", force: true do |t|
