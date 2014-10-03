@@ -57,9 +57,9 @@ class SmScraper < Scraper
 
       response = post(@@endpoint, data)
       if redirected_to_homepage?
-        raise Quasar::Exceptions::UnexpectedUrl.new(@@endpoint, "Failed to access SM Cinema API, got redirected to the home page.")
+        raise "Failed to access SM Cinema API, got redirected to the home page."
       elsif received_error?
-        raise Quasar::Exceptions::SiteError.new(@response, "SM Cinema API error: #{get_error_message()}")
+        raise "SM Cinema API error: #{get_error_message()}"
       else
         JSON.parse(response)
       end
@@ -121,7 +121,7 @@ class SmScraper < Scraper
             # Raise a ignorable Exception if they use an unknown one. 
             if ! screening['MtrcbRating'].empty?
               if ratings[screening['MtrcbRating']].nil? 
-                raise Exception.new("SM Fetcher: Unknown MTRCB rating #{screening['MtrcbRating']}, skipping it instead.")
+                raise "SM Fetcher: Unknown MTRCB rating #{screening['MtrcbRating']}, skipping it instead."
               else
                 movie[:rating] = ratings[screening['MtrcbRating']]
               end
