@@ -52,10 +52,10 @@ class RottenTomatoes < WebClient
     result = get_raw_details(id)
 
     require 'date'
-
+    
     details = {}
-    details['title'] = result['title']
-    details['release-date'] = Date.parse(result['release_dates']['theater'])
+    details['title'] = result['title']    
+    details['release-date'] = Date.parse(result['release_dates']['theater']) unless result['release_dates']['theater'].nil?
     details['genre'] = result['genres']
     details['runtime'] = result['runtime'].to_i
     details['director'] = result['abridged_directors'].first['name']
