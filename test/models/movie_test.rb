@@ -7,4 +7,11 @@ class MovieTest < ActiveSupport::TestCase
     assert_equal('The Expendables', actual)
   end
 
+  test 'should correctly update scores' do
+    movie = movies(:airforceone)
+    movie.sources.search
+    movie.update_scores
+    assert_not_nil(movie.aggregate_score)
+  end
+
 end

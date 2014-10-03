@@ -113,4 +113,16 @@ class Source < ActiveRecord::Base
     klass = @@source_to_class[self.name.to_sym].new
   end
 
+  # Updates the movie's scores based on the source.
+  def update_score
+    self.score = self.client.get_score(self.external_id)
+  end
+
+  # Returns TRUE if this source is included in the aggregate scoring.
+  # This usually returns false for sources that has too few voters (TMDB)
+  # or doesn't have a ratings system.
+  def can_score?
+    true if self.name != 'tmdb'
+  end
+
 end
