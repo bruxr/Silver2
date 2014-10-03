@@ -80,7 +80,7 @@ class RottenTomatoes < WebClient
     details = get_details(id)
 
     # If we got an error, end early.
-    if details.nil?
+    if details.nil? || details['ratings'].nil?
       nil
     else
       critics = details['ratings']['critics_score'].to_f / 10
