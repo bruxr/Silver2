@@ -10,15 +10,18 @@ class GetSchedulesJob
 
   # Crawls and processes the records we read from
   # the cinema's website.
-  def perform(cinema_id, scraper)
+  def perform(cinema_id)
 
     cinema = Cinema.find(cinema_id)
-    fetcher = Quasar::SchedulesFetcher.new(cinema)
-    fetcher.perform
+    new_movies = cinema.fetch_new
 
-    fetcher.new_movies.each do |movie|
-      UpdateMovieJob.perform_async(movie.id)
+    new_movies.each do |movie|
+      movie.find_details
+      movie.find_trailer
+      movie.save
     end
+
+    cinema.save
 
     Rails.logger.info("Successfully fetched new schedules for #{cinema.name}.")
 

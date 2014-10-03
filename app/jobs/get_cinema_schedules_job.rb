@@ -11,8 +11,7 @@ class GetCinemaSchedulesJob
 
     cinemas = Cinema.is_active.has_scraper.select('id').all
     cinemas.all.each do |cinema|
-      scraper = "Quasar::Scrapers::#{cinema.fetcher}".constantize
-      GetSchedulesJob.perform_async(cinema.id, scraper)
+      GetSchedulesJob.perform_async(cinema.id)
     end
 
     Rails.logger.info("Successfully enqueued #{cinemas.count} GetSchedulesJob.")

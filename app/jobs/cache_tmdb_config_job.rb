@@ -8,7 +8,7 @@ class CacheTmdbConfigJob
 
   def perform
 
-    tmdb = Quasar::WebServices::Tmdb.new(ENV['TMDB_API_KEY'])
+    tmdb = Tmdb.new
     config = tmdb.get_configuration
     Rails.cache.write('tmdb:config', config, { expires_in: 30.days })
 

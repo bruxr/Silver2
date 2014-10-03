@@ -7,8 +7,9 @@ class UpdateMovieJob
     movie = Movie.includes(:sources).find(movie_id)
     
     if movie.sources.count > 0
-      updater = Quasar::MovieUpdater.new(movie)
-      updater.perform
+      movie.find_details
+      movie.find_trailer
+      movie.save
       Rails.logger.info("Successfully updated movie \"#{movie.title}\".")
     else
       Rails.logger.warn("Cannot update movie \"#{movie.title}\". No sources found.")

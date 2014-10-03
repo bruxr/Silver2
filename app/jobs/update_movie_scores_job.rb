@@ -10,8 +10,8 @@ class UpdateMovieScoresJob
 
     movies = Movie.now_showing.includes(:sources).all
     movies.each do |movie|
-      updater = Quasar::ScoreUpdater.new(movie)
-      updater.perform
+      movie.update_scores
+      movie.save
     end
 
     Rails.logger.info("Movie scores successfully updated. #{movies.count} items processed.")
