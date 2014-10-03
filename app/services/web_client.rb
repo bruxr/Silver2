@@ -49,4 +49,38 @@ class WebClient
 
   end
 
+  # Removes all HTML elements in a string.
+  def sanitize_string(value)
+    require 'sanitize'
+    Sanitize.fragment(value)
+  end
+
+  # Works the same as sanitize_string except it works
+  # for hashes.
+  def sanitize_hash(hash)
+    require 'sanitize'
+    cleaned = {}
+    hash.each do |key, value|
+      if value.instance_of? Hash
+        cleaned[key] = sanitize_hash(value)
+      elsif value.instance_of? Array
+        cleaned[key] = sanitize_array(value)
+      else
+        cleaned[key] = Sanitize.fragment(value.to_s)
+      end
+    end
+    cleaned
+  end
+
+  # Works the same as sanitize_string except it works for
+  # array types.
+  def sanitize_array(array)
+    require 'sanitize'
+    cleaned = []
+    array.each_with_index do |value, index|
+      cleaned[index] = value
+    end
+    cleaned
+  end
+
 end

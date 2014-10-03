@@ -41,6 +41,7 @@ gem 'httparty'
 gem 'nokogiri'
 gem 'redis-rails'
 gem 'devise'
+gem 'sanitize'
 
 # Clients for Web Services
 gem 'dropbox-sdk'
