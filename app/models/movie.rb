@@ -38,7 +38,7 @@ class Movie < ActiveRecord::Base
     where(status: 'incomplete')
   end
 
-  # 
+  # Fixes movie titles by querying our external movie sources.
   def self.fix_title(title)
 
     cache_key = "fixed_titles:#{title.parameterize}"
