@@ -100,4 +100,66 @@ class Movie < ActiveRecord::Base
 
   end
 
+  # Sets the trailer for this movie.
+  # Doesn't set anything if it cannot find a trailer.
+  def find_trailer
+
+    raise "Cannot find the movie's title" if self.title.nil?
+
+    require 'google/api_client'
+    google = Google::APIClient.new(
+      key: ENV['G_API_KEY'],
+      authorization: nil,
+      application_name: 'Silver',
+      application_version: '1'
+    )
+
+    year = Date.today.strftime('%Y')
+    search_query = "#{self.title} #{year} trailer"
+
+    # Use a cached youtube service if it's present
+    youtube = Rails.cache.fetch('youtube-service') do
+      google.discovered_api('youtube', 'v3')
+    end
+
+    trailers = Hash.new(nil)
+    ['high', 'standard'].each do |definition|
+
+      resp = google.execute!(
+        api_method: youtube.search.list,
+        parameters: {
+          part: 'snippet',
+          q: search_query,
+          maxResults: 25,
+          type: 'video',
+          videoDefinition: definition,
+          videoEmbeddable: 'true',
+          videoSyndicated: 'true'
+        }
+      )
+
+      # Look for the very first video in the search results.
+      # After finding one, take note of it then skip the rest.
+      resp.data.items.each do |item|
+
+        next if item.id.kind != 'youtube#video'
+
+        if trailers[definition] == nil
+          trailers[definition] = item.id.videoId 
+          break
+        end
+
+      end
+
+    end
+
+    # Set the highest definition video as possible
+    if !trailers['high'].nil?
+      self.trailer = trailers['high']
+    elsif !trailers['standard'].nil?
+      self.trailer = trailers['standard']
+    end
+
+  end
+
 end

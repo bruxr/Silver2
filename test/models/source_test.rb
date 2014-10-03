@@ -52,4 +52,10 @@ class SourceTest < ActiveSupport::TestCase
     assert_equal('The eye of the enemy is moving.', actual['tagline'])
   end
 
+  test 'should be able to find a movie trailer' do
+    movie = movies(:spiderman)
+    movie.find_trailer
+    assert_not_nil(movie.trailer)
+  end
+
 end
