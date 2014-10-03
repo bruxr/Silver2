@@ -12,6 +12,8 @@ class GetSchedulesJob
   # the cinema's website.
   def perform(cinema_id)
 
+    raise "Invalid Cinema ID: #{cinema_id}" if cinema_id <= 0
+
     cinema = Cinema.find(cinema_id)
     new_movies = cinema.fetch_new
 
