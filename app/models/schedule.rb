@@ -41,6 +41,18 @@ class Schedule < ActiveRecord::Base
 
   end
 
+  # Creates a non persisted Schedule object if the schedule doesn't exist yet.
+  # This is mainly used by the Cinema model to build schedules without knowing
+  # about the needed attributes (besides the required ones)
+  # TODO: Refactor this? Longest argument list in the world.
+  def self.initialize_if_inexistent(movie, cinema, time, room, format: '2D', ticket_url: '', price: 0)
+
+    unless Schedule.existing? movie, cinema, time, room
+      Schedule.new(movie: movie, cinema: cinema, screening_time: time, room: room, format: format, ticket_url: ticket_url, ticket_price: price)
+    end
+
+  end
+
   # Scope for finding schedules that are a month old.
   def self.old
 

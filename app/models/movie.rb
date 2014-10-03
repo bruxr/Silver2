@@ -80,6 +80,18 @@ class Movie < ActiveRecord::Base
     result
 
   end
+
+  # Creates a non persistent Movie object using the provided details.
+  # Used by the Cinema model so it won't know about the attributes needed nor 
+  # the preprocessing a movie may need when initialized.
+  def self.find_or_initialize(title, rating: nil)
+
+    title = Movie.fix_title(title)
+    movie = Movie.find_or_initialize_by(title: title)
+    movie.mtrcb_rating = rating unless rating.nil?
+
+    movie
+
   end
 
   # Searches for this movie's details like overview, runtime, trailer.
