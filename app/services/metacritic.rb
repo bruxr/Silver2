@@ -52,7 +52,7 @@ class Metacritic < WebClient
   #
   # Important: Use the title returned by find_title() 
   # it's the only 100% sure identifier that will match.
-  def get_details(id)
+  def get_raw_details(id)
 
     data = {
       title: id
@@ -60,14 +60,41 @@ class Metacritic < WebClient
     resp = query('/find/movie', data)
     unless resp.nil?
       result = resp['result']
-      # Add an ID & title to match other web services
-      result[:id] = result['name']
-      result[:title] = result['name']
+      sanitize_hash(result)
     else
       result = nil
     end
 
     result
+
+  end
+
+  # Fetches "normalized" movie details using its title.
+  # Normalized movie details are movie info that follow
+  # Silver's conventions. (e.g. lowercase string keys, 
+  # overview instead of plot etc.)
+  #
+  # Take note that metacritic doesn't expose an API
+  # so we're just using the movie title as ID :)
+  #
+  # Important: Use the title returned by find_title() 
+  # it's the only 100% sure identifier that will match.
+  def get_details(id)
+
+    result = get_raw_details(id)
+
+    require 'date'
+
+    details = {}
+    details['title'] = result['name']
+    details['release-date'] = Date.parse(result['rlsdate'])
+    details['genre'] = result['genre'].split("\n").map(&:strip).map(&:downcase)
+    details['runtime'] = result['runtime'].gsub('min', '').to_i
+    details['director'] = result['director']
+    details['cast'] = result['cast'].split(',').map(&:strip)
+    details['poster'] = result['thumbnail']
+
+    details
 
   end
 

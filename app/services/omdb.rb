@@ -29,18 +29,35 @@ class Omdb < WebClient
 
   # Returns a wealth of information about a movie
   # using its IMDB movie ID
+  def get_raw_details(id)
+
+    details = query({i: id})
+    sanitize_hash(details)
+
+  end
+
+  # Returns a normalized hash of movie informations using its
+  # IMDB movie ID.
+  # 
+  # Take note that this follows Silver's conventions for movie
+  # details. (e.g. lowercase keys, overview for plot)
   def get_details(id)
 
-    resp = query({i: id})
+    result = get_raw_details(id)
 
-    # Replace N/A with nils
-    resp.each do |key, value|
-      if value == 'N/A'
-        resp[key] = nil
-      end
-    end
+    require 'date'
 
-    resp
+    details = {}
+    details['title'] = result['Title']
+    details['release-date'] = Date.parse(result['Released'])
+    details['genre'] = result['Genre'].split(',').map(&:strip).map(&:downcase)
+    details['runtime'] = result['Runtime'].gsub('min', '').to_i
+    details['director'] = result['Director']
+    details['cast'] = result['Actors'].split(',').map(&:strip)
+    details['poster'] = result['Poster']
+    details['overview'] = result['Plot']
+
+    details
 
   end
 

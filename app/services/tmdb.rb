@@ -49,9 +49,37 @@ class Tmdb < WebClient
   # Convenience method for grabbing details
   # for a specific movie using the given
   # movie ID.
+  def get_raw_details(id)
+
+    result = query("/movie/#{id}")
+    sanitize_hash(result)
+
+  end
+
+  # Returns normalized hash of details for a movie
+  # given a TMDB movie ID.
+  # Take note that the hash follows Silver's movie details
+  # conventions (e.g. lowercase keys, overview for plot, etc)
   def get_details(id)
 
-    query("/movie/#{id}")
+    result = get_raw_details(id)
+
+    require 'date'
+
+    details = {}
+    details['title'] = result['title']
+    details['release-date'] = Date.parse(result['release_date'])
+    details['genre'] = []
+    result['genres'].each do |genre|
+      details['genre'] << genre['name']
+    end
+    details['runtime'] = result['runtime'].to_i
+    details['poster'] = result['poster_path']
+    details['overview'] = result['overview']
+    details['tagline'] = result['tagline']
+    details['backdrop'] = result['backdrop_path']
+
+    details
 
   end
 

@@ -38,8 +38,36 @@ class RottenTomatoes < WebClient
 
   # Returns the details for a movie
   # when provided with a movie ID.
-  def get_details(id)
+  def get_raw_details(id)
     result = query("/movies/#{id}")
+    sanitize_hash(result)
+  end
+
+  # Returns a normalized hash of details for a movie.
+  # Take note that this follows Silver's conventions
+  # for movie details (e.g. in a hash, lowercase keys, 
+  # overview for plot, etc.)
+  def get_details(id)
+    
+    result = get_raw_details(id)
+
+    require 'date'
+
+    details = {}
+    details['title'] = result['title']
+    details['release-date'] = Date.parse(result['release_dates']['theater'])
+    details['genre'] = result['genres']
+    details['runtime'] = result['runtime'].to_i
+    details['director'] = result['abridged_directors'].first['name']
+    details['cast'] = []
+    result['abridged_cast'].each do |cast|
+      details['cast'] << cast['name']
+    end
+    details['poster'] = result['posters']['original']
+    details['overview'] = result['synopsis'].gsub(/\(C\).+$/, '')
+
+    details
+
   end
 
   # Returns the movie's rating in Rotten Tomatoes.
