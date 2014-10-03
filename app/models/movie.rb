@@ -38,8 +38,8 @@ class Movie < ActiveRecord::Base
     where(status: 'incomplete')
   end
 
-  # Fixes the movie's title that may have spelling errors, extra characters
-  def fix_title
+  # 
+  def self.fix_title(title)
 
     cache_key = "fixed_titles:#{title.parameterize}"
 
@@ -73,16 +73,13 @@ class Movie < ActiveRecord::Base
         end
       end
 
-      # If we can't still find the title, raise an error.
-      # Otherwise update the attribute.
-      if fixed.nil?
-        raise "Failed to fix movie title: #{original}"
-      else
-        self.title = fixed
-      end
+      fixed
 
     end
 
+    result
+
+  end
   end
 
   # Searches for this movie's details like overview, runtime, trailer.

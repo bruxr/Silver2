@@ -3,10 +3,8 @@ require 'test_helper'
 class MovieTest < ActiveSupport::TestCase
   
   test 'should correctly fix titles' do
-    movie = Movie.new
-    movie.title = 'The Expandables'
-    movie.fix_title
-    assert_equal('The Expendables', movie.title)
+    actual = Movie.fix_title('The Expandables')
+    assert_equal('The Expendables', actual)
   end
 
 end
