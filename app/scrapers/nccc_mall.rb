@@ -44,6 +44,15 @@ class NcccMall < Scraper
           movie[:rating] = 'G'
         end
 
+        # If for some reason the MTRCB rating is in the title, extract that.
+        if title =~ /\(G|PG|R-?13|R-?16|R-?18\)/
+          title.scan(/\(G|PG|R-?13|R-?16|R-?18\)/) do |mtrcb_rating|
+            mtrcb_rating = mtrcb_rating.gsub('R', 'R-') if mtrcb_rating =~ /R13|R16|R18/ # Add dashes if they're missing
+            movie[:rating] = mtrcb_rating
+            movie[:name] = title.gsub(/\(G|PG|R-?13|R-?16|R-?18\)/, '')
+          end
+        end
+
         # Determine the format based on the title's suffix
         # (They're suffixed with a 2D or 3D depending on the format)
         if title =~ /3D\z/
