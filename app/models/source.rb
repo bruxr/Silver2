@@ -95,6 +95,7 @@ class Source < ActiveRecord::Base
     # Now fetch details using our sorted sources, overwriting
     # any missing detail.
     sorted_sources.each do |source|
+      next if source.nil? # Skip if the preferred source is missing.
       client = source.client
       client.get_details(source.external_id).each do |key, value|
         if result[key.to_s].nil?
