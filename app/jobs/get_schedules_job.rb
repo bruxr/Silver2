@@ -18,9 +18,7 @@ class GetSchedulesJob
     new_movies = cinema.schedules.fetch_new
 
     new_movies.each do |movie|
-      movie.find_details
-      movie.find_trailer
-      movie.save
+      UpdateMovieJob.perform_async(movie.id)
     end
 
     cinema.save
