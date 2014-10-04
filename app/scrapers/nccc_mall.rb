@@ -39,6 +39,9 @@ class NcccMall < Scraper
         # If rating is PG-13, convert it to PG to match MTRCB's ratings
         if movie[:rating] == 'PG-13'
           movie[:rating] = 'PG'
+        # GP is just G now
+        elsif movie[:rating] == 'GP'
+          movie[:rating] = 'G'
         end
 
         # Determine the format based on the title's suffix
