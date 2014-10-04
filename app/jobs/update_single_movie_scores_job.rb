@@ -7,7 +7,7 @@ class UpdateSingleMovieScoresJob
 
   def perform(movie_id)
 
-    movie = Movie.include(:sources).find(movie_id)
+    movie = Movie.includes(:sources).find(movie_id)
     movie.update_scores
     movie.save
 
