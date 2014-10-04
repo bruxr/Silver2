@@ -2,7 +2,7 @@
 # and then creates schedules & movies (if it doesn't exist)
 # for every record read from the websites.
 #
-# This will also enqueue a UpdateMovie job when we
+# This will also enqueue a UpdateMovie & UpdateMovieScores job when we
 # encounter a new movie.
 class GetSchedulesJob
   include Sidekiq::Worker
@@ -19,6 +19,7 @@ class GetSchedulesJob
 
     new_movies.each do |movie|
       UpdateMovieJob.perform_async(movie.id)
+      UpdateMovieScoresJob.perform_async(movie.id)
     end
 
     cinema.save
