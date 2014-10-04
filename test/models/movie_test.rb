@@ -14,4 +14,10 @@ class MovieTest < ActiveSupport::TestCase
     assert_not_nil(movie.aggregate_score)
   end
 
+  test 'should find a trailer' do
+    movie = movies(:aragorn)
+    movie.find_trailer
+    assert_not_nil(movie.trailer)
+  end
+
 end

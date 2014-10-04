@@ -115,46 +115,29 @@ class Movie < ActiveRecord::Base
 
     raise "Cannot find the movie's title" if self.title.nil?
 
-    require 'google/api_client'
-    google = Google::APIClient.new(
-      key: ENV['G_API_KEY'],
-      authorization: nil,
-      application_name: 'Silver',
-      application_version: '1'
-    )
-
+    google = Google.new
     year = Date.today.strftime('%Y')
     search_query = "#{self.title} #{year} trailer"
-
-    # Use a cached youtube service if it's present
-    youtube = Rails.cache.fetch('youtube-service') do
-      google.discovered_api('youtube', 'v3')
-    end
+    params = {
+      type: 'video',
+      videoEmbeddable: 'true',
+      videoSyndicated: 'true'
+    }
 
     trailers = Hash.new(nil)
     ['high', 'standard'].each do |definition|
 
-      resp = google.execute!(
-        api_method: youtube.search.list,
-        parameters: {
-          part: 'snippet',
-          q: search_query,
-          maxResults: 25,
-          type: 'video',
-          videoDefinition: definition,
-          videoEmbeddable: 'true',
-          videoSyndicated: 'true'
-        }
-      )
+      params[:videoDefinition] = definition
+      resp = google.youtube_search(search_query, params)
 
       # Look for the very first video in the search results.
       # After finding one, take note of it then skip the rest.
-      resp.data.items.each do |item|
+      resp['items'].each do |item|
 
-        next if item.id.kind != 'youtube#video'
+        next if item['id']['kind'] != 'youtube#video'
 
         if trailers[definition] == nil
-          trailers[definition] = item.id.videoId 
+          trailers[definition] = item['id']['videoId']
           break
         end
 
