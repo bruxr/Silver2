@@ -11,17 +11,12 @@ class UpdateStatsJob
 
   def perform
 
-    count = 0
-
-    count += Cinema.all.count
-    count += Movie.all.count
-    count += Schedule.all.count
-    count += Source.all.count
-    count += User.all.count
+    # Postgresql only support.
+    return unless ActiveRecord::Base.connection.instance_of? ActiveRecord::ConnectionAdapters::PostgreSQLAdapter
 
     conn = ActiveRecord::Base.connection
-    res = conn.execute('SELECT COUNT(*) FROM schema_migrations')
-    count += res.first.first.to_i
+    res = conn.execute('SELECT SUM(n_live_tup) AS total FROM pg_stat_user_tables;')
+    count = res.first['total'].to_i
 
     Rails.cache.write('db_count', count)
 
