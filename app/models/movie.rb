@@ -86,7 +86,8 @@ class Movie < ActiveRecord::Base
   # the preprocessing a movie may need when initialized.
   def self.find_or_initialize(title, rating: nil)
 
-    title = Movie.fix_title(title)
+    fixed = Movie.fix_title(title)
+    title = fixed unless fixed.nil?
     movie = Movie.find_or_initialize_by(title: title)
     movie.mtrcb_rating = rating unless rating.nil?
 
