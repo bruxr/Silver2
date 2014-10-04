@@ -22,8 +22,8 @@ class Metacritic < WebClient
     }
     resp = query('/search/movie', data)
 
-    # Exit early if response is nil
-    return nil if resp.nil?
+    # Exit early if response is nil or there are no items/results to process
+    return nil if resp.nil? || resp['count'] == 0
 
     use_index = 0 # Use first search result by default
     result = {}
