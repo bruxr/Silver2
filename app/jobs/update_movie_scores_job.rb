@@ -9,7 +9,7 @@ class UpdateMovieScoresJob
 
   def perform
 
-    movies = Movie.now_showing.select('id').all
+    movies = Movie.now_showing.select('id').distinct.all
     count = 0
     movies.each do |movie|
       UpdateSingleMovieScoresJob.perform_async(movie.id)
