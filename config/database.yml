@@ -8,7 +8,7 @@ default: &default
   adapter: postgresql
   encoding: utf-8
   database: <%= ENV['SILVER_DB_NAME'] %>
-  pool: 5
+  pool: 20
   username: <%= ENV['SILVER_DB_USER'] %>
   password: <%= ENV['SILVER_DB_PASS'] %>
 
