@@ -45,13 +45,18 @@ class Omdb < WebClient
 
     result = get_raw_details(id)
 
+    # Convert N/A's to nil
+    result.each do |key, value|
+      result[key] = nil if value == 'N/A'
+    end
+
     require 'date'
 
     details = {}
     details['title'] = result['Title']
-    details['release-date'] = Date.parse(result['Released'])
+    details['release-date'] = Date.parse(result['Released']) unless result['Released'].nil?
     details['genre'] = result['Genre'].split(',').map(&:strip).map(&:downcase)
-    details['runtime'] = result['Runtime'].gsub('min', '').to_i
+    details['runtime'] = result['Runtime'].gsub('min', '').to_i unless result['Runtime'].nil?
     details['director'] = result['Director']
     details['cast'] = result['Actors'].split(',').map(&:strip)
     details['poster'] = result['Poster']
