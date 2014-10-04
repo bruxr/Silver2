@@ -15,7 +15,7 @@ class GetSchedulesJob
     raise "Invalid Cinema ID: #{cinema_id}" if cinema_id <= 0
 
     cinema = Cinema.find(cinema_id)
-    new_movies = cinema.fetch_new
+    new_movies = cinema.schedules.fetch_new
 
     new_movies.each do |movie|
       movie.find_details
