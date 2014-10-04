@@ -173,4 +173,20 @@ class Movie < ActiveRecord::Base
 
   end
 
+  # Marks the movie as ready if it contains complete
+  # details like overview, plot, trailer, etc.
+  def update_status
+
+    return if self.status != 'incomplete' # Exit early if this has been processed already
+
+    required_details = %w(overview runtime poster backdrop trailer)
+    is_ready = true
+    required_details.each do |detail|
+      is_ready = false if self.send(detail).nil?
+    end
+
+    self.status = 'ready' if is_ready
+
+  end
+
 end

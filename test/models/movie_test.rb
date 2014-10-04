@@ -20,4 +20,13 @@ class MovieTest < ActiveSupport::TestCase
     assert_not_nil(movie.trailer)
   end
 
+  test 'should be able to mark movies with complete details as ready' do
+    movie = movies(:aragorn)
+    movie.sources.search
+    movie.find_details
+    movie.find_trailer
+    movie.update_status
+    assert_equal('ready', movie.status)
+  end
+
 end
