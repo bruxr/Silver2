@@ -9,7 +9,7 @@ class UpdateIncompleteMoviesJob
 
   def perform()
 
-    movies = Movie.now_showing.incomplete.select('id').all
+    movies = Movie.now_showing.incomplete.select('id').distinct.all
     movies.each do |movie|
       UpdateMovieJob.perform_async(movie.id)
     end
