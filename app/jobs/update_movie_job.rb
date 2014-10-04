@@ -11,6 +11,7 @@ class UpdateMovieJob
     if movie.sources.count > 0
       movie.find_details
       movie.find_trailer
+      movie.update_status
       movie.save
       Rails.logger.info("Successfully updated movie \"#{movie.title}\".")
     else
