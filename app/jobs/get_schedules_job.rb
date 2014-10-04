@@ -19,7 +19,7 @@ class GetSchedulesJob
 
     new_movies.each do |movie|
       UpdateMovieJob.perform_async(movie.id)
-      UpdateMovieScoresJob.perform_async(movie.id)
+      UpdateSingleMovieScoresJob.perform_async(movie.id)
     end
 
     cinema.save

@@ -1,4 +1,5 @@
-# Updates Movie scores/ratings from it's different sources.
+# Updates Movie scores/ratings by enqueuing UpdateSingleMovieScores jobs
+# for every "now showing" movies.
 # Runs every 6 hours.
 class UpdateMovieScoresJob
   include Sidekiq::Worker
@@ -8,13 +9,14 @@ class UpdateMovieScoresJob
 
   def perform
 
-    movies = Movie.now_showing.includes(:sources).all
+    movies = Movie.now_showing.select('id').all
+    count = 0
     movies.each do |movie|
-      movie.update_scores
-      movie.save
+      UpdateSingleMovieScoresJob.perform_async(movie.id)
+      count += 0
     end
 
-    Rails.logger.info("Movie scores successfully updated. #{movies.count} items processed.")
+    Rails.logger.info("Enqueueing #{count} UpdateSingleMovieScoresJob for updating scores/ratings.")
 
   end
 
