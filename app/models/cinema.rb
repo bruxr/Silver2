@@ -31,9 +31,9 @@ class Cinema < ActiveRecord::Base
           movie.save!
         end
 
-        new_movies
-
       end
+
+      new_movies
 
     end
 
