@@ -5,9 +5,6 @@
 # This job runs every 12:00 midnight.
 class UpdateStatsJob
   include Sidekiq::Worker
-  include Sidetiq::Schedulable
-
-  recurrence { daily.hour_of_day(0) }
 
   def perform
 

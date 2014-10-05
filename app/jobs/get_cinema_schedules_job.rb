@@ -3,9 +3,6 @@
 # Runs every 6 am, every day.
 class GetCinemaSchedulesJob
   include Sidekiq::Worker
-  include Sidetiq::Schedulable
-
-  recurrence { daily.hour_of_day(6) }
 
   def perform()
 

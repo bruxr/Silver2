@@ -2,9 +2,6 @@
 # inside Heroku's 10k rows limit.
 class ArchiveOldSchedulesJob
   include Sidekiq::Worker
-  include Sidetiq::Schedulable
-
-  recurrence { daily.hour_of_day(0) }
 
   def perform()
 

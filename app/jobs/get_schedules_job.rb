@@ -6,7 +6,6 @@
 # encounter a new movie.
 class GetSchedulesJob
   include Sidekiq::Worker
-  include Sidetiq::Schedulable
 
   # Crawls and processes the records we read from
   # the cinema's website.
