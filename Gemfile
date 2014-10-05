@@ -45,7 +45,6 @@ gem 'sanitize'
 
 # Clients for Web Services
 gem 'dropbox-sdk'
-gem 'google-api-client'
 
 # Background jobs
 gem 'sidekiq'
