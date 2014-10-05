@@ -180,6 +180,9 @@ GEM
       json
       redis (>= 3.0.6)
       redis-namespace (>= 1.3.1)
+    sidekiq-throttler (0.4.1)
+      activesupport
+      sidekiq (>= 2.5, < 4.0)
     sidetiq (0.6.3)
       celluloid (>= 0.14.1)
       ice_cube (= 0.11.1)
@@ -238,6 +241,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   sentry-raven!
   sidekiq
+  sidekiq-throttler
   sidetiq
   sinatra (>= 1.3.0)
   spring

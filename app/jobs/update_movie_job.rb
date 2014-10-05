@@ -2,6 +2,8 @@
 class UpdateMovieJob
   include Sidekiq::Worker
 
+  sidekiq_options throttle: { threshold: 300, period: 1.hour, key: 'rt-api-client' }
+
   def perform(movie_id)
 
     raise "Invalid Movie ID #{movie_id}" if movie_id <= 0
