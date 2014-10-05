@@ -2,7 +2,7 @@
 class UpdateMovieJob
   include Sidekiq::Worker
 
-  sidekiq_options throttle: { threshold: 300, period: 1.hour, key: 'rt-api-client' }
+  sidekiq_options throttle: { threshold: 5, period: 1.second, key: 'rt-api-client' }
 
   def perform(movie_id)
 
