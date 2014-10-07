@@ -26,6 +26,7 @@ class Cinema < ActiveRecord::Base
         # Save the movie, adding new ones to the new_movies array
         # after a successful save.
         if movie.new_record?
+          movie.sources.search
           new_movies << movie if movie.save!
         else
           movie.save!
