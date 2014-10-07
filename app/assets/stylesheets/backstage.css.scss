@@ -1,4 +1,6 @@
 $blue: #3498db;
+$asphalt: #34495e;
+$asphalt_light: lighten($asphalt, 5%);
 $midnight: #2c3e50;
 $green: #1abc9c;
 $default-font: "Lato", "Helvetica Neue", Arial, sans-serif;
@@ -451,6 +453,22 @@ header {
   margin-bottom: 5%;
   margin-right: 5%;
   width: 15%;
+}
+
+.media-thumbnail {
+  margin-bottom: 5px;
+}
+
+.media-title {
+  color: $asphalt_light;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.media-info {
+  color: #999;
+  font-size: .9em;
 }
 
 // Movie media objects
