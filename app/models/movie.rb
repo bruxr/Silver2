@@ -191,7 +191,8 @@ class Movie < ActiveRecord::Base
 
   # Returns the complete movie poster URL with the provided width.
   # If the width isn't supported by TMDB, it uses the highest & nearest width.
-  def get_poster(width = 350)
+  def poster_url(width = 350)
     Tmdb.new.get_poster(self.poster, width)
   end
+
 end

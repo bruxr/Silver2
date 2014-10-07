@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     respond_to do |format|
-      format.json { render json: { movie: @movies.as_json(root: false) } }
+      format.json { render json: { movie: @movies.as_json(root: false, methods: :poster_url) } }
     end
   end
 

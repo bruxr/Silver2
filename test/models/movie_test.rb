@@ -32,7 +32,7 @@ class MovieTest < ActiveSupport::TestCase
   test 'should be able to fetch the best poster' do
     movie = movies(:airforceone)
     movie.sources.search
-    assert_not_nil(movie.get_poster)
+    assert_not_nil(movie.poster_url)
   end
 
 end
