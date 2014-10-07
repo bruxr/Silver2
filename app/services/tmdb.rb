@@ -73,6 +73,8 @@ class Tmdb < WebClient
 
     end
 
+    config
+
   end
 
   # Convenience method for searching TMDB for
