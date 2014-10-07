@@ -189,6 +189,7 @@ class GaisanoScraper < Scraper
             sked[:name] = lines[0] # Title on the first line
             sked[:schedules] = []
             times = []
+            prices = nil
 
             # Find for stuff in the lines
             lines.each do |line|
