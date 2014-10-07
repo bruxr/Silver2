@@ -55,7 +55,7 @@ class Omdb < WebClient
     details = {}
     details['title'] = result['Title']
     details['release-date'] = Date.parse(result['Released']) unless result['Released'].nil?
-    details['genre'] = result['Genre'].split(',').map(&:strip).map(&:downcase)
+    details['genre'] = result['Genre'].split(',').map(&:strip).map(&:downcase) unless result['Genre'].nil?
     details['runtime'] = result['Runtime'].gsub('min', '').to_i unless result['Runtime'].nil?
     details['director'] = result['Director']
     details['cast'] = result['Actors'].split(',').map(&:strip)
