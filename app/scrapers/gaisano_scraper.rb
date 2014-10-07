@@ -207,7 +207,7 @@ class GaisanoScraper < Scraper
 
               # Find the screening times
               elsif line =~ /([0-9]{1,2}\:[0-9]{2}\|?)+/
-                times = extract_screening_times[line, dates] # Assumes that all screening times are in 1 line
+                times = extract_screening_times(line, dates) # Assumes that all screening times are in 1 line
               end
 
             end
