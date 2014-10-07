@@ -28,7 +28,7 @@ class Tmdb < WebClient
   # - set secure to TRUE to return a HTTPS url
   def get_image(type, file, size = 'original', secure = true)
 
-    raise "Invalid image type: #{type}" if type != 'backdrop' && size != 'poster'
+    raise "Invalid image type: #{type}" if type != 'backdrop' && type != 'poster'
 
     # Find the nearest size if it isn't original.
     if size != 'original'
