@@ -32,9 +32,9 @@ class Tmdb < WebClient
 
     # Find the nearest size if it isn't original.
     if size != 'original'
-      sizes = Rails.cache.read("tmdb:config:#{type}_sizes")
-      raise "Cannot find preprocessed #{type} sizes." if sizes.nil?
-      size = closest_in(sizes, size)
+      config = Rails.cache.read("tmdb:config")
+      raise "Cannot find preprocessed #{type} sizes." if config['preprocessed_sizes'][type].nil?
+      size = closest_in(config['preprocessed_sizes'][type], size)
       size = "w#{size}"
     end
 
