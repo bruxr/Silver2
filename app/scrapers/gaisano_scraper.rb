@@ -204,7 +204,14 @@ class GaisanoScraper < Scraper
               elsif line =~ /P[0-9]+(?:\/P?[0-9]+)?/
                 line.match(/P[0-9]+(?:\/P?[0-9]+)?/) do |match|
                   prices = match[0].gsub('P', '').split('/').map(&:to_i)
-                  prices = prices[0] if prices.count == 1
+                  if prices.count == 2
+                    prices = { 'Lower Deck' => prices.min, 'Upper Deck' => prices.max }
+                  elsif prices.count == 1
+                    prices = prices[0]
+                  else
+                    x = prices.join(',')
+                    raise "Encountered multiple prices for a cinema. #{x}"
+                  end
                 end
 
               # Find the screening times
