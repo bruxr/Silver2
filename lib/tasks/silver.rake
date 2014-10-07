@@ -10,7 +10,7 @@ namespace :silver do
   end
 
   desc "Grabs movie schedules from sources"
-  task :fetch do
+  task :fetch => :environment do
     GetCinemaSchedulesJob.perform_async
     puts("Enqueued job for fetching cinema schedules.")
   end
