@@ -13,12 +13,12 @@ class Tmdb < WebClient
 
   # Convenience method for get_image for movie posters.
   def get_poster(file, size = 'original', secure = true)
-    get_image('poster', size, secure)
+    get_image('poster', file, size, secure)
   end
 
   # Convenience method for get_image for backdrops.
   def get_backdrop(file, size = 'original', secure = true)
-    get_image('backdrop', size, secure)
+    get_image('backdrop', file, size, secure)
   end
 
   # Returns the full URL to a image given a size & type.
