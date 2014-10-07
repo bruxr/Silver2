@@ -186,7 +186,7 @@ class GaisanoScraper < Scraper
           movies.each do |lines|
 
             sked = {}
-            sked[:title] = lines[0] # Title on the first line
+            sked[:name] = lines[0] # Title on the first line
             sked[:schedules] = []
 
             # Find for stuff in the lines
