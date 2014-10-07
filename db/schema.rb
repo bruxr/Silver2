@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20140908072604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "cinemas", force: true do |t|
     t.string   "name",                                                    null: false
@@ -42,13 +43,13 @@ ActiveRecord::Schema.define(version: 20140908072604) do
     t.datetime "updated_at"
   end
 
-  create_table "schedules", id: false, force: true do |t|
+  create_table "schedules", force: true do |t|
     t.integer  "movie_id",                      null: false
     t.integer  "cinema_id",                     null: false
     t.datetime "screening_time",                null: false
     t.string   "format",         default: "2D", null: false
     t.text     "ticket_url"
-    t.float    "ticket_price"
+    t.hstore   "ticket_price"
     t.string   "room",                          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
