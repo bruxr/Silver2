@@ -11,13 +11,6 @@ class Tmdb < WebClient
     @api_key = ENV['TMDB_API_KEY']
   end
 
-  # Builds image URLs for backdrops & posters.
-  def image(image, size = 'original')
-
-    @@images_base_url << "/#{size}#{image}"
-
-  end
-
   # Convenience method for get_image for movie posters.
   def get_poster(file, size = 'original', secure = true)
     get_image('poster', size, secure)
