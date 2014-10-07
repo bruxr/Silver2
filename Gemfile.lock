@@ -47,6 +47,9 @@ GEM
       handlebars-source
     bcrypt (3.1.7)
     builder (3.2.2)
+    ceaser-easing (0.7)
+      compass (>= 0.12.2)
+      rake
     celluloid (0.15.2)
       timers (~> 1.1.0)
     chronic (0.10.2)
@@ -223,6 +226,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   awesome_print
+  ceaser-easing
   compass-rails
   devise
   dotenv-rails

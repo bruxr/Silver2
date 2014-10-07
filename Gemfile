@@ -59,6 +59,7 @@ gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
 gem 'autoprefixer-rails'
 gem 'compass-rails'
 gem 'ember-rails'
+gem 'ceaser-easing'
 
 # Dev gems
 gem 'awesome_print', group: [:development, :test]

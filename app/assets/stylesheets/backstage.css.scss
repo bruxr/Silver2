@@ -11,6 +11,7 @@ $default-font-color: #444;
 @import "media-queries";
 @import "utils";
 @import "ultra-icons";
+@import "ceaser-easing";
 
 // Layout
 html, body {
@@ -27,6 +28,15 @@ html, body {
 img { // Make images responsive by default
   height: auto;
   max-width: 100%;
+}
+
+img.fi {
+  //opacity: 0;
+  @include transition(opacity 200ms ease-out)
+}
+
+img.fi-loaded {
+  opacity: 1;
 }
 
 // Typography
