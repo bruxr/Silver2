@@ -171,17 +171,6 @@ class GaisanoScraper < Scraper
     end
 
     # Creates array of schedules from the preprocessed blocks.
-    #
-    # Note that this method expects a movie "block" to
-    # follow this format/line order (as of oct 6 2014).
-    # This may change but I can't
-    # find a way on how to be more flexible on this:
-    # <MOVIE TITLE>
-    # <CAST 1>|<CAST 2>|<CAST N>
-    # <MTRCB RATING>-<GENRE 1>|<GENRE 2>|<GENRE N>
-    # <TIME 1>|<TIME 2>|<TIME N>
-    # P<PRICE LOWER DECK>/<PRICE UPPER DECK (can be missing)>
-    #
     # TODO: Detect 3D movies
     def schedulize(blocks, dates)
 
@@ -198,27 +187,32 @@ class GaisanoScraper < Scraper
 
             sked = {}
             sked[:title] = lines[0] # Title on the first line
-            
-            # Find the line containing the MTRCB rating
+            sked[:schedules] = []
+
+            # Find for stuff in the lines
             lines.each do |line|
+
+              # Find the line containing the MTRCB rating
               if line =~ /G|GP|PG13|R13|R16|R18\s?-\s?/
                 line.match(/(G|GP|PG13|R13|R16|R18)\s?-\s?)/) do |match|
                   sked[:rating] = normalize_mtrcb_rating(match[1])
                 end
+
+              # Find the prices
+              elsif line =~ /P[0-9]+(?:\/P?[0-9]+)?/
+                line.match(/P[0-9]+(?:\/P?[0-9]+)?/) do |match|
+                  prices = match[0].gsub('P', '').split('/').map(&:to_i)
+                  prices = prices[0] if prices.count == 1
+                end
+
+              # Find the screening times
+              elsif line =~ /([0-9]{1,2}\:[0-9]{2}\|?)+/
+                times = extract_screening_times[line, dates] # Assumes that all screening times are in 1 line
               end
+
             end
 
-            # Ticket Price
-            if lines[4].nil?
-              prices = nil
-            else
-              prices = lines[4].gsub('P', '').split('/').map(&:to_i)
-              prices = prices[0] if prices.count == 1 # Flatten price array if contains only 1 price
-            end
-
-            # Screening times
-            sked[:schedules] = []
-            times = extract_screening_times(lines[3], dates)
+            # Process the screening times to schedule hashes
             times.each do |time|
               sked[:schedules] << {
                 cinema_name: cinema.downcase.capitalize,
