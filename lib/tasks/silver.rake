@@ -11,26 +11,14 @@ namespace :silver do
 
   desc "Grabs movie schedules from sources"
   task :fetch => :environment do
-    cinemas = Cinema.where("fetcher != ''")
-    puts("Fetching schedules for #{cinemas.count} cinema/s...")
-    cinemas.all.each do |cinema|
-      puts("  - #{cinema.name}")
-      Quasar::ScheduleFetcher.new(cinema).perform
-    end
+    GetCinemaSchedulesJob.perform_async
+    puts("Enqueued job for fetching cinema schedules.")
   end
 
   desc "Updates movies that contains incomplete information"
   task :update => :environment do
-    movies = Movie.where(status: 'incomplete').all
-    puts("Updating #{movies.count} movie/s...")
-    movies.each do |movie|
-      puts("  - #{movie.title}")
-      begin
-        Quasar::MovieUpdater.new(movie).perform
-      rescue => error
-        puts("    > Error: #{error.message}")
-      end
-    end
+    UpdateIncompleteMoviesJob.perform_async
+    puts("Enqueued job for updating movies with incomplete info.")
   end
 
   desc "Adds a new user that can access the backstage"

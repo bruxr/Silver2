@@ -1,20 +1,19 @@
-# Updates Movie scores/ratings from it's different sources.
+# Updates Movie scores/ratings by enqueuing UpdateSingleMovieScores jobs
+# for every "now showing" movies.
 # Runs every 6 hours.
 class UpdateMovieScoresJob
   include Sidekiq::Worker
-  include Sidetiq::Schedulable
-
-  recurrence { daily.hour_of_day(6, 12, 18, 24) }
 
   def perform
 
-    movies = Movie.now_showing.includes(:sources).all
+    movies = Movie.now_showing.select('id').distinct.all
+    count = 0
     movies.each do |movie|
-      updater = Quasar::ScoreUpdater.new(movie)
-      updater.perform
+      UpdateSingleMovieScoresJob.perform_async(movie.id)
+      count += 0
     end
 
-    Rails.logger.info("Movie scores successfully updated. #{movies.count} items processed.")
+    Rails.logger.info("Enqueueing #{count} UpdateSingleMovieScoresJob for updating scores/ratings.")
 
   end
 

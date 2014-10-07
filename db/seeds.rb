@@ -18,13 +18,15 @@ Cinema.create([
   name: 'Gaisano Mall of Davao',
   latitude: 7.077843,
   longitude: 125.614033,
-  status: 'active'
+  status: 'active',
+  fetcher: 'GaisanoMall'
 },
 {
   name: 'Gaisano Grand Mall',
   latitude: 7.012950,
   longitude: 125.490528,
-  status: 'active'
+  status: 'active',
+  fetcher: 'GaisanoGrand'
 },
 {
   name: 'NCCC Mall',
