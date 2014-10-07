@@ -320,19 +320,15 @@ header {
   position: relative;
 
   h2 {
-    color: #484848;
-    font-family: "Helvetica Neue", Lato, Arial, sans-serif;
+    color: $midnight;
     font-size: 2.5em;
-    font-weight: 300;
-    margin: 0;
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin: 0 0 5px 0;
   }
 
-  small {
-    bottom: 20px;
+  small, span {
     color: #ccc;
-    font-size: .9em;
-    position: absolute;
-    right: 0;
   }
 
 }
