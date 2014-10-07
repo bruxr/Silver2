@@ -19,10 +19,10 @@ class Schedule < ActiveRecord::Base
     message: "is not a valid URL."
   }
 
-  validates :ticket_price, numericality: {
-    greater_than_or_equal_to: 0,
-    allow_nil: true
-  }
+  #validates :ticket_price, numericality: {
+  #  greater_than_or_equal_to: 0,
+  #  allow_nil: true
+  #}
 
   # Convenience function for
   # checking if a schedule already exists
