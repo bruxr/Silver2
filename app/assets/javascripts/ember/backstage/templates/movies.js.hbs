@@ -9,8 +9,12 @@
     
     {{#each}}
     <div class="media movie">
+      {{#if poster}}
       <div class="media-thumbnail">
-        <a href="#"><img {{bind-attr src=poster_url}} {{bind-attr alt=title}}></a>
+      {{else}}
+      <div class="media-thumbnail no-thumbnail">
+      {{/if}}
+        <a href="#">{{#if poster}}<img {{bind-attr src=poster_url}} {{bind-attr alt=title}}>{{/if}}</a>
       </div>
       <a href="#" class="media-title">{{title}}</a>
       23 scheduled<br>

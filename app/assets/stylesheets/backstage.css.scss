@@ -452,17 +452,33 @@ header {
 }
 
 .media {
-  margin-bottom: 20px;
-  margin-right: 20px;
-  width: 23%;
+  margin-bottom: 5%;
+  margin-right: 5%;
+  width: 15%;
 }
 
 // Movie media objects
 .movie.media {
 
   .media-thumbnail {
-    background-color: #95a5a6;
+    height: 230px;
     overflow: hidden;
+
+    &.no-thumbnail {
+      background-color: #95a5a6;
+
+      a {
+        background: image-url("logo-white.png") center no-repeat;
+        background-size: 50%;
+        opacity: .25;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
   }
 
   img {
