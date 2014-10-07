@@ -199,9 +199,14 @@ class GaisanoScraper < Scraper
             sked = {}
             sked[:title] = lines[0] # Title on the first line
             
-            # MTRCB rating
-            sked[:rating] = lines[2].split('-').map(&:strip)[0]
-            sked[:rating] = normalize_mtrcb_rating(sked[:rating])
+            # Find the line containing the MTRCB rating
+            lines.each do |line|
+              if line =~ /G|GP|PG13|R13|R16|R18\s?-\s?/
+                line.match(/(G|GP|PG13|R13|R16|R18)\s?-\s?)/) do |match|
+                  sked[:rating] = normalize_mtrcb_rating(match[1])
+                end
+              end
+            end
 
             # Ticket Price
             if lines[4].nil?
