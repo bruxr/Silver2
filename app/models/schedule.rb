@@ -19,10 +19,10 @@ class Schedule < ActiveRecord::Base
     message: "is not a valid URL."
   }
 
-  validates :ticket_price, numericality: {
-    greater_than_or_equal_to: 0,
-    allow_nil: true
-  }
+  #validates :ticket_price, numericality: {
+  #  greater_than_or_equal_to: 0,
+  #  allow_nil: true
+  #}
 
   # Convenience function for
   # checking if a schedule already exists
@@ -48,6 +48,7 @@ class Schedule < ActiveRecord::Base
   def self.initialize_if_inexistent(movie, cinema, time, room, format: '2D', ticket_url: '', price: 0)
 
     unless Schedule.existing? movie, cinema, time, room
+      price = { 'all' => price } unless price.instance_of? Hash
       Schedule.new(movie: movie, cinema: cinema, screening_time: time, room: room, format: format, ticket_url: ticket_url, ticket_price: price)
     end
 
