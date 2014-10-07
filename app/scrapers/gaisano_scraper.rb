@@ -244,6 +244,9 @@ class GaisanoScraper < Scraper
       skeds = []
       times = line.split('|')
 
+      # If dates is single, convert it to an array
+      dates = [dates] if dates.instance_of? Date
+
       # Convert each time to Time objects
       times.each do |time|
 
