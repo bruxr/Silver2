@@ -194,7 +194,7 @@ class GaisanoScraper < Scraper
 
               # Find the line containing the MTRCB rating
               if line =~ /G|GP|PG13|R13|R16|R18\s?-\s?/
-                line.match(/(G|GP|PG13|R13|R16|R18)\s?-\s?)/) do |match|
+                line.match(/(G|GP|PG13|R13|R16|R18)\s?-\s?/) do |match|
                   sked[:rating] = normalize_mtrcb_rating(match[1])
                 end
 
