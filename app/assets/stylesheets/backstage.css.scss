@@ -31,7 +31,7 @@ img { // Make images responsive by default
 }
 
 img.fi {
-  //opacity: 0;
+  opacity: 0;
   @include transition(opacity 200ms ease-out)
 }
 
