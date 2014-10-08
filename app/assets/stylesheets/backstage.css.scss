@@ -486,7 +486,7 @@ header {
 .movie.media {
 
   .media-thumbnail {
-    height: 230px;
+    height: 215px;
     overflow: hidden;
 
     &.no-thumbnail {
@@ -508,6 +508,7 @@ header {
 
   img {
     display: block;
+    height: 100%;
   }
 
 }
