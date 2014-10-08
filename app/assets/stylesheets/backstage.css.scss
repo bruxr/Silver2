@@ -468,6 +468,15 @@ header {
 
 .media-thumbnail {
   margin-bottom: 10px;
+
+  a {
+    opacity: 1;
+    @include transition(opacity 600ms ease);
+  }
+
+  a:hover {
+    opacity: .75;
+  }
 }
 
 .media-title {
