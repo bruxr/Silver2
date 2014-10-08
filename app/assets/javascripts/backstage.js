@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require common/fadein-images
 //= require handlebars
 //= require ember
 //= require ember-data
