@@ -1,18 +1,14 @@
-# Exposes the every class method to Job classes.
-# The every method sets the Job's run schedule
+# Exposes the every class method to Job classes,
+# this method sets the Job's run schedule.
 module Scheduler::Schedulable
 
-  def every(duration)
-    @every = duration
-    Scheduler::Manager.instance.register(self)
-  end
-
-  def runs_every
-    @every
-  end
-
-  def next_run
-    Time.now + @every
+  def every(duration=nil)
+    if duration
+      @every = duration
+      Scheduler::Manager.instance.register(self) # We need to tell the manager since discovery doesn't work.
+    else
+      @every
+    end
   end
 
 end
