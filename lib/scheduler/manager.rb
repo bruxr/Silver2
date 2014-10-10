@@ -26,16 +26,16 @@ module Scheduler
     end
 
     def enqueue(job)
-      @enqueued[job.to_s] = job.perform_at(job.next_run)
+      job.perform_at(job.next_run)
     end
 
     def tick
       ap @enqueued
       # Check for finished jobs and then check if they succeeded.
       # If they do, re enqueue them with the next run time.
-      done_jobs.each do |job|
-        enqueue(job['class']) if registered?(job)
-      end
+      #done_jobs.each do |job|
+      #  enqueue(job['class']) if registered?(job)
+      #end
     end
 
     def done_jobs
