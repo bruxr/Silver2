@@ -62,3 +62,4 @@ gem 'ember-rails'
 
 # Dev gems
 gem 'awesome_print', group: [:development, :test]
+gem 'colorize', group: [:development, :test]
