@@ -1,13 +1,17 @@
+# This Sidekiq server middleware schedules again
+# recurring jobs.
 module Scheduler
   class Middleware
 
     def call(worker, msg, queue)
       yield
     rescue Exception => e
-      Scheduler::Manager.instance.retry(msg['class']) if msg['retry'] == true
       raise e
     else
-      Scheduler::Manager.instance.finished(msg['class'])
+      klass = msg['class'].constantize
+      if klass.is_a? Scheduler::Schedulable
+        klass.perform_in(klass.every)
+      end
     end
 
   end
