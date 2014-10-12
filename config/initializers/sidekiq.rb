@@ -3,6 +3,7 @@ Sidekiq.configure_server do |config|
 
   config.server_middleware do |chain|
     chain.add(Sidekiq::Throttler, storage: :redis)
+    chain.add(Scheduler::Middleware)
   end
 
 end
@@ -18,7 +19,7 @@ if Sidekiq.server?
       rescue => err
         Rails.logger.error("#{err.message}") # Eew, log then continue the party
       end
-      sleep 10
+      sleep 1
     end
   end
 

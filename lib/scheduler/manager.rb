@@ -6,44 +6,69 @@ module Scheduler
   # to run a job.
   #
   # Check the notes on scheduler.rb for more info
+  #
+  # Job format:
+  # {
+  #   job: job class
+  #   next_run: next run time
+  #   last_run: last run time
+  #   last_status: status of last job run. can be "OK", "FAILED", "RETRY"
+  #   execution_time: number of secs a job used
+  # }
   class Manager
     include Singleton
 
     def initialize
-      @jobs = []
-      @schedule = {}
+      @jobs = {}
+      @queued = {}
     end
 
     def register(job)
-      unless registered?(job)
-        @jobs << job.to_s
-        enqueue(job)
-      end
-    end
-
-    def registered?(job)
-      @jobs.include?(job)
-    end
-
-    def enqueue(job)
-      job.perform_at(job.next_run)
+      @jobs[job.to_s] = {
+        job: job,
+        next_run: (Time.now + job.every).to_f
+      } if @jobs[job.to_s].nil?
+      puts "registered #{job.to_s} job, next run is #{Time.now + job.every}".green
     end
 
     def tick
-      ap @enqueued
-      # Check for finished jobs and then check if they succeeded.
-      # If they do, re enqueue them with the next run time.
-      #done_jobs.each do |job|
-      #  enqueue(job['class']) if registered?(job)
-      #end
+      now = Time.now.to_f
+      @jobs.each do |job_name, job|
+        perform_job(job_name) if job[:next_run] <= now && !enqueued?(job_name)
+      end
     end
 
-    def done_jobs
-      Sidekiq.redis do |redis|
-        redis.zrange('schedule', 0, 1).each do |j|
-          return JSON.parse(j) if j
-        end
-      end
+    def perform_job(job)
+      now = Time.now
+      jid = @jobs[job][:job].perform_async
+      @jobs[job][:jid] = jid
+      @jobs[job][:last_run] = now
+      @queued[job] = jid
+      puts "enqueued #{job[:job].to_s} (#{jid})".green
+    end
+
+    def enqueued?(job)
+      !@queued[job].nil?
+    end
+
+    # Only used by the server middleware to let the manager
+    # know that a job has finished.
+    def finished(job)
+      now = Time.now
+      @jobs[job][:last_status] = 'OK'
+      @jobs[job][:execution_time] = now - @jobs[job][:last_run]
+      @jobs[job][:next_run] = now + @jobs[job][:job].every
+      @queued.delete(job)
+      puts "#{job} finished.".green
+    end
+
+    # Only used by the server middleware to let the manager
+    # know that a job is in the retry queue
+    def retry(job)
+      now = Time.now
+      @jobs[job][:last_status] = 'RETRY'
+      @jobs[job][:execution_time] = now - @jobs[job][:last_run]
+      puts "#{job} failed".red
     end
 
   end
