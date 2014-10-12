@@ -2,6 +2,8 @@
 # this method sets the Job's run schedule.
 module Scheduler::Schedulable
 
+  # Registers the job every call to this method.
+  # if possible, use job discovery.
   def every(duration=nil)
     if duration
       @every = duration
