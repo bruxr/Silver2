@@ -6,15 +6,6 @@ module Scheduler
   # to run a job.
   #
   # Check the notes on scheduler.rb for more info
-  #
-  # Job format:
-  # {
-  #   job: job class
-  #   next_run: next run time
-  #   last_run: last run time
-  #   last_status: status of last job run. can be "OK", "FAILED", "RETRY"
-  #   execution_time: number of secs a job used
-  # }
   class Manager
     include Singleton
     include Scheduler::Storage
