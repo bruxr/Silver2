@@ -9,7 +9,6 @@ module Scheduler
 
       app.get('/scheduler') do
         @jobs = Scheduler::Manager.instance.jobs
-        ap @jobs
         erb(File.read(File.join(VIEWS, 'scheduler.erb')))
       end
 

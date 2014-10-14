@@ -49,6 +49,43 @@ module Scheduler
       scheduled
     end
 
+    # Returns an array of recurring jobs by querying
+    # Sidekiq's queues.
+    def jobs
+      jobs = []
+      Sidekiq::ScheduledSet.new.each do |j|
+        c = j.klass.constantize
+        if c.is_a?(Scheduler::Schedulable)
+          jobs << {
+            'name'    => j.klass,
+            'klass'   => c,
+            'status'  => :SCHEDULED
+          }
+        end
+      end
+      Sidekiq::Queue.new.each do |j|
+        c = j.klass.constantize
+        if c.is_a?(Scheduler::Schedulable)
+          jobs << {
+            'name'    => j.klass,
+            'klass'   => c,
+            'status'  => :QUEUED
+          }
+        end
+      end
+      Sidekiq::RetrySet.new.each do |j|
+        c = j.klass.constantize
+        if c.is_a?(Scheduler::Schedulable)
+          jobs << {
+            'name'    => j.klass,
+            'klass'   => c,
+            'status'  => :RETRY
+          }
+        end
+      end
+      jobs
+    end
+
   end
 
 end
