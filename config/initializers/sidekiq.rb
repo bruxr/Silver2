@@ -8,6 +8,6 @@ Sidekiq.configure_server do |config|
 
 end
 
-if Sidekiq.server
+if Sidekiq.server?
   Scheduler::Manager.instance.load_jobs
 end
