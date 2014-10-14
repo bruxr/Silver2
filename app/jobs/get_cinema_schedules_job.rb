@@ -3,6 +3,9 @@
 # Runs every 6 am, every day.
 class GetCinemaSchedulesJob
   include Sidekiq::Worker
+  extend Scheduler::Schedulable
+
+  every '6:00 am every day'
 
   def perform()
 
