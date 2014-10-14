@@ -7,3 +7,7 @@ Sidekiq.configure_server do |config|
   end
 
 end
+
+if Sidekiq.server
+  Scheduler::Manager.instance.load_jobs
+end

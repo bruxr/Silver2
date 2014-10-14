@@ -23,8 +23,22 @@ module Scheduler
       
     end
 
+    # Loads jobs in app/jobs and schedules them if they aren't scheduled yet.
+    def load_jobs
+      Dir["#{Rails.root}/app/jobs/*.rb"].each do |file|
+        require_dependency file
+      end
+      ObjectSpace.each_object(Scheduler::Schedulable) do |klass|
+        klass.perform_at(klass.next_run) unless scheduled?(klass)
+      end
+    end
+
     def schedule(klass)
       klass.perform_in(klass.every)
+    end
+
+    def scheduled?(klass)
+
     end
 
   end

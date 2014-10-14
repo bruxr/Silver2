@@ -6,7 +6,6 @@ module Scheduler::Schedulable
     if duration
       raise "#{self} has already set a schedule." unless @every.nil?
       @every = duration
-      Scheduler::Manager.instance.schedule(self)
     else
       @every
     end
