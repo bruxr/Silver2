@@ -5,6 +5,9 @@
 # This job runs every 12:00 midnight.
 class UpdateStatsJob
   include Sidekiq::Worker
+  extend Scheduler::Schedulable
+
+  every 1.day
 
   def perform
 

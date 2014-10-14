@@ -3,6 +3,9 @@
 # Runs every 6 hours.
 class UpdateMovieScoresJob
   include Sidekiq::Worker
+  extend Scheduler::Schedulable
+
+  every 6.hours
 
   def perform
 

@@ -2,6 +2,9 @@
 # backdrop and movie poster image URLs.
 class CacheTmdbConfigJob
   include Sidekiq::Worker
+  extend Scheduler::Schedulable
+
+  every 1.day
 
   def perform
 
