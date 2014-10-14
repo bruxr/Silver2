@@ -9,9 +9,7 @@ module Scheduler
       raise e
     else
       klass = msg['class'].constantize
-      if klass.is_a? Scheduler::Schedulable
-        klass.perform_in(klass.every)
-      end
+      Scheduler::Manager.instance.schedule(klass) if klass.is_a?(Scheduler::Schedulable)
     end
 
   end

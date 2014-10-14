@@ -29,12 +29,13 @@ module Scheduler
         require_dependency file
       end
       ObjectSpace.each_object(Scheduler::Schedulable) do |klass|
-        klass.perform_at(klass.next_run) unless scheduled?(klass)
+        schedule(klass) unless scheduled?(klass)
       end
     end
 
+    # Schedules a job for a run later
     def schedule(klass)
-      klass.perform_in(klass.every)
+      klass.perform_at(klass.next_run)
     end
 
     # Returns TRUE if klass is already scheduled.
