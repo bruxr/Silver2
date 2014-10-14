@@ -11,4 +11,9 @@ module Scheduler::Schedulable
     end
   end
 
+  # Returns the next run time for this job
+  def next_run
+    Time.now.getutc + @every
+  end
+
 end
