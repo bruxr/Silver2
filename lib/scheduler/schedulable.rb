@@ -2,6 +2,7 @@
 # this method sets the Job's run schedule.
 module Scheduler::Schedulable
 
+  # Sets/gets the duration when the job runs
   def every(duration=nil)
     if duration
       raise "#{self} has already set a schedule." unless @every.nil?
