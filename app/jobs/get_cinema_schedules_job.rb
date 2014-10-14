@@ -5,7 +5,7 @@ class GetCinemaSchedulesJob
   include Sidekiq::Worker
   extend Scheduler::Schedulable
 
-  every '6:00 am every day'
+  every '9:00 am every day'
 
   def perform()
 
