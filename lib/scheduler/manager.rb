@@ -37,8 +37,24 @@ module Scheduler
       klass.perform_in(klass.every)
     end
 
+    # Returns TRUE if klass is already scheduled.
+    # This is really expensive! So use only when you really
+    # need to know if a klass is scheduled
     def scheduled?(klass)
-
+      scheduled = false
+      klass = klass.to_s
+      Sidekiq::ScheduledSet.new.each do |j|
+        scheduled = true if j.klass == klass
+      end
+      return scheduled if scheduled
+      Sidekiq::Queue.new.each do |j|
+        scheduled = true if j.klass == klass
+      end
+      return scheduled if scheduled
+      Sidekiq::RetrySet.new.each do |j|
+        scheduled = true if j.klass == klass
+      end
+      scheduled
     end
 
   end
