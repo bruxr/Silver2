@@ -223,6 +223,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   awesome_print
+  ceaser-easing
   colorize
   compass-rails
   devise
