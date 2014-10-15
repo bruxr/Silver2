@@ -223,11 +223,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   awesome_print
-<<<<<<< HEAD
-  ceaser-easing
-=======
   colorize
->>>>>>> lightweight-scheduled-jobs
   compass-rails
   devise
   dotenv-rails
