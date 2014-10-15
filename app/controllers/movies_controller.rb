@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
+    @movies = Movie.now_showing.all
     respond_to do |format|
       format.json { render json: { movie: @movies.as_json(root: false, methods: [:poster_url, :schedules_count, :schedules_cinema_count]) } }
     end
