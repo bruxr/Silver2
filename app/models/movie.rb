@@ -195,4 +195,14 @@ class Movie < ActiveRecord::Base
     Tmdb.new.get_poster(self.poster, width)
   end
 
+  # Returns the total number of schedules for this movie
+  def schedules_count
+    schedules.count
+  end
+
+  # Returns the total number of cinemas screening this movie
+  def schedules_cinema_count
+    schedules.scope.distinct.count(:cinema_id)
+  end
+
 end
