@@ -53,7 +53,7 @@ gem 'sidekiq-throttler'
 gem 'whenever', require: false
 
 # Error tracking
-gem 'airbrake'
+gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
 
 # Frontend stuff
 gem 'autoprefixer-rails'
