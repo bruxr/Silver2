@@ -464,26 +464,28 @@ header {
   margin-bottom: 5%;
   margin-right: 5%;
   width: 15%;
-}
 
-.media-thumbnail {
-  margin-bottom: 10px;
-
-  a {
+  a .media-thumbnail {
     opacity: 1;
     @include transition(opacity 600ms ease);
   }
 
-  a:hover {
-    opacity: .75;
+  a:hover .media-thumbnail {
+    opacity: .75
   }
+}
+
+.media-thumbnail {
+  margin-bottom: 10px;
 }
 
 .media-title {
   color: $asphalt_light;
   display: block;
+  font-size: 1em;
   font-weight: bold;
   margin-bottom: 5px;
+  margin-top: 0;
 }
 
 .media-info {
