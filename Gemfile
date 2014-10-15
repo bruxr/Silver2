@@ -50,7 +50,6 @@ gem 'dropbox-sdk'
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', require: false
 gem 'sidekiq-throttler'
-gem 'whenever', require: false
 
 # Error tracking
 gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
@@ -63,3 +62,4 @@ gem 'ceaser-easing'
 
 # Dev gems
 gem 'awesome_print', group: [:development, :test]
+gem 'colorize', group: [:development, :test]

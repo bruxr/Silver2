@@ -1,4 +1,6 @@
 require 'sidekiq/web'
+require_dependency 'scheduler/web'
+
 Rails.application.routes.draw do
   devise_for :users
   resources :schedules

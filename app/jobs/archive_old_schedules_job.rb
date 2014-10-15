@@ -2,6 +2,9 @@
 # inside Heroku's 10k rows limit.
 class ArchiveOldSchedulesJob
   include Sidekiq::Worker
+  extend Scheduler::Schedulable
+
+  every 5.days
 
   def perform()
 
