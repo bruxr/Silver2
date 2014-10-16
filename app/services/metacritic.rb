@@ -87,7 +87,7 @@ class Metacritic < WebClient
 
     details = {}
     details['title'] = result['name']
-    details['release-date'] = Date.parse(result['rlsdate'])
+    details['release-date'] = Date.parse(result['rlsdate']) unless result['rlsdate'].nil?
     details['genre'] = result['genre'].split("\n").map(&:strip).map(&:downcase)
     details['runtime'] = result['runtime'].gsub('min', '').to_i
     details['director'] = result['director']
