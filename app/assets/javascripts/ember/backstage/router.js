@@ -4,7 +4,9 @@ Silver.Router.reopen({
 });
 
 Silver.Router.map(function() {
-  this.resource('movies');
+  this.resource('movies', function() {
+    this.resource('movie', { path: '/:movie_id' });
+  });
   this.resource('cinemas');
   this.resource('schedules');
 });

@@ -15,3 +15,9 @@ Silver.MoviesRoute = Ember.Route.extend({
     return this.store.findQuery('movie', params);
   }
 });
+
+Silver.MovieRoute = Ember.Route.extend({
+  model: function(params) {
+    return this.store.find('movie', params.movie_id);
+  }
+});

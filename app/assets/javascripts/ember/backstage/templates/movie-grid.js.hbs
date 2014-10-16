@@ -1,8 +1,8 @@
 <div class="media-grid">
     
-  {{#each}}
+  {{#each movies}}
   <div class="media movie">
-    <a href="#">
+    {{#link-to 'movie' movie}}
       {{#if poster}}
       <div class="media-thumbnail">
       {{else}}
@@ -13,7 +13,7 @@
       <h6 class="media-title">{{title}}</h6>
       <span class="media-info">{{schedules_count}} scheduled
       {{#if schedules_count}}<br>{{schedules_cinema_count}} cinemas</span>{{/if}}
-    </a>
+    {{/link-to}}
   </div>
   {{/each}}
 
