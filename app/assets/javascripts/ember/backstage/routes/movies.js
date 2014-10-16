@@ -9,9 +9,8 @@ Silver.MoviesRoute = Ember.Route.extend({
     controller.set('model', movies);
   },
   model: function() {
-    //return this.store.findAll('movie', {type: 'now_showing'});
     return this.store.filter('movie', {filter: 'now-showing'}, function(movie) {
-      true // API does it for us
+      return true; // API does this for us.
     });
   }
 });
