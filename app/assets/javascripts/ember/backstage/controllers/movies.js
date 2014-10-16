@@ -1,3 +1,4 @@
-Silver.MovieController = Ember.ArrayController.extend({
-  
+Silver.MoviesController = Ember.ArrayController.extend({
+  queryParams: ['filter'],
+  filter: 'now-showing'
 });

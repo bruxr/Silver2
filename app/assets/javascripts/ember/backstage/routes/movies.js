@@ -5,12 +5,13 @@ Silver.IndexRoute = Ember.Route.extend({
 });
 
 Silver.MoviesRoute = Ember.Route.extend({
+  queryParams: {
+    filter: { refreshModel: true }
+  },
   setupController: function(controller, movies) {
     controller.set('model', movies);
   },
-  model: function() {
-    return this.store.filter('movie', {filter: 'now-showing'}, function(movie) {
-      return true; // API does this for us.
-    });
+  model: function(params) {
+    return this.store.findQuery('movie', params);
   }
 });

@@ -46,12 +46,12 @@ body {
 }
 
 a {
-  color: $blue;
+  color: $midnight;
   text-decoration: none;
 }
 
 a:hover {
-  color: darken($blue, 15%);
+  color: lighten($midnight, 15%);
 }
 
 // Forms
@@ -342,6 +342,45 @@ header {
 
   small, span {
     color: #ccc;
+  }
+
+  .sub {
+    display: flex;
+  }
+
+  .sub-menu {
+    width: 75%;
+
+    ul {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+
+      &:first-child {
+        margin-left: 10px;
+      }
+    }
+
+    a {
+      color: #888;
+      display: inline-block;
+    }
+
+    a.active {
+      color: $asphalt;
+      font-weight: bold;
+    }
+  }
+
+  .sub-right {
+    flex: 1;
+    text-align: right;
   }
 
 }
