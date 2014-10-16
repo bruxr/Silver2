@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   
   # Silver API
   # The frontend Quasar & backstage relies on this endpoint
-  namespace :api do
+  scope '/api' do
     resources :movies, :cinemas, :schedules
   end
 
