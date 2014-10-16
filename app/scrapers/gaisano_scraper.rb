@@ -60,11 +60,19 @@ class GaisanoScraper < Scraper
       response = JSON.parse(response)
 
       sked_post = nil
-      response['data'].each do |post|
-        next if post['message'].nil?
-        sked_post = post if post['message'] =~ /\ASKED FOR/
-      end
 
+      # Sked post is usually pinned as the first data
+      if response['data'].first['message'] =~ /\ASKED FOR/
+        sked_post = response['data'].first
+
+      # Otherwise search for it
+      else
+        response['data'].each do |post|
+          next if post['message'].nil?
+          sked_post = post if post['message'] =~ /\ASKED FOR/
+        end
+      end
+      
       Sanitize::fragment(sked_post['message'])
 
     end
@@ -186,7 +194,7 @@ class GaisanoScraper < Scraper
           movies.each do |lines|
 
             sked = {}
-            sked[:name] = lines[0] # Title on the first line
+            sked[:name] = lines[0].strip # Title on the first line
             sked[:schedules] = []
             times = []
             prices = nil
