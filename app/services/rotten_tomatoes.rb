@@ -58,7 +58,7 @@ class RottenTomatoes < WebClient
     details['release-date'] = Date.parse(result['release_dates']['theater']) unless result['release_dates']['theater'].nil?
     details['genre'] = result['genres']
     details['runtime'] = result['runtime'].to_i
-    details['director'] = result['abridged_directors'].first['name']
+    details['director'] = result['abridged_directors'].first['name'] unless result['abridged_directors'].nil?
     details['cast'] = []
     result['abridged_cast'].each do |cast|
       details['cast'] << cast['name']
