@@ -22,18 +22,13 @@ class MoviesController < ApplicationController
     limit = 25
 
     if params[:filter].nil? || params[:filter] == 'now-showing'
-      movies = Movie.now_showing.limit(limit).offset(offset).all
+      @movies = Movie.now_showing.limit(limit).offset(offset).all
     elsif params[:filter] == 'past' || params[:filter] == 'finished'
-      movies = Movie.past.limit(limit).offset(offset).all
+      @movies = Movie.past.limit(limit).offset(offset).all
     elsif params[:filter] == 'all'
-      movies = Movie.all.limit(limit).offset(offset).all
+      @movies = Movie.all.limit(limit).offset(offset).all
     else
       raise "Invalid movie filter #{params[:filter]}" unless params[:filter].nil?
-    end
-
-    methods = [:poster_url, :schedules_count, :schedules_cinema_count]
-    respond_to do |format|
-      format.json { render json: { movie: movies.as_json(root: false, methods: methods) } }
     end
 
   end
