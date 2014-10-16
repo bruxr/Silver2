@@ -1,16 +1,32 @@
+# Controller for the /api/movies resource.
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
 
-  # GET /movies
-  # GET /movies.json
+  # The /movies index route.
+  #
+  # Filtering:
+  # -> /movies.json?filter=now-showing
+  # The API supports filters that will return a subset of
+  # movies that fit the filter:
+  # now-showing      -> movies that has upcoming schedules (default)
+  # finished or past -> inverse of now-showing, movies without any upcoming skeds.
+  # all              -> all movies
+  #
+  # This API endpoint will only return a maximum of 25 movies, add an
+  # offset (/movies.json?offset=25) to paginate results.
   def index
-    
+
+    offset = 0
+    offset = params[:offset].to_i if params[:offset] =~ /\A\d+\Z/ && params[:offset] >= 0
+
+    limit = 25
+
     if params[:filter].nil? || params[:filter] == 'now-showing'
-      movies = Movie.now_showing.all
-    elsif params[:filter] == 'past'
-      movies = Movie.past.all
+      movies = Movie.now_showing.limit(limit).offset(offset).all
+    elsif params[:filter] == 'past' || params[:filter] == 'finished'
+      movies = Movie.past.limit(limit).offset(offset).all
     elsif params[:filter] == 'all'
-      movies = Movie.all
+      movies = Movie.all.limit(limit).offset(offset).all
     else
       raise "Invalid movie filter #{params[:filter]}" unless params[:filter].nil?
     end
