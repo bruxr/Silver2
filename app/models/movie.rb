@@ -29,12 +29,12 @@ class Movie < ActiveRecord::Base
   # Scope for finding movies that are still "now showing".
   # e.g. still has future schedules.
   def self.now_showing
-    joins(:schedules).where('schedules.screening_time > ?', Time.now)
+    joins(:schedules).where('schedules.screening_time > ?', Time.now).uniq
   end
 
   # Scope for finding movies that has passed (not showing anymore)
   def self.past
-    joins(:schedules).where('schedules.screening_time < ?', Time.now)
+    joins(:schedules).where('schedules.screening_time < ?', Time.now).uniq
   end
 
   # Scope for finding movies that contains incomplete details.
