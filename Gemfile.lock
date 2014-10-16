@@ -122,6 +122,8 @@ GEM
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.5)
+    rabl (0.11.0)
+      activesupport (>= 2.3.14)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -235,6 +237,7 @@ DEPENDENCIES
   jquery-rails
   nokogiri
   pg
+  rabl
   rails (= 4.1.5)
   redis-rails
   sanitize
