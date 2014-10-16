@@ -4,5 +4,6 @@ Silver.Movie = DS.Model.extend({
   poster: DS.attr('string'),
   poster_url: DS.attr('string'),
   schedules_count: DS.attr('number', {default_value: 0}),
-  schedules_cinema_count: DS.attr('number', {default_value: 0})
+  schedules_cinema_count: DS.attr('number', {default_value: 0}),
+  type: DS.attr('string')
 })

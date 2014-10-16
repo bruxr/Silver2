@@ -32,6 +32,11 @@ class Movie < ActiveRecord::Base
     joins(:schedules).where('schedules.screening_time > ?', Time.now)
   end
 
+  # Scope for finding movies that has passed (not showing anymore)
+  def self.past
+    joins(:schedules).where('schedules.screening_time < ?', Time.now)
+  end
+
   # Scope for finding movies that contains incomplete details.
   def self.incomplete
     where(status: 'incomplete')

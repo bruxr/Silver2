@@ -4,10 +4,22 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.now_showing.all
-    respond_to do |format|
-      format.json { render json: { movie: @movies.as_json(root: false, methods: [:poster_url, :schedules_count, :schedules_cinema_count]) } }
+    
+    if params[:filter].nil? || params[:filter] == 'now-showing'
+      movies = Movie.now_showing.all
+    elsif params[:filter] == 'past'
+      movies = Movie.past.all
+    elsif params[:filter] == 'all'
+      movies = Movie.all
+    else
+      raise "Invalid movie filter #{params[:filter]}" unless params[:filter].nil?
     end
+
+    methods = [:poster_url, :schedules_count, :schedules_cinema_count]
+    respond_to do |format|
+      format.json { render json: { movie: movies.as_json(root: false, methods: methods) } }
+    end
+
   end
 
   # GET /movies/1
