@@ -194,7 +194,7 @@ class GaisanoScraper < Scraper
           movies.each do |lines|
 
             sked = {}
-            sked[:name] = lines[0] # Title on the first line
+            sked[:name] = lines[0].strip # Title on the first line
             sked[:schedules] = []
             times = []
             prices = nil
