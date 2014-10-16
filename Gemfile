@@ -50,15 +50,16 @@ gem 'dropbox-sdk'
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', require: false
 gem 'sidekiq-throttler'
-gem 'whenever', require: false
 
 # Error tracking
-gem 'airbrake'
+gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
 
 # Frontend stuff
 gem 'autoprefixer-rails'
 gem 'compass-rails'
 gem 'ember-rails'
+gem 'ceaser-easing'
 
 # Dev gems
 gem 'awesome_print', group: [:development, :test]
+gem 'colorize', group: [:development, :test]

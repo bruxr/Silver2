@@ -32,6 +32,11 @@ class Movie < ActiveRecord::Base
     joins(:schedules).where('schedules.screening_time > ?', Time.now)
   end
 
+  # Scope for finding movies that has passed (not showing anymore)
+  def self.past
+    joins(:schedules).where('schedules.screening_time < ?', Time.now)
+  end
+
   # Scope for finding movies that contains incomplete details.
   def self.incomplete
     where(status: 'incomplete')
@@ -187,6 +192,26 @@ class Movie < ActiveRecord::Base
 
     self.status = 'ready' if is_ready
 
+  end
+
+  # Returns the complete movie poster URL with the provided width.
+  # If the width isn't supported by TMDB, it uses the highest & nearest width.
+  def poster_url(width = 350)
+    if self.poster =~ /http/
+      self.poster
+    else
+      Tmdb.new.get_poster(self.poster, width)
+    end
+  end
+
+  # Returns the total number of schedules for this movie
+  def schedules_count
+    schedules.count
+  end
+
+  # Returns the total number of cinemas screening this movie
+  def schedules_cinema_count
+    schedules.scope.distinct.count(:cinema_id)
   end
 
 end

@@ -29,4 +29,10 @@ class MovieTest < ActiveSupport::TestCase
     assert_equal('ready', movie.status)
   end
 
+  test 'should be able to fetch the best poster' do
+    movie = movies(:airforceone)
+    movie.sources.search
+    assert_not_nil(movie.poster_url)
+  end
+
 end

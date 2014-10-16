@@ -1,4 +1,6 @@
 $blue: #3498db;
+$asphalt: #34495e;
+$asphalt_light: lighten($asphalt, 5%);
 $midnight: #2c3e50;
 $green: #1abc9c;
 $default-font: "Lato", "Helvetica Neue", Arial, sans-serif;
@@ -9,6 +11,7 @@ $default-font-color: #444;
 @import "media-queries";
 @import "utils";
 @import "ultra-icons";
+@import "ceaser-easing";
 
 // Layout
 html, body {
@@ -25,6 +28,15 @@ html, body {
 img { // Make images responsive by default
   height: auto;
   max-width: 100%;
+}
+
+img.fi {
+  opacity: 0;
+  @include transition(opacity 200ms ease-out)
+}
+
+img.fi-loaded {
+  opacity: 1;
 }
 
 // Typography
@@ -51,6 +63,7 @@ input:focus {
 header {
   background: #fff;
   box-shadow: 0 3px 3px rgba(black, .13);
+  opacity: .98;
   position: fixed;
   top: 0;
   width: 100%;
@@ -316,23 +329,19 @@ header {
 .page-header {
   border-bottom: 1px solid #eee;
   margin-bottom: 30px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   position: relative;
 
   h2 {
-    color: #484848;
-    font-family: "Helvetica Neue", Lato, Arial, sans-serif;
+    color: $midnight;
     font-size: 2.5em;
-    font-weight: 300;
-    margin: 0;
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin: 0 0 10px 0;
   }
 
-  small {
-    bottom: 20px;
+  small, span {
     color: #ccc;
-    font-size: .9em;
-    position: absolute;
-    right: 0;
   }
 
 }
@@ -452,25 +461,65 @@ header {
 }
 
 .media {
-  flex-basis: 175px;
-  margin-bottom: 15px;
-  margin-right: 15px;
+  margin-bottom: 5%;
+  margin-right: 5%;
+  width: 15%;
 
-  &:nth-child(5n) {
-    margin-right: 0;
+  a .media-thumbnail {
+    opacity: 1;
+    @include transition(opacity 600ms ease);
   }
+
+  a:hover .media-thumbnail {
+    opacity: .75
+  }
+}
+
+.media-thumbnail {
+  margin-bottom: 10px;
+}
+
+.media-title {
+  color: $asphalt_light;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.media-info {
+  color: #999;
+  font-size: .9em;
 }
 
 // Movie media objects
 .movie.media {
 
   .media-thumbnail {
-    background-color: #95a5a6;
+    height: 215px;
     overflow: hidden;
+
+    &.no-thumbnail {
+      background-color: #95a5a6;
+
+      a {
+        background: image-url("logo-white.png") center no-repeat;
+        background-size: 50%;
+        opacity: .25;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
   }
 
   img {
     display: block;
+    height: 100%;
   }
 
 }

@@ -2,13 +2,13 @@
 # backdrop and movie poster image URLs.
 class CacheTmdbConfigJob
   include Sidekiq::Worker
+  extend Scheduler::Schedulable
+
+  every 1.day
 
   def perform
 
-    tmdb = Tmdb.new
-    config = tmdb.get_configuration
-    Rails.cache.write('tmdb:config', config, { expires_in: 30.days })
-
+    Tmdb.new.cache_configuration
     Rails.logger.info("Successfully cached TMDB config.")
 
   end

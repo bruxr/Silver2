@@ -6,5 +6,4 @@
 //= require ./ember/backstage/app
 //= require ./ember/backstage/router
 //= require_tree ./ember/models
-//= require_tree ./ember/backstage/routes
-//= require_tree ./ember/backstage/templates
+//= require_tree ./ember/backstage

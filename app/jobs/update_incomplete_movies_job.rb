@@ -3,6 +3,9 @@
 # Enqueues UpdateMovieJob's that will perform the update.
 class UpdateIncompleteMoviesJob
   include Sidekiq::Worker
+  extend Scheduler::Schedulable
+
+  every 12.hours
 
   def perform()
 

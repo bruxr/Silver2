@@ -62,6 +62,13 @@ class Schedule < ActiveRecord::Base
 
   end
 
+  # Scope for finding schedules that are coming up (future schedules)
+  def self.upcoming
+
+    where('screening_time >= ?', Time.now)
+
+  end
+
   # Archives old records to Dropbox.
   # Returns the total number of schedules archived.
   def self.archive_old_records

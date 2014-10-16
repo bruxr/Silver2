@@ -2,22 +2,9 @@
 
   <div class="page-header">
     <h2>Now Showing</h2>
-    <small>Listing 2 of 64 movies</small>
+    <span>Listing 2 of 64 movies</span>
   </div>
 
-  <div class="media-grid">
-    
-    {{#each}}
-    <div class="media movie">
-      <div class="media-thumbnail">
-        <a href="#"><img {{bind-attr src=poster}} {{bind-attr alt=title}}></a>
-      </div>
-      <a href="#" class="media-title">{{title}}</a>
-      23 scheduled<br>
-      5 cinemas
-    </div>
-    {{/each}}
-
-  </div>
+  {{view "movie-grid"}}
 
 </div>

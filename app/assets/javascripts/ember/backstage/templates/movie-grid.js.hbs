@@ -1,0 +1,20 @@
+<div class="media-grid">
+    
+  {{#each}}
+  <div class="media movie">
+    <a href="#">
+      {{#if poster}}
+      <div class="media-thumbnail">
+      {{else}}
+      <div class="media-thumbnail no-thumbnail">
+      {{/if}}
+        {{#if poster}}<img {{bind-attr src=poster_url}} {{bind-attr alt=title}} class="fi">{{/if}}
+      </div>
+      <h6 class="media-title">{{title}}</h6>
+      <span class="media-info">{{schedules_count}} scheduled
+      {{#if schedules_count}}<br>{{schedules_cinema_count}} cinemas</span>{{/if}}
+    </a>
+  </div>
+  {{/each}}
+
+  </div>

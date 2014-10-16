@@ -6,23 +6,75 @@
 class Tmdb < WebClient
 
   @@api_endpoint = 'https://api.themoviedb.org/3'
-  @@images_base_url = 'https://image.tmdb.org/t/p'
 
   def initialize
     @api_key = ENV['TMDB_API_KEY']
   end
 
-  # Builds image URLs for backdrops & posters.
-  def image(image, size = 'original')
+  # Convenience method for get_image for movie posters.
+  def get_poster(file, size = 'original', secure = true)
+    get_image('poster', file, size, secure)
+  end
 
-    @@images_base_url << "/#{size}#{image}"
+  # Convenience method for get_image for backdrops.
+  def get_backdrop(file, size = 'original', secure = true)
+    get_image('backdrop', file, size, secure)
+  end
 
+  # Returns the full URL to a image given a size & type.
+  # - size can either be original or any integer. get_image
+  #   will find the nearest size if it isn't supported by TMDB.
+  # - type can either be 'poster' or 'backdrop'
+  # - set secure to TRUE to return a HTTPS url
+  def get_image(type, file, size = 'original', secure = true)
+
+    raise "Invalid image type: #{type}" if type != 'backdrop' && type != 'poster'
+
+    # Find the nearest size if it isn't original.
+    if size != 'original'
+      config = Rails.cache.read("tmdb:config")
+      raise "Cannot find preprocessed sizes" if config['preprocessed_sizes'].nil?
+      raise "Cannot find preprocessed #{type} sizes." if config['preprocessed_sizes'][type].nil?
+      size = closest_in(config['preprocessed_sizes'][type], size)
+      size = "w#{size}"
+    end
+
+    # Determine the base URL
+    config = Rails.cache.read('tmdb:config')
+    if secure
+      base_url = config['images']['secure_base_url']
+    else
+      base_url = config['images']['base_url']
+    end
+
+    "#{base_url}#{size}#{file}"
+
+  end
+
+  # Caches TMDB configuration.
+  def cache_configuration(duration = 30.days)
+    Rails.cache.write('tmdb:config', get_configuration, { expires_in: duration })
   end
 
   # Returns TMDB configuration.
   def get_configuration
 
-    query('/configuration')
+    config = query('/configuration')
+
+    # Build an array of integer sizes without the "w" prefix
+    # These arrays are used for finding the nearest image size so
+    # we don't need to recreate those arrays everytime we generate
+    # an image URL.
+    config['preprocessed_sizes'] = {}
+    ['backdrop', 'poster'].each do |type|
+
+      config['preprocessed_sizes'][type] = config['images']["#{type}_sizes"].select { |i| true if i != 'original' }.map { |i|
+        i.gsub('w', '').to_i
+      }
+
+    end
+
+    config
 
   end
 
@@ -106,5 +158,13 @@ class Tmdb < WebClient
     JSON.parse(response)
 
   end
+
+  private
+
+    # Returns the number nearest to input from a set of numbers arr.
+    # Used by the image functions to return the nearest image size.
+    def closest_in(arr, input)
+      arr.min_by { |x| (x.to_f - input).abs }
+    end
 
 end
