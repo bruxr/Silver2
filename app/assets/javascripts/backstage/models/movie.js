@@ -1,5 +1,4 @@
 Backstage.Movie = DS.Model.extend({
-	id: 						 DS.attr('number'),
   title: 					 DS.attr('string'),
   slug: 					 DS.attr('string'),
 	overview: 			 DS.attr('string'),
