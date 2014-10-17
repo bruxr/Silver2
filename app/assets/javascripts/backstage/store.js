@@ -1,4 +1,4 @@
 // Let Ember know that our REST API is at /api
-Backstage.ApplicationAdapter = DS.RESTAdapter.extend({
+Backstage.ApplicationAdapter = DS.ActiveModelAdapter.extend({
 	namespace: 'api'
 });
