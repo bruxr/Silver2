@@ -1,0 +1,23 @@
+<div id="movies">
+
+  <div class="page-header">
+  
+    <h2>Movies</h2>
+    
+    <div class="sub">
+      <nav class="sub-menu">
+      Show: 
+      <ul>
+        <li>{{#link-to 'movies' (query-params filter="now-showing")}}Now Showing{{/link-to}}</li>
+        <li>{{#link-to 'movies' (query-params filter="past")}}Finished{{/link-to}}</li>
+        <li>{{#link-to 'movies' (query-params filter="all")}}All{{/link-to}}</li>
+      </ul>
+      </nav>
+      <div class="sub-right"><span>64 movies total</span></div>
+    </div>
+
+  </div>
+
+  {{view "movie-grid"}}
+
+</div>
