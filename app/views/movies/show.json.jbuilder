@@ -1,0 +1,1 @@
+json.(@movie, :id, :title, :slug, :overview, :runtime, :aggregate_score, :trailer, :mtrcb_rating)
