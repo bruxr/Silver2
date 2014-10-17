@@ -1,1 +1,3 @@
-json.(@movie, :id, :title, :slug, :overview, :runtime, :aggregate_score, :trailer, :mtrcb_rating)
+json.movie do |movie|
+  json.partial! 'movies/movie', movie: @movie
+end
