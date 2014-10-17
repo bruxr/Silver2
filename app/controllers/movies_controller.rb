@@ -1,6 +1,6 @@
 # Controller for the /api/movies resource.
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie, only: [:show, :update, :destroy]
 
   # The /movies index route.
   #
@@ -36,15 +36,6 @@ class MoviesController < ApplicationController
   # The movies/<id> route.
   # Returns information about a single movie.
   def show
-  end
-
-  # GET /movies/new
-  def new
-    @movie = Movie.new
-  end
-
-  # GET /movies/1/edit
-  def edit
   end
 
   # POST /movies
