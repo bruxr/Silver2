@@ -28,7 +28,7 @@ class MoviesController < ApplicationController
     elsif params[:filter] == 'all'
       @movies = Movie.all.limit(limit).offset(offset).all
     else
-      raise "Invalid movie filter #{params[:filter]}" unless params[:filter].nil?
+      raise "Invalid movie filter #{params[:filter]}"
     end
 
   end
