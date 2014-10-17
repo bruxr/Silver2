@@ -33,8 +33,8 @@ class MoviesController < ApplicationController
 
   end
 
-  # GET /movies/1
-  # GET /movies/1.json
+  # The movies/<id> route.
+  # Returns information about a single movie.
   def show
   end
 
