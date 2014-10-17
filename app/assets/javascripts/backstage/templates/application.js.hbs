@@ -1,0 +1,53 @@
+<div id="wrap">
+    
+  <header>
+    
+    <div id="logo">
+      <a href="#" id="toggle-mobile-menu"><i class="icon-menu"></i></a>
+      <h1>{{#link-to 'index'}}Silver{{/link-to}}</h1>
+    </div>
+
+    <div id="search-form">
+      <form action="" method="get">
+        <input type="search" name="q" placeholder="Search Silver&hellip;">
+        <button><i class="icon-search"></i></button>
+      </form>
+    </div>
+
+    <div id="user-menu">
+      <a href="#"><img src="https://www.gravatar.com/avatar/dce5d961f6d2060241e38ea075e4bfd8?size=48&amp;default=mm" alt="Brux" class="gravatar"></a>
+    </div>
+
+  </header>
+
+  <div id="content">
+    
+    <div id="left-pane">
+      
+      <div id="search-form-mobile">
+        <form action="" method="get">
+          <input type="search" name="q" placeholder="Search Silver">
+        </form>
+      </div>
+
+      <nav id="main-menu">
+        <h3 class="menu-title">Main</h3>
+        <ul>
+          <li>{{#link-to 'movies'}}<i class="icon-film"></i> Movies{{/link-to}}</li>
+          <li>{{#link-to 'cinemas'}}<i class="icon-marker"></i> Cinemas{{/link-to}}</li>
+          <li>{{#link-to 'schedules'}}<i class="icon-calendar"></i> Schedules{{/link-to}}</li>
+          <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div id="content-pane">
+
+      {{{outlet}}}
+
+    </div>
+
+  </div>
+
+</div>
