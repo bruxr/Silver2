@@ -13,6 +13,7 @@ default: &default
   password: <%= ENV['SILVER_DB_PASS'] %>
 
 development:
+	host: localhost
   <<: *default
 
 # Warning: The database defined as "test" will be erased and
