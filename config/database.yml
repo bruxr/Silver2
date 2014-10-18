@@ -13,8 +13,8 @@ default: &default
   password: <%= ENV['SILVER_DB_PASS'] %>
 
 development:
-	host: localhost
   <<: *default
+	host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
