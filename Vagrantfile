@@ -27,10 +27,9 @@ gem install bundler
 rbenv rehash
 curl -sL https://deb.nodesource.com/setup | bash -
 apt-get install -y nodejs
-cd /vagrant
-git clone https://$USER:$PASSWORD@bitbucket.org/imoz32/silver2.git .
 bundle
 rbenv rehash
+rake db:setup
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
