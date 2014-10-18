@@ -7,6 +7,7 @@
 default: &default
   adapter: postgresql
   encoding: utf-8
+  host: <%= ENV['SILVER_DB_HOST'] %>
   database: <%= ENV['SILVER_DB_NAME'] %>
   pool: 20
   username: <%= ENV['SILVER_DB_USER'] %>
@@ -14,7 +15,6 @@ default: &default
 
 development:
   <<: *default
-	host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,4 +25,3 @@ test:
 
 production:
   <<: *default
-	host: <%= ENV['SILVER_DB_HOST'] %>
