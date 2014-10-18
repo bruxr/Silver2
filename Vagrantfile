@@ -13,7 +13,7 @@ apt-get upgrade -y
 apt-get install -y locales
 locale-gen --purge en_US.UTF-8
 echo -e 'LANG="en_US.UTF-8"\nLANGUAGE="en_US:en"\n' > /etc/default/locale
-apt-get install -y postgresql postgresql-client redis-server git libpqdev libsqlite3-dev curl
+apt-get install -y postgresql postgresql-client redis-server git libpq-dev libsqlite3-dev curl
 pg_createcluster 9.1 main
 service postgresql restart
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
