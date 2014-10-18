@@ -29,7 +29,6 @@ curl -sL https://deb.nodesource.com/setup | bash -
 apt-get install -y nodejs
 bundle
 rbenv rehash
-rake db:setup
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
