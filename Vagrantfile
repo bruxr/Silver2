@@ -16,11 +16,12 @@ echo -e 'LANG="en_US.UTF-8"\nLANGUAGE="en_US:en"\n' > /etc/default/locale
 apt-get install -y postgresql postgresql-client redis-server git libpq-dev libsqlite3-dev curl
 pg_createcluster 9.1 main
 service postgresql restart
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-echo 'export PATH="$HOME/.rbenv/$bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-source ~/.bashrc
-git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+su vagrant
+git clone https://github.com/sstephenson/rbenv.git /home/vagrant/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> /home/vagrant/.bashrc
+echo 'eval "$(rbenv init -)"' >> /home/vagrant/.bashrc
+source /home/vagrant/.bashrc
+git clone https://github.com/sstephenson/ruby-build.git /home/vagrant/.rbenv/plugins/ruby-build
 rbenv install 2.1.3
 rbenv global 2.1.3
 gem install bundler
