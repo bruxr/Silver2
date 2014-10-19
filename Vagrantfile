@@ -1,6 +1,12 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+#
+# WARNING!
+# This doesn't work yet! For some reason I can't install rbenv
+# on the VM since by default it uses the root user when provisioning.
+#
+
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
