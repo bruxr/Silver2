@@ -16,7 +16,7 @@ class UpdateMovieJob
         movie.find_trailer
 
       rescue Exceptions::QuotaReached => e
-        self.perform_in(5.seconds, movie_id) # If we reach the quota, back off for 5 seconds.
+        self.class.perform_in(5.seconds, movie_id) # If we reach the quota, back off for 5 seconds.
       else
         movie.update_status
         movie.save
