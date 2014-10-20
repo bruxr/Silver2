@@ -64,14 +64,24 @@ class Cinema < ActiveRecord::Base
     where.not(fetcher: '')
   end
 
-  # Returns an instance of the cinema's scraper.
+  # Alias to scraper
   def get_scraper
+    scraper
+  end
+  
+  # Returns an instance of the cinema's scraper.
+  def scraper
     raise "#{self.name} has no scraper class." if self.fetcher.nil?
     if @scraper.nil?
       @scraper = self.fetcher.constantize.new
     else
       @scraper
     end
+  end
+  
+  # Returns TRUE if the cinema has a scraper.
+  def scraper?
+    !self.fetcher.nil?
   end
 
 end
