@@ -134,6 +134,8 @@ class SmScraper < Scraper
               sked[:format] = '3D'
             elsif screening['FilmFormat'] == 'F3D' and screening['CinemaType'] == 'IMAX'
               sked[:format] = 'IMAX'
+            else
+              next # Skip if we have no format, this can be a deformed schedule.
             end
 
             # Add the rest of the schedule info
