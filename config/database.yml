@@ -5,15 +5,16 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgresql
-  encoding: utf-8
+  adapter: mysql2
+  encoding: utf8
   pool: 20
 
 development:
+  <<: *default
   host: localhost
   database: silver-dev
-  username: postgres
-  <<: *default
+  username: root
+  password: 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

@@ -23,6 +23,8 @@ class Schedule < ActiveRecord::Base
   #  greater_than_or_equal_to: 0,
   #  allow_nil: true
   #}
+  
+  serialize :ticket_price
 
   # Convenience function for
   # checking if a schedule already exists
