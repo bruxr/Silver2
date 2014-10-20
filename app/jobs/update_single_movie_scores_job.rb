@@ -7,10 +7,14 @@ class UpdateSingleMovieScoresJob
   def perform(movie_id)
 
     movie = Movie.includes(:sources).find(movie_id)
-    movie.update_scores
-    movie.save
-
-    Rails.logger.info("Successfully updated scores of \"#{movie.title}\"")
+    begin
+      movie.update_scores
+    rescue Exceptions::QuotaReached => e
+      self.perform_in(5.seconds, movie_id) # If we reach the quota, back off for 5 seconds.
+    else
+      movie.save
+      Rails.logger.info("Successfully updated scores of \"#{movie.title}\"")
+    end
 
   end
 
