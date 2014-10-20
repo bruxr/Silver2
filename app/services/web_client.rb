@@ -8,6 +8,27 @@
 # inspecting response headers and status code.
 class WebClient
   include HTTParty
+  
+  # Returned when the WebClient receives a
+  # non 200 OK response.
+  class HTTPError < StandardError
+    
+    attr_reader :code, :url
+    
+    def initialize(code, url)
+      @code = code
+      @url = url
+    end
+    
+    def status
+      Rack::Utils::HTTP_STATUS_CODES[@code]
+    end
+    
+    def message
+      "Received HTTP status #{@code} #{status} from #{@url}."
+    end
+    
+  end
 
   # Performs a GET request.
   # Pass in a data hash to send query string/parameters.
@@ -23,8 +44,7 @@ class WebClient
     if @response.code == 200
       @response.body
     else
-      message = Rack::Utils::HTTP_STATUS_CODES[@response.code]
-      raise "Received HTTP #{@response.code} #{message} for #{url}."
+      raise WebClient::HTTPError.new(@response.code, url)
     end
 
   end
@@ -43,8 +63,7 @@ class WebClient
     if @response.code == 200
       @response.body
     else
-      message = Rack::Utils::HTTP_STATUS_CODES[@response.code]
-      raise "Received HTTP #{@response.code} #{message} for #{url}."
+      raise WebClient::HTTPError.new(@response.code, url)
     end
 
   end
