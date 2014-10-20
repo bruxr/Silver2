@@ -11,11 +11,17 @@ class UpdateMovieJob
     movie = Movie.includes(:sources).find(movie_id)
     
     if movie.sources.count > 0
-      movie.find_details
-      movie.find_trailer
-      movie.update_status
-      movie.save
-      Rails.logger.info("Successfully updated movie \"#{movie.title}\".")
+      begin
+        movie.find_details
+        movie.find_trailer
+
+      rescue Exceptions::QuotaReached => e
+        self.perform_in(5.seconds, movie_id) # If we reach the quota, back off for 5 seconds.
+      else
+        movie.update_status
+        movie.save
+        Rails.logger.info("Successfully updated movie \"#{movie.title}\".")
+      end
     else
       Rails.logger.warn("Cannot update movie \"#{movie.title}\". No sources found.")
     end

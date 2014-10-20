@@ -103,8 +103,13 @@ class RottenTomatoes < WebClient
     data['apikey'] = @api_key
 
     url = "#{@@endpoint}#{method}.json"
-    response = get(url, data)
-    JSON.parse(response)
+    begin
+      response = get(url, data)
+    rescue WebClient::HTTPError => e
+      raise Exceptions::QuotaReached.new(self.class.to_s) if e.code == 403
+    else
+      JSON.parse(response)
+    end
 
   end
 
