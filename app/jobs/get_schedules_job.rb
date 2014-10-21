@@ -14,15 +14,48 @@ class GetSchedulesJob
     raise "Invalid Cinema ID: #{cinema_id}" if cinema_id <= 0
 
     cinema = Cinema.find(cinema_id)
-    new_movies = cinema.schedules.fetch_new
-
-    new_movies.each do |movie|
-      UpdateMovieJob.perform_async(movie.id)
-      UpdateSingleMovieScoresJob.perform_async(movie.id)
+    movies = cinema.scraper.schedules
+    
+    # Process scraped movies
+    movies.each do |movie|
+      
+      title = Movie.fix_title(movie)
+      
+      # Try to add the movie.
+      # If it fails, then use the existing movie.
+      new_record = true
+      begin
+        m = Movie.new(title: title, mtrcb_rating: movie[:rating])
+        m.save!
+      rescue 
+        Rails.logger.warn("GetSchedulesJob: #{title} already exists in the database, using that instead.")
+        m = Movie.find_by(title: movie[:name])
+        new_record = false
+      end
+      
+      # Add schedules to our movie
+      movie[:schedules].each do |sked|
+        s = Schedule.new
+        s.cinema_id = cinema_id
+        s.screening_time = sked[:time]
+        s.format = sked[:format]
+        s.ticket_url = sked[:ticket_url]
+        s.ticket_price = sked[:price]
+        s.room = sked[:room]
+        m.schedules << s
+      end
+      
+      m.save!
+      
+      # If this is a new movie record, add jobs that update
+      # the movie's information.
+      if new_record
+        UpdateMovieJob.perform_async(movie.id)
+        UpdateSingleMovieScoresJob.perform_async(movie.id)
+      end
+      
     end
-
-    cinema.save
-
+    
     Rails.logger.info("Successfully fetched new schedules for #{cinema.name}.")
 
   end
