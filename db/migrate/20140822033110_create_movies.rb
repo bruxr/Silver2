@@ -1,8 +1,9 @@
 class CreateMovies < ActiveRecord::Migration
   def change
+    
     create_table :movies do |t|
-      t.string :title, null: false, unique: true
-      t.string :slug, null: false, unique: true
+      t.string :title, null: false
+      t.string :slug, null: false
       t.text :overview
       t.integer :runtime
       t.float :aggregate_score
@@ -13,5 +14,9 @@ class CreateMovies < ActiveRecord::Migration
       t.string :status, null: false, default: 'incomplete'
       t.timestamps
     end
+    
+    add_index :movies, :title, unique: true
+    add_index :movies, :slug, unique: true
+    
   end
 end
