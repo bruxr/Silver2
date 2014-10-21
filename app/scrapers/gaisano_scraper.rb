@@ -20,7 +20,7 @@ class GaisanoScraper < Scraper
 
   ENDPOINT = 'https://graph.facebook.com/v2.1/gmallcinemas/posts'
 
-  def get_schedules
+  def schedules
     
     raise 'Gaisano mall name missing.' if self.class::MALL.nil?
 

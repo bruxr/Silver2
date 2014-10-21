@@ -11,7 +11,7 @@ class SmScraper < Scraper
 
   # Returns an array of screening times for
   # movies available to a branch
-  def get_schedules()
+  def schedules()
 
     @schedules = []
 

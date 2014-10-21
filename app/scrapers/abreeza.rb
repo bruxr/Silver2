@@ -6,7 +6,7 @@
 class Abreeza < Scraper
 
   # Grabs schedules from Sureseat's Abreeza page.
-  def get_schedules
+  def schedules
 
     @schedules = []
     

@@ -4,7 +4,7 @@
 class NcccMall < Scraper
 
   # Grabs schedules from NCCC's cinema page
-  def get_schedules
+  def schedules
 
     @schedules = []
 
