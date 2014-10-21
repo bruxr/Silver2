@@ -35,14 +35,16 @@ class GetSchedulesJob
       
       # Add schedules to our movie
       movie[:schedules].each do |sked|
-        s = Schedule.new
-        s.cinema_id = cinema_id
-        s.screening_time = sked[:time]
-        s.format = sked[:format]
-        s.ticket_url = sked[:ticket_url]
-        s.ticket_price = sked[:price]
-        s.room = sked[:room]
-        m.schedules << s
+        unless Schedule.existing?(m, cinema, sked[:time], sked[:room])
+          s = Schedule.new
+          s.cinema_id = cinema_id
+          s.screening_time = sked[:time]
+          s.format = sked[:format]
+          s.ticket_url = sked[:ticket_url]
+          s.ticket_price = sked[:price]
+          s.room = sked[:room]
+          m.schedules << s
+        end
       end
       
       m.save!
