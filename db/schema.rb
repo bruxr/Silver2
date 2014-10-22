@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 20140908072604) do
     t.datetime "updated_at"
   end
 
+  add_index "movies", ["slug"], name: "index_movies_on_slug", unique: true, using: :btree
+  add_index "movies", ["title"], name: "index_movies_on_title", unique: true, using: :btree
+
   create_table "schedules", force: true do |t|
     t.integer  "movie_id",                      null: false
     t.integer  "cinema_id",                     null: false
@@ -47,8 +50,6 @@ ActiveRecord::Schema.define(version: 20140908072604) do
     t.text     "ticket_url"
     t.text     "ticket_price"
     t.string   "room",                          null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "sources", force: true do |t|
