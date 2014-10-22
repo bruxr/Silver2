@@ -40,7 +40,12 @@ $turqoise: #18bc9c;
 
 // Page Header
 .page-header {
+  margin-bottom: 40px;
   margin-top: 0;
+
+  h2 {
+    font-size: 38px;
+  }
 }
 
 // Generic grid
@@ -97,4 +102,21 @@ $turqoise: #18bc9c;
   color: #999;
   display: block;
   font-size: 14px;
+}
+
+// Media grid options
+.media-grid-options {
+  color: #999;
+  margin-top: 30px;
+  text-align: center;
+
+  a {
+    color: #999;
+    display: inline-block;
+    padding: 5px 15px;
+  }
+
+  a.active {
+    color: $turqoise;
+  }
 }
