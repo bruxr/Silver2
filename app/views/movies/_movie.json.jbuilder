@@ -1,4 +1,4 @@
-json.(movie, :id, :title, :slug, :overview, :runtime, :aggregate_score, :trailer, :mtrcb_rating)
+json.(movie, :id, :title, :slug, :overview, :runtime, :aggregate_score, :trailer, :mtrcb_rating, :poster_url)
 if user_signed_in?
-  json.(movie, :created_at, :updated_at)
+  json.(movie, :status, :created_at, :updated_at)
 end
