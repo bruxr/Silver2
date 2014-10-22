@@ -109,6 +109,9 @@ class Movie < ActiveRecord::Base
   # Creates movie records for scraped movies from cinema websites.
   def self.process_scraped_movie(movie, cinema)
     
+    # Raise an error immediately if we have no title
+    raise 'Missing movie title' if movie[:name].nil?
+    
     title = Movie.fix_title(movie[:name])
     
     mov = Movie.find_or_create_by!(title: title) # Create immediately, to prevent race conditions
