@@ -95,6 +95,8 @@ class Movie < ActiveRecord::Base
   # the preprocessing a movie may need when initialized.
   def self.find_or_initialize(title, rating: nil)
 
+    raise DeprecatedMethod
+
     fixed = Movie.fix_title(title)
     title = fixed unless fixed.nil?
     movie = Movie.find_or_initialize_by(title: title)
