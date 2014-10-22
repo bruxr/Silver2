@@ -19,8 +19,8 @@ class Movie < ActiveRecord::Base
   end
 
   # Make sure we have a title and it is unique.
-  validates_presence_of :title
-  validates_uniqueness_of :title
+  validates :title, presence: true
+  validates :title, uniqueness: true
 
   validates :mtrcb_rating, inclusion: {
     in: %w(G PG R-13 R-16 R-18),
