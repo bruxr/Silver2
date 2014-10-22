@@ -41,7 +41,7 @@ class GetSchedulesJob
       
       # Add schedules to our movie
       movie[:schedules].each do |sked|
-        unless Schedule.existing?(m, cinema, sked[:time], sked[:room])
+        unless Schedule.existing?(m, cinema, sked[:time], sked[:cinema_name])
           s = Schedule.new
           s.cinema_id = cinema_id
           s.screening_time = sked[:time]
