@@ -1,8 +1,12 @@
 @import "bootswatch-flatly";
 @import "compass/css3";
 
+$midnight: #2c3e50;
+$asphalt: #1a242f;
+$turqoise: #18bc9c;
+
 .navbar-default .navbar-brand {
-  background-color: #18bc9c;
+  background-color: $turqoise;
   border-radius: 3px;
   display: block;
   font-weight: bold;
@@ -16,13 +20,13 @@
   @include transition(all 300ms ease-in);
   
   &:hover {
-    background-color: lighten(#18bc9c, 5%);
+    background-color: lighten($turqoise, 5%);
     color: #1a242f;
   }
 }
 
 .navbar a.active {
-  background-color: #1a242f;
+  background-color: $asphalt;
 }
 
 .navbar-default .gravatar {
@@ -32,4 +36,58 @@
   img {
     border-radius: 30px;
   }
+}
+
+// Page Header
+.page-header {
+  margin-top: 0;
+}
+
+// Generic grid
+.media-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.media-grid .media-item {
+  margin-bottom: 30px;
+  margin-right: 30px;
+  width: 14%;
+}
+
+.media-grid .media-item a:hover {
+  color: darken($turqoise, 5% );
+  text-decoration: none;
+}
+
+.media-grid .media-item .thumbnail {
+  border: none;
+  border-radius: 0;
+  height: 239px;
+  padding: 0;
+}
+
+.media-grid .media-item .thumbnail.no-thumbnail {
+  background-color: $midnight;
+}
+
+.media-grid .media-item .thumbnail img {
+  display: block;
+  opacity: 1;
+  @include transition(opacity 150ms ease-in);
+  -webkit-backface-visibility: hidden; // Prevent img from moving while animating
+}
+
+.media-grid .media-item a:hover img {
+  opacity: .75;
+}
+
+.media-grid .media-item .movie-title {
+  font-size: 16px;
+}
+
+.media-grid .media-item .media-info {
+  color: #999;
+  display: block;
+  font-size: 14px;
 }

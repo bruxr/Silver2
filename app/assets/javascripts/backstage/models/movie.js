@@ -6,6 +6,9 @@ Backstage.Movie = DS.Model.extend({
 	aggregateScore:  DS.attr('number'),
 	trailer: 				 DS.attr('string'),
 	mtrcbRating: 	   DS.attr('string'),
+  posterUrl:       DS.attr('string'),
+  scheduleCount:   DS.attr('number'),
+  cinemaCount:     DS.attr('number'),
 	createdAt:  		 DS.attr('date'),
 	updatedAt:  		 DS.attr('date')
 });

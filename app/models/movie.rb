@@ -257,12 +257,12 @@ class Movie < ActiveRecord::Base
   end
 
   # Returns the total number of schedules for this movie
-  def schedules_count
+  def schedule_count
     schedules.count
   end
 
   # Returns the total number of cinemas screening this movie
-  def schedules_cinema_count
+  def cinema_count
     schedules.scope.distinct.count(:cinema_id)
   end
 
