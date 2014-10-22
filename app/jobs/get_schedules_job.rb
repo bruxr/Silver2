@@ -19,51 +19,11 @@ class GetSchedulesJob
     # Process scraped movies
     movies.each do |movie|
       
-      title = Movie.fix_title(movie[:name])
+      m = Movie.process_scraped_movie(movie, cinema)
       
-      # Try to add the movie.
-      # If it fails, then use the existing movie.
-      m = nil
-      new_record = true
-      begin
-        m = Movie.new(title: title, mtrcb_rating: movie[:rating])
-        m.save!
-        
-      # This is a bit dirty but basically, this detects if we hit a
-      # uniqueness violation. If we do, fetch the existing movie
-      # and add schedules to it instead.
-      rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid => e
-        title_error = e.record.errors.messages[:title].first
-        ap title_error
-        if !title_error.nil? && title_error == 'has already been taken'
-          ap 'invalid record.'
-          Rails.logger.warn("GetSchedulesJob: #{title} already exists in the database, using that instead.")
-          m = Movie.find_by(title: movie[:name])
-          new_record = false
-        end
-      end
-      
-      # Add schedules to our movie
-      movie[:schedules].each do |sked|
-        unless Schedule.existing?(m, cinema, sked[:time], sked[:cinema_name])
-          s = Schedule.new
-          s.cinema_id = cinema_id
-          s.screening_time = sked[:time]
-          s.format = sked[:format]
-          s.ticket_url = sked[:ticket_url]
-          s.ticket_price = sked[:price]
-          s.room = sked[:cinema_name]
-          m.schedules << s
-        end
-      end
-      
-      m.save!
-      
-      # If this is a new movie record, add jobs that update
-      # the movie's information.
-      if new_record
-        UpdateMovieJob.perform_async(movie.id)
-        UpdateSingleMovieScoresJob.perform_async(movie.id)
+      if m.incomplete?
+        UpdateMovieJob.perform_async(m.id)
+        UpdateSingleMovieScoresJob.perform_async(m.id)
       end
       
     end

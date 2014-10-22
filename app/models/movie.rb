@@ -103,6 +103,31 @@ class Movie < ActiveRecord::Base
     movie
 
   end
+  
+  # Creates movie records for scraped movies from cinema websites.
+  def self.process_scraped_movie(movie, cinema)
+    
+    title = Movie.fix_title(movie[:name])
+    
+    mov = Movie.find_or_create_by!(title: title) # Create immediately, to prevent race conditions
+    mov.mtrcb_rating = movie[:rating] if mov.mtrcb_rating.nil?
+    
+    movie[:schedules].each do |sked|
+      unless Schedule.existing?(mov, cinema, sked[:time], sked[:cinema_name])
+        s = Schedule.new
+        s.cinema_id = cinema.id
+        s.screening_time = sked[:time]
+        s.format = sked[:format]
+        s.ticket_url = sked[:ticket_url]
+        s.ticket_price = sked[:price]
+        s.room = sked[:cinema_name]
+        mov.schedules << s
+      end
+    end
+    
+    mov.save!
+    
+  end
 
   # Searches for this movie's details like overview, runtime, trailer.
   # This requires that the movie has sources.
@@ -197,6 +222,17 @@ class Movie < ActiveRecord::Base
 
     self.status = 'ready' if is_ready
 
+  end
+  
+  # Returns TRUE if this movie has incomplete details
+  def incomplete?
+    self.status == 'incomplete'
+  end
+  
+  # Returns TRUE if this movie is ready for primetime.
+  # (e.g. Has complete details)
+  def ready?
+    self.status == 'ready'
   end
 
   # Returns the complete movie poster URL with the provided width.

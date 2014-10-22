@@ -34,5 +34,31 @@ class MovieTest < ActiveSupport::TestCase
     movie.sources.search
     assert_not_nil(movie.poster_url)
   end
+  
+  test 'should be able to create movies from scraped info' do
+    scraped = {
+      name: 'Air Force One',
+      rating: 'PG',
+      schedules: [
+        {
+          time: Time.now + 1.day,
+          format: '2D',
+          ticket_url: 'http://buymeaticket.com',
+          price: 150,
+          cinema_name: 'Cinema 1'
+        },
+        {
+          time: Time.now + 1.hour,
+          format: '3D',
+          ticket_url: 'http://free3dmovies.com', # Shady website lol
+          price: 250,
+          cinema_name: 'Cinema 2'
+        }
+      ]
+    }
+    cinema = Cinema.first
+    movie = Movie.process_scraped_movie(scraped, cinema)
+    assert_not_nil(movie)
+  end
 
 end
