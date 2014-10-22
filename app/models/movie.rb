@@ -118,6 +118,7 @@ class Movie < ActiveRecord::Base
     
     mov = Movie.find_or_create_by!(title: title) # Create immediately, to prevent race conditions
     mov.mtrcb_rating = movie[:rating] if mov.mtrcb_rating.nil?
+    mov.sources.search if mov.sources.empty?
     
     movie[:schedules].each do |sked|
       unless Schedule.existing?(mov, cinema, sked[:time], sked[:cinema_name])
