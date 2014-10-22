@@ -128,6 +128,7 @@ class Movie < ActiveRecord::Base
     end
     
     mov.save!
+    mov
     
   end
 
