@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20140908072604) do
     t.datetime "updated_at"
   end
 
+  add_index "cinemas", ["name"], name: "index_cinemas_on_name", using: :btree
+  add_index "cinemas", ["slug"], name: "index_cinemas_on_slug", unique: true, using: :btree
+
   create_table "movies", force: true do |t|
     t.string   "title",                                             null: false
     t.string   "slug",                                              null: false
@@ -59,6 +62,8 @@ ActiveRecord::Schema.define(version: 20140908072604) do
     t.text    "url",                    null: false
     t.float   "score",       limit: 24
   end
+
+  add_index "sources", ["movie_id"], name: "index_sources_on_movie_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
