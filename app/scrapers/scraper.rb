@@ -6,8 +6,6 @@
 # clean up scraped information.
 class Scraper < WebClient
 
-  attr_reader :schedules
-
   # Setups an empty array as schedules
   def initialize
     @schedules = []
@@ -15,7 +13,7 @@ class Scraper < WebClient
   end
 
   # Subclasses should override this method
-  def get_schedules
+  def schedules
     raise NotImplementedError.new
   end
 

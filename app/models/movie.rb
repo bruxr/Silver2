@@ -11,17 +11,22 @@ class Movie < ActiveRecord::Base
     # Take note that this will set and overwrite existing
     # sources with the found sources.
     def search
-      raise 'Movie title is nil.' if proxy_association.owner.title.nil?
-      proxy_association.owner.sources << Source.find_movie_sources(proxy_association.owner.title)
+      movie = proxy_association.owner
+      raise 'Movie title is nil.' if movie.title.nil?
+      movie.sources << Source.find_movie_sources(movie.title)
     end
 
   end
 
+  # Make sure we have a title and it is unique.
   validates :title, presence: true
+  validates :title, uniqueness: true
 
+  # Make sure the MTRCB rating is a valid one if it exists.
   validates :mtrcb_rating, inclusion: {
     in: %w(G PG R-13 R-16 R-18),
-    message: "%{value} is not a valid MTRCB Rating."
+    message: "%{value} is not a valid MTRCB Rating.",
+    allow_nil: true
   }
 
   slugify :title
@@ -52,11 +57,20 @@ class Movie < ActiveRecord::Base
 
       fixed = nil
 
+      # If we can't find it on both TMDB & RT, check OMDB/Freebase
+      omdb = Omdb.new
+      omdb_res = omdb.find_title(title)
+      unless omdb_res.nil?
+         fixed = omdb_res[:title]
+      end
+
       # Search TMDB
-      tmdb = Tmdb.new
-      tmdb_res = tmdb.find_title(title)
-      unless tmdb_res.nil?
-        fixed = tmdb_res[:title]
+      if fixed.nil?
+        tmdb = Tmdb.new
+        tmdb_res = tmdb.find_title(title)
+        unless tmdb_res.nil?
+          fixed = tmdb_res[:title]
+        end
       end
 
       # If we can't find it on TMDB, check Rotten Tomatoes
@@ -65,15 +79,6 @@ class Movie < ActiveRecord::Base
         rt_res = rt.find_title(title)
         unless rt_res.nil?
           fixed = rt_res[:title]
-        end
-      end
-
-      # If we can't find it on both TMDB & RT, check OMDB/Freebase
-      if fixed.nil?
-        omdb = Omdb.new
-        omdb_res = omdb.find_title(title)
-        unless omdb_res.nil?
-           fixed = omdb_res[:title]
         end
       end
 
@@ -90,6 +95,8 @@ class Movie < ActiveRecord::Base
   # the preprocessing a movie may need when initialized.
   def self.find_or_initialize(title, rating: nil)
 
+    raise DeprecatedMethod
+
     fixed = Movie.fix_title(title)
     title = fixed unless fixed.nil?
     movie = Movie.find_or_initialize_by(title: title)
@@ -97,6 +104,37 @@ class Movie < ActiveRecord::Base
 
     movie
 
+  end
+  
+  # Creates movie records for scraped movies from cinema websites.
+  def self.process_scraped_movie(movie, cinema)
+    
+    # Raise an error immediately if we have no title
+    raise 'Missing movie title' if movie[:name].nil?
+    
+    # Try to fix the title.
+    title = Movie.fix_title(movie[:name])
+    title = movie[:name] if title.nil?
+    
+    mov = Movie.find_or_create_by!(title: title) # Create immediately, to prevent race conditions
+    mov.mtrcb_rating = movie[:rating] if mov.mtrcb_rating.nil?
+    
+    movie[:schedules].each do |sked|
+      unless Schedule.existing?(mov, cinema, sked[:time], sked[:cinema_name])
+        s = Schedule.new
+        s.cinema_id = cinema.id
+        s.screening_time = sked[:time]
+        s.format = sked[:format]
+        s.ticket_url = sked[:ticket_url]
+        s.ticket_price = sked[:price]
+        s.room = sked[:cinema_name]
+        mov.schedules << s
+      end
+    end
+    
+    mov.save!
+    mov
+    
   end
 
   # Searches for this movie's details like overview, runtime, trailer.
@@ -192,6 +230,17 @@ class Movie < ActiveRecord::Base
 
     self.status = 'ready' if is_ready
 
+  end
+  
+  # Returns TRUE if this movie has incomplete details
+  def incomplete?
+    self.status == 'incomplete'
+  end
+  
+  # Returns TRUE if this movie is ready for primetime.
+  # (e.g. Has complete details)
+  def ready?
+    self.status == 'ready'
   end
 
   # Returns the complete movie poster URL with the provided width.

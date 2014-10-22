@@ -20,7 +20,7 @@ class GaisanoScraper < Scraper
 
   ENDPOINT = 'https://graph.facebook.com/v2.1/gmallcinemas/posts'
 
-  def get_schedules
+  def schedules
     
     raise 'Gaisano mall name missing.' if self.class::MALL.nil?
 
@@ -79,7 +79,6 @@ class GaisanoScraper < Scraper
 
     # Extracts the screening date from the schedule post
     # This only matches posts with "SKED FOR OCT. 5" for example,
-    # TODO: Should be able to match ranges
     def extract_dates(post)
 
       dates = []
@@ -179,7 +178,6 @@ class GaisanoScraper < Scraper
     end
 
     # Creates array of schedules from the preprocessed blocks.
-    # TODO: Detect 3D movies
     def schedulize(blocks, dates)
 
       skeds = {}
@@ -194,10 +192,15 @@ class GaisanoScraper < Scraper
           movies.each do |lines|
 
             sked = {}
-            sked[:name] = lines[0].strip # Title on the first line
             sked[:schedules] = []
             times = []
             prices = nil
+            
+            # The title is in the first line and it contains
+            # a (3D) suffix if it is in 3D.
+            title = lines[0].strip
+            title.gsub('(3D)', '').strip if title =~ /\(3D\)\Z/i
+            sked[:name] = title
 
             # Find for stuff in the lines
             lines.each do |line|

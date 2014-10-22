@@ -14,15 +14,20 @@ class GetSchedulesJob
     raise "Invalid Cinema ID: #{cinema_id}" if cinema_id <= 0
 
     cinema = Cinema.find(cinema_id)
-    new_movies = cinema.schedules.fetch_new
-
-    new_movies.each do |movie|
-      UpdateMovieJob.perform_async(movie.id)
-      UpdateSingleMovieScoresJob.perform_async(movie.id)
+    movies = cinema.scraper.schedules
+    
+    # Process scraped movies
+    movies.each do |movie|
+      
+      m = Movie.process_scraped_movie(movie, cinema)
+      
+      if m.incomplete?
+        UpdateMovieJob.perform_async(m.id)
+        UpdateSingleMovieScoresJob.perform_async(m.id)
+      end
+      
     end
-
-    cinema.save
-
+    
     Rails.logger.info("Successfully fetched new schedules for #{cinema.name}.")
 
   end

@@ -9,7 +9,6 @@ class CreateSchedules < ActiveRecord::Migration
       t.text :ticket_url
       t.text :ticket_price
       t.string :room, null: false
-      t.timestamps
     end
 
   end
