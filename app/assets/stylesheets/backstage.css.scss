@@ -50,9 +50,13 @@ $turqoise: #18bc9c;
 }
 
 .media-grid .media-item {
-  margin-bottom: 30px;
-  margin-right: 30px;
-  width: 14%;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  width: 16%;
+
+  &:nth-child(5n) {
+    margin-right: 0;
+  }
 }
 
 .media-grid .media-item a:hover {
@@ -63,7 +67,7 @@ $turqoise: #18bc9c;
 .media-grid .media-item .thumbnail {
   border: none;
   border-radius: 0;
-  height: 239px;
+  height: 274px;
   padding: 0;
 }
 
