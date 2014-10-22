@@ -59,7 +59,6 @@ gem 'autoprefixer-rails'
 gem 'compass-rails'
 gem 'ember-rails'
 gem 'ceaser-easing'
-gem 'bootstrap-sass'
 
 # Dev gems
 gem 'awesome_print', group: [:development, :test]
