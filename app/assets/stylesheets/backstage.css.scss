@@ -88,6 +88,9 @@ $turqoise: #18bc9c;
 
 .media-grid .media-item .movie-title {
   font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .media-grid .media-item .media-info {
