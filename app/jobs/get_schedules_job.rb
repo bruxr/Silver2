@@ -19,7 +19,7 @@ class GetSchedulesJob
     # Process scraped movies
     movies.each do |movie|
       
-      title = Movie.fix_title(movie)
+      title = Movie.fix_title(movie[:name])
       
       # Try to add the movie.
       # If it fails, then use the existing movie.
