@@ -1,55 +1,41 @@
-<div id="wrap">
-    
-  <header>
-    
-    <div id="logo">
-      <a href="#" id="toggle-mobile-menu"><i class="icon-menu"></i></a>
-      <h1>{{#link-to 'index'}}Silver{{/link-to}}</h1>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'index' class='navbar-brand' title='Silver Backstage'}}S{{/link-to}}
     </div>
 
-    <div id="search-form">
-      <form action="" method="get">
-        <input type="search" name="q" placeholder="Search Silver&hellip;">
-        <button><i class="icon-search"></i></button>
-      </form>
-    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>{{#link-to 'movies'}}Movies{{/link-to}}</li>
+        <li>{{#link-to 'cinemas'}}Cinemas{{/link-to}}</li>
+        <li>{{#link-to 'schedules'}}Schedules{{/link-to}}</li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="/sidekiq">Sidekiq</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="gravatar dropdown-toggle" data-toggle="dropdown"><img src="https://www.gravatar.com/avatar/dce5d961f6d2060241e38ea075e4bfd8?size=32&amp;default=mm" alt="Brux"> <i class="caret"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Sign Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-    <div id="user-menu">
-      <a href="#"><img src="https://www.gravatar.com/avatar/dce5d961f6d2060241e38ea075e4bfd8?size=48&amp;default=mm" alt="Brux" class="gravatar"></a>
-    </div>
+<div id="wrap" class="container">
 
-  </header>
-
-  <div id="content">
-    
-    <div id="left-pane">
-      
-      <div id="search-form-mobile">
-        <form action="" method="get">
-          <input type="search" name="q" placeholder="Search Silver">
-        </form>
-      </div>
-
-      <nav id="main-menu">
-        <h3 class="menu-title">Main</h3>
-        <ul>
-          <li>{{#link-to 'movies'}}<i class="icon-film"></i> Movies{{/link-to}}</li>
-          <li>{{#link-to 'cinemas'}}<i class="icon-marker"></i> Cinemas{{/link-to}}</li>
-          <li>{{#link-to 'schedules'}}<i class="icon-calendar"></i> Schedules{{/link-to}}</li>
-          <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
-        </ul>
-      </nav>
-
-      {{{outlet toolbars}}}
-
-    </div>
-
-    <div id="content-pane">
-
-      {{{outlet}}}
-
-    </div>
-
+  <div class="content">
+    {{{outlet}}}
   </div>
 
 </div>
