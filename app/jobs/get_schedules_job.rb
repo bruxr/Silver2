@@ -23,6 +23,7 @@ class GetSchedulesJob
       
       # Try to add the movie.
       # If it fails, then use the existing movie.
+      m = nil
       new_record = true
       begin
         m = Movie.new(title: title, mtrcb_rating: movie[:rating])
@@ -32,7 +33,10 @@ class GetSchedulesJob
       # uniqueness violation. If we do, fetch the existing movie
       # and add schedules to it instead.
       rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid => e
-        if !e.record.errors.messages[:title].nil? && e.record.errors.messages[:title] == 'has already been taken'
+        title_error = e.record.errors.messages[:title].first
+        ap title_error
+        if !title_error.nil? && title_error == 'has already been taken'
+          ap 'invalid record.'
           Rails.logger.warn("GetSchedulesJob: #{title} already exists in the database, using that instead.")
           m = Movie.find_by(title: movie[:name])
           new_record = false
