@@ -178,7 +178,6 @@ class GaisanoScraper < Scraper
     end
 
     # Creates array of schedules from the preprocessed blocks.
-    # TODO: Detect 3D movies
     def schedulize(blocks, dates)
 
       skeds = {}
@@ -193,10 +192,15 @@ class GaisanoScraper < Scraper
           movies.each do |lines|
 
             sked = {}
-            sked[:name] = lines[0].strip # Title on the first line
             sked[:schedules] = []
             times = []
             prices = nil
+            
+            # The title is in the first line and it contains
+            # a (3D) suffix if it is in 3D.
+            title = lines[0].strip
+            title.gsub('(3D)', '').strip if title =~ /\(3D\)\Z/i
+            sked[:name] = title
 
             # Find for stuff in the lines
             lines.each do |line|
