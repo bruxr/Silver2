@@ -79,7 +79,6 @@ class GaisanoScraper < Scraper
 
     # Extracts the screening date from the schedule post
     # This only matches posts with "SKED FOR OCT. 5" for example,
-    # TODO: Should be able to match ranges
     def extract_dates(post)
 
       dates = []
