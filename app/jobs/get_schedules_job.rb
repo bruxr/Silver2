@@ -42,7 +42,7 @@ class GetSchedulesJob
           s.format = sked[:format]
           s.ticket_url = sked[:ticket_url]
           s.ticket_price = sked[:price]
-          s.room = sked[:room]
+          s.room = sked[:cinema_name]
           m.schedules << s
         end
       end
