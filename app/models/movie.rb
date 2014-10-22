@@ -54,11 +54,20 @@ class Movie < ActiveRecord::Base
 
       fixed = nil
 
+      # If we can't find it on both TMDB & RT, check OMDB/Freebase
+      omdb = Omdb.new
+      omdb_res = omdb.find_title(title)
+      unless omdb_res.nil?
+         fixed = omdb_res[:title]
+      end
+
       # Search TMDB
-      tmdb = Tmdb.new
-      tmdb_res = tmdb.find_title(title)
-      unless tmdb_res.nil?
-        fixed = tmdb_res[:title]
+      if fixed.nil?
+        tmdb = Tmdb.new
+        tmdb_res = tmdb.find_title(title)
+        unless tmdb_res.nil?
+          fixed = tmdb_res[:title]
+        end
       end
 
       # If we can't find it on TMDB, check Rotten Tomatoes
@@ -67,15 +76,6 @@ class Movie < ActiveRecord::Base
         rt_res = rt.find_title(title)
         unless rt_res.nil?
           fixed = rt_res[:title]
-        end
-      end
-
-      # If we can't find it on both TMDB & RT, check OMDB/Freebase
-      if fixed.nil?
-        omdb = Omdb.new
-        omdb_res = omdb.find_title(title)
-        unless omdb_res.nil?
-           fixed = omdb_res[:title]
         end
       end
 
