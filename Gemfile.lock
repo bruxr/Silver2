@@ -46,6 +46,10 @@ GEM
       execjs
       handlebars-source
     bcrypt (3.1.7)
+    bootstrap-sass (3.2.0.1)
+      sass (~> 3.2)
+    bootswatch-rails (3.2.4)
+      railties (>= 3.1)
     builder (3.2.2)
     ceaser-easing (0.7)
       compass (>= 0.12.2)
@@ -223,6 +227,8 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   awesome_print
+  bootstrap-sass
+  bootswatch-rails
   ceaser-easing
   colorize
   compass-rails
