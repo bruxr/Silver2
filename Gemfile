@@ -60,7 +60,6 @@ gem 'compass-rails'
 gem 'ember-rails'
 gem 'ceaser-easing'
 gem 'bootstrap-sass'
-gem 'bootswatch-rails'
 
 # Dev gems
 gem 'awesome_print', group: [:development, :test]
