@@ -112,7 +112,9 @@ class Movie < ActiveRecord::Base
     # Raise an error immediately if we have no title
     raise 'Missing movie title' if movie[:name].nil?
     
+    # Try to fix the title.
     title = Movie.fix_title(movie[:name])
+    title = movie[:name] if title.nil?
     
     mov = Movie.find_or_create_by!(title: title) # Create immediately, to prevent race conditions
     mov.mtrcb_rating = movie[:rating] if mov.mtrcb_rating.nil?
