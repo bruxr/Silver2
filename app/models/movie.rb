@@ -11,8 +11,9 @@ class Movie < ActiveRecord::Base
     # Take note that this will set and overwrite existing
     # sources with the found sources.
     def search
-      raise 'Movie title is nil.' if proxy_association.owner.title.nil?
-      proxy_association.owner.sources << Source.find_movie_sources(proxy_association.owner.title)
+      movie = proxy_association.owner
+      raise 'Movie title is nil.' if movie.title.nil?
+      movie.sources << Source.find_movie_sources(movie.title)
     end
 
   end
