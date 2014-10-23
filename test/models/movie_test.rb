@@ -60,5 +60,17 @@ class MovieTest < ActiveSupport::TestCase
     movie = Movie.process_scraped_movie(scraped, cinema)
     assert_not_nil(movie)
   end
+  
+  test 'should be able to correctly count upcoming schedules' do
+    movie = Movie.first
+    movie.schedules << Schedule.new(cinema_id: Cinema.first.id, screening_time: Time.now + 1.day, format: '2D', room: 'Cinema 9')
+    assert_equal(1, movie.schedule_count(:upcoming))
+  end
+  
+  test 'should be able to correctly count cinemas with upcoming schedules' do
+    movie = Movie.first
+    movie.schedules << Schedule.new(cinema_id: Cinema.first.id, screening_time: Time.now + 1.day, format: '2D', room: 'Cinema 9')
+    assert_equal(1, movie.cinema_count(:upcoming))
+  end
 
 end

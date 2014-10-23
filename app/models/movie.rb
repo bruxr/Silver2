@@ -2,6 +2,8 @@ class Movie < ActiveRecord::Base
   include Sluggable
 
   has_many :schedules, inverse_of: :movie, dependent: :destroy
+  
+  has_many :upcoming_schedules, -> { where('screening_time > ?', Time.now) }, class_name: 'Schedule'
 
   # Declares that many web services (e.g. The Movie Database)
   # may contain a record of this movie.
@@ -257,13 +259,21 @@ class Movie < ActiveRecord::Base
   end
 
   # Returns the total number of schedules for this movie
-  def schedule_count
-    schedules.count
+  def schedule_count(filter = :all)
+    if filter == :upcoming
+      upcoming_schedules.count
+    else
+      schedules.count
+    end
   end
 
   # Returns the total number of cinemas screening this movie
-  def cinema_count
-    schedules.scope.distinct.count(:cinema_id)
+  def cinema_count(filter = :all)
+    if filter == :upcoming
+      upcoming_schedules.scope.distinct.count(:cinema_id)
+    else
+      schedules.scope.distinct.count(:cinema_id)
+    end
   end
 
 end
