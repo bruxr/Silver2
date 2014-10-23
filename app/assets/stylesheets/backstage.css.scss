@@ -5,6 +5,12 @@ $midnight: #2c3e50;
 $asphalt: #1a242f;
 $turqoise: #18bc9c;
 
+// Disable rubberband scrolling
+body {
+  overflow: hidden;
+}
+
+// Navbar
 .navbar-default .navbar-brand {
   background-color: $turqoise;
   border-radius: 3px;
@@ -36,6 +42,27 @@ $turqoise: #18bc9c;
   img {
     border-radius: 30px;
   }
+}
+
+// Wrap
+#wrap {
+  height: 100%;
+  left: 0;
+  margin-top: 60px;
+  overflow-y: auto;
+  padding-top: 20px;
+  position: fixed;
+  width: 100%;
+}
+
+.curtains {
+  background: rgba(black, 0.8);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 // Page Header
@@ -119,4 +146,16 @@ $turqoise: #18bc9c;
   a.active {
     color: $turqoise;
   }
+}
+
+// Movie Popover
+.movie-popover {
+  background-color: #fff;
+  height: 100%;
+  padding: 15px;
+  position: fixed;
+  right: 0;
+  top: 60px;
+  width: 50%;
+  z-index: 2;
 }
