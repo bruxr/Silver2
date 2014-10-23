@@ -20,7 +20,7 @@
     {{#each}}
     
       <div class="movie media-item">
-        {{#link-to 'movies'}}
+        {{#link-to 'movie' this}}
           {{#if posterUrl}}
             <div class="thumbnail">
               <img {{bind-attr src=posterUrl}} {{bind-attr alt=title}}>
@@ -36,6 +36,10 @@
     
     {{/each}}
     
+  </div>
+  
+  <div class="movie-popover">
+    {{outlet}}
   </div>
 
 </div>
