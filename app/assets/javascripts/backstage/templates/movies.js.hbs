@@ -5,9 +5,9 @@
     <div class="col-md-4"><h2>Movies</h2></div>
     
     <div class="col-md-4 media-grid-options">
-      <a href="#" class="active">Now Showing</a> | 
-      <a href="#">Finished</a> | 
-      <a href="#">All</a>
+      {{#link-to 'movies' (query-params show='now-showing')}}Now Showing{{/link-to}} | 
+      {{#link-to 'movies' (query-params show='finished')}}Finished{{/link-to}} | 
+      {{#link-to 'movies' (query-params show='all')}}All{{/link-to}}
     </div>
 
     <div class="col-md-4 media-grid-search">
