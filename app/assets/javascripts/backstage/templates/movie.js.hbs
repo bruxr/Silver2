@@ -1,5 +1,11 @@
 <div class="movie-trailer">
-  TRAILER GOES HERE
+  <iframe {{bind-attr src=trailerUrl}} width="640" height="390" frameborder="0"></iframe>
 </div>
 
-<h2 class="movie-title">{{title}}</h2>
+<div class="container">
+  
+  <h2 class="movie-title">{{title}}</h2>
+  
+  <p>{{overview}}</p>
+  
+</div>
