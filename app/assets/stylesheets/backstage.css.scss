@@ -192,6 +192,10 @@ body {
   }
 }
 
+.media-grid .media-item a {
+  color: $midnight;
+}
+
 .media-grid .media-item a:hover {
   color: darken($turqoise, 5% );
   text-decoration: none;
@@ -223,6 +227,7 @@ body {
 
 .media-grid .media-item .movie-title {
   font-size: 16px;
+  margin-bottom: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
