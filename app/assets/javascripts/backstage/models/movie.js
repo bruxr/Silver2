@@ -7,6 +7,7 @@ Backstage.Movie = DS.Model.extend({
 	trailer: 				 DS.attr('string'),
 	mtrcbRating: 	   DS.attr('string'),
   posterUrl:       DS.attr('string'),
+  backdropUrl:     DS.attr('string'),
   scheduleCount:   DS.attr('number'),
   cinemaCount:     DS.attr('number'),
 	createdAt:  		 DS.attr('date'),

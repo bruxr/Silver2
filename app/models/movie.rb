@@ -257,6 +257,18 @@ class Movie < ActiveRecord::Base
       Tmdb.new.get_poster(self.poster, width)
     end
   end
+  
+  # Returns the complete movie backdrop URL with the provided width.
+  # If the width isn't supported by TMDB, it uses the highest & nearest width.
+  def backdrop_url(width = 640)
+    if self.backdrop.nil?
+      nil
+    elsif self.backdrop =~ /http/
+      self.backdrop
+    else
+      Tmdb.new.get_backdrop(self.backdrop, width)
+    end
+  end
 
   # Returns the total number of schedules for this movie
   def schedule_count(filter = :all)
