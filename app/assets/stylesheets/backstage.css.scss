@@ -62,7 +62,7 @@ body {
 }
 
 .curtains {
-  background: rgba(black, 0.8);
+  background: rgba(black, 0.75);
   display: none;
   height: 100%;
   left: 0;
@@ -259,13 +259,14 @@ body {
 // Movie Popover
 .movie-popover {
   background-color: #fff;
+  box-shadow: 0 0 16px rgba(black, 0.5);
   height: 100%;
   position: fixed;
   right: -640px;
-  top: 60px;
+  top: 0;
   width: 640px;
   z-index: 2;
-  @include transition(right 300ms ease);
+  @include transition(right 300ms ceaser($easeOutQuint));
   
   &.shown {
     right: 0;
