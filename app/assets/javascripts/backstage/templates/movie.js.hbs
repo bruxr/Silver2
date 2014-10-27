@@ -1,11 +1,16 @@
-<div class="movie-trailer">
-  <img {{bind-attr src=backdropUrl}} {{bind-attr alt=title}}>
-</div>
+<div class="movie-popover">
 
-<div class="container">
+  <div class="movie-trailer">
+    <img {{bind-attr src=backdropUrl}} {{bind-attr alt=title}}>
+  </div>
+
+  <div class="container">
   
-  <h2 class="movie-title">{{title}}</h2>
+    <h2 class="movie-title">{{title}}</h2>
   
-  <p>{{overview}}</p>
+    <p>{{overview}}</p>
   
+  </div>
+
 </div>
+<div class="curtains"></div>

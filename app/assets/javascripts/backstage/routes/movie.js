@@ -3,9 +3,12 @@ Backstage.MovieRoute = Ember.Route.extend({
   	return this.store.find('movie', params.id);
   },
   actions: {
-    didTransition: function() {
-      $('.movie-popover').addClass('shown');
-      $('.curtains').addClass('shown');
+    
+    // Invoked when the slidein modal is closed
+    // e.g. clicking the curtains
+    close: function() {
+      this.transitionTo('movies');
     }
+    
   }
 });

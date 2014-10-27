@@ -5,5 +5,7 @@ Backstage = Ember.Application.create({
       parsedName.fullNameWithoutType = 'backstage/' + parsedName.fullNameWithoutType;
       return this._super(parsedName);
     }
-  })
+  }),
+  LOG_TRANSITIONS: true,
+  LOG_VIEW_LOOKUPS: true
 });
