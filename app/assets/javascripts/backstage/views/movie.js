@@ -5,8 +5,10 @@ Backstage.MovieView = Ember.View.extend({
   // Slide in the modal & fade in the curtains
   // when our view is in the DOM.
   didInsertElement: function() {
-    this.$('.movie-popover').addClass('shown');
-    this.$('.curtains').addClass('shown');
+    setTimeout(function() {
+      this.$('.movie-popover').addClass('shown');
+      this.$('.curtains').addClass('shown');
+    }, 100);
   },
   
   willDestroyElement: function() {
