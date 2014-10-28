@@ -58,6 +58,7 @@ gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
 gem 'autoprefixer-rails'
 gem 'compass-rails'
 gem 'ember-rails'
+gem 'ember-source', '1.8.0'
 gem 'ceaser-easing'
 
 # Dev gems
