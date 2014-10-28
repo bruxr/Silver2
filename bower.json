@@ -17,5 +17,6 @@
   ],
   "dependencies": {
     "ember-animate": "~0.3.6",
+    "velocity": "~1.1.0"
   }
 }
