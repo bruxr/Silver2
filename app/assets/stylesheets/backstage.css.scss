@@ -18,40 +18,6 @@ img {
   max-width: 100%;
 }
 
-// Navbar
-.navbar-default .navbar-brand {
-  background-color: $turqoise;
-  border-radius: 3px;
-  display: block;
-  font-weight: bold;
-  height: 40px;
-  line-height: 3px;
-  margin-left: 0 !important;
-  margin-right: 15px;
-  margin-top: 10px;
-  text-align: center;
-  width: 40px;
-  @include transition(all 300ms ease-in);
-  
-  &:hover {
-    background-color: lighten($turqoise, 5%);
-    color: #1a242f;
-  }
-}
-
-.navbar a.active {
-  background-color: $asphalt;
-}
-
-.navbar-default .gravatar {
-  padding-bottom: 10px;
-  padding-top: 15px;
-  
-  img {
-    border-radius: 30px;
-  }
-}
-
 // Buttons
 .btn.btn-primary {
   background-color: $turqoise;
