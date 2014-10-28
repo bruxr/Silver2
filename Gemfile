@@ -57,9 +57,12 @@ gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
 # Frontend stuff
 gem 'autoprefixer-rails'
 gem 'compass-rails'
+gem 'ceaser-easing'
+
+# EmberJS
 gem 'ember-rails'
 gem 'ember-source', '1.8.0'
-gem 'ceaser-easing'
+gem 'ember-data-source', '1.0.0.beta.11'
 
 # Dev gems
 gem 'awesome_print', group: [:development, :test]
