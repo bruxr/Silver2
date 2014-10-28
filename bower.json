@@ -15,4 +15,7 @@
     "test",
     "tests"
   ],
+  "dependencies": {
+    "ember-animate": "~0.3.6",
+  }
 }
