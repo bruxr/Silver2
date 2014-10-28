@@ -12,6 +12,12 @@ body {
   overflow: hidden;
 }
 
+// Make all images responsive
+img {
+  height: auto;
+  max-width: 100%;
+}
+
 // Navbar
 .navbar-default .navbar-brand {
   background-color: $turqoise;
