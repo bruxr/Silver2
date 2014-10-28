@@ -98,7 +98,7 @@ img {
   }
   
   li {
-    background-position: left;
+    background-position: left top;
     background-repeat: no-repeat;
     background-size: 18px;
     margin-bottom: 28px;
@@ -127,6 +127,24 @@ img {
   
   a.active {
     color: $turqoise;
+  }
+  
+  ul.submenu {
+    margin-top: 14px;
+  }
+  
+  ul.submenu li {
+    margin-bottom: 8px;
+    padding-left: 0;
+  }
+  
+  ul.submenu li a {
+    color: #475d74;
+    font-size: 14px;
+  }
+  
+  ul.submenu li a.active {
+    color: #fff;
   }
   
 }
