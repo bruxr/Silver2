@@ -4,6 +4,8 @@
 //= require handlebars
 //= require ember
 //= require ember-data
+//= require ember-animate/ember-animate
+//= require velocity
 //= require ./backstage/app
 //= require ./backstage/router
 //= require_tree ./backstage

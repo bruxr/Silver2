@@ -71,12 +71,6 @@ body {
   top: 0;
   width: 100%;
   z-index: 1;
-  @include transition(opacity 1s ease-in);
-  
-  &.shown {
-    display: block;
-    opacity: 1;
-  }
 }
 
 // Nav Pane
@@ -266,9 +260,4 @@ body {
   top: 0;
   width: 640px;
   z-index: 2;
-  @include transition(right 300ms ceaser($easeOutQuint));
-  
-  &.shown {
-    right: 0;
-  }
 }
