@@ -1,14 +1,28 @@
 <div class="movie-popover">
 
-  <div class="movie-trailer">
-    <img {{bind-attr src=backdropUrl}} {{bind-attr alt=title}}>
-  </div>
+  <div class="movie">
 
-  <div class="container">
+    <div class="movie-trailer">
+      <img {{bind-attr src=backdropUrl}} {{bind-attr alt=title}}>
+    </div>
+
+    <div class="movie-content">
   
-    <h2 class="movie-title">{{title}}</h2>
+      <div class="movie-header">
+        <h2 class="movie-title">{{title}}</h2>
+        <a href="#" class="movie-edit btn btn-primary">Edit</a>
+      </div>
+      
+      <p>{{overview}}</p>
+      
+      <dl>
+        <dt>Runtime</dt>
+        <dd>{{runtime}} min</dd>
+        <dt>MTRCB Rating</dt>
+        <dd>{{mtrcbRating}}</dd>
+      </dl>
   
-    <p>{{overview}}</p>
+    </div>
   
   </div>
 

@@ -52,6 +52,12 @@ img {
   }
 }
 
+// Buttons
+.btn.btn-primary {
+  background-color: $turqoise;
+  border-color: $turqoise;
+}
+
 // Layout
 #wrap {
   display: flex;
@@ -261,9 +267,36 @@ img {
   background-color: #fff;
   box-shadow: 0 0 16px rgba(black, 0.5);
   height: 100%;
+  overflow: auto;
   position: fixed;
   right: -640px;
   top: 0;
   width: 640px;
   z-index: 2;
+}
+
+.movie-trailer {
+  height: 350px;
+}
+
+.movie-content {
+  padding: 30px;
+}
+
+.movie-header {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.movie-title {
+  flex: 1;
+  margin: 0;
+}
+
+.movie-edit {
+  display: block;
+  margin-left: 30px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  width: 100px;
 }
