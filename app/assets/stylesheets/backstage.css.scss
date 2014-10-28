@@ -8,7 +8,9 @@ $asphalt: #1a242f;
 $turqoise: #18bc9c;
 
 // Disable rubberband scrolling
+// Set default font size to 16px
 body {
+  font-size: 16px;
   overflow: hidden;
 }
 
