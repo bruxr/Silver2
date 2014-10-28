@@ -1,11 +1,13 @@
 @import "bootswatch-flatly";
 @import "compass/css3";
 @import "ceaser-easing";
+@import "font-awesome";
 
 $midnight: #2c3e50;
 $dark-midnight: #1d2833;
 $asphalt: #1a242f;
 $turqoise: #18bc9c;
+$smoke: #dce4ec;
 
 // Disable rubberband scrolling
 // Set default font size to 16px
@@ -157,7 +159,7 @@ img {
   h2 {
     color: $midnight;
     font-size: 38px;
-    margin-top: 7px;
+    margin-top: 0;
   }
   
   span {
@@ -165,6 +167,26 @@ img {
     display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
+  }
+  
+  & > div {
+    margin-top: 7px;
+  }
+  
+  .form {
+    position: relative;
+  }
+  
+  .form .fa {
+    color: $smoke;
+    position: absolute;
+    right: 15px;
+    top: 13px;
+    @include transition(color 150ms ease-in-out);
+  }
+  
+  .form .form-control:focus + .fa {
+    color: $midnight;
   }
 }
 
