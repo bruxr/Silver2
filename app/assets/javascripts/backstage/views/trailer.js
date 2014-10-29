@@ -33,7 +33,7 @@ Backstage.TrailerView = Ember.View.extend({
   
   playTrailer: function() {
     var trailer = this.get('controller').get('trailer');
-    var iframe = '<iframe src="https://www.youtube.com/embed/%s?autoplay=1&controls=0&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0" width="640" height="350" frameborder="0"></iframe>'.replace('%s', trailer);
+    var iframe = '<iframe src="https://www.youtube.com/embed/%s?autoplay=1&controls=0&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0" height="350" frameborder="0"></iframe>'.replace('%s', trailer);
     this.$('img,.play-btn').hide();
     this.$('.movie-trailer').append(iframe);
   },
