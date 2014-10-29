@@ -8,6 +8,10 @@ $asphalt: #1a242f;
 $turqoise: #18bc9c;
 $smoke: #dce4ec;
 
+$red: #e74c3c;
+$orange: #f39c12;
+$green: $turqoise;
+
 // Disable rubberband scrolling
 // Set default font size to 16px
 body {
@@ -25,6 +29,24 @@ img {
 .btn.btn-primary {
   background-color: $turqoise;
   border-color: $turqoise;
+}
+
+// Links
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+// Utility
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
 }
 
 // Layout
@@ -282,6 +304,11 @@ img {
   z-index: 2;
 }
 
+.movie {
+  color: #2c3e50;
+  line-height: 24px;
+}
+
 .movie-trailer {
   height: 350px;
 }
@@ -290,9 +317,14 @@ img {
   padding: 30px;
 }
 
+.movie-header, .movie-overview,
+.movie-info, .movie-scores {
+  margin-bottom: 30px;
+}
+
 .movie-header {
-  display: flex;
-  margin-bottom: 15px;
+  padding-right: 125px;
+  position: relative;
 }
 
 .movie-title {
@@ -300,10 +332,142 @@ img {
   margin: 0;
 }
 
+.movie-tagline {
+  color: #b4b4b4;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
 .movie-edit {
+  border-radius: 22px;
   display: block;
   margin-left: 30px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  width: 100px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 130px;
+  
+  .fa {
+    margin-left: -8px;
+    margin-right: 5px;
+  }
+}
+
+.movie-info {
+  
+  dl {
+    margin-bottom: 0;
+  }
+  
+  dt {
+    margin-bottom: 5px;
+  }
+  
+  dd {
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding-left: 24px;
+  }
+  
+  .fa {
+    margin-right: 5px;
+    width: 16px;
+  }
+  
+}
+
+.movie-scores {
+  margin-bottom: 60px;
+  position: relative;
+  
+  .source-name {
+    text-align: center;
+  }
+  
+  .score-graph {
+    height: 200px;
+    position: relative;
+  }
+  
+  .score {
+    height: 100%;
+    position: relative;
+  }
+  
+  .bar {
+    bottom: 25px;
+    color: #fff;
+    left: 42px;
+    padding-top: 5%;
+    position: absolute;
+    text-align: center;
+    width: 65px;
+  }
+  
+  .bar.red {
+    background-color: $red;
+  }
+  
+  .bar.yellow {
+    background-color: $orange;
+  }
+  
+  .bar.green {
+    background-color: $green;
+  }
+  
+  .source-name {
+    bottom: 0;
+    font-size: 16px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .source-name a {
+    color: $midnight;
+  }
+  
+  hr {
+    bottom: 25px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.movie-schedules {
+  
+  .table {
+    margin-top: 30px;
+  }
+  
+  .table td {
+    border-top: 1px solid #eee;
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  
+  .table tbody td:last-child {
+    text-align: right;
+  }
+  
+  .table a {
+    text-decoration: none;
+  }
+  
+  .format {
+    border: 1px solid $midnight;
+    border-radius: 22px;
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
 }

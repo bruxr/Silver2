@@ -9,95 +9,103 @@
     <div class="movie-content">
   
       <div class="movie-header">
-        <h2 class="movie-title">{{title}}</h2>
-        <a href="#" class="movie-edit btn btn-primary">Edit</a>
+        <hgroup>
+          <h2 class="movie-title">{{title}}</h2>
+          <h4 class="movie-tagline">Tagline goes here</h4>
+        </hgroup>
+        <a href="#" class="movie-edit btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
       </div>
       
-      <p>{{overview}}</p>
+      <div class="movie-overview">
+        <p>{{overview}}</p>
+      </div>
       
-      <div class="row">
+      <div class="movie-info row">
         <div class="col-md-6">
           <dl>
-            <dt>Runtime</dt>
+            <dt><i class="fa fa-clock-o"></i> Runtime</dt>
             <dd>{{runtime}} min</dd>
-            <dt>MTRCB Rating</dt>
+            <dt><i class="fa fa-child"></i> Rating</dt>
             <dd>{{mtrcbRating}}</dd>
-            <dt>Website</dt>
+            <dt><i class="fa fa-external-link"></i> Website</dt>
             <dd><a href="#">http://bruxromuar.com</a></dd>
           </dl>
         </div>
         <div class="col-md-6">
           <dl>
-            <dt>Genres</dt>
+            <dt><i class="fa fa-tags"></i> Genres</dt>
             <dd>Action, Horror, Comedy</dd>
-            <dt>Cast</dt>
+            <dt><i class="fa fa-group"></i>  Cast</dt>
             <dd>Brux Romuar, Jamie Chung</dd>
           </dl>
         </div>
       </div>
       
-      <section>
+      <section class="movie-scores">
         <h3>Scores</h3>
-        <div class="row">
-          <div class="col-md-3 scores">
-            <span class="score red">2.3</score>
-            <h4>IMDB</h4>
+        <div class="score-graph row">
+          <div class="col-md-3 score">
+            <div class="bar red" style="height: 40.25px">2.3</div>
+            <h4 class="source-name"><a href="#" target="_blank">IMDB</a></h4>
           </div>
-          <div class="col-md-3 scores">
-            <span class="score yellow">5.0</score>
-            <h4>Rotten Tomatoes</h4>
+          <div class="col-md-3 score">
+            <div class="bar yellow" style="height: 87.5px">5.0</div>
+            <h4 class="source-name"><a href="#" targe="_blank">Rotten Tomatoes</a></h4>
           </div>
-          <div class="col-md-3 scores">
-            <span class="score green">8.4</score>
-            <h4>Metacritic</h4>
+          <div class="col-md-3 score">
+            <div class="bar green" style="height: 147px">8.4</div>
+            <h4 class="source-name"><a href="#" target="_blank">Metacritic</a></h4>
           </div>
-          <div class="col-md-3 scores">
-            <span class="score green">9.9</score>
-            <h4>Total</h4>
+          <div class="col-md-3 score">
+            <div class="bar green" style="height: 173.25px">9.9</div>
+            <h4 class="source-name"><a href="#" target="_blank">Average Score</a></h4>
           </div>
+          <hr>
         </div>
       </section>
       
-      <section>
+      <section class="movie-schedules">
         <h3>Screening Times</h3>
         <table class="table">
           <tbody>
             <tr>
               <td>Tomorrow, 9:00 am</td>
               <td><a href="#">SM Lanang</a></td>
-              <td>P 150</td>
+              <td>&#8369 150</td>
               <td><span class="format">2D</span></td>
             </tr>
             <tr>
               <td>Tomorrow, 9:00 am</td>
               <td><a href="#">SM Lanang</a></td>
-              <td>P 150</td>
+              <td>&#8369 150</td>
               <td><span class="format">2D</span></td>
             </tr>
             <tr>
               <td>Tomorrow, 9:00 am</td>
               <td><a href="#">SM Lanang</a></td>
-              <td>P 150</td>
+              <td>&#8369 150</td>
               <td><span class="format">2D</span></td>
             </tr>
             <tr>
               <td>Tomorrow, 9:00 am</td>
               <td><a href="#">SM Lanang</a></td>
-              <td>P 150</td>
+              <td>&#8369 150</td>
               <td><span class="format">2D</span></td>
             </tr>
             <tr>
               <td>Tomorrow, 9:00 am</td>
               <td><a href="#">SM Lanang</a></td>
-              <td>P 150</td>
-              <td><span class="format">2D</span></td>
+              <td>&#8369 150</td>
+              <td ><span class="format">2D</span></td>
             </tr>
+          </tbody>
+          <tfoot>
             <tr>
               <td colspan="4" class="align-center">
                 <a href="#">View More</a>
               </td>
             </tr>
-          </tbody>
+          </tfoot>
         </table>
       </section>
   
