@@ -49,6 +49,10 @@ a:hover {
   text-align: right;
 }
 
+.fadein {
+  opacity: 0;
+}
+
 // Layout
 #wrap {
   display: flex;
@@ -311,6 +315,35 @@ a:hover {
 
 .movie-trailer {
   height: 350px;
+  position: relative;
+  
+  .play-btn {
+    background: rgba(black, .75);
+    border-radius: 50px;
+    color: #fff;
+    display: block;
+    height: 100px;
+    left: 260px;
+    padding-left: 38px;
+    padding-top: 28px;
+    position: absolute;
+    top: 125px;
+    width: 100px;
+    @include transform(scale(0));
+  }
+  
+  .play-btn.ready {
+    @include transform(scale(1));
+    @include transition(transform 300ms ceaser($easeInOutBack));
+  }
+  
+  .play-btn.ready:hover {
+    @include transform(scale(1.25));
+  }
+  
+  .fa {
+    font-size: 45px;
+  }
 }
 
 .movie-content {
