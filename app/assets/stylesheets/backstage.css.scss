@@ -314,8 +314,23 @@ a:hover {
 }
 
 .movie-trailer {
+  background-color: #eee;
   height: 350px;
   position: relative;
+  
+  &.no-backdrop:before {
+    color: #aaa;
+    display: block;
+    font: normal normal normal 64px/1 FontAwesome;
+    content: "\f06a";
+    position: absolute;
+    left: 290px;
+    top: 128px;
+  }
+  
+  &.ready {
+    background-color: #fff;
+  }
   
   .play-btn {
     background: rgba(black, .75);

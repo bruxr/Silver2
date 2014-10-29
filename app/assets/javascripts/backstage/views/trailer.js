@@ -4,8 +4,19 @@ Backstage.TrailerView = Ember.View.extend({
   
   didInsertElement: function() {
     this._super();
+    this.prepareImage();
+  },
+  
+  prepareImage: function() {
+    
+    container = this.$('.movie-trailer');
+    this.$('.fadein').on('error', function(event) {
+      container.addClass('no-backdrop');
+    });
+    
     var playBtn = this.$('.play-btn');
     this.$('.fadein').on('load', function() {
+      container.addClass('ready');
       $(this).velocity({
         properties: { opacity: 1 },
         options: {
@@ -17,6 +28,7 @@ Backstage.TrailerView = Ember.View.extend({
         }
       });
     });
+    
   },
   
   playTrailer: function() {
@@ -32,5 +44,5 @@ Backstage.TrailerView = Ember.View.extend({
     if (el.hasClass('fa-play')) {
       this.playTrailer();
     }
-  },
+  }
 });
