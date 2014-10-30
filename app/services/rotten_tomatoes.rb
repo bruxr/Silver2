@@ -77,8 +77,8 @@ class RottenTomatoes < WebClient
   # and the audience score.
   def get_score(id, audiences = false)
 
-    details = get_details(id)
-
+    details = get_raw_details(id)
+    ap details
     # If we got an error, end early.
     if details.nil? || details['ratings'].nil?
       nil

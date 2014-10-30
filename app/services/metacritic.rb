@@ -104,7 +104,7 @@ class Metacritic < WebClient
   # a score in the range of 0-10
   def get_score(id, actual = false)
 
-    resp = get_details(id)
+    resp = get_raw_details(id)
 
     # If we didn't get anything, return a nil
     return nil if resp.nil?

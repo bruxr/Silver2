@@ -69,7 +69,7 @@ class Omdb < WebClient
   # Returns a movie's rating in IMDB.
   def get_score(id)
 
-    resp = get_details(id)
+    resp = get_raw_details(id)
 
     # Nil for error
     if resp.nil?
