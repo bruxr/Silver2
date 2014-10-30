@@ -35,6 +35,12 @@ class Movie < ActiveRecord::Base
     message: "%{value} is not a valid MTRCB Rating.",
     allow_nil: true
   }
+  
+  validates :aggregate_score, numericality: {
+    greater_than_or_equal_to: 0
+    less_than_or_equal_to: 10
+    allow_nil: true
+  }
 
   slugify :title
 
