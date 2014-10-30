@@ -190,7 +190,9 @@ class GaisanoScraper < Scraper
         cinemas.each do |cinema, movies|
 
           movies.each do |lines|
-
+            
+            next if lines.empty? # Do not process empty lines
+            
             sked = {}
             sked[:schedules] = []
             times = []
