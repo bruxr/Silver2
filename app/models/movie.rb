@@ -151,7 +151,7 @@ class Movie < ActiveRecord::Base
 
     raise 'No sources to use.' if self.sources.empty?
 
-    whitelist = %w(overview runtime poster backdrop)
+    whitelist = %w(overview runtime poster backdrop release_date tagline website)
 
     result = Source.find_movie_details(self.sources)
     whitelist.each do |detail|

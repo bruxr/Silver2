@@ -130,6 +130,7 @@ class Tmdb < WebClient
     details['overview'] = result['overview']
     details['tagline'] = result['tagline']
     details['backdrop'] = result['backdrop_path']
+    details['website'] = result['homepage']
 
     details
 
