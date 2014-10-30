@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140908072604) do
+ActiveRecord::Schema.define(version: 20141030060609) do
+
+  create_table "artists", force: true do |t|
+    t.string "name", null: false
+  end
+
+  create_table "artists_movies", force: true do |t|
+    t.integer "artist_id", null: false
+    t.integer "movie_id",  null: false
+  end
+
+  add_index "artists_movies", ["artist_id", "movie_id"], name: "index_artists_movies_on_artist_id_and_movie_id", using: :btree
+  add_index "artists_movies", ["movie_id"], name: "index_artists_movies_on_movie_id", using: :btree
 
   create_table "cinemas", force: true do |t|
     t.string   "name",                                                    null: false
@@ -27,6 +39,18 @@ ActiveRecord::Schema.define(version: 20140908072604) do
   add_index "cinemas", ["name"], name: "index_cinemas_on_name", using: :btree
   add_index "cinemas", ["slug"], name: "index_cinemas_on_slug", unique: true, using: :btree
 
+  create_table "genres", force: true do |t|
+    t.string "name", null: false
+  end
+
+  create_table "genres_movies", force: true do |t|
+    t.integer "genre_id", null: false
+    t.integer "movie_id", null: false
+  end
+
+  add_index "genres_movies", ["genre_id", "movie_id"], name: "index_genres_movies_on_genre_id_and_movie_id", using: :btree
+  add_index "genres_movies", ["movie_id"], name: "index_genres_movies_on_movie_id", using: :btree
+
   create_table "movies", force: true do |t|
     t.string   "title",                                             null: false
     t.string   "slug",                                              null: false
@@ -40,6 +64,9 @@ ActiveRecord::Schema.define(version: 20140908072604) do
     t.string   "status",                     default: "incomplete", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "website"
+    t.string   "tagline"
+    t.date     "release_date"
   end
 
   add_index "movies", ["slug"], name: "index_movies_on_slug", unique: true, using: :btree

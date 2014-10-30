@@ -19,6 +19,10 @@ class Movie < ActiveRecord::Base
     end
 
   end
+  
+  # Genres & Cast
+  has_and_belongs_to_many :genres
+  has_and_belongs_to_many :cast, class_name: 'Artist'
 
   # Make sure we have a title and it is unique.
   validates :title, presence: true
