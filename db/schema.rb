@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20141030060609) do
     t.string "name", null: false
   end
 
+  add_index "artists", ["name"], name: "index_artists_on_name", unique: true, using: :btree
+
   create_table "artists_movies", force: true do |t|
     t.integer "artist_id", null: false
     t.integer "movie_id",  null: false
@@ -42,6 +44,8 @@ ActiveRecord::Schema.define(version: 20141030060609) do
   create_table "genres", force: true do |t|
     t.string "name", null: false
   end
+
+  add_index "genres", ["name"], name: "index_genres_on_name", unique: true, using: :btree
 
   create_table "genres_movies", force: true do |t|
     t.integer "genre_id", null: false

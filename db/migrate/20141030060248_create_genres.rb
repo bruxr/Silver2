@@ -2,8 +2,9 @@ class CreateGenres < ActiveRecord::Migration
   def change
     
     create_table :genres do |t|
-      t.string :name, null: false, unique: true
+      t.string :name, null: false
     end
+    add_index :genres, :name, unique: true
     
     create_table :genres_movies do |t|
       t.references :genre, null: false

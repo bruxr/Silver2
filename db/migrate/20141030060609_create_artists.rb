@@ -2,8 +2,9 @@ class CreateArtists < ActiveRecord::Migration
   def change
     
     create_table :artists do |t|
-      t.string :name, null: false, unique: true
+      t.string :name, null: false
     end
+    add_index :artists, :name, unique: true
     
     create_table :artists_movies do |t|
       t.references :artist, null: false
