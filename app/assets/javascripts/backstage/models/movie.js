@@ -1,4 +1,6 @@
 Backstage.Movie = DS.Model.extend({
+  schedules:       DS.hasMany('schedule'),
+  sources:         DS.hasMany('source'),
   title: 					 DS.attr('string'),
   slug: 					 DS.attr('string'),
 	overview: 			 DS.attr('string'),
