@@ -120,7 +120,7 @@ class Tmdb < WebClient
 
     details = {}
     details['title'] = result['title']
-    details['release-date'] = Date.parse(result['release_date'])
+    details['release_date'] = Date.parse(result['release_date'])
     details['genre'] = []
     result['genres'].each do |genre|
       details['genre'] << genre['name']
