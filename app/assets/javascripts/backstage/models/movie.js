@@ -8,6 +8,11 @@ Backstage.Movie = DS.Model.extend({
 	mtrcbRating: 	   DS.attr('string'),
   posterUrl:       DS.attr('string'),
   backdropUrl:     DS.attr('string'),
+  tagline:         DS.attr('string'),
+  website:         DS.attr('string'),
+  releaseDate:     DS.attr('date'),
+  genres:          DS.attr(),
+  cast:            DS.attr(),
 	createdAt:  		 DS.attr('date'),
 	updatedAt:  		 DS.attr('date')
 });
