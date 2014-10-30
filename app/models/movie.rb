@@ -29,8 +29,9 @@ class Movie < ActiveRecord::Base
   validates :title, uniqueness: true
 
   # Make sure the MTRCB rating is a valid one if it exists.
+  MTRCB_RATINGS = %w(G PG R-13 R-16 R-18)
   validates :mtrcb_rating, inclusion: {
-    in: %w(G PG R-13 R-16 R-18),
+    in: Movie::MTRCB_RATINGS,
     message: "%{value} is not a valid MTRCB Rating.",
     allow_nil: true
   }

@@ -32,6 +32,10 @@ class Abreeza < Scraper
 
       # Extract the MTRCB rating
       movie[:rating] = table.search('.SEARCH_RATING').first.content.sub('Rating: ', '')
+      unless Movie::MTRCB_RATINGS.include?(movie[:rating])
+        Rails.logger.warn("Scrapers::Abreeza - Unknown MTRCB Rating \"#{movie[:rating]}\" for \"#{movie[:name]}\".")
+        movie[:rating] = nil
+      end
 
       # Determine the cinema
       cinema_name = table.search('.CINEMA_NUMBER').first.content
