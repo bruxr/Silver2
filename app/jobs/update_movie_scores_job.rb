@@ -13,7 +13,7 @@ class UpdateMovieScoresJob
     count = 0
     movies.each do |movie|
       UpdateSingleMovieScoresJob.perform_async(movie.id)
-      count += 0
+      count += 1
     end
 
     Rails.logger.info("Enqueueing #{count} UpdateSingleMovieScoresJob for updating scores/ratings.")
