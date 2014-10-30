@@ -26,9 +26,17 @@ img {
 }
 
 // Buttons
+.btn {
+  border: 0;
+}
+
 .btn.btn-primary {
   background-color: $turqoise;
-  border-color: $turqoise;
+  @include transition(background-color 300ms ease-out);
+  
+  &:hover {
+    background-color: lighten($turqoise, 5%);
+  }
 }
 
 // Links
