@@ -115,7 +115,7 @@ class Source < ActiveRecord::Base
   end
 
   # Updates the movie's scores based on the source.
-  def update_score
+  def update_score!
     self.score = self.client.get_score(self.external_id)
   end
 

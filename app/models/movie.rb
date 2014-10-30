@@ -220,13 +220,13 @@ class Movie < ActiveRecord::Base
   end
 
   # Updates the movie's scores & aggregate score
-  def update_scores
+  def update_scores!
 
     total = 0
     divisor = 0
     self.sources.each do |source|
       if source.can_score?
-        source.update_score
+        source.update_score!
         unless source.score.nil?
           total += source.score
           divisor += 1

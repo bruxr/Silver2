@@ -8,7 +8,7 @@ class UpdateSingleMovieScoresJob
 
     movie = Movie.includes(:sources).find(movie_id)
     begin
-      movie.update_scores
+      movie.update_scores!
       movie.save
     rescue Exceptions::QuotaReached => e
       self.class.perform_in(5.seconds, movie_id) # If we reach the quota, back off for 5 seconds.
