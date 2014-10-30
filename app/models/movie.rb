@@ -228,7 +228,6 @@ class Movie < ActiveRecord::Base
       if source.can_score?
         
         source.update_score!
-        source.save
         
         unless source.score.nil?
           total += source.score
