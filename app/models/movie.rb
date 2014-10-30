@@ -150,11 +150,25 @@ class Movie < ActiveRecord::Base
 
     raise 'No sources to use.' if self.sources.empty?
 
-    details = %w(overview runtime poster backdrop)
+    whitelist = %w(overview runtime poster backdrop)
 
     result = Source.find_movie_details(self.sources)
-    details.each do |detail|
+    whitelist.each do |detail|
       self.send("#{detail}=", result[detail])
+    end
+    
+    unless result['genre'].blank?
+      result['genre'].each do |g|
+        g = g.titleize
+        genres.build(name: g) unless Genre.exists?(name: g) 
+      end
+    end
+    
+    unless result['cast'].blank?
+      result['cast'].each do |c|
+        c = c.titleize
+        cast.build(name: c) unless Artist.exists?(name: c)
+      end
     end
 
   end
