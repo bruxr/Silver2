@@ -125,5 +125,10 @@ class Source < ActiveRecord::Base
   def can_score?
     true if self.name != 'tmdb'
   end
+  
+  # Rounds scores to 1 decimal place. 
+  def score=(s)
+    super(s.round(1))
+  end
 
 end

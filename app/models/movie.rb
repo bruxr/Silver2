@@ -309,5 +309,10 @@ class Movie < ActiveRecord::Base
       schedules.scope.distinct.count(:cinema_id)
     end
   end
+  
+  # Rounds the aggregate score to 1 decimal place.
+  def aggregate_score=(s)
+    super(s.round(1))
+  end
 
 end
