@@ -226,11 +226,15 @@ class Movie < ActiveRecord::Base
     divisor = 0
     self.sources.each do |source|
       if source.can_score?
+        
         source.update_score!
+        source.save
+        
         unless source.score.nil?
           total += source.score
           divisor += 1
         end
+        
       end
     end
 
