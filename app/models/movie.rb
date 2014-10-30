@@ -7,7 +7,7 @@ class Movie < ActiveRecord::Base
 
   # Declares that many web services (e.g. The Movie Database)
   # may contain a record of this movie.
-  has_many :sources, inverse_of: :movie, dependent: :destroy do
+  has_many :sources, inverse_of: :movie, dependent: :destroy, autosave: true do
 
     # Searches for this movie's external sources.
     # Take note that this will set and overwrite existing
