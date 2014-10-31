@@ -5,9 +5,6 @@ json.movie do |movie|
   json.genres @movie.genres.map { |g| g.name }
   json.cast @movie.cast.map { |c| c.name }
   
-  json.sources @movie.sources, :id, :name, :url, :score
-  json.schedules @movie.schedules.scope.upcoming.limit(5)
-  
   if user_signed_in?
     json.(@movie, :status, :created_at, :updated_at)
   end
@@ -15,3 +12,6 @@ json.movie do |movie|
   json.partial false
   
 end
+
+json.sources @movie.sources, :id, :name, :url, :score
+json.schedules @movie.schedules.scope.upcoming.limit(5)
