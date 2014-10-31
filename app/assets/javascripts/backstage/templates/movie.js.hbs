@@ -64,40 +64,23 @@
       </section>
       {{/if}}
       
+      {{#if schedules}}
       <section class="movie-schedules">
         <h3>Screening Times</h3>
         <table class="table">
           <tbody>
+            {{#each schedules}}
             <tr>
-              <td>Tomorrow, 9:00 am</td>
-              <td><a href="#">SM Lanang</a></td>
-              <td>&#8369 150</td>
-              <td><span class="format">2D</span></td>
+              <td>{{calendarTime screeningTime}}</td>
+              {{#if ticketUrl}}
+              <td><a {{bind-attr href=ticketUrl}} target="_blank">{{cinema.name}}</a></td>
+              {{else}}
+              <td>{{cinema.name}}</td>
+              {{/if}}
+              <td>{{#if ticketPrice}}&#8369 {{ticketPrice}}{{/if}}</td>
+              <td><span class="format">{{format}}</span></td>
             </tr>
-            <tr>
-              <td>Tomorrow, 9:00 am</td>
-              <td><a href="#">SM Lanang</a></td>
-              <td>&#8369 150</td>
-              <td><span class="format">2D</span></td>
-            </tr>
-            <tr>
-              <td>Tomorrow, 9:00 am</td>
-              <td><a href="#">SM Lanang</a></td>
-              <td>&#8369 150</td>
-              <td><span class="format">2D</span></td>
-            </tr>
-            <tr>
-              <td>Tomorrow, 9:00 am</td>
-              <td><a href="#">SM Lanang</a></td>
-              <td>&#8369 150</td>
-              <td><span class="format">2D</span></td>
-            </tr>
-            <tr>
-              <td>Tomorrow, 9:00 am</td>
-              <td><a href="#">SM Lanang</a></td>
-              <td>&#8369 150</td>
-              <td ><span class="format">2D</span></td>
-            </tr>
+            {{/each}}
           </tbody>
           <tfoot>
             <tr>
@@ -108,6 +91,7 @@
           </tfoot>
         </table>
       </section>
+      {{/if}}
   
     </div>
   

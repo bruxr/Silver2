@@ -21,4 +21,12 @@ json.sources do
   end
 end
 
+schedules = @movie.schedules.scope.upcoming.order(screening_time: :desc).limit(5)
+json.schedules do
+  json.array! schedules do |schedule|
+    json.(schedule, :id, :movie_id, :cinema_id, :format, :ticket_url, :ticket_price, :room)
+    json.screening_time schedule.screening_time.in_time_zone(Rails.configuration.time_zone)
+  end 
+end
+
 json.schedules @movie.schedules.scope.upcoming.limit(5)

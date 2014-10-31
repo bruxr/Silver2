@@ -1,5 +1,5 @@
 Backstage.Schedule = DS.Model.extend({
-  cinema:         DS.belongsTo('cinema'),
+  cinema:         DS.belongsTo('cinema', {async: true}),
   movie:          DS.belongsTo('movie'),
   screeningTime:  DS.attr('date'),
   format:         DS.attr('string'),

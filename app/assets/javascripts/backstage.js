@@ -6,6 +6,7 @@
 //= require ember-data
 //= require ember-animate/ember-animate
 //= require velocity
+//= require moment
 //= require ./backstage/app
 //= require ./backstage/router
 //= require_tree ./backstage
