@@ -16,5 +16,6 @@ Backstage.Movie = DS.Model.extend({
   genres:          DS.attr(),
   cast:            DS.attr(),
 	createdAt:  		 DS.attr('date'),
-	updatedAt:  		 DS.attr('date')
+	updatedAt:  		 DS.attr('date'),
+  partial:         DS.attr('boolean')
 });
