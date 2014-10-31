@@ -513,12 +513,16 @@ a:hover {
     padding-bottom: 15px;
     padding-top: 15px;
     text-align: center;
-    width: 20%;
+    width: 15%;
   }
   
   .table tbody td:first-child {
     text-align: left;
-    width: 40%;
+    width: 35%;
+  }
+  
+  .table tbody td:nth-child(2) {
+    width: 35%;
   }
   
   .table a {
