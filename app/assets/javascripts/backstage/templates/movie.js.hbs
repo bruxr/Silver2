@@ -2,6 +2,10 @@
 
   <div class="movie">
 
+    {{#if isEditing}}
+      {{partial 'movies/edit'}}
+    {{else}}
+    
     {{view "trailer"}}
 
     <div class="movie-content">
@@ -11,7 +15,7 @@
           <h2 class="movie-title">{{title}}</h2>
           {{#if tagline}}<h4 class="movie-tagline">{{tagline}}</h4>{{/if}}
         </hgroup>
-        <a href="#" class="movie-edit btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
+        <button {{action 'edit'}} class="movie-edit btn btn-primary"><i class="fa fa-pencil"></i> Edit</button>
       </div>
       
       <div class="movie-overview">
@@ -94,6 +98,8 @@
       {{/if}}
   
     </div>
+    
+    {{/if}}
   
   </div>
 

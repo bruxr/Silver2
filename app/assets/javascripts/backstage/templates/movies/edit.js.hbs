@@ -1,0 +1,88 @@
+<div class="movie-content editing">
+  
+  <h2>Editing Movie</h2>
+  
+  <div class="movie-edit-controls">
+  
+  <div class="form-group">
+    <label>
+      Title
+      {{input value=title class="form-control"}}
+    </label>
+  </div>
+  
+  <div class="form-group">
+    <label>
+      Overview
+      {{textarea value=overview rows="6" class="form-control"}}
+    </label>
+  </div>
+  
+  <div class="form-group">
+    <label>
+      Tagline
+      {{input value=tagline class="form-control"}}
+    </label>
+  </div>
+  
+  <div class="form-group">
+    <label>
+      Website
+      {{input value=website class="form-control"}}
+    </label>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4 form-group">
+      <label>
+        Runtime<br>
+        {{view Ember.TextField type="text" valueBinding=runtime class="form-control inline" size="4"}} mins
+      </label>
+    </div>
+    <div class="col-md-4 form-group">
+      <label>
+        MTRCB Rating
+        {{view "select" content=mtrcbRatings value=mtrcbRating class="form-control"}}
+      </label>
+    </div>
+    <div class="col-md-4 form-group">
+      <label>
+        Release Date
+        {{input value=releaseDate class="form-control inline"}}
+      </label>
+    </div>
+  </div>
+  
+  <section>
+    
+    <h3>Media</h3>
+    
+    <div class="form-group">
+      <label>
+        Trailer
+        {{view Ember.TextField type="url" valueBinding=trailerUrl class="form-control"}}
+      </label>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <label>Poster</label>
+      </div>
+      <div class="col-md-6">
+        <label>Backdrop</label>
+      </div>
+    </div>
+    
+  </section>
+  
+  <section>
+    
+    <h3>Sources</h3>
+    
+    
+    
+  </section>
+  
+  <button {{action 'doneEditing'}} class="btn btn-primary btn-block">Save Changes</button>
+  
+</div>

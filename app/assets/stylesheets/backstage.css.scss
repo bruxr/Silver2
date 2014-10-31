@@ -28,6 +28,7 @@ img {
 // Buttons
 .btn {
   border: 0;
+  outline: none;
 }
 
 .btn.btn-primary {
@@ -59,6 +60,24 @@ a:hover {
 
 .fadein {
   opacity: 0;
+}
+
+// Forms
+label {
+  display: block;
+  
+  .form-control {
+    margin-top: 5px;
+  }
+}
+
+.form-control {
+  font-weight: normal;
+  
+  &.inline {
+    display: inline-block;
+    width: auto;
+  }
 }
 
 // Layout
@@ -301,6 +320,17 @@ a:hover {
   a.active {
     color: $turqoise;
   }
+}
+
+// Editing UI
+.movie-content.editing {
+  padding-top: 15px;
+}
+
+.editing h2 {
+  border-bottom: 1px solid $smoke;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
 }
 
 // Movie Popover
