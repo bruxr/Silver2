@@ -8,3 +8,9 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+# Configure VCR for testing web services
+VCR.configure do |c|
+  c.cassette_library_dir = Rails.root.join('test', 'vcr')
+  c.hook_into :faraday
+end
