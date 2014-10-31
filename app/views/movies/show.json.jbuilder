@@ -1,4 +1,4 @@
-json.movie do |movie|
+json.movie do
   
   json.(@movie, :id, :title, :slug, :overview, :runtime, :aggregate_score, :trailer, :mtrcb_rating, :poster_url, :backdrop_url, :website, :tagline, :release_date)
   
