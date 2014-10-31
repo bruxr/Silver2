@@ -13,5 +13,5 @@ json.movie do |movie|
   
 end
 
-json.sources @movie.sources, :id, :name, :url, :score
+json.sources @movie.sources, :id, :movie_id, :name, :url, :score
 json.schedules @movie.schedules.scope.upcoming.limit(5)
