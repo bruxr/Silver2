@@ -45,28 +45,20 @@
         </div>
       </div>
       
+      {{#if sources}}
       <section class="movie-scores">
         <h3>Scores</h3>
         <div class="score-graph row">
+          {{#each sources}}
           <div class="col-md-3 score">
             <div class="bar red" style="height: 40.25px">2.3</div>
             <h4 class="source-name"><a href="#" target="_blank">IMDB</a></h4>
           </div>
-          <div class="col-md-3 score">
-            <div class="bar yellow" style="height: 87.5px">5.0</div>
-            <h4 class="source-name"><a href="#" targe="_blank">Rotten Tomatoes</a></h4>
-          </div>
-          <div class="col-md-3 score">
-            <div class="bar green" style="height: 147px">8.4</div>
-            <h4 class="source-name"><a href="#" target="_blank">Metacritic</a></h4>
-          </div>
-          <div class="col-md-3 score">
-            <div class="bar green" style="height: 173.25px">9.9</div>
-            <h4 class="source-name"><a href="#" target="_blank">Average Score</a></h4>
-          </div>
+          {{/each}}
           <hr>
         </div>
       </section>
+      {{/if}}
       
       <section class="movie-schedules">
         <h3>Screening Times</h3>

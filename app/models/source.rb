@@ -32,6 +32,13 @@ class Source < ActiveRecord::Base
     rt: RottenTomatoes,
     tmdb: Tmdb
   }
+  
+  @@name_to_friendly = {
+    metacritic: 'Metacritic',
+    omdb: 'IMDB',
+    rt: 'Rotten Tomatoes',
+    tmdb: 'The Movie Database'
+  }
 
   # Returns an array of sources that contains
   # a movie titled with the provided param.
@@ -129,6 +136,11 @@ class Source < ActiveRecord::Base
   # Rounds scores to 1 decimal place. 
   def score=(s)
     super(s.round(1))
+  end
+  
+  # Returns the source's human friendly name
+  def friendly_name
+    @@name_to_friendly[self.name.to_sym]
   end
 
 end

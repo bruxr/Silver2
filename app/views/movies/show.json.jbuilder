@@ -13,5 +13,12 @@ json.movie do |movie|
   
 end
 
-json.sources @movie.sources, :id, :movie_id, :name, :url, :score
+json.sources do
+  json.array! @movie.sources.select { |s| !s.score.nil? } do |source|
+    next if source.score.nil?
+    json.(source, :id, :movie_id, :url, :score)
+    json.name source.friendly_name
+  end
+end
+
 json.schedules @movie.schedules.scope.upcoming.limit(5)
