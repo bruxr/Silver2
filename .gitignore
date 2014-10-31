@@ -1,4 +1,4 @@
-
+vendor/assets/bower_components
 .vagrant/*
 .env
 tmp/
