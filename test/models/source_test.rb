@@ -44,6 +44,14 @@ class SourceTest < ActiveSupport::TestCase
     end
     assert_equal(expected, actual)
   end
+  
+  test 'should not create duplicate sources' do
+    movie = movies(:aragorn)
+    movie.sources.search!
+    movie.save!
+    movie.sources.search!
+    assert_equal(4, movie.sources.count)
+  end
 
   test 'should find the correct movie details' do
     movie = movies(:aragorn)

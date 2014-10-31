@@ -42,7 +42,18 @@ class Source < ActiveRecord::Base
 
   # Returns an array of sources that contains
   # a movie titled with the provided param.
-  def self.find_movie_sources(title)
+  #
+  # Provide an optional movie_id to check for already existing
+  # sources linked to the movie.
+  def self.find_movie_sources(title, movie_id = nil)
+    
+    # Build our saved sources array
+    saved_sources = []
+    unless movie_id.nil?
+      Movie.find(movie_id).sources.each do |s|
+        saved_sources << s.name
+      end
+    end
 
     sources = []
 
@@ -59,12 +70,14 @@ class Source < ActiveRecord::Base
       source = klass.to_s.downcase
       source = 'rt' if source == 'rottentomatoes' # Shorten rotten tomatoes
 
-      # Build the model and then add 
-      sources << Source.new({
-        name: source,
-        external_id: resp[:id],
-        url: resp[:url]
-      });
+      # Build the model and then add if it doesn't exist yet
+      unless saved_sources.include? source
+        sources << Source.new({
+          name: source,
+          external_id: resp[:id],
+          url: resp[:url]
+        });
+      end
 
     end
 
