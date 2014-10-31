@@ -52,14 +52,14 @@ module Sluggable
       ret.gsub! /\s*@\s*/, " at "
       ret.gsub! /\s*&\s*/, " and "
 
-      #replace all non alphanumeric, underscore or periods with underscore
-      ret.gsub! /\s*[^A-Za-z0-9\.\-]\s*/, '-'  
+      #replace all non alphanumeric nor hyphen characters with a hyphen
+      ret.gsub! /\s*[^A-Za-z0-9\-]\s*/, '-'  
 
       #convert double underscores to single
       ret.gsub! /\-+/,"-"
 
       #strip off leading/trailing underscore
-      ret.gsub! /\A[-\.]+|[-\.]+\z/,""
+      ret.gsub! /\A[-]+|[-]+\z/,""
 
       ret
 
