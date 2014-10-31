@@ -49,12 +49,16 @@
       <section class="movie-scores">
         <h3>Scores</h3>
         <div class="score-graph row">
-          {{#each sources}}
+          {{#each source in sources}}
           <div class="col-md-3 score">
-            <div class="bar red" style="height: 40.25px">2.3</div>
-            <h4 class="source-name"><a href="#" target="_blank">IMDB</a></h4>
+            {{scorebar source.score}}
+            <h4 class="source-name"><a {{bind-attr href=source.url}} target="_blank">{{source.name}}</a></h4>
           </div>
           {{/each}}
+          <div class="col-md-3 score">
+            {{scorebar aggregateScore}}
+            <h4 class="source-name">Aggregate Score</h4>
+          </div>
           <hr>
         </div>
       </section>
