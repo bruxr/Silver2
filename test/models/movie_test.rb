@@ -9,7 +9,7 @@ class MovieTest < ActiveSupport::TestCase
 
   test 'should correctly update scores' do
     movie = movies(:airforceone)
-    movie.sources.search
+    movie.sources.search!
     movie.update_scores
     assert_not_nil(movie.aggregate_score)
   end
@@ -22,7 +22,7 @@ class MovieTest < ActiveSupport::TestCase
 
   test 'should be able to mark movies with complete details as ready' do
     movie = movies(:aragorn)
-    movie.sources.search
+    movie.sources.search!
     movie.find_details
     movie.find_trailer
     movie.update_status
@@ -31,7 +31,7 @@ class MovieTest < ActiveSupport::TestCase
 
   test 'should be able to fetch the best poster' do
     movie = movies(:airforceone)
-    movie.sources.search
+    movie.sources.search!
     movie.find_details
     assert_not_nil(movie.poster_url)
   end

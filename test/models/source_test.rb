@@ -47,7 +47,7 @@ class SourceTest < ActiveSupport::TestCase
 
   test 'should find the correct movie details' do
     movie = movies(:aragorn)
-    movie.sources.search
+    movie.sources.search!
     actual = Source.find_movie_details(movie.sources)
     assert_equal('The eye of the enemy is moving.', actual['tagline'])
   end

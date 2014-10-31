@@ -16,10 +16,10 @@ class Movie < ActiveRecord::Base
     # Searches for this movie's external sources.
     # Take note that this will set and overwrite existing
     # sources with the found sources.
-    def search
+    def search!
       movie = proxy_association.owner
       raise 'Movie title is nil.' if movie.title.nil?
-      movie.sources << Source.find_movie_sources(movie.title)
+      movie.sources << Source.find_movie_sources(movie.title, movie.id)
     end
 
   end
@@ -135,7 +135,7 @@ class Movie < ActiveRecord::Base
     
     mov = Movie.find_or_create_by!(title: title) # Create immediately, to prevent race conditions
     mov.mtrcb_rating = movie[:rating] if mov.mtrcb_rating.nil?
-    mov.sources.search if mov.sources.empty?
+    mov.sources.search! if mov.sources.empty?
     
     movie[:schedules].each do |sked|
       unless Schedule.existing?(mov, cinema, sked[:time], sked[:cinema_name])
