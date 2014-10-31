@@ -3,6 +3,10 @@ class Movie < ActiveRecord::Base
 
   has_many :schedules, inverse_of: :movie, dependent: :destroy
   
+  # DEPRECATED
+  # This is anti pattern since Movie knows what are the internals
+  # of a schedule (screening_time).
+  # Use movie.schedules.scope.upcoming instead.
   has_many :upcoming_schedules, -> { where('screening_time > ?', Time.now) }, class_name: 'Schedule'
 
   # Declares that many web services (e.g. The Movie Database)
