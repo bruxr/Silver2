@@ -5,5 +5,5 @@ Backstage.Schedule = DS.Model.extend({
   format:         DS.attr('string'),
   ticket_url:     DS.attr('string'),
   ticket_price:   DS.attr('number'),
-  room:           DS.attr('room')
+  room:           DS.attr('string')
 });
