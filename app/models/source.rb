@@ -45,10 +45,9 @@ class Source < ActiveRecord::Base
   def self.find_movie_sources(title)
 
     sources = []
-    services = [Metacritic, Omdb, RottenTomatoes, Tmdb]
 
     # Loop through each website
-    services.each do |klass|
+    @@source_to_class.values.each do |klass|
       
       service = klass.new
       resp = service.find_title(title)
