@@ -21,10 +21,10 @@ class UpdateMovieJob
       else
         movie.update_status
         movie.save
-        Rails.logger.info("Successfully updated movie \"#{movie.title}\".")
+        Rails.logger.info("UpdateMovieJob - Successfully updated movie \"#{movie.title}\".")
       end
     else
-      Rails.logger.warn("Cannot update movie \"#{movie.title}\". No sources found.")
+      Rails.logger.error("UpdateMovieJob - Failed to update movie \"#{movie.title}\", no sources found.")
     end
 
   end
