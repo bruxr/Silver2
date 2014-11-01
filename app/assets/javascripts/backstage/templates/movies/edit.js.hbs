@@ -38,7 +38,10 @@
       <div class="form-group">
         <label>
           Trailer
-          {{input type="url" value=trailerUrl class="form-control"}}
+          <div class="form-control-prefixed">
+            <span class="prefix">http://www.youtube.com/watch?v=</span>
+            {{input type="url" value=trailer class="form-control trailer"}}
+          </div>
         </label>
       </div>
   

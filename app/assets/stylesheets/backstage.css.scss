@@ -116,6 +116,18 @@ label {
   }
 }
 
+.form-control-prefixed {
+  position: relative;
+  
+  .prefix {
+    font-weight: normal;
+    left: 15px;
+    opacity: .50;
+    position: absolute;
+    top: 9px;
+  }
+}
+
 // Layout
 #wrap {
   display: flex;
@@ -641,4 +653,8 @@ label {
     color: $midnight;
     text-decoration: none;
   }
+}
+
+.form-control.trailer {
+  padding-left: 265px;
 }

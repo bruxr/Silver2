@@ -4,10 +4,6 @@ Backstage.MovieController = Ember.ObjectController.extend({
   mtrcbRatings: ['None', 'G', 'PG', 'R-13', 'R-16', 'R-18'],
   sourceTypes: ['metacritic', 'omdb', 'rt', 'tmdb'],
   
-  trailerUrl: function() {
-    return 'http://www.youtube.com/watch?v='+ this.get('trailer');
-  }.property('trailer'),
-  
   isoReleaseDate: function() {
     return moment(this.get('releaseDate')).toISOString().substring(0, 10);
   }.property('releaseDate'),
