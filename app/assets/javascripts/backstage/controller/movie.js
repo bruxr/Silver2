@@ -5,6 +5,10 @@ Backstage.MovieController = Ember.ObjectController.extend({
     return 'http://www.youtube.com/watch?v='+ this.get('trailer');
   }.property('trailer'),
   
+  isoReleaseDate: function() {
+    return moment(this.get('releaseDate')).toISOString().substring(0, 10);
+  }.property('releaseDate'),
+  
   actions: {
     edit: function() {
       this.set('isEditing', true);
