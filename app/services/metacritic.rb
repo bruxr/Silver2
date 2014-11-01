@@ -113,10 +113,16 @@ class Metacritic < WebClient
     return nil if resp.nil?
 
     score = resp['score'].to_i
+    score = nil if score == 0
+    
     if actual
       score
     else
-      score / 10
+      if score.nil?
+        score
+      else
+        score / 10
+      end
     end
 
   end

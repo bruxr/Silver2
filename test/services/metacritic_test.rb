@@ -9,4 +9,11 @@ class MetacriticTest < ActiveSupport::TestCase
     end
   end
   
+  test 'should return nil if a movie has no ratings' do
+    VCR.use_cassette('metacritic/check_no_score') do
+      resp = Metacritic.new.get_score('Blood Ransom')
+      assert_equal(nil, resp)
+    end
+  end
+  
 end

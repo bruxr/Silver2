@@ -77,13 +77,13 @@ class Omdb < WebClient
 
     resp = get_raw_details(id)
 
-    # Nil for error
-    if resp.nil?
-      return nil
+    raise "Omdb - Failed to get the details for #{id}, response is nil." if resp.nil?
 
-    # The score for success
+    score = resp['imdbRating']
+    if score == 'N/A'
+      nil
     else
-      return resp['imdbRating'].to_f
+      score.to_f
     end
 
   end

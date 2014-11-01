@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://byroredux-metacritic.p.mashape.com/find/movie
+    body:
+      encoding: UTF-8
+      string: title=Blood%20Ransom
+    headers:
+      X-Mashape-Key:
+      - Ox9v8xmk50mshP0TW0RpTdnNAQ6Up1FQyZBjsnTgPQUvFh8Pa2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 01 Nov 2014 07:45:43 GMT
+      Expires:
+      - "-1"
+      Pragma:
+      - no-cache
+      Server:
+      - Mashape/5.0.5
+      X-Powered-By:
+      - PleskLin
+      Content-Length:
+      - '379'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":{"name":"Blood Ransom","score":"","rlsdate":"2014-10-31","genre":"Thriller\nFantasy\nRomance","rating":"Not
+        Rated","thumbnail":"http:\/\/static.metacritic.com\/images\/products\/movies\/5\/9122611ccfe18c9fc13f9137fc0231ba-98.jpg","userscore":null,"runtime":"Not
+        Rated","director":"Francis dela Torre","cast":"","url":"http:\/\/www.metacritic.com\/movie\/blood-ransom"}}'
+    http_version: 
+  recorded_at: Sat, 01 Nov 2014 07:45:43 GMT
+recorded_with: VCR 2.9.3

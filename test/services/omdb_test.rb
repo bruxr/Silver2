@@ -9,4 +9,11 @@ class OmdbTest < ActiveSupport::TestCase
     end
   end
   
+  test 'should return nil if a movie has no ratings' do
+    VCR.use_cassette('omdb/check_no_score') do
+      resp = Omdb.new.get_score('tt2173248')
+      assert_equal(nil, resp)
+    end
+  end
+  
 end
