@@ -1,6 +1,7 @@
 <div class="movie-content editing">
   
   <h2>Editing Movie</h2>
+  <a {{action cancelEditing}} href="#" class="close-btn"></a>
   
   <div class="movie-edit-controls">
   
@@ -29,6 +30,13 @@
     <label>
       Website
       {{input value=website class="form-control"}}
+    </label>
+  </div>
+  
+  <div class="form-group">
+    <label>
+      Trailer
+      {{view Ember.TextField type="url" valueBinding=trailerUrl class="form-control"}}
     </label>
   </div>
   

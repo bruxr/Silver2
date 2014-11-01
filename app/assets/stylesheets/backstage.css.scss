@@ -40,6 +40,42 @@ img {
   }
 }
 
+.btn-group > .btn + .dropdown-toggle {
+  border-left: 1px solid darken($turqoise, 4%);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.close-btn {
+  border: 2px solid $smoke;
+  border-radius: 50%;
+  color: $smoke;
+  display: block;
+  font-size: 32px;
+  height: 35px;
+  text-align: center;
+  width: 35px;
+  @include translate3d(0, 0, 0);
+  @include transition(all 300ms ceaser($easeOutQuint));
+  
+  &:before {
+    content: '\00d7';
+    line-height: 29px;
+  }
+  
+  &:hover {
+    border-color: $midnight;
+    color: $midnight;
+    text-decoration: none;
+    @include transform(rotate(360deg));
+  }
+  
+  i {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
 // Links
 a {
   text-decoration: none;
@@ -327,10 +363,20 @@ label {
   padding-top: 15px;
 }
 
+.editing {
+  position: relative;
+}
+
 .editing h2 {
   border-bottom: 1px solid $smoke;
   margin-bottom: 30px;
   padding-bottom: 15px;
+}
+
+.editing .close-btn {
+  position: absolute;
+  right: 30px;
+  top: 35px;
 }
 
 // Movie Popover
@@ -429,19 +475,20 @@ label {
   margin-top: 5px;
 }
 
-.movie-edit {
-  border-radius: 22px;
-  display: block;
-  margin-left: 30px;
-  padding-bottom: 7px;
-  padding-top: 7px;
+.movie-edit-btn-box {
   position: absolute;
   right: 0;
-  top: 8px;
-  width: 130px;
+  top: 0;
+  
+  .dropdown-menu {
+    left: -56px;
+  }
+}
+
+.movie-edit {
+  display: block;
   
   .fa {
-    margin-left: -8px;
     margin-right: 5px;
   }
 }
