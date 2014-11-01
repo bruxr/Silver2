@@ -14,7 +14,7 @@ class Metacritic < WebClient
   # Searches the API for a movie that matches the
   # provided title.
   # Returns a hash of the movie's ID (also the title XD) and title
-  def find_title(title)
+  def find_title(title, year = Date.today.year)
 
     data = {
       max_pages: 1,
@@ -31,9 +31,12 @@ class Metacritic < WebClient
     # Try to find the exact title on the results
     title_dc = title.downcase
     resp['results'].each_with_index do |search_result, index|
-      if search_result['name'].downcase == title_dc
-        use_index = index
-      end
+      
+      result_title = search_result['name'].downcase
+      result_year = search_result['rlsdate'][0..4].to_i
+      
+      use_index = index if title == result_title && result_year == year
+      
     end
 
     # Build the result hash

@@ -81,9 +81,9 @@ class Tmdb < WebClient
   # Convenience method for searching TMDB for
   # a movie title, returns TMDB's movie title
   # ID and URL or nil if nothing is returned.
-  def find_title(title)
+  def find_title(title, year = Date.today.year)
     
-    data = { query: title }
+    data = { query: title, year: year }
 
     resp = query('/search/movie', data)
     unless resp.nil?

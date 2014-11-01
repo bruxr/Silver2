@@ -4,9 +4,9 @@ class Omdb < WebClient
   @@endpoint = 'http://www.omdbapi.com'
 
   # Searches the OMDB API given a movie title
-  def find_title(title)
+  def find_title(title, year = Date.today.year)
 
-    resp = query({s: title})
+    resp = query({s: title, y: year})
     result = nil
     unless resp.nil?
       unless resp['Search'].nil?

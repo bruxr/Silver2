@@ -15,16 +15,21 @@ class RottenTomatoes < WebClient
   # Searches the Rotten Tomatoes API
   # for a movie title.
   # Returns the title and its ID.
-  def find_title(title)
+  def find_title(title, year = Date.today.year)
 
     resp = query('/movies', {q: title, page_limit: 1, page: 1})
     unless resp.nil? 
       if resp['total'] > 0
-        result = {
-          title: resp['movies'][0]['title'],
-          id: resp['movies'][0]['id'].to_i,
-          url: resp['movies'][0]['links']['alternate']
-        }
+        
+        result = {}
+        resp['movies'].each do |movie|
+          if movie['year'] == year
+            result[:title] = movie['title']
+            result[:id] = movie['id'].to_i
+            result[:url] = movie['links']['alternate']
+          end
+        end
+        
       else
         result = nil
       end
