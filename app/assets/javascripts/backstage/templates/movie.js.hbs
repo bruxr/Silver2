@@ -15,7 +15,13 @@
           <h2 class="movie-title">{{title}}</h2>
           {{#if tagline}}<h4 class="movie-tagline">{{tagline}}</h4>{{/if}}
         </hgroup>
-        <button {{action 'edit'}} class="movie-edit btn btn-primary"><i class="fa fa-pencil"></i> Edit</button>
+        <div class="btn-group movie-edit-btn-box">
+          <button {{action 'edit'}} type="button" class="movie-edit btn btn-primary"><i class="fa fa-pencil"></i> Edit</button>
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="caret"></i></button>
+          <ul class="dropdown-menu">
+            <li><a {{action 'updateInfo'}} href="#"><i class="fa fa-magic fa-fw"></i> Update Info</a></li>
+          </ul>
+        </div>
       </div>
       
       <div class="movie-overview">
