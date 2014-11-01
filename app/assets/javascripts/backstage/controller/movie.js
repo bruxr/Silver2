@@ -13,18 +13,30 @@ Backstage.MovieController = Ember.ObjectController.extend({
   }.property('releaseDate'),
   
   actions: {
+    
     edit: function() {
       this.set('isEditing', true);
       $('.movie-popover').animate({scrollTop: 0}, 'fast');
     },
+    
     doneEditing: function() {
       this.get('model').save().then(function() {
         this.set('isEditing', false);
       });
     },
+    
     cancelEditing: function() {
       this.set('isEditing', false);
-    }
+    },
+    
+    removeSource: function(source) {
+      movie = this.get('model');
+      movie.get('sources').removeObject(source);
+      movie.save();
+      source.deleteRecord();
+      source.save();
+    },
+    
   }
   
 });
