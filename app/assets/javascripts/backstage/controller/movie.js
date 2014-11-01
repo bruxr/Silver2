@@ -8,7 +8,13 @@ Backstage.MovieController = Ember.ObjectController.extend({
     if (arguments.length > 1) {
       this.set('model.releaseDate', new Date(v));
     }
-    return this.get('model.releaseDate').toISOString().substring(0, 10);
+    date = this.get('model.releaseDate')
+    if (date !== null) {
+      return date.toISOString().substring(0, 10);
+    }
+    else {
+      return null
+    }
   }.property('model.releaseDate'),
   
   name: function() {
