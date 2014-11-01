@@ -10,16 +10,22 @@ class Omdb < WebClient
     result = nil
     unless resp.nil?
       unless resp['Search'].nil?
-        resp['Search'].each do |item|
-          if item['Type'] == 'movie'
-            result = {
-              title: item['Title'],
-              id: item['imdbID'],
-              url: "http://www.imdb.com/title/#{item['imdbID']}"
-            }
-            break
-          end
+        
+        scores = {}
+        
+        resp['Search'].each_with_index do |item, index|
+          next if item['Type'] != 'movie'
+          scores[index] = Levenshtein.distance(title, item['Title'])
         end
+        
+        # Use the first result that is nearest to our title.
+        use_index = scores.key(scores.values.min)
+        result = {
+          title: resp['Search'][use_index]['Title'],
+          id: resp['Search'][use_index]['imdbID'],
+          url: "http://www.imdb.com/title/#{resp['Search'][use_index]['imdbID']}"
+        }
+        
       end
     end
 
