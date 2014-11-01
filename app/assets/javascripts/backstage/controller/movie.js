@@ -8,6 +8,7 @@ Backstage.MovieController = Ember.ObjectController.extend({
   actions: {
     edit: function() {
       this.set('isEditing', true);
+      $('.movie-popover').animate({scrollTop: 0}, 'fast');
     },
     doneEditing: function() {
       this.get('model').save().then(function() {
