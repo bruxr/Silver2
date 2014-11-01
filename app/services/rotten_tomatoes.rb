@@ -84,14 +84,30 @@ class RottenTomatoes < WebClient
 
     details = get_raw_details(id)
     
-    # If we got an error, end early.
-    if details.nil? || details['ratings'].nil?
-      nil
-    else
-      critics = details['ratings']['critics_score'].to_f / 10
-      audience = details['ratings']['audience_score'].to_f / 10
-      (critics + audience) / 2
+    raise "RottenTomatoes - Failed to fetch details for \##{id}, response is nil." if details.nil?
+    
+    require 'nokogiri'
+    page = get(details['links']['alternate'])
+    doc = Nokogiri::HTML(page)
+    
+    critic_ratings = doc.at_css('#scoreStats > div:first')
+    if critic_ratings.nil?
+      Rails.logger.warn("RottenTomatoes - Failed to find critics section when calculating scores for \##{id}. No score will be calculated.")
+      return nil # Score unavailable if critic scores aren't present.
     end
+    
+    critics_score = critic_ratings.content.strip.match(/(\d(\.\d)?)\/10/)[0]
+    raise "Failed to extract critics score when calculating scores for \##{id}." if critics_score.nil?
+    critics_score = critics_score.to_f
+    
+    audience_ratings = doc.at_css('.audience-info > div:first').content
+    raise "Failed to find audience section when calculating scores for \##{id}." if audience_ratings.blank?
+
+    audience_score = audience_ratings.strip.match(/(\d(\.\d)?)\/5/)[0]
+    raise "Failed to extract audience score when calculating scores for \##{id}." if audience_score.nil?
+    audience_score = audience_score.to_f * 2
+    
+    (critics_score + audience_score) / 20
 
   end
 

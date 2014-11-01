@@ -8,5 +8,12 @@ class RottenTomatoesTest < ActiveSupport::TestCase
       assert_equal(771373980, resp[:id])
     end
   end
+
+  test 'should be able to get ratings from movie pages' do
+    VCR.use_cassette('rotten_tomatoes/get_score') do
+      score = RottenTomatoes.new.get_score(770740154) # Avengers
+      assert_instance_of(Float, score)
+    end
+  end
   
 end
