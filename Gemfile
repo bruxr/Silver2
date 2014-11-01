@@ -68,3 +68,4 @@ gem 'ember-data-source', '1.0.0.beta.11'
 gem 'awesome_print', group: [:development, :test]
 gem 'colorize', group: [:development, :test]
 gem 'vcr', group: [:development, :test]
+gem 'webmock', group: [:development, :test]
