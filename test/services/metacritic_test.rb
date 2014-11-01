@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OmdbTest < ActiveSupport::TestCase
+class MetacriticTest < ActiveSupport::TestCase
   
   test 'should be able to find the correct movie' do
     VCR.use_cassette('test/metacritic/find_correct_movie') do
