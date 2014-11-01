@@ -620,3 +620,17 @@ label {
   padding-right: 0;
   width: 168px;
 }
+
+.movie-source-edit .remove-source {
+  color: $smoke;
+  display: block;
+  font-size: 25px;
+  margin-left: -10px;
+  margin-top: 36px;
+  padding: 0 5px;
+  
+  &:hover {
+    color: $midnight;
+    text-decoration: none;
+  }
+}

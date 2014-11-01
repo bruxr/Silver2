@@ -15,9 +15,9 @@ end
 
 json.sources do
   json.array! @movie.sources.select { |s| !s.score.nil? } do |source|
-    next if source.score.nil?
-    json.(source, :id, :movie_id, :url, :score)
+    json.(source, :id, :movie_id, :external_id, :url, :score)
     json.name source.friendly_name
+    json.short_name source.name
   end
 end
 
