@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=dzvhcez774keqnkankf8kt8z&page=1&page_limit=1&q=Ouija
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Language:
+      - en-US
+      Content-Type:
+      - text/javascript;charset=ISO-8859-1
+      Date:
+      - Sat, 01 Nov 2014 06:40:58 GMT
+      Flx-Build-Date:
+      - '2014-10-30 12:31:49'
+      Flx-Commit:
+      - JOBRELEASE.2014-10-30.11-47-17 3a1e500
+      Flx-Server:
+      - web238.flixster.com
+      Rt-Commit:
+      - 0e82581
+      Server:
+      - Mashery Proxy
+      Set-Cookie:
+      - JSESSIONID=EFCCB74A4DA01C9627D8AC480FBED04B; Path=/; HttpOnly
+      Vary:
+      - User-Agent,Accept-Encoding
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-61.mashery.com
+      Content-Length:
+      - '2131'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {"total":5,"movies":[{"id":"771373980","title":"Ouija","year":2014,"mpaa_rating":"PG-13","runtime":83,"critics_consensus":"","release_dates":{"theater":"2014-10-24"},"ratings":{"critics_rating":"Rotten","critics_score":8,"audience_rating":"Spilled","audience_score":35},"synopsis":"In Ouija, a group of friends must confront their most terrifying fears when they awaken the dark powers of an ancient spirit board. Stiles White directs the supernatural thriller that is produced by Platinum Dunes partners Michael Bay, Brad Fuller and Andrew Form (The Purge, The Texas Chainsaw Massacre, Friday the 13th) alongside Blumhouse Productions' Jason Blum (Paranormal Activity and Insidious series, The Purge), Bennett Schneir (Battleship) and Hasbro. (c) Universal","posters":{"thumbnail":"http://content6.flixster.com/movie/11/17/93/11179312_tmb.jpg","profile":"http://content6.flixster.com/movie/11/17/93/11179312_tmb.jpg","detailed":"http://content6.flixster.com/movie/11/17/93/11179312_tmb.jpg","original":"http://content6.flixster.com/movie/11/17/93/11179312_tmb.jpg"},"abridged_cast":[{"name":"Douglas Smith","id":"478230222"},{"name":"Olivia Cooke","id":"771439949"},{"name":"Daren Kagasoff","id":"770808922","characters":["Trevor"]},{"name":"Bianca A. Santos","id":"771462751"},{"name":"Ana Coto","id":"771479145"}],"alternate_ids":{"imdb":"1204977"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/771373980.json","alternate":"http://www.rottentomatoes.com/m/ouija_2014/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/771373980/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/771373980/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/771373980/similar.json"}}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=Ouija&page_limit=1&page=1","next":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=Ouija&page_limit=1&page=2"},"link_template":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"}
+    http_version: 
+  recorded_at: Sat, 01 Nov 2014 07:39:00 GMT
+recorded_with: VCR 2.9.3
