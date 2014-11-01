@@ -13,13 +13,13 @@ http_interactions:
       message: OK
     headers:
       Cache-Control:
-      - private, max-age=209
+      - private, max-age=3600
       Content-Type:
       - text/html; charset=utf-8
       Expires:
-      - Sat, 01 Nov 2014 07:41:52 GMT
+      - Sat, 01 Nov 2014 08:46:01 GMT
       Last-Modified:
-      - Sat, 01 Nov 2014 06:41:52 GMT
+      - Sat, 01 Nov 2014 07:46:01 GMT
       Vary:
       - "*"
       Server:
@@ -31,15 +31,14 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Sat, 01 Nov 2014 07:38:23 GMT
+      - Sat, 01 Nov 2014 07:46:00 GMT
       Content-Length:
       - '331'
     body:
       encoding: UTF-8
-      string: '{"Search":[{"Title":"Ouija","Year":"2014","imdbID":"tt1204977","Type":"movie"},{"Title":"The
-        Ouija Board","Year":"2014","imdbID":"tt3150004","Type":"N/A"},{"Title":"La
+      string: '{"Search":[{"Title":"The Ouija Experiment 2: Theatre of Pain","Year":"2014","imdbID":"tt3727824","Type":"movie"},{"Title":"La
         Ouija","Year":"2014","imdbID":"tt3590184","Type":"episode"},{"Title":"The
-        Ouija Experiment 2: Theatre of Pain","Year":"2014","imdbID":"tt3727824","Type":"movie"}]}'
+        Ouija Board","Year":"2014","imdbID":"tt3150004","Type":"N/A"},{"Title":"Ouija","Year":"2014","imdbID":"tt1204977","Type":"movie"}]}'
     http_version: 
-  recorded_at: Sat, 01 Nov 2014 07:38:20 GMT
+  recorded_at: Sat, 01 Nov 2014 07:45:58 GMT
 recorded_with: VCR 2.9.3

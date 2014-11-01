@@ -19,7 +19,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 01 Nov 2014 07:39:12 GMT
+      - Sat, 01 Nov 2014 07:48:55 GMT
       Etag:
       - '"36baae774370990488f50cd6e253f9fb"'
       Server:
@@ -29,9 +29,9 @@ http_interactions:
       X-Memc:
       - HIT
       X-Memc-Age:
-      - '3394'
+      - '3977'
       X-Memc-Expires:
-      - '7406'
+      - '6823'
       X-Memc-Key:
       - 7a520086c28a6beee1f73066af346465
       Content-Length:
@@ -42,5 +42,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/pJXFPBOild76vDAiapX5BOTtj2B.jpg","id":242512,"original_title":"Ouija","release_date":"2014-10-24","poster_path":"/m9jNAoWFL3cevXhqP6RePQYUmJa.jpg","popularity":3.14051221822419,"title":"Ouija","vote_average":7.2,"vote_count":5}],"total_pages":1,"total_results":1}'
     http_version: 
-  recorded_at: Sat, 01 Nov 2014 07:39:12 GMT
+  recorded_at: Sat, 01 Nov 2014 07:48:55 GMT
 recorded_with: VCR 2.9.3

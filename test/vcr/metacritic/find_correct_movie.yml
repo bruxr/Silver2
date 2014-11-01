@@ -19,7 +19,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 01 Nov 2014 07:33:21 GMT
+      - Sat, 01 Nov 2014 07:45:40 GMT
       Expires:
       - "-1"
       Pragma:
@@ -38,5 +38,5 @@ http_interactions:
         Coto, Bianca A. Santos, Daren Kagasoff, Douglas Smith, Olivia Cooke","genre":"Action,
         Adventure, Thriller, Horror","avguserscore":"7.5","runtime":"89 min"}]}'
     http_version: 
-  recorded_at: Sat, 01 Nov 2014 07:33:21 GMT
+  recorded_at: Sat, 01 Nov 2014 07:45:41 GMT
 recorded_with: VCR 2.9.3
