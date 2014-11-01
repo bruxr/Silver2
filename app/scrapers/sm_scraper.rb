@@ -121,7 +121,8 @@ class SmScraper < Scraper
             # Raise a ignorable Exception if they use an unknown one. 
             if ! screening['MtrcbRating'].empty?
               if ratings[screening['MtrcbRating']].nil? 
-                raise "SM Fetcher: Unknown MTRCB rating #{screening['MtrcbRating']}, skipping it instead."
+                Rails.logger.warn("SmScraper::#{@branch_code} - Ignored unknown MTRCB rating: #{screening['MtrcbRating']}.")
+                movie[:rating] = nil
               else
                 movie[:rating] = ratings[screening['MtrcbRating']]
               end
