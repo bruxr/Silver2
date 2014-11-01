@@ -4,9 +4,17 @@ Backstage.MovieController = Ember.ObjectController.extend({
   mtrcbRatings: ['None', 'G', 'PG', 'R-13', 'R-16', 'R-18'],
   sourceTypes: ['metacritic', 'omdb', 'rt', 'tmdb'],
   
-  isoReleaseDate: function() {
-    return moment(this.get('releaseDate')).toISOString().substring(0, 10);
-  }.property('releaseDate'),
+  isoReleaseDate: function(k, v) {
+    if (arguments.length > 1) {
+      this.set('model.releaseDate', new Date(v));
+    }
+    return this.get('model.releaseDate').toISOString().substring(0, 10);
+  }.property('model.releaseDate'),
+  
+  name: function() {
+    console.log(arguments);
+    return this.get('model.title')
+  }.property('model.title'),
   
   actions: {
     
