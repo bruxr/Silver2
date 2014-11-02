@@ -59,14 +59,10 @@ class MoviesController < ApplicationController
     end
   end
 
-  # DELETE /movies/1
-  # DELETE /movies/1.json
+  # DELETE /movies/<id>.json route
+  # Deleting movies is not allowed.
   def destroy
-    @movie.destroy
-    respond_to do |format|
-      format.html { redirect_to movies_url, notice: 'Movie was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    not_found
   end
 
   private
