@@ -34,3 +34,27 @@ five:
   name: tmdb
   external_id: 1930
   url: http://www.themoviedb.org/movie/1930
+  
+six:
+  movie: nightcrawler
+  name: metacritic
+  external_id: Nightcrawler
+  url: http://www.metacritic.com/movie/nightcrawler
+  
+seven:
+  movie: nightcrawler
+  name: omdb
+  external_id: tt2872718
+  url: http://www.imdb.com/title/tt2872718
+
+eight:
+  movie: nightcrawler
+  name: rt
+  external_id: 771380953
+  url: http://www.rottentomatoes.com/m/nightcrawler
+  
+nine:
+  movie: nightcrawler
+  name: tmdb
+  external_id: 242582
+  url: https://www.themoviedb.org/movie/242582
