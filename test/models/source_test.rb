@@ -56,7 +56,6 @@ class SourceTest < ActiveSupport::TestCase
         movie.find_sources!
         movie.save
         movie.find_sources!
-        ap movie.sources.to_a
         assert_equal(4, movie.sources.length)
       end
     end
