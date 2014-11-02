@@ -19,7 +19,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 02 Nov 2014 07:45:20 GMT
+      - Sun, 02 Nov 2014 08:32:44 GMT
       Expires:
       - "-1"
       Pragma:
@@ -28,8 +28,8 @@ http_interactions:
       - Mashape/5.0.5
       X-Powered-By:
       - PleskLin
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '1490'
       Connection:
       - keep-alive
     body:
@@ -48,10 +48,10 @@ http_interactions:
         Byrne, G\u00e9rard Depardieu, Jeremy Irons, John Malkovich, Leonardo DiCaprio","genre":"Action,
         Adventure, Drama, History","avguserscore":"6.2","runtime":"132 min"}]}'
     http_version: 
-  recorded_at: Sun, 02 Nov 2014 07:45:20 GMT
+  recorded_at: Sun, 02 Nov 2014 08:32:44 GMT
 - request:
     method: get
-    uri: http://www.omdbapi.com/?s=Iron%20Man&y=2014
+    uri: http://www.omdbapi.com/?s=Iron%20Man&y=2008
     body:
       encoding: US-ASCII
       string: ''
@@ -62,13 +62,13 @@ http_interactions:
       message: OK
     headers:
       Cache-Control:
-      - private, max-age=3600
+      - private, max-age=1223
       Content-Type:
       - text/html; charset=utf-8
       Expires:
-      - Sun, 02 Nov 2014 09:45:24 GMT
+      - Sun, 02 Nov 2014 09:53:11 GMT
       Last-Modified:
-      - Sun, 02 Nov 2014 07:45:24 GMT
+      - Sun, 02 Nov 2014 07:53:11 GMT
       Vary:
       - "*"
       Server:
@@ -80,20 +80,36 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Sun, 02 Nov 2014 07:45:24 GMT
+      - Sun, 02 Nov 2014 08:32:46 GMT
       Content-Length:
-      - '362'
+      - '822'
     body:
-      encoding: UTF-8
-      string: '{"Search":[{"Title":"Iron Man and Captain America: Heroes United","Year":"2014","imdbID":"tt3911200","Type":"movie"},{"Title":"The
-        Awakening: An Iron Man Saga","Year":"2014","imdbID":"tt3550252","Type":"movie"},{"Title":"Iron
-        Man 2","Year":"2014","imdbID":"tt3512560","Type":"episode"},{"Title":"Iron
-        Man 2","Year":"2014","imdbID":"tt3512560","Type":"episode"}]}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJTZWFyY2giOlt7IlRpdGxlIjoiSXJvbiBNYW4iLCJZZWFyIjoiMjAwOCIs
+        ImltZGJJRCI6InR0MDM3MTc0NiIsIlR5cGUiOiJtb3ZpZSJ9LHsiVGl0bGUi
+        OiJJcm9uIE1hbjogQXJtb3JlZCBBZHZlbnR1cmVzIiwiWWVhciI6IjIwMDji
+        gJMiLCJpbWRiSUQiOiJ0dDA4MzcxNDMiLCJUeXBlIjoic2VyaWVzIn0seyJU
+        aXRsZSI6Iklyb24gTWFuIiwiWWVhciI6IjIwMDgiLCJpbWRiSUQiOiJ0dDEy
+        MzMyMDUiLCJUeXBlIjoiZ2FtZSJ9LHsiVGl0bGUiOiJJcm9uIE1hbiIsIlll
+        YXIiOiIyMDA4IiwiaW1kYklEIjoidHQzMDExMjQ0IiwiVHlwZSI6ImVwaXNv
+        ZGUifSx7IlRpdGxlIjoiV2lsZGx5IFBvcHVsYXIgJ0lyb24gTWFuJyBUcmFp
+        bGVyIHRvIEJlIEFkYXB0ZWQgaW50byBGdWxsLUxlbmd0aCBGaWxtIiwiWWVh
+        ciI6IjIwMDgiLCJpbWRiSUQiOiJ0dDE3OTI3ODUiLCJUeXBlIjoiZXBpc29k
+        ZSJ9LHsiVGl0bGUiOiJUaGUgRm9yYmlkZGVuIEtpbmdkb20vRGVjZXB0aW9u
+        cy9Jcm9uIE1hbiIsIlllYXIiOiIyMDA4IiwiaW1kYklEIjoidHQxNjU3Njcx
+        IiwiVHlwZSI6ImVwaXNvZGUifSx7IlRpdGxlIjoiSXJvbiBNYW4gRWRpdGlv
+        biIsIlllYXIiOiIyMDA4IiwiaW1kYklEIjoidHQxMzU1NDk0IiwiVHlwZSI6
+        ImVwaXNvZGUifSx7IlRpdGxlIjoiVGhlIEJyZXRocmVuIG9mIHRoZSBTdG9u
+        ZTogSXJvbiBNYW4iLCJZZWFyIjoiMjAwOCIsImltZGJJRCI6InR0MTI1MTcy
+        MyIsIlR5cGUiOiJtb3ZpZSJ9LHsiVGl0bGUiOiJJcm9uIE1hbiBhbmQgSHVs
+        ayIsIlllYXIiOiIyMDA4IiwiaW1kYklEIjoidHQxMjIyNzU1IiwiVHlwZSI6
+        ImVwaXNvZGUifV19
     http_version: 
-  recorded_at: Sun, 02 Nov 2014 07:45:22 GMT
+  recorded_at: Sun, 02 Nov 2014 08:32:45 GMT
 - request:
     method: get
-    uri: http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=dzvhcez774keqnkankf8kt8z&page=1&page_limit=1&q=Iron%20Man
+    uri: http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=dzvhcez774keqnkankf8kt8z&page=1&q=Iron%20Man
     body:
       encoding: US-ASCII
       string: ''
@@ -108,7 +124,7 @@ http_interactions:
       Content-Type:
       - text/javascript;charset=ISO-8859-1
       Date:
-      - Sun, 02 Nov 2014 07:45:23 GMT
+      - Sun, 02 Nov 2014 08:32:45 GMT
       Flx-Build-Date:
       - '2014-10-30 12:31:49'
       Flx-Commit:
@@ -120,13 +136,13 @@ http_interactions:
       Server:
       - Mashery Proxy
       Set-Cookie:
-      - JSESSIONID=721F6EF5D661649784932EE9A5B1AB7C; Path=/; HttpOnly
+      - JSESSIONID=970309D2D6C520195EA9F15689EE03F0; Path=/; HttpOnly
       Vary:
       - User-Agent,Accept-Encoding
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-57.mashery.com
+      - prod-j-worker-us-east-1b-59.mashery.com
       Content-Length:
-      - '1826'
+      - '26779'
       Connection:
       - keep-alive
     body:
@@ -164,12 +180,12 @@ http_interactions:
 
 
 
-        {"total":18,"movies":[{"id":"714976247","title":"Iron Man","year":2008,"mpaa_rating":"PG-13","runtime":126,"critics_consensus":"","release_dates":{"theater":"2008-04-14","dvd":"2008-09-30"},"ratings":{"critics_rating":"Certified Fresh","critics_score":93,"audience_rating":"Upright","audience_score":91},"synopsis":"","posters":{"thumbnail":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg","profile":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg","detailed":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg","original":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg"},"abridged_cast":[{"name":"Robert Downey Jr.","id":"162654529","characters":["Tony Stark"]},{"name":"Terrence Howard","id":"162652991","characters":["Rhodey"]},{"name":"Jeff Bridges","id":"162655890","characters":["Obadiah Stane"]},{"name":"Gwyneth Paltrow","id":"162653966","characters":["Pepper Potts"]},{"name":"Leslie Bibb","id":"563122407","characters":["Christine Everhart"]}],"alternate_ids":{"imdb":"0371746"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247.json","alternate":"http://www.rottentomatoes.com/m/iron_man/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247/similar.json"}}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=Iron+Man&page_limit=1&page=1","next":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=Iron+Man&page_limit=1&page=2"},"link_template":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"}
+        {"total":18,"movies":[{"id":"714976247","title":"Iron Man","year":2008,"mpaa_rating":"PG-13","runtime":126,"critics_consensus":"","release_dates":{"theater":"2008-04-14","dvd":"2008-09-30"},"ratings":{"critics_rating":"Certified Fresh","critics_score":93,"audience_rating":"Upright","audience_score":91},"synopsis":"","posters":{"thumbnail":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg","profile":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg","detailed":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg","original":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg"},"abridged_cast":[{"name":"Robert Downey Jr.","id":"162654529","characters":["Tony Stark"]},{"name":"Terrence Howard","id":"162652991","characters":["Rhodey"]},{"name":"Jeff Bridges","id":"162655890","characters":["Obadiah Stane"]},{"name":"Gwyneth Paltrow","id":"162653966","characters":["Pepper Potts"]},{"name":"Leslie Bibb","id":"563122407","characters":["Christine Everhart"]}],"alternate_ids":{"imdb":"0371746"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247.json","alternate":"http://www.rottentomatoes.com/m/iron_man/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247/similar.json"}},{"id":"771217285","title":"Iron Man 3","year":2013,"mpaa_rating":"PG-13","runtime":109,"critics_consensus":"","release_dates":{"theater":"2013-05-03","dvd":"2013-09-24"},"ratings":{"critics_rating":"Certified Fresh","critics_score":78,"audience_rating":"Upright","audience_score":79},"synopsis":"Marvel's \"Iron Man 3\" pits brash-but-brilliant industrialist Tony Stark/Iron Man against an enemy whose reach knows no bounds. When Stark finds his personal world destroyed at his enemy's hands, he embarks on a harrowing quest to find those responsible. This journey, at every turn, will test his mettle. With his back against the wall, Stark is left to survive by his own devices, relying on his ingenuity and instincts to protect those closest to him. As he fights his way back, Stark discovers the answer to the question that has secretly haunted him: does the man make the suit or does the suit make the man? (c) Disney","posters":{"thumbnail":"http://content8.flixster.com/movie/11/17/05/11170594_tmb.jpg","profile":"http://content8.flixster.com/movie/11/17/05/11170594_tmb.jpg","detailed":"http://content8.flixster.com/movie/11/17/05/11170594_tmb.jpg","original":"http://content8.flixster.com/movie/11/17/05/11170594_tmb.jpg"},"abridged_cast":[{"name":"Wang Xueqin","id":"770990330","characters":["Dr. Wu"]},{"name":"Robert Downey Jr.","id":"162654529","characters":["Tony Stark"]},{"name":"Gwyneth Paltrow","id":"162653966","characters":["Pepper Potts"]},{"name":"Don Cheadle","id":"162652206","characters":["Colonel James Rhodes"]},{"name":"Guy Pearce","id":"162660324","characters":["Aldrich Killian"]}],"alternate_ids":{"imdb":"1300854"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/771217285.json","alternate":"http://www.rottentomatoes.com/m/iron_man_3/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/771217285/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/771217285/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/771217285/similar.json"}},{"id":"771240976","title":"Iron Man","year":1931,"mpaa_rating":"Unrated","runtime":73,"release_dates":{},"ratings":{"critics_score":-1,"audience_score":43},"synopsis":"","posters":{"thumbnail":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif","profile":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif","detailed":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif","original":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif"},"abridged_cast":[{"name":"Lew Ayres","id":"364615499","characters":["Young Mason"]},{"name":"Jean Harlow","id":"364599945","characters":["Rose Mason"]},{"name":"Robert Armstrong","id":"364653286","characters":["George Regan"]},{"name":"John Miljan","id":"326298431","characters":["Paul H. Lewis"]},{"name":"Edward Dillon","id":"770827600","characters":["Jeff"]}],"alternate_ids":{"imdb":"0022002"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/771240976.json","alternate":"http://www.rottentomatoes.com/m/771240976/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/771240976/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/771240976/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/771240976/similar.json"}},{"id":"770800493","title":"Iron Man 2","year":2010,"mpaa_rating":"PG-13","runtime":124,"critics_consensus":"","release_dates":{"theater":"2010-05-07","dvd":"2010-09-28"},"ratings":{"critics_rating":"Certified Fresh","critics_score":73,"audience_rating":"Upright","audience_score":73},"synopsis":"Robert Downey Jr. returns as Tony Stark, the wealthy playboy whose exploits as Iron Man are now public knowledge after his admission at the close of the first film. In the follow-up, Stark is pitted against his Russian arch nemesis, Whiplash (Mickey Rourke), and corporate rival Justin Hammer (Sam Rockwell). Also making their Marvel debuts are Scarlett Johansson as the sexy Russian spy Black Widow, and Don Cheadle, who takes over the role of Colonel James Rhodes from Terrence Howard.","posters":{"thumbnail":"http://content7.flixster.com/movie/11/12/20/11122085_tmb.jpg","profile":"http://content7.flixster.com/movie/11/12/20/11122085_tmb.jpg","detailed":"http://content7.flixster.com/movie/11/12/20/11122085_tmb.jpg","original":"http://content7.flixster.com/movie/11/12/20/11122085_tmb.jpg"},"abridged_cast":[{"name":"Robert Downey Jr.","id":"162654529","characters":["Tony Stark"]},{"name":"Gwyneth Paltrow","id":"162653966","characters":["Virginia 'Pepper' Potts"]},{"name":"Don Cheadle","id":"162652206","characters":["Colonel James 'Rhodey' Rhodes"]},{"name":"Mickey Rourke","id":"162652508","characters":["Ivan Vanko/Whiplash"]},{"name":"Sam Rockwell","id":"162652298","characters":["Justin Hammer"]}],"alternate_ids":{"imdb":"1228705"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/770800493.json","alternate":"http://www.rottentomatoes.com/m/iron_man_2/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/770800493/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/770800493/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/770800493/similar.json"}},{"id":"525809622","title":"The Invincible Iron Man","year":2007,"mpaa_rating":"PG-13","runtime":83,"release_dates":{"dvd":"2007-01-23"},"ratings":{"critics_score":-1,"audience_rating":"Spilled","audience_score":47},"synopsis":"","posters":{"thumbnail":"http://content6.flixster.com/movie/11/14/92/11149296_tmb.jpg","profile":"http://content6.flixster.com/movie/11/14/92/11149296_tmb.jpg","detailed":"http://content6.flixster.com/movie/11/14/92/11149296_tmb.jpg","original":"http://content6.flixster.com/movie/11/14/92/11149296_tmb.jpg"},"abridged_cast":[{"name":"Marc Worden","id":"289633124","characters":["Tony Stark/Iron Man","Tony Stark/Ironman"]},{"name":"Gwendoline Yeo","id":"525809623","characters":["Li Mei"]},{"name":"Rodney Saulsberry","id":"525809628","characters":["Rhodey"]},{"name":"Elisa Pensler Gabrielli","id":"771029152","characters":["Pepper Pots"]},{"name":"John McCook","id":"770682868","characters":["Howard Stark"]}],"alternate_ids":{"imdb":"0903135"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/525809622.json","alternate":"http://www.rottentomatoes.com/m/the-invincible-iron-man/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/525809622/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/525809622/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/525809622/similar.json"}},{"id":"771352646","title":"Iron Man: Rise Of Technovore","year":2013,"mpaa_rating":"PG-13","runtime":88,"release_dates":{"dvd":"2013-04-16"},"ratings":{"critics_score":-1,"audience_rating":"Spilled","audience_score":35},"synopsis":"Billionaire Tony Stark, in his Iron Man armor, prevents an attack from a mysterious new foe, but innocent bystanders are killed, including his best friend War Machine, Lt. Colonel James Rhodes. Detained for questioning by S.H.I.E.L.D., Iron Man escapes, determined to find the mastermind behind the attack. Pursued by Black Widow and Hawkeye, Iron Man enlists the help of the ruthless vigilante The Punisher. But can the Armored Avenger handle what he finds when he catches the person responsible and is forced to face his deadliest weapon, a biotechnology called Technovore that could wipe out all life on the planet?","posters":{"thumbnail":"http://content9.flixster.com/movie/11/17/07/11170791_tmb.jpg","profile":"http://content9.flixster.com/movie/11/17/07/11170791_tmb.jpg","detailed":"http://content9.flixster.com/movie/11/17/07/11170791_tmb.jpg","original":"http://content9.flixster.com/movie/11/17/07/11170791_tmb.jpg"},"abridged_cast":[{"name":"Matthew Mercer","id":"771401761"},{"name":"Norman Reedus","id":"162684038"},{"name":"Clare Grant","id":"770772192"},{"name":"Eric Bauza","id":"770729972"},{"name":"Kate Higgins","id":"770809153"}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/771352646.json","alternate":"http://www.rottentomatoes.com/m/iron_man_rise_of_technovore/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/771352646/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/771352646/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/771352646/similar.json"}},{"id":"771375358","title":"Iron Man & Hulk: Heroes United","year":2013,"mpaa_rating":"PG","runtime":71,"release_dates":{"theater":"2013-12-03"},"ratings":{"critics_score":-1,"audience_rating":"Spilled","audience_score":46},"synopsis":"Iron Man and the Hulk team up in groundbreaking Marvel CG Animation.","posters":{"thumbnail":"http://content9.flixster.com/movie/11/17/98/11179883_tmb.jpg","profile":"http://content9.flixster.com/movie/11/17/98/11179883_tmb.jpg","detailed":"http://content9.flixster.com/movie/11/17/98/11179883_tmb.jpg","original":"http://content9.flixster.com/movie/11/17/98/11179883_tmb.jpg"},"abridged_cast":[{"name":"Adrian Pasdar","id":"162691685"},{"name":"Fred Tatasciore","id":"770739041"},{"name":"Dee Bradley Baker","id":"551528216"},{"name":"Robin Atkin Downes","id":"770752492"},{"name":"David Kaye","id":"453915888"}],"alternate_ids":{"imdb":"3221698"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/771375358.json","alternate":"http://www.rottentomatoes.com/m/iron_man_and_hulk_heroes_united/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/771375358/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/771375358/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/771375358/similar.json"}},{"id":"771353983","title":"Harkins Iron Man Marathon","year":2013,"mpaa_rating":"Unrated","runtime":"","release_dates":{"theater":"2013-05-02"},"ratings":{"critics_score":-1,"audience_rating":"Upright","audience_score":90},"synopsis":"Marvel's brash-but-brilliant industrialist Tony Stark/Iron Man is back with the Harkins Ultimate Iron Man Marathon! The lineup features Iron Man (PG-13 - 126 min), Iron Man 2 (PG-13 -124 min), Marvel's The Avengers in 3D (PG-13 - 142 min), and the premiere of Marvel's Iron Man 3 in 3D. The Marathon Package includes admission to all four films, one Loyalty Cup voucher (includes first fill FREE), one small popcorn (to be enjoyed the day of the event), and a commemorative Iron Man lanyard. http://www.harkinstheatres.com/ironman","posters":{"thumbnail":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif","profile":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif","detailed":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif","original":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif"},"abridged_cast":[{"name":"Robert Downey Jr.","id":"162654529"}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/771353983.json","alternate":"http://www.rottentomatoes.com/m/harkins_iron_man_marathon/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/771353983/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/771353983/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/771353983/similar.json"}},{"id":"770691412","title":"Chinese Iron Man","year":1975,"mpaa_rating":"Unrated","runtime":90,"release_dates":{"dvd":"2003-04-08"},"ratings":{"critics_score":-1,"audience_rating":"Upright","audience_score":69},"synopsis":"","posters":{"thumbnail":"http://content8.flixster.com/movie/10/93/35/10933542_tmb.jpg","profile":"http://content8.flixster.com/movie/10/93/35/10933542_tmb.jpg","detailed":"http://content8.flixster.com/movie/10/93/35/10933542_tmb.jpg","original":"http://content8.flixster.com/movie/10/93/35/10933542_tmb.jpg"},"abridged_cast":[{"name":"Yan Nan Hsi","id":"771023866"},{"name":"Wen Chiang Lung","id":"770787832"},{"name":"Wen Chiang Long","id":"770718629"},{"name":"Yan Nan Xi","id":"770718630"}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/770691412.json","alternate":"http://www.rottentomatoes.com/m/iron_man-1998/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/770691412/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/770691412/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/770691412/similar.json"}},{"id":"10666","title":"The Man in the Iron Mask","year":1998,"mpaa_rating":"PG-13","runtime":135,"release_dates":{"theater":"1998-03-13","dvd":"1998-08-11"},"ratings":{"critics_rating":"Rotten","critics_score":33,"audience_rating":"Spilled","audience_score":56},"synopsis":"","posters":{"thumbnail":"http://content6.flixster.com/movie/10/89/35/10893580_tmb.jpg","profile":"http://content6.flixster.com/movie/10/89/35/10893580_tmb.jpg","detailed":"http://content6.flixster.com/movie/10/89/35/10893580_tmb.jpg","original":"http://content6.flixster.com/movie/10/89/35/10893580_tmb.jpg"},"abridged_cast":[{"name":"Leonardo DiCaprio","id":"162659161","characters":["King Louis/Philippe"]},{"name":"Jeremy Irons","id":"162652244","characters":["Aramis"]},{"name":"John Malkovich","id":"162655610","characters":["Athos"]},{"name":"Gerard Depardieu","id":"162656948","characters":["Porthos"]},{"name":"Gabriel Byrne","id":"162666076","characters":["D'Artagnan"]}],"alternate_ids":{"imdb":"0120744"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/10666.json","alternate":"http://www.rottentomatoes.com/m/1082400-man_in_the_iron_mask/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/10666/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/10666/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/10666/similar.json"}},{"id":"771225600","title":"The Man With the Iron Fists","year":2012,"mpaa_rating":"R","runtime":96,"critics_consensus":"","release_dates":{"theater":"2012-11-02","dvd":"2013-02-12"},"ratings":{"critics_rating":"Rotten","critics_score":49,"audience_rating":"Spilled","audience_score":40},"synopsis":"Making his debut as a big-screen director and leading man, RZA-alongside a stellar international cast led by Russell Crowe and Lucy Liu-tells the epic story of warriors, assassins and a lone outsider hero in nineteenth-century China who must unite to destroy the clan traitor who would destroy them all. Since his arrival in China's Jungle Village, the town's blacksmith (RZA) has been forced by radical tribal factions to create elaborate tools of destruction. When the clans' brewing war boils over, the stranger channels an ancient energy to transform himself into a human weapon. As he fights alongside iconic heroes and against soulless villains, one man must harness this power to become savior of his adopted people. -- (C) Universal","posters":{"thumbnail":"http://content7.flixster.com/movie/11/16/82/11168297_tmb.jpg","profile":"http://content7.flixster.com/movie/11/16/82/11168297_tmb.jpg","detailed":"http://content7.flixster.com/movie/11/16/82/11168297_tmb.jpg","original":"http://content7.flixster.com/movie/11/16/82/11168297_tmb.jpg"},"abridged_cast":[{"name":"Russell Crowe","id":"162652569","characters":["Jack Knife"]},{"name":"Lucy Liu","id":"162654563","characters":["Madame Blossom"]},{"name":"Cung Le","id":"770779230","characters":["Bronze Lion"]},{"name":"Byron Mann","id":"162695934","characters":["Silver Lion"]},{"name":"Rick Yune","id":"382065689","characters":["Zen Yi","The X-Blade"]}],"alternate_ids":{"imdb":"1258972"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/771225600.json","alternate":"http://www.rottentomatoes.com/m/the_man_with_the_iron_fists/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/771225600/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/771225600/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/771225600/similar.json"}},{"id":"22238","title":"Man in the Iron Mask","year":1939,"mpaa_rating":"Unrated","runtime":110,"release_dates":{"theater":"1939-04-12"},"ratings":{"critics_score":-1,"audience_rating":"Upright","audience_score":77},"synopsis":"","posters":{"thumbnail":"http://content7.flixster.com/movie/10/89/35/10893573_tmb.jpg","profile":"http://content7.flixster.com/movie/10/89/35/10893573_tmb.jpg","detailed":"http://content7.flixster.com/movie/10/89/35/10893573_tmb.jpg","original":"http://content7.flixster.com/movie/10/89/35/10893573_tmb.jpg"},"abridged_cast":[{"name":"Louis Hayward","id":"364620010","characters":["Louis XIV","Philippe"]},{"name":"Joan Bennett","id":"364602501","characters":["Maria Theresa"]},{"name":"Alan Hale","id":"335719192","characters":["Porthos"]},{"name":"Warren William","id":"364627077","characters":["D'Artagnan"]},{"name":"Joseph Schildkraut","id":"364617099","characters":["Fouquet"]}],"alternate_ids":{"imdb":"0031619"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/22238.json","alternate":"http://www.rottentomatoes.com/m/1013177-man_in_the_iron_mask/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/22238/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/22238/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/22238/similar.json"}},{"id":"770909232","title":"Man in the Iron Mask","year":1999,"mpaa_rating":"Unrated","runtime":60,"release_dates":{"dvd":"1990-09-24"},"ratings":{"critics_score":-1,"audience_score":0},"synopsis":"","posters":{"thumbnail":"http://content9.flixster.com/movie/10/96/92/10969275_tmb.jpg","profile":"http://content9.flixster.com/movie/10/96/92/10969275_tmb.jpg","detailed":"http://content9.flixster.com/movie/10/96/92/10969275_tmb.jpg","original":"http://content9.flixster.com/movie/10/96/92/10969275_tmb.jpg"},"abridged_cast":[],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/770909232.json","alternate":"http://www.rottentomatoes.com/m/man_in_the_iron_mask/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/770909232/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/770909232/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/770909232/similar.json"}},{"id":"312774973","title":"The Man in the Iron Mask","year":1977,"mpaa_rating":"R","runtime":110,"release_dates":{"dvd":"2013-10-08"},"ratings":{"critics_score":-1,"audience_rating":"Upright","audience_score":66},"synopsis":"","posters":{"thumbnail":"http://content9.flixster.com/movie/10/89/35/10893583_tmb.jpg","profile":"http://content9.flixster.com/movie/10/89/35/10893583_tmb.jpg","detailed":"http://content9.flixster.com/movie/10/89/35/10893583_tmb.jpg","original":"http://content9.flixster.com/movie/10/89/35/10893583_tmb.jpg"},"abridged_cast":[{"name":"Richard Chamberlain","id":"162671270","characters":["Louis XIV/Philippe"]},{"name":"Patrick McGoohan","id":"162656225","characters":["Fouquet"]},{"name":"Louis Jourdan","id":"356196905","characters":["D'Artagnan"]},{"name":"Jenny Agutter","id":"162678577","characters":["Louise de la Valliere"]},{"name":"Godfrey Quigley","id":"770709258","characters":["Baisemeaux"]}],"alternate_ids":{"imdb":"0074853"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/312774973.json","alternate":"http://www.rottentomatoes.com/m/1013178-man_in_the_iron_mask/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/312774973/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/312774973/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/312774973/similar.json"}},{"id":"21356","title":"Il Ferroviere (The Railroad Man) (Man of Iron)","year":1956,"mpaa_rating":"Unrated","runtime":140,"release_dates":{"theater":"1956-08-11","dvd":"2005-06-28"},"ratings":{"critics_score":-1,"audience_rating":"Upright","audience_score":71},"synopsis":"","posters":{"thumbnail":"http://content9.flixster.com/movie/10/93/94/10939459_tmb.jpg","profile":"http://content9.flixster.com/movie/10/93/94/10939459_tmb.jpg","detailed":"http://content9.flixster.com/movie/10/93/94/10939459_tmb.jpg","original":"http://content9.flixster.com/movie/10/93/94/10939459_tmb.jpg"},"abridged_cast":[{"name":"Sylva Koscina","id":"287588650","characters":["Giulia Marcocci"]},{"name":"Saro Urzi","id":"770675470","characters":["Gigi Liverani"]},{"name":"Renato Speziali","id":"770746631","characters":["Renato"]},{"name":"Carlo Giuffre","id":"162657515","characters":["Marcello"]},{"name":"Edoardo Nevola","id":"770746630","characters":["Sandrino"]}],"alternate_ids":{"imdb":"0049207"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/21356.json","alternate":"http://www.rottentomatoes.com/m/railroad_man/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/21356/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/21356/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/21356/similar.json"}},{"id":"770682887","title":"Czlowiek z Zelaza (Man of Iron)","year":1981,"mpaa_rating":"PG","runtime":140,"release_dates":{"theater":"1981-07-27"},"ratings":{"critics_score":-1,"audience_rating":"Upright","audience_score":82},"synopsis":"","posters":{"thumbnail":"http://content9.flixster.com/movie/10/89/35/10893571_tmb.jpg","profile":"http://content9.flixster.com/movie/10/89/35/10893571_tmb.jpg","detailed":"http://content9.flixster.com/movie/10/89/35/10893571_tmb.jpg","original":"http://content9.flixster.com/movie/10/89/35/10893571_tmb.jpg"},"abridged_cast":[{"name":"Jerzy Radziwilowicz","id":"364609374","characters":["Tomczyk"]},{"name":"Krystyna Janda","id":"649804113","characters":["Agnieszka"]},{"name":"Marian Opania","id":"770729706","characters":["Winkiel"]},{"name":"Irene Byrska","id":"770975910","characters":["Anna Hulewicz's Mother"]},{"name":"Boguslaw Linda","id":"364652046","characters":["Radio-TV Technician Dzidek"]}],"alternate_ids":{"imdb":"0082222"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/770682887.json","alternate":"http://www.rottentomatoes.com/m/man_of_iron/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/770682887/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/770682887/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/770682887/similar.json"}},{"id":"770671317","title":"The Man in the Iron Mask","year":1998,"mpaa_rating":"PG-13","runtime":85,"release_dates":{"theater":"1998-02-05","dvd":"1998-08-11"},"ratings":{"critics_score":-1,"audience_rating":"Upright","audience_score":75},"synopsis":"","posters":{"thumbnail":"http://content7.flixster.com/movie/10/89/35/10893577_tmb.jpg","profile":"http://content7.flixster.com/movie/10/89/35/10893577_tmb.jpg","detailed":"http://content7.flixster.com/movie/10/89/35/10893577_tmb.jpg","original":"http://content7.flixster.com/movie/10/89/35/10893577_tmb.jpg"},"abridged_cast":[{"name":"Edward Albert Jr.","id":"770717217"},{"name":"Edward Albert","id":"162673765","characters":["Athos"]},{"name":"Dana Barron","id":"770669603","characters":["Valliere"]},{"name":"Timothy Bottoms","id":"162661047","characters":["Fouquet"]},{"name":"Brigid Brannagh","id":"497057899","characters":["Molly Pichon"]}],"alternate_ids":{"imdb":"0141574"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/770671317.json","alternate":"http://www.rottentomatoes.com/m/1081244-man_in_the_iron_mask/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/770671317/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/770671317/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/770671317/similar.json"}},{"id":"771006428","title":"Classic Tales For Children - The Man In The Iron Mask","year":2007,"mpaa_rating":"Unrated","runtime":52,"release_dates":{"dvd":"2007-10-02"},"ratings":{"critics_score":-1,"audience_rating":"Spilled","audience_score":0},"synopsis":"","posters":{"thumbnail":"http://content9.flixster.com/movie/11/05/22/11052279_tmb.jpg","profile":"http://content9.flixster.com/movie/11/05/22/11052279_tmb.jpg","detailed":"http://content9.flixster.com/movie/11/05/22/11052279_tmb.jpg","original":"http://content9.flixster.com/movie/11/05/22/11052279_tmb.jpg"},"abridged_cast":[],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/771006428.json","alternate":"http://www.rottentomatoes.com/m/classic_tales_for_children_the_man_in_the_iron_mask/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/771006428/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/771006428/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/771006428/similar.json"}}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=Iron+Man&page_limit=30&page=1"},"link_template":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"}
     http_version: 
-  recorded_at: Sun, 02 Nov 2014 07:45:23 GMT
+  recorded_at: Sun, 02 Nov 2014 08:32:47 GMT
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/search/movie?api_key=6bcb3eb09fa94f061923cdf517da3677&query=Iron%20Man&year=2014
+    uri: https://api.themoviedb.org/3/search/movie?api_key=6bcb3eb09fa94f061923cdf517da3677&query=Iron%20Man&year=2008
     body:
       encoding: US-ASCII
       string: ''
@@ -186,30 +202,30 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sun, 02 Nov 2014 07:45:25 GMT
+      - Sun, 02 Nov 2014 08:32:48 GMT
       Etag:
-      - '"0f6166e2241f8e1e615afb55bd4c371c"'
+      - '"9476231c968299e88f9b066549c99234"'
       Server:
       - nginx
       Status:
       - 200 OK
       X-Memc:
-      - MISS, STORE
+      - HIT
       X-Memc-Age:
-      - '0'
+      - '4085'
       X-Memc-Expires:
-      - '10800'
+      - '6715'
       X-Memc-Key:
-      - f6950263996142852ab9dda2833154f0
+      - 0422996c4e089cf9f9a5ddc61504e9ef
       Content-Length:
-      - '389'
+      - '324'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/wvg8adyEqpmiCVxoRmR6ZOIbww.jpg","id":284274,"original_title":"Iron
-        Man & Captain America: Heroes United","release_date":"2014-07-29","poster_path":"/i6rU78N2EAlzOaiRXM8NCe2qHwh.jpg","popularity":0.377620541691129,"title":"Iron
-        Man & Captain America: Heroes United","vote_average":6.0,"vote_count":2}],"total_pages":1,"total_results":1}'
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/gWyevEz9NT5tON6kdhxsmfvdJ40.jpg","id":1726,"original_title":"Iron
+        Man","release_date":"2008-05-01","poster_path":"/s2IG9qXfhJYxIttKyroYFBsHwzQ.jpg","popularity":3.96034180885284,"title":"Iron
+        Man","vote_average":7.0,"vote_count":3940}],"total_pages":1,"total_results":1}'
     http_version: 
-  recorded_at: Sun, 02 Nov 2014 07:45:25 GMT
+  recorded_at: Sun, 02 Nov 2014 08:32:48 GMT
 recorded_with: VCR 2.9.3

@@ -19,7 +19,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 02 Nov 2014 07:45:27 GMT
+      - Sun, 02 Nov 2014 08:32:50 GMT
       Expires:
       - "-1"
       Pragma:
@@ -39,7 +39,7 @@ http_interactions:
         Serkis","genre":"Action, Adventure, Fantasy","avguserscore":"9.0","runtime":"201
         min"}]}'
     http_version: 
-  recorded_at: Sun, 02 Nov 2014 07:45:27 GMT
+  recorded_at: Sun, 02 Nov 2014 08:32:50 GMT
 - request:
     method: get
     uri: http://www.omdbapi.com/?s=The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King&y=2014
@@ -53,7 +53,7 @@ http_interactions:
       message: OK
     headers:
       Cache-Control:
-      - private, max-age=3600
+      - private, max-age=756
       Content-Type:
       - text/html; charset=utf-8
       Expires:
@@ -71,17 +71,17 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Sun, 02 Nov 2014 07:45:43 GMT
+      - Sun, 02 Nov 2014 08:32:53 GMT
       Content-Length:
       - '47'
     body:
       encoding: UTF-8
       string: '{"Response":"False","Error":"Movie not found!"}'
     http_version: 
-  recorded_at: Sun, 02 Nov 2014 07:45:42 GMT
+  recorded_at: Sun, 02 Nov 2014 08:32:51 GMT
 - request:
     method: get
-    uri: http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=dzvhcez774keqnkankf8kt8z&page=1&page_limit=1&q=The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King
+    uri: http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=dzvhcez774keqnkankf8kt8z&page=1&q=The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King
     body:
       encoding: US-ASCII
       string: ''
@@ -96,25 +96,25 @@ http_interactions:
       Content-Type:
       - text/javascript;charset=ISO-8859-1
       Date:
-      - Sun, 02 Nov 2014 07:45:42 GMT
+      - Sun, 02 Nov 2014 08:31:40 GMT
       Flx-Build-Date:
       - '2014-10-30 12:31:49'
       Flx-Commit:
       - JOBRELEASE.2014-10-30.11-47-17 3a1e500
       Flx-Server:
-      - web236.flixster.com
+      - web235.flixster.com
       Rt-Commit:
       - 0e82581
       Server:
       - Mashery Proxy
       Set-Cookie:
-      - JSESSIONID=75D29A0B766C7F7D0134D45D57738A86; Path=/; HttpOnly
+      - JSESSIONID=C567302AE6A3B87CDDD52B2AD4BEA489; Path=/; HttpOnly
       Vary:
       - User-Agent,Accept-Encoding
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-51.mashery.com
+      - prod-j-worker-us-east-1e-58.mashery.com
       Content-Length:
-      - '1936'
+      - '3038'
       Connection:
       - keep-alive
     body:
@@ -152,9 +152,9 @@ http_interactions:
 
 
 
-        {"total":2,"movies":[{"id":"10156","title":"The Lord of the Rings: The Return of the King","year":2003,"mpaa_rating":"PG-13","runtime":201,"critics_consensus":"","release_dates":{"theater":"2003-12-17","dvd":"2004-05-25"},"ratings":{"critics_rating":"Certified Fresh","critics_score":94,"audience_rating":"Upright","audience_score":86},"synopsis":"","posters":{"thumbnail":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg","profile":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg","detailed":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg","original":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg"},"abridged_cast":[{"name":"Elijah Wood","id":"162652512","characters":["Frodo Baggins"]},{"name":"Ian McKellen","id":"162653241","characters":["Gandalf"]},{"name":"Viggo Mortensen","id":"162654541","characters":["Aragorn"]},{"name":"Sean Astin","id":"162659177","characters":["Samwise Gamgee"]},{"name":"Orlando Bloom","id":"162652240","characters":["Legolas"]}],"alternate_ids":{"imdb":"0167260"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156.json","alternate":"http://www.rottentomatoes.com/m/the_lord_of_the_rings_the_return_of_the_king/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156/similar.json"}}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=The+Lord+of+the+Rings%3A+The+Return+of+the+King&page_limit=1&page=1","next":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=The+Lord+of+the+Rings%3A+The+Return+of+the+King&page_limit=1&page=2"},"link_template":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"}
+        {"total":2,"movies":[{"id":"10156","title":"The Lord of the Rings: The Return of the King","year":2003,"mpaa_rating":"PG-13","runtime":201,"critics_consensus":"","release_dates":{"theater":"2003-12-17","dvd":"2004-05-25"},"ratings":{"critics_rating":"Certified Fresh","critics_score":94,"audience_rating":"Upright","audience_score":86},"synopsis":"","posters":{"thumbnail":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg","profile":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg","detailed":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg","original":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg"},"abridged_cast":[{"name":"Elijah Wood","id":"162652512","characters":["Frodo Baggins"]},{"name":"Ian McKellen","id":"162653241","characters":["Gandalf"]},{"name":"Viggo Mortensen","id":"162654541","characters":["Aragorn"]},{"name":"Sean Astin","id":"162659177","characters":["Samwise Gamgee"]},{"name":"Orlando Bloom","id":"162652240","characters":["Legolas"]}],"alternate_ids":{"imdb":"0167260"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156.json","alternate":"http://www.rottentomatoes.com/m/the_lord_of_the_rings_the_return_of_the_king/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156/similar.json"}},{"id":"771307026","title":"The Lord of the Rings: The Return of the King (Extended)","year":2003,"mpaa_rating":"PG-13","runtime":225,"release_dates":{"theater":"2003-12-05"},"ratings":{"critics_score":-1,"audience_rating":"Upright","audience_score":98},"synopsis":"","posters":{"thumbnail":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg","profile":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg","detailed":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg","original":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg"},"abridged_cast":[{"name":"Elijah Wood","id":"162652512"},{"name":"Liv Tyler","id":"162661412"},{"name":"Ian McKellen","id":"162653241"},{"name":"Viggo Mortensen","id":"162654541"},{"name":"Sean Astin","id":"162659177"}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026.json","alternate":"http://www.rottentomatoes.com/m/lord_of_the_rings_the_return_of_the_king_extended/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026/similar.json"}}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=The+Lord+of+the+Rings%3A+The+Return+of+the+King&page_limit=30&page=1"},"link_template":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"}
     http_version: 
-  recorded_at: Sun, 02 Nov 2014 07:45:42 GMT
+  recorded_at: Sun, 02 Nov 2014 08:32:52 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=6bcb3eb09fa94f061923cdf517da3677&query=The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King&year=2014
@@ -174,7 +174,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sun, 02 Nov 2014 07:45:44 GMT
+      - Sun, 02 Nov 2014 08:32:53 GMT
       Etag:
       - '"a8d277d2d95f2ea20f792a48c43093dc"'
       Server:
@@ -182,11 +182,11 @@ http_interactions:
       Status:
       - 200 OK
       X-Memc:
-      - MISS, STORE
+      - HIT
       X-Memc-Age:
-      - '0'
+      - '2829'
       X-Memc-Expires:
-      - '10800'
+      - '7971'
       X-Memc-Key:
       - 41d0539317b5f02cf7ba0bcf16d7cba6
       Content-Length:
@@ -197,7 +197,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"page":1,"results":[],"total_pages":0,"total_results":0}'
     http_version: 
-  recorded_at: Sun, 02 Nov 2014 07:45:44 GMT
+  recorded_at: Sun, 02 Nov 2014 08:32:53 GMT
 - request:
     method: get
     uri: http://api.rottentomatoes.com/api/public/v1.0/movies/.json?apikey=dzvhcez774keqnkankf8kt8z
@@ -215,23 +215,23 @@ http_interactions:
       Content-Type:
       - text/javascript;charset=ISO-8859-1
       Date:
-      - Sun, 02 Nov 2014 06:47:32 GMT
+      - Sun, 02 Nov 2014 07:48:35 GMT
       Flx-Build-Date:
       - '2014-10-30 12:31:49'
       Flx-Commit:
       - JOBRELEASE.2014-10-30.11-47-17 3a1e500
       Flx-Server:
-      - web238.flixster.com
+      - web235.flixster.com
       Rt-Commit:
       - 0e82581
       Server:
       - Mashery Proxy
       Set-Cookie:
-      - JSESSIONID=66128C69609EF8F71232CA91BD308E2B; Path=/; HttpOnly
+      - JSESSIONID=DD46F7F3946458520DDEC6ABF9793A49; Path=/; HttpOnly
       Vary:
       - User-Agent,Accept-Encoding
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-61.mashery.com
+      - prod-j-worker-us-east-1b-56.mashery.com
       Content-Length:
       - '175'
       Connection:
@@ -273,5 +273,5 @@ http_interactions:
 
         {"link_template":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"}
     http_version: 
-  recorded_at: Sun, 02 Nov 2014 07:45:45 GMT
+  recorded_at: Sun, 02 Nov 2014 08:32:54 GMT
 recorded_with: VCR 2.9.3
