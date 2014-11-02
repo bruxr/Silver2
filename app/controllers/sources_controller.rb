@@ -18,10 +18,7 @@ class SourcesControllerController < ApplicationController
   # DELETE /sources/<id>.json route
   # Deletes a source.
   def destroy
-    movie_id = @source.movie_id
     @source.destroy
-    Movie.find(movie_id).update_scores!
-    
     respond_to do |format|
       format.json { head :no_content }
     end
