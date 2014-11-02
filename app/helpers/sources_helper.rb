@@ -1,2 +1,2 @@
-module SourcesControllerHelper
+module SourcesHelper
 end
