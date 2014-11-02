@@ -39,7 +39,7 @@ class SourceTest < ActiveSupport::TestCase
     ]
     
     VCR.use_cassette('sources/find_sources') do 
-      sources = Source.find_movie_sources('Iron Man')
+      sources = Source.find_movie_sources('Iron Man', nil, 2008)
       actual = []
       sources.each do |source|
         actual << source.attributes
