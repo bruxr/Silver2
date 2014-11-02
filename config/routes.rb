@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # The frontend Quasar & backstage relies on this endpoint
   scope '/api' do
     resources :movies, only: [:index, :show, :update]
+    resources :sources, only: [:update, :destroy]
     resources :cinemas, :schedules
   end
 
