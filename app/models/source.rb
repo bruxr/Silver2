@@ -23,6 +23,8 @@ class Source < ActiveRecord::Base
     allow_nil: true,
     message: "is not a valid URL."
   }
+  
+  after_destroy :update_parent_movie_scores
 
   # Maps source names to the service classes,
   # used for converting 'name' strings to classes.
@@ -164,5 +166,13 @@ class Source < ActiveRecord::Base
   def friendly_name
     @@name_to_friendly[self.name.to_sym]
   end
+
+  private
+  
+    # Update this source's parent movie scores when
+    # this got deleted
+    def update_parent_movie_scores
+      self.movie.update_scores!
+    end
 
 end

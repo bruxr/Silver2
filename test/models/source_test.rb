@@ -61,5 +61,13 @@ class SourceTest < ActiveSupport::TestCase
       end
     end
   end
+  
+  test 'should update parent movie scores whenever a source is deleted' do
+    VCR.use_cassette('sources/update_scores_when_deleted') do
+      movie = movies(:nightcrawler)
+      movie.sources.last.destroy
+      assert_equal(8.3, movie.aggregate_score)
+    end
+  end
 
 end
