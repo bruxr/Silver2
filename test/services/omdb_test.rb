@@ -9,6 +9,13 @@ class OmdbTest < ActiveSupport::TestCase
     end
   end
   
+  test 'should return the correct score' do
+    VCR.use_cassette('omdb/correct_score') do
+      resp = Omdb.new.get_score('tt0371746')
+      assert_equal(7.9, resp)
+    end
+  end
+  
   test 'should return nil if a movie has no ratings' do
     VCR.use_cassette('omdb/check_no_score') do
       resp = Omdb.new.get_score('tt2173248')
