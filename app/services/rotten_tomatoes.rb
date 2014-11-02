@@ -107,7 +107,7 @@ class RottenTomatoes < WebClient
     raise "Failed to extract audience score when calculating scores for \##{id}." if audience_score.nil?
     audience_score = audience_score.to_f * 2
     
-    (critics_score + audience_score) / 20
+    10 * ((critics_score + audience_score) / 20)
 
   end
 

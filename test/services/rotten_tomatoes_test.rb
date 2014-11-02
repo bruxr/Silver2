@@ -16,6 +16,13 @@ class RottenTomatoesTest < ActiveSupport::TestCase
     end
   end
   
+  test 'should return the correct score' do
+    VCR.use_cassette('rotten_tomatoes/correct_score') do
+      resp = RottenTomatoes.new.get_score(714976247)
+      assert_equal(8, resp)
+    end
+  end
+  
   test 'should return nil if a movie has no ratings' do
     VCR.use_cassette('rotten_tomatoes/check_no_score') do
       resp = RottenTomatoes.new.get_score(771388678) # Use "Kristy" instead, Blood Ransom has ratings on RT.
