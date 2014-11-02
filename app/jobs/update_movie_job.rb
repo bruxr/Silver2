@@ -9,7 +9,7 @@ class UpdateMovieJob
     raise "Invalid Movie ID #{movie_id}" if movie_id <= 0
 
     movie = Movie.includes(:sources).find(movie_id)
-    movie.sources.search!
+    movie.find_sources!
     
     if movie.sources.count > 0
       begin
