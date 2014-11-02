@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://byroredux-metacritic.p.mashape.com/search/movie
+    body:
+      encoding: UTF-8
+      string: max_pages=1&title=Iron%20Man
+    headers:
+      X-Mashape-Key:
+      - Ox9v8xmk50mshP0TW0RpTdnNAQ6Up1FQyZBjsnTgPQUvFh8Pa2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 02 Nov 2014 08:06:41 GMT
+      Expires:
+      - "-1"
+      Pragma:
+      - no-cache
+      Server:
+      - Mashape/5.0.5
+      X-Powered-By:
+      - PleskLin
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"max_pages":"1","count":5,"results":[{"name":"Iron Man 3","score":"62","url":"http:\/\/www.metacritic.com\/movie\/iron-man-3","rlsdate":"2013-05-03","rating":"PG-13","cast":"Don
+        Cheadle, Guy Pearce, Gwyneth Paltrow, Robert Downey Jr.","genre":"Action,
+        Adventure, Sci-Fi, Thriller, Fantasy","avguserscore":"6.4","runtime":"130
+        min"},{"name":"Iron Man","score":"79","url":"http:\/\/www.metacritic.com\/movie\/iron-man","rlsdate":"2008-05-02","rating":"PG-13","cast":"Gwyneth
+        Paltrow, Robert Downey Jr., Terrence Howard","genre":"Action, Adventure, Sci-Fi,
+        Thriller","avguserscore":"8.2","runtime":"126 min"},{"name":"Iron Man 2","score":"57","url":"http:\/\/www.metacritic.com\/movie\/iron-man-2","rlsdate":"2010-05-07","rating":"PG-13","cast":"Gwyneth
+        Paltrow, Mickey Rourke, Robert Downey Jr.","genre":"Action, Adventure, Sci-Fi,
+        Thriller","avguserscore":"6.6","runtime":"124 min"},{"name":"The Man with
+        the Iron Fists","score":"51","url":"http:\/\/www.metacritic.com\/movie\/the-man-with-the-iron-fists","rlsdate":"2012-11-02","rating":"R","cast":"Cung
+        Le, Lucy Liu, Russell Crowe, The RZA","genre":"Action","avguserscore":"5.7","runtime":"95
+        min"},{"name":"The Man in the Iron Mask","score":"48","url":"http:\/\/www.metacritic.com\/movie\/the-man-in-the-iron-mask","rlsdate":"1998-03-13","rating":"PG-13","cast":"Gabriel
+        Byrne, G\u00e9rard Depardieu, Jeremy Irons, John Malkovich, Leonardo DiCaprio","genre":"Action,
+        Adventure, Drama, History","avguserscore":"6.2","runtime":"132 min"}]}'
+    http_version: 
+  recorded_at: Sun, 02 Nov 2014 08:06:42 GMT
+recorded_with: VCR 2.9.3

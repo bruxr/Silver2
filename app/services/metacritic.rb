@@ -24,19 +24,24 @@ class Metacritic < WebClient
 
     # Exit early if response is nil or there are no items/results to process
     return nil if resp.nil? || resp['count'] == 0
-
-    use_index = 0 # Use first search result by default
+    
     result = {}
+    scores = {}
 
-    # Try to find the exact title on the results
-    title_dc = title.downcase
     resp['results'].each_with_index do |search_result, index|
       
-      result_title = search_result['name'].downcase
+      # Skip movies that isn't released on the same year
       result_year = search_result['rlsdate'][0..4].to_i
+      next if result_year != year
       
-      use_index = index if title == result_title && result_year == year
+      scores[index] = Levenshtein.distance(title, search_result['name'])
       
+    end
+    
+    if scores.empty?
+      use_index = 0
+    else
+      use_index = scores.key(scores.values.min)
     end
 
     # Build the result hash
