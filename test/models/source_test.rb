@@ -48,14 +48,17 @@ class SourceTest < ActiveSupport::TestCase
     end
   end
   
+  # TODO: do we really need to time travel here?
   test 'should not create duplicate sources' do
-    VCR.use_cassette('sources/no_duplicates') do
-      movie = movies(:aragorn)
-      movie.find_sources!
-      movie.save
-      movie.find_sources!
-      ap movie.sources.to_a
-      assert_equal(4, movie.sources.length)
+    Delorean.time_travel_to('2003-01-01') do 
+      VCR.use_cassette('sources/no_duplicates') do
+        movie = movies(:aragorn)
+        movie.find_sources!
+        movie.save
+        movie.find_sources!
+        ap movie.sources.to_a
+        assert_equal(4, movie.sources.length)
+      end
     end
   end
 
