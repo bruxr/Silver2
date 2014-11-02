@@ -47,15 +47,13 @@ class MoviesController < ApplicationController
     not_found
   end
 
-  # PATCH/PUT /movies/1
-  # PATCH/PUT /movies/1.json
+  # PATCH/PUT /movies/<id>.json route
+  # Updates a movie's details
   def update
     respond_to do |format|
       if @movie.update(movie_params)
-        format.html { redirect_to @movie, notice: 'Movie was successfully updated.' }
         format.json { render :show, status: :ok, location: @movie }
       else
-        format.html { render :edit }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
       end
     end
@@ -79,6 +77,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params[:movie]
+      params.require(:movie).permit(:title, :overview, :tagline, :website, :trailer, :runtime, :mtrcb_rating, :release_date)
     end
 end

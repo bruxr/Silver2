@@ -30,8 +30,9 @@ Backstage.MovieController = Ember.ObjectController.extend({
     },
     
     doneEditing: function() {
+      var self = this;
       this.get('model').save().then(function() {
-        this.set('isEditing', false);
+        self.set('isEditing', false);
       });
     },
     

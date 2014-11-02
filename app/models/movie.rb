@@ -27,6 +27,9 @@ class Movie < ActiveRecord::Base
   # Genres & Cast
   has_and_belongs_to_many :genres
   has_and_belongs_to_many :cast, class_name: 'Artist'
+  
+  # Convert 'none' & empty MTRCB ratings to nil
+  before_validation :convert_blank_mtrcb_rating
 
   # Make sure we have a title and it is unique.
   validates :title, presence: true
@@ -323,6 +326,11 @@ class Movie < ActiveRecord::Base
   # Rounds the aggregate score to 1 decimal place.
   def aggregate_score=(s)
     super(s.round(1))
+  end
+    
+  # Converts 'None' & empty '' MTRCB ratings to nil.
+  def convert_blank_mtrcb_rating
+    self.mtrcb_rating = nil if self.mtrcb_rating.downcase == 'none' || self.mtrcb_rating.blank?
   end
 
 end
