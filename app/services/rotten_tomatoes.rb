@@ -17,7 +17,7 @@ class RottenTomatoes < WebClient
   # Returns the title and its ID.
   def find_title(title, year = Date.today.year)
 
-    resp = query('/movies', {q: title, page_limit: 1, page: 1})
+    resp = query('/movies', {q: title, page: 1})
     unless resp.nil? 
       if resp['total'] > 0
         
