@@ -37,33 +37,34 @@ class SourceTest < ActiveSupport::TestCase
         'score' => nil
       }
     ]
-    sources = Source.find_movie_sources('Iron Man')
-    actual = []
-    sources.each do |source|
-      actual << source.attributes
+    
+    VCR.use_cassette('sources/find_sources') do 
+      sources = Source.find_movie_sources('Iron Man')
+      actual = []
+      sources.each do |source|
+        actual << source.attributes
+      end
+      assert_equal(expected, actual)
     end
-    assert_equal(expected, actual)
   end
   
   test 'should not create duplicate sources' do
-    movie = movies(:aragorn)
-    movie.sources.search!
-    movie.save!
-    movie.sources.search!
-    assert_equal(4, movie.sources.count)
+    VCR.use_cassette('sources/no_duplicates') do
+      movie = movies(:aragorn)
+      movie.sources.search!
+      movie.save!
+      movie.sources.search!
+      assert_equal(4, movie.sources.count)
+    end
   end
 
   test 'should find the correct movie details' do
-    movie = movies(:aragorn)
-    movie.sources.search!
-    actual = Source.find_movie_details(movie.sources)
-    assert_equal('The eye of the enemy is moving.', actual['tagline'])
-  end
-
-  test 'should be able to find a movie trailer' do
-    movie = movies(:spiderman)
-    movie.find_trailer
-    assert_not_nil(movie.trailer)
+    VCR.use_cassette('sources/find_details') do
+      movie = movies(:aragorn)
+      movie.sources.search!
+      actual = Source.find_movie_details(movie.sources)
+      assert_equal('The eye of the enemy is moving.', actual['tagline'])
+    end
   end
 
 end

@@ -1,0 +1,215 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://byroredux-metacritic.p.mashape.com/search/movie
+    body:
+      encoding: UTF-8
+      string: max_pages=1&title=Iron%20Man
+    headers:
+      X-Mashape-Key:
+      - Ox9v8xmk50mshP0TW0RpTdnNAQ6Up1FQyZBjsnTgPQUvFh8Pa2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 02 Nov 2014 07:45:20 GMT
+      Expires:
+      - "-1"
+      Pragma:
+      - no-cache
+      Server:
+      - Mashape/5.0.5
+      X-Powered-By:
+      - PleskLin
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"max_pages":"1","count":5,"results":[{"name":"Iron Man 3","score":"62","url":"http:\/\/www.metacritic.com\/movie\/iron-man-3","rlsdate":"2013-05-03","rating":"PG-13","cast":"Don
+        Cheadle, Guy Pearce, Gwyneth Paltrow, Robert Downey Jr.","genre":"Action,
+        Adventure, Sci-Fi, Thriller, Fantasy","avguserscore":"6.4","runtime":"130
+        min"},{"name":"Iron Man","score":"79","url":"http:\/\/www.metacritic.com\/movie\/iron-man","rlsdate":"2008-05-02","rating":"PG-13","cast":"Gwyneth
+        Paltrow, Robert Downey Jr., Terrence Howard","genre":"Action, Adventure, Sci-Fi,
+        Thriller","avguserscore":"8.2","runtime":"126 min"},{"name":"Iron Man 2","score":"57","url":"http:\/\/www.metacritic.com\/movie\/iron-man-2","rlsdate":"2010-05-07","rating":"PG-13","cast":"Gwyneth
+        Paltrow, Mickey Rourke, Robert Downey Jr.","genre":"Action, Adventure, Sci-Fi,
+        Thriller","avguserscore":"6.6","runtime":"124 min"},{"name":"The Man with
+        the Iron Fists","score":"51","url":"http:\/\/www.metacritic.com\/movie\/the-man-with-the-iron-fists","rlsdate":"2012-11-02","rating":"R","cast":"Cung
+        Le, Lucy Liu, Russell Crowe, The RZA","genre":"Action","avguserscore":"5.7","runtime":"95
+        min"},{"name":"The Man in the Iron Mask","score":"48","url":"http:\/\/www.metacritic.com\/movie\/the-man-in-the-iron-mask","rlsdate":"1998-03-13","rating":"PG-13","cast":"Gabriel
+        Byrne, G\u00e9rard Depardieu, Jeremy Irons, John Malkovich, Leonardo DiCaprio","genre":"Action,
+        Adventure, Drama, History","avguserscore":"6.2","runtime":"132 min"}]}'
+    http_version: 
+  recorded_at: Sun, 02 Nov 2014 07:45:20 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?s=Iron%20Man&y=2014
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=3600
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - Sun, 02 Nov 2014 09:45:24 GMT
+      Last-Modified:
+      - Sun, 02 Nov 2014 07:45:24 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Sun, 02 Nov 2014 07:45:24 GMT
+      Content-Length:
+      - '362'
+    body:
+      encoding: UTF-8
+      string: '{"Search":[{"Title":"Iron Man and Captain America: Heroes United","Year":"2014","imdbID":"tt3911200","Type":"movie"},{"Title":"The
+        Awakening: An Iron Man Saga","Year":"2014","imdbID":"tt3550252","Type":"movie"},{"Title":"Iron
+        Man 2","Year":"2014","imdbID":"tt3512560","Type":"episode"},{"Title":"Iron
+        Man 2","Year":"2014","imdbID":"tt3512560","Type":"episode"}]}'
+    http_version: 
+  recorded_at: Sun, 02 Nov 2014 07:45:22 GMT
+- request:
+    method: get
+    uri: http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=dzvhcez774keqnkankf8kt8z&page=1&page_limit=1&q=Iron%20Man
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Language:
+      - en-US
+      Content-Type:
+      - text/javascript;charset=ISO-8859-1
+      Date:
+      - Sun, 02 Nov 2014 07:45:23 GMT
+      Flx-Build-Date:
+      - '2014-10-30 12:31:49'
+      Flx-Commit:
+      - JOBRELEASE.2014-10-30.11-47-17 3a1e500
+      Flx-Server:
+      - web235.flixster.com
+      Rt-Commit:
+      - 0e82581
+      Server:
+      - Mashery Proxy
+      Set-Cookie:
+      - JSESSIONID=721F6EF5D661649784932EE9A5B1AB7C; Path=/; HttpOnly
+      Vary:
+      - User-Agent,Accept-Encoding
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-57.mashery.com
+      Content-Length:
+      - '1826'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {"total":18,"movies":[{"id":"714976247","title":"Iron Man","year":2008,"mpaa_rating":"PG-13","runtime":126,"critics_consensus":"","release_dates":{"theater":"2008-04-14","dvd":"2008-09-30"},"ratings":{"critics_rating":"Certified Fresh","critics_score":93,"audience_rating":"Upright","audience_score":91},"synopsis":"","posters":{"thumbnail":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg","profile":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg","detailed":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg","original":"http://content7.flixster.com/movie/10/93/35/10933541_tmb.jpg"},"abridged_cast":[{"name":"Robert Downey Jr.","id":"162654529","characters":["Tony Stark"]},{"name":"Terrence Howard","id":"162652991","characters":["Rhodey"]},{"name":"Jeff Bridges","id":"162655890","characters":["Obadiah Stane"]},{"name":"Gwyneth Paltrow","id":"162653966","characters":["Pepper Potts"]},{"name":"Leslie Bibb","id":"563122407","characters":["Christine Everhart"]}],"alternate_ids":{"imdb":"0371746"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247.json","alternate":"http://www.rottentomatoes.com/m/iron_man/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/714976247/similar.json"}}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=Iron+Man&page_limit=1&page=1","next":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=Iron+Man&page_limit=1&page=2"},"link_template":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"}
+    http_version: 
+  recorded_at: Sun, 02 Nov 2014 07:45:23 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=6bcb3eb09fa94f061923cdf517da3677&query=Iron%20Man&year=2014
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 02 Nov 2014 07:45:25 GMT
+      Etag:
+      - '"0f6166e2241f8e1e615afb55bd4c371c"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - f6950263996142852ab9dda2833154f0
+      Content-Length:
+      - '389'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/wvg8adyEqpmiCVxoRmR6ZOIbww.jpg","id":284274,"original_title":"Iron
+        Man & Captain America: Heroes United","release_date":"2014-07-29","poster_path":"/i6rU78N2EAlzOaiRXM8NCe2qHwh.jpg","popularity":0.377620541691129,"title":"Iron
+        Man & Captain America: Heroes United","vote_average":6.0,"vote_count":2}],"total_pages":1,"total_results":1}'
+    http_version: 
+  recorded_at: Sun, 02 Nov 2014 07:45:25 GMT
+recorded_with: VCR 2.9.3
