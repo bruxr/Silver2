@@ -40,12 +40,9 @@ class Source < ActiveRecord::Base
     tmdb: 'The Movie Database'
   }
 
-  # Returns an array of sources that contains
-  # a movie titled with the provided param.
-  #
-  # Provide an optional movie_id to check for already existing
-  # sources linked to the movie.
-  def self.find_movie_sources(title, movie_id = nil)
+  # Alias to find_sources_for.
+  # Please use the newer find_sources_for for new code.
+  def self.find_movie_sources(title, movie_id = nil, year = Date.today.year)
     
     # Build our saved sources array
     saved_sources = []
@@ -54,14 +51,27 @@ class Source < ActiveRecord::Base
         saved_sources << s.name
       end
     end
+    
+    self.class.find_sources_for(title, except: saved_sources, year: year)
 
+  end
+  
+  # Returns an array of sources for a movie title.
+  #
+  # Optional Parameters:
+  # except - array of source names (metacritic, rt) to exclude from
+  # the generated array.
+  # year - search for the title that is released on this year
+  #
+  def self.find_sources_for(title, except: [], year: Date.today.year)
+    
     sources = []
 
     # Loop through each website
     @@source_to_class.values.each do |klass|
       
       service = klass.new
-      resp = service.find_title(title)
+      resp = service.find_title(title, year)
 
       # Skip source if it didn't find anything
       next if resp.nil?
@@ -70,8 +80,8 @@ class Source < ActiveRecord::Base
       source = klass.to_s.downcase
       source = 'rt' if source == 'rottentomatoes' # Shorten rotten tomatoes
 
-      # Build the model and then add if it doesn't exist yet
-      unless saved_sources.include? source
+      # Build the model and then add if it isn't excluded
+      unless except.include?(source)
         sources << Source.new({
           name: source,
           external_id: resp[:id],
@@ -82,7 +92,7 @@ class Source < ActiveRecord::Base
     end
 
     sources
-
+    
   end
 
   # Returns a plethora of information about a movie

@@ -11,18 +11,7 @@ class Movie < ActiveRecord::Base
 
   # Declares that many web services (e.g. The Movie Database)
   # may contain a record of this movie.
-  has_many :sources, inverse_of: :movie, dependent: :destroy, autosave: true do
-
-    # Searches for this movie's external sources.
-    # Take note that this will set and overwrite existing
-    # sources with the found sources.
-    def search!
-      movie = proxy_association.owner
-      raise 'Movie title is nil.' if movie.title.nil?
-      movie.sources << Source.find_movie_sources(movie.title, movie.id)
-    end
-
-  end
+  has_many :sources, inverse_of: :movie, dependent: :destroy, autosave: true
   
   # Genres & Cast
   has_and_belongs_to_many :genres
@@ -155,6 +144,24 @@ class Movie < ActiveRecord::Base
     
     mov.save!
     mov
+    
+  end
+  
+  # Searches for this movie's sources.
+  def find_sources!
+    
+    if self.release_date.nil?
+      year = Date.today.year
+    else
+      year = self.release_date.year
+    end
+    
+    saved_sources = []
+    self.sources.each do |source|
+      saved_sources << source.name
+    end
+    
+    self.sources << Source.find_sources_for(self.title, {except: saved_sources, year: year});
     
   end
 

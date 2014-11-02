@@ -39,7 +39,7 @@ class SourceTest < ActiveSupport::TestCase
     ]
     
     VCR.use_cassette('sources/find_sources') do 
-      sources = Source.find_movie_sources('Iron Man', nil, 2008)
+      sources = Source.find_sources_for('Iron Man', year: 2008)
       actual = []
       sources.each do |source|
         actual << source.attributes
@@ -51,19 +51,11 @@ class SourceTest < ActiveSupport::TestCase
   test 'should not create duplicate sources' do
     VCR.use_cassette('sources/no_duplicates') do
       movie = movies(:aragorn)
-      movie.sources.search!
-      movie.save!
-      movie.sources.search!
-      assert_equal(4, movie.sources.count)
-    end
-  end
-
-  test 'should find the correct movie details' do
-    VCR.use_cassette('sources/find_details') do
-      movie = movies(:aragorn)
-      movie.sources.search!
-      actual = Source.find_movie_details(movie.sources)
-      assert_equal('The eye of the enemy is moving.', actual['tagline'])
+      movie.find_sources!
+      movie.save
+      movie.find_sources!
+      ap movie.sources.to_a
+      assert_equal(4, movie.sources.length)
     end
   end
 
