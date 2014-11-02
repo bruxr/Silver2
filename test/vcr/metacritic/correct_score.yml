@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://byroredux-metacritic.p.mashape.com/find/movie
+    body:
+      encoding: UTF-8
+      string: title=Iron%20Man
+    headers:
+      X-Mashape-Key:
+      - Ox9v8xmk50mshP0TW0RpTdnNAQ6Up1FQyZBjsnTgPQUvFh8Pa2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 02 Nov 2014 09:24:47 GMT
+      Expires:
+      - "-1"
+      Pragma:
+      - no-cache
+      Server:
+      - Mashape/5.0.5
+      X-Powered-By:
+      - PleskLin
+      Content-Length:
+      - '419'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":{"name":"Iron Man","score":"79","rlsdate":"2008-05-02","genre":"Action\nAdventure\nSci-Fi\nThriller","rating":"PG-13","thumbnail":"http:\/\/static.metacritic.com\/images\/products\/movies\/6\/04fda7bb6f618f5233f253c488f08795-98.jpg","userscore":8.2,"runtime":"126
+        min","director":"Jon Favreau","cast":"Gwyneth Paltrow, Robert Downey Jr.,
+        Terrence Howard","url":"http:\/\/www.metacritic.com\/movie\/iron-man"}}'
+    http_version: 
+  recorded_at: Sun, 02 Nov 2014 09:24:47 GMT
+recorded_with: VCR 2.9.3

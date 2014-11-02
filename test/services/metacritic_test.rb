@@ -18,6 +18,13 @@ class MetacriticTest < ActiveSupport::TestCase
     end
   end
   
+  test 'should return the correct score' do
+    VCR.use_cassette('metacritic/correct_score') do
+      resp = Metacritic.new.get_score('Iron Man')
+      assert_equal(8.05, resp)
+    end
+  end
+  
   test 'should return nil if a movie has no ratings' do
     VCR.use_cassette('metacritic/check_no_score') do
       resp = Metacritic.new.get_score('Blood Ransom')

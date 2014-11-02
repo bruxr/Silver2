@@ -117,17 +117,14 @@ class Metacritic < WebClient
     # If we didn't get anything, return a nil
     return nil if resp.nil?
 
-    score = resp['score'].to_i
-    score = nil if score == 0
-    
-    if actual
-      score
+    critic_score = resp['score'].to_f / 10
+    user_score = resp['userscore'].to_f
+    score = 10 * ((critic_score + user_score) / 20)
+  
+    if score == 0
+      nil
     else
-      if score.nil?
-        score
-      else
-        score / 10
-      end
+      score
     end
 
   end
