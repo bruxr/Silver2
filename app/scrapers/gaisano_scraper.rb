@@ -89,6 +89,11 @@ class GaisanoScraper < Scraper
 
       # Remove day of week bits
       date_segment = date_segment[1].gsub(/\([A-Z]+\)/, '')
+      
+      # If we find an "ONLY" word, limit the date before that
+      if date_segment =~ /ONLY./
+        date_segment = post.match(/(.+)ONLY\./)[1]
+      end
 
       dates = []
       year = Date.today.strftime('%Y')
