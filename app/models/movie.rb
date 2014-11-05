@@ -337,7 +337,9 @@ class Movie < ActiveRecord::Base
     
   # Converts 'None' & empty '' MTRCB ratings to nil.
   def convert_blank_mtrcb_rating
-    self.mtrcb_rating = nil if self.mtrcb_rating.downcase == 'none' || self.mtrcb_rating.blank?
+    unless self.mtrcb_rating.nil?
+      self.mtrcb_rating = nil if self.mtrcb_rating.downcase == 'none' || self.mtrcb_rating.blank?
+    end
   end
 
 end
