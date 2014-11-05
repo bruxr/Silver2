@@ -159,7 +159,7 @@ class Source < ActiveRecord::Base
   
   # Rounds scores to 1 decimal place. 
   def score=(s)
-    super(s.round(1))
+    super(s.round(1)) unless s.nil?
   end
   
   # Returns the source's human friendly name
