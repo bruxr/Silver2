@@ -191,14 +191,26 @@ class Movie < ActiveRecord::Base
     unless result['genre'].blank?
       result['genre'].each do |g|
         g = g.titleize
-        genres.build(name: g) unless Genre.exists?(name: g) 
+        begin
+          genre = Genre.create(name: g)
+        rescue ActiveRecord::RecordNotUnique => e
+          genre = Genre.find_by(name: g)
+        else
+          genres << genre
+        end
       end
     end
     
     unless result['cast'].blank?
       result['cast'].each do |c|
         c = c.titleize
-        cast.build(name: c) unless Artist.exists?(name: c)
+        begin
+          cst = Genre.create(name: c)
+        rescue ActiveRecord::RecordNotUnique => e
+          cst = Genre.find_by(name: g)
+        else
+          cast << cst
+        end
       end
     end
     
