@@ -128,7 +128,7 @@ class Movie < ActiveRecord::Base
     begin
       mov = Movie.find_or_create_by!(title: title) # Create immediately, to prevent race conditions
     rescue ActiveRecord::RecordNotUnique => e
-      mov = Movie.find_by!(title: title)
+      mov = Movie.find_by!(slug: Movie.to_slug(title))
     end
     mov.mtrcb_rating = movie[:rating] if mov.mtrcb_rating.nil?
     mov.find_sources! if mov.sources.empty?
