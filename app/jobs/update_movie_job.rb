@@ -13,8 +13,8 @@ class UpdateMovieJob
     
     if movie.sources.count > 0
       begin
-        movie.find_details
-        movie.find_trailer
+        movie.find_details!
+        movie.find_trailer!
 
       rescue Exceptions::QuotaReached => e
         self.class.perform_in(5.seconds, movie_id) # If we reach the quota, back off for 5 seconds.

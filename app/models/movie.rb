@@ -169,10 +169,16 @@ class Movie < ActiveRecord::Base
     
   end
 
+  # DEPRECATED!
+  # Use bang! method instead.
+  def find_details
+    raise DeprecatedMethod
+  end
+
   # Searches for this movie's details like overview, runtime, trailer.
   # This requires that the movie has sources.
-  def find_details
-
+  def find_details!
+    
     raise 'No sources to use.' if self.sources.empty?
 
     whitelist = %w(overview runtime poster backdrop release_date tagline website)
@@ -195,13 +201,19 @@ class Movie < ActiveRecord::Base
         cast.build(name: c) unless Artist.exists?(name: c)
       end
     end
-
+    
   end
 
+  # DEPRECATED!
+  # Use the bang! method instead
+  def find_trailer
+    raise DeprecatedMethod
+  end
+  
   # Sets the trailer for this movie.
   # Doesn't set anything if it cannot find a trailer.
-  def find_trailer
-
+  def find_trailer!
+    
     raise "Cannot find the movie's title" if self.title.nil?
 
     google = Google.new
@@ -240,7 +252,7 @@ class Movie < ActiveRecord::Base
     elsif !trailers['standard'].nil?
       self.trailer = trailers['standard']
     end
-
+    
   end
 
   # Updates the movie's scores & aggregate score
