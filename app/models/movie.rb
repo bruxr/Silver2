@@ -196,7 +196,7 @@ class Movie < ActiveRecord::Base
         rescue ActiveRecord::RecordNotUnique => e
           genre = Genre.find_by(name: g)
         rescue ActiveRecord::RecordInvalid => e
-          if e.message = 'Validation failed: Genre has already been taken'
+          if e.message = 'Name has already been taken'
             genre = Genre.find_by(name: g)
           else
             raise e
@@ -215,7 +215,7 @@ class Movie < ActiveRecord::Base
         rescue ActiveRecord::RecordNotUnique => e
           cst = Genre.find_by(name: c)
         rescue ActiveRecord::RecordInvalid => e
-          if e.message = 'Validation failed: Name has already been taken'
+          if e.message = 'Name has already been taken'
             cst = Genre.find_by(name: c)
           else
             raise e
