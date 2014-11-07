@@ -48,6 +48,10 @@ Backstage.MovieController = Ember.ObjectController.extend({
       source.save();
     },
     
+    updateScores: function(movie) {
+      movie.updateScores();
+    },
+    
   }
   
 });

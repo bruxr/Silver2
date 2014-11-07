@@ -64,6 +64,16 @@ class MoviesController < ApplicationController
   def destroy
     not_found
   end
+  
+  # POST /movies/<id>/update_scores.json route
+  # Updates the movie's scores.
+  def update_scores
+    UpdateSingleMovieScoresJob.perform_async(params[:id])
+    resp = {status: 'ok', date: Time.zone.now }
+    respond_to do |format|
+      format.json { render json: resp }
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

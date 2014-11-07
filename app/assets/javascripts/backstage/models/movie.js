@@ -17,5 +17,18 @@ Backstage.Movie = DS.Model.extend({
   cast:            DS.attr(),
 	createdAt:  		 DS.attr('date'),
 	updatedAt:  		 DS.attr('date'),
-  partial:         DS.attr('boolean')
+  partial:         DS.attr('boolean'),
+  
+  updateScores: function() {
+    
+    var url = '/api/movies/%d/update_scores'.replace('%d', this.get('id')),
+        self = this;
+    
+    $.post(url, function(resp) {
+      if (resp.status == 'ok') {
+        setTimeout(self.reload, 5000); // reload model after 5 secs.
+      }
+    }, 'json');
+    
+  }
 });
