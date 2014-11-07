@@ -4,7 +4,7 @@ class CinemasController < ApplicationController
   # GET /cinemas
   # GET /cinemas.json
   def index
-    @cinemas = Cinema.all
+    @cinemas = Cinema.order(:name).all
   end
 
   # GET /cinemas/1
