@@ -20,6 +20,7 @@ class Omdb < WebClient
         
         # Use the first result that is nearest to our title.
         use_index = scores.key(scores.values.min)
+        use_index = 0 if use_index.nil?
         result = {
           title: resp['Search'][use_index]['Title'],
           id: resp['Search'][use_index]['imdbID'],
