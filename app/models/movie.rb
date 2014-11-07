@@ -192,15 +192,9 @@ class Movie < ActiveRecord::Base
       result['genre'].each do |g|
         g = g.titleize
         begin
-          genre = Genre.create(name: g)
+          genre = Genre.find_or_create_by!(name: g)
         rescue ActiveRecord::RecordNotUnique => e
           genre = Genre.find_by(name: g)
-        rescue ActiveRecord::RecordInvalid => e
-          if e.message = 'Name has already been taken'
-            genre = Genre.find_by(name: g)
-          else
-            raise e
-          end
         else
           genres << genre
         end
@@ -211,15 +205,9 @@ class Movie < ActiveRecord::Base
       result['cast'].each do |c|
         c = c.titleize
         begin
-          cst = Genre.create(name: c)
+          cst = Artist.find_or_create_by!(name: c)
         rescue ActiveRecord::RecordNotUnique => e
-          cst = Genre.find_by(name: c)
-        rescue ActiveRecord::RecordInvalid => e
-          if e.message = 'Name has already been taken'
-            cst = Genre.find_by(name: c)
-          else
-            raise e
-          end
+          cst = Artist.find_by(name: c)
         else
           cast << cst
         end
