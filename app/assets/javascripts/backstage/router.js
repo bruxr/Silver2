@@ -7,6 +7,8 @@ Backstage.Router.map(function() {
   this.route('movies', function() {
     this.resource('movie', { path: '/:id' });
   });
-  this.resource('cinemas');
+  this.route('cinemas', function() {
+    this.resource('cinema', { path: '/:id' });
+  });
   this.resource('schedules');
 });

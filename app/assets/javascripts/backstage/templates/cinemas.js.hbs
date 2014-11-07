@@ -1,0 +1,31 @@
+<div id="cinemas">
+
+  <div class="page-header row">
+  
+    <div class="col-md-8">
+      <h2>Cinemas</h2>
+    </div>
+    
+    <div class="col-md-4 align-right">
+      <form class="form">
+        <input type="search" placeholder="Search Cinemas..." class="form-control">
+        <i class="fa fa-search"></i>
+      </form>
+    </div>
+    
+  </div>
+  
+  <div class="media-row">
+    
+    {{#each}}
+    <div class="cinema">
+      <h4 class="cinema-name">{{#link-to 'cinema' this}}{{name}}{{/link-to}}</h4>
+      <span class="cinema-coords">{{latitude}}, {{longitude}}</span>
+    </div>
+    {{/each}}
+    
+  </div>
+  
+  {{outlet}}
+
+</div>

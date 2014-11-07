@@ -658,3 +658,36 @@ label {
 .form-control.trailer {
   padding-left: 265px;
 }
+
+// Cinemas
+.cinema {
+  margin-bottom: 45px;
+  padding-left: 80px;
+  padding-top: 1px;
+  position: relative;
+  
+  &:before {
+    background-color: $midnight;
+    border-radius: 40px;
+    color: #fff;
+    content: "\f0f7";
+    display: block;
+    font: 32px FontAwesome;
+    height: 64px;
+    left: 0;
+    padding-top: 15px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 64px;
+  }
+ 
+  .cinema-name a {
+    
+  }
+  
+  .cinema-coords {
+    color: #999;
+  }
+  
+}
