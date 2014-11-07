@@ -207,7 +207,7 @@ class Movie < ActiveRecord::Base
         begin
           cst = Genre.create(name: c)
         rescue ActiveRecord::RecordNotUnique => e
-          cst = Genre.find_by(name: g)
+          cst = Genre.find_by(name: c)
         else
           cast << cst
         end
