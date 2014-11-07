@@ -123,7 +123,7 @@ class Movie < ActiveRecord::Base
     
     # Try to fix the title.
     title = Movie.fix_title(movie[:name])
-    title = movie[:name] if title.nil?
+    title = movie[:name].downcase.titleize if title.nil?
     
     begin
       mov = Movie.find_or_create_by!(title: title) # Create immediately, to prevent race conditions
