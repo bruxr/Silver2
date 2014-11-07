@@ -397,15 +397,7 @@ label {
 
 // Movie Popover
 .movie-popover {
-  background-color: #fff;
-  box-shadow: 0 0 16px rgba(black, 0.5);
-  height: 100%;
-  overflow: auto;
-  position: fixed;
-  right: -640px;
-  top: 0;
-  width: 640px;
-  z-index: 2;
+  @extend .paper;
   
   h3 {
     margin-bottom: 30px;
