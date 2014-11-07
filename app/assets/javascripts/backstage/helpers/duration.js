@@ -4,7 +4,7 @@ Ember.Handlebars.helper('duration', function(value, options) {
     return new Ember.Handlebars.SafeString('? mins');
   }
   else {
-    var hours = Math.ceil(value / 60),
+    var hours = Math.floor(value / 60),
         mins = value % 60,
         str = '';
     if (hours > 0) { str += "%d hrs".replace('%d', hours); }
