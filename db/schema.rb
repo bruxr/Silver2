@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030060609) do
+ActiveRecord::Schema.define(version: 20141108070154) do
 
   create_table "artists", force: true do |t|
     t.string "name", null: false
@@ -28,14 +28,16 @@ ActiveRecord::Schema.define(version: 20141030060609) do
   add_index "artists_movies", ["movie_id"], name: "index_artists_movies_on_movie_id", using: :btree
 
   create_table "cinemas", force: true do |t|
-    t.string   "name",                                                    null: false
-    t.string   "slug",                                                    null: false
-    t.decimal  "latitude",   precision: 15, scale: 10, default: 0.0,      null: false
-    t.decimal  "longitude",  precision: 15, scale: 10, default: 0.0,      null: false
-    t.string   "status",                               default: "active", null: false
+    t.string   "name",                                                      null: false
+    t.string   "slug",                                                      null: false
+    t.decimal  "latitude",     precision: 15, scale: 10, default: 0.0,      null: false
+    t.decimal  "longitude",    precision: 15, scale: 10, default: 0.0,      null: false
+    t.string   "status",                                 default: "active", null: false
     t.string   "fetcher"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone_number"
+    t.text     "website"
   end
 
   add_index "cinemas", ["name"], name: "index_cinemas_on_name", using: :btree

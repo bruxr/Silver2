@@ -12,42 +12,51 @@ Cinema.create([
   latitude: 7.091450,
   longitude: 125.610936,
   status: 'active',
-  fetcher: 'Abreeza'
+  fetcher: 'Abreeza',
+  website: 'http://www.sureseats.com'
 },
 {
   name: 'Gaisano Mall of Davao',
   latitude: 7.077843,
   longitude: 125.614033,
   status: 'active',
-  fetcher: 'GaisanoMall'
+  fetcher: 'GaisanoMall',
+  phone_number: '(082) 226-2244',
+  website: 'https://www.facebook.com/gmallcinemas'
 },
 {
   name: 'Gaisano Grand Mall',
   latitude: 7.012950,
   longitude: 125.490528,
   status: 'active',
-  fetcher: 'GaisanoGrand'
+  fetcher: 'GaisanoGrand',
+  phone_number: '(082) 285-7579',
+  website: 'https://www.facebook.com/gmallcinemas'
 },
 {
   name: 'NCCC Mall',
   latitude: 7.063291,
   longitude: 125.593610,
   status: 'active',
-  fetcher: 'NcccMall'
+  fetcher: 'NcccMall',
+  phone_number: '(082) 305-0744',
+  website: 'http://nccc.com.ph/main/page/cinema/'
 },
 {
   name: 'SM City Davao',
   latitude: 7.050202,
   longitude: 125.588078,
   status: 'active',
-  fetcher: 'SmCityDavao'
+  fetcher: 'SmCityDavao',
+  website: 'https://smcinema.com'
 },
 {
   name: 'SM Lanang Premiere',
   latitude: 7.098374,
   longitude: 125.630645,
   status: 'active',
-  fetcher: 'SmLanang'
+  fetcher: 'SmLanang',
+  website: 'https://smcinema.com'
 },
 {
   name: 'Victoria Plaza Mall',
