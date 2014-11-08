@@ -25,6 +25,32 @@ img {
   max-width: 100%;
 }
 
+// Definition Lists
+dl {
+  margin-bottom: 0;
+}
+
+dt {
+  margin-bottom: 5px;
+  
+  .fa {
+    margin-right: 5px;
+    width: 16px;
+  }
+}
+
+dd {
+  font-size: 14px;
+  margin-bottom: 15px;
+  padding-left: 24px;
+}
+
+// Code
+code {
+  color: #555;
+  padding: 4px 8px;
+}
+
 // Buttons
 .btn {
   border: 0;
@@ -382,6 +408,11 @@ label {
   width: 640px;
   z-index: 2;
   
+  header {
+    margin-bottom: 15px;
+    padding: 30px 30px 0 30px;
+  }
+  
   section {
     padding: 30px;
   }
@@ -520,29 +551,6 @@ label {
   .fa {
     margin-right: 5px;
   }
-}
-
-.movie-info {
-  
-  dl {
-    margin-bottom: 0;
-  }
-  
-  dt {
-    margin-bottom: 5px;
-  }
-  
-  dd {
-    font-size: 14px;
-    margin-bottom: 15px;
-    padding-left: 24px;
-  }
-  
-  .fa {
-    margin-right: 5px;
-    width: 16px;
-  }
-  
 }
 
 .movie-scores {
@@ -703,4 +711,8 @@ label {
 
 .map {
   height: 350px;
+}
+
+.cinema-phone {
+  color: #999;
 }

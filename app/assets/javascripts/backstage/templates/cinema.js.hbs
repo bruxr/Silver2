@@ -6,12 +6,39 @@
   
   {{map latitude longitude}}
 
+  <header>
+    <h2 class="cinema-name">{{name}}</h2>
+    <h6 class="cinema-phone">(082) 282-0965</h6>
+    {{phoneNumber}}
+  </header>
+
   <section>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <dl>
+          <dt><i class="fa fa-phone"></i> Phone Number<dt>
+          <dd>{{#if phoneNumber}}{{phoneNumber}}{{else}}None{{/if}}</dd>
+          <dt><i class="fa fa-arrows-h"></i> Latitude</dt>
+          <dd>{{latitude}}</dd>
+          <dt><i class="fa fa-eye"></i> Status</dt>
+          <dd><code>{{status}}</code></dd>
+        </dl>
+      </div>
+      <div class="col-md-6">
+        <dl>
+          <dt><i class="fa fa-globe"></i> Website</dt>
+          <dd><a {{bind-attr href=website}} target="_blank">{{website}}</a></dd>
+          <dt><i class="fa fa-arrows-v"></i> Longitude</dt>
+          <dd>{{longitude}}</dd>
+          <dt><i class="fa fa-gear"></i> Scraper</dt>
+          <dd><code>{{fetcher}}</code></dd>
+        </dl>
+      </div>
+    </div>
 
-    <header>
-      <h2 class="cinema-name">{{name}}</h2>
-    </header>
-
+  </section>
+  
   <section>
   
   {{/if}}

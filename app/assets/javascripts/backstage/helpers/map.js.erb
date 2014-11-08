@@ -1,18 +1,38 @@
 Ember.Handlebars.helper('map', function(latitude, longitude, options) {
+  
   var MAPBOX_JS = 'https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js',
       MAPBOX_CSS = 'https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css',
       el_id = 'map-' + (+new Date),
       map = null;
+      
+  var setupMap = function() {
+    L.mapbox.accessToken = '<%= Rails.application.secrets.mapbox %>'
+    map = L.mapbox.map(el_id, '<%= Rails.application.secrets.mapbox_backstage_map %>')
+          .setView([latitude, longitude], 16);
+    L.mapbox.featureLayer({
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [longitude, latitude]
+      },
+      properties: {
+        title: 'Abreeza',
+        description: 'Abreeza',
+        'marker-size': 'large',
+        'marker-color': '#18bc9c',
+        'marker-symbol': 'cinema'
+      }
+    }).addTo(map);
+  }
+  
   $.ajax({
     dataType: 'script',
     cache: true,
     url: MAPBOX_JS,
-    success: function() {
-      map = L.mapbox.map(el_id, {
-        accessToken: '<%= Rails.application.secrets.mapbox %>',
-      }).setView([38, -77], 5);
-    }
+    success: setupMap
   });
   $('head').append('<link rel="stylesheet" href="%d" type="text/css">'.replace('%d', MAPBOX_CSS));
+  
   return new Ember.Handlebars.SafeString('<div id="'+ el_id +'" class="map"></div>');
+  
 });
