@@ -4,8 +4,15 @@ Backstage.CinemaRoute = Ember.Route.extend({
   	return this.store.find('cinema', params.id);
   },
   
+  // Load each of our cinema's upcoming movie.
   afterModel: function(cinema, transition) {
-    cinema.reload();
+    var store = this.store;
+    return $.getJSON('/api/cinemas/'+ cinema.id +'/schedules', function(resp) {
+      $.each(resp, function() {
+        var i = Backstage.Utils.unserialize(this);
+        store.push('schedule', i);
+      });
+    });
   },
   
   actions: {

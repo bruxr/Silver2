@@ -8,5 +8,6 @@
 //= require velocity
 //= require moment
 //= require ./backstage/app
+//= require ./backstage/utils
 //= require ./backstage/router
 //= require_tree ./backstage
