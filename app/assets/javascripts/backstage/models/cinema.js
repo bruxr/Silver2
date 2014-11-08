@@ -1,4 +1,5 @@
 Backstage.Cinema = DS.Model.extend({
+  schedules:    DS.hasMany('schedule', {async: true}),
   name:         DS.attr('string'),
   slug:         DS.attr('string'),
   latitude:     DS.attr('number'),

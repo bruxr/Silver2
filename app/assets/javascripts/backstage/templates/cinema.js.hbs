@@ -40,6 +40,23 @@
   </section>
   
   <section>
+    
+    <h3 class="section-title">Upcoming Movies</h3>
+    
+    <table class="table">
+      <tbody>
+        {{#each schedules}}
+        <tr>
+          <th>{{room}}</th>
+          <td>{{#link-to 'movie' this}}{{movie.name}}{{/link-to}}</td>
+          <td>{{calendarTime screeningTime}}</td>
+          <td><span class="format">{{format}}</span></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    
+  </section>
   
   {{/if}}
 

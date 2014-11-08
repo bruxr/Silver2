@@ -4,6 +4,10 @@ Backstage.CinemaRoute = Ember.Route.extend({
   	return this.store.find('cinema', params.id);
   },
   
+  afterModel: function(cinema, transition) {
+    cinema.reload();
+  },
+  
   actions: {
     
     // Invoked when the slidein modal is closed
