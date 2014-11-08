@@ -1,7 +1,14 @@
-Backstage.CinemaRoute = Ember.Route.extend({
+Backstage.MovieRoute = Ember.Route.extend({
   
   model: function(params) {
-  	return this.store.find('cinema', params.id);
+  	return this.store.find('movie', params.id);
+  },
+  
+  setupController: function(controller, model) {
+    if (model.get('partial') === true) {
+      model.reload();
+    }
+    controller.set('model', model)
   },
   
   actions: {
@@ -10,7 +17,7 @@ Backstage.CinemaRoute = Ember.Route.extend({
     // e.g. clicking the curtains
     close: function() {
       this.get('controller').set('isEditing', false);
-      this.transitionTo('cinemas');
+      this.transitionTo('movies');
     }
     
   }
