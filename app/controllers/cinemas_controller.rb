@@ -1,44 +1,19 @@
 class CinemasController < ApplicationController
   before_action :set_cinema, only: [:show, :edit, :update, :destroy]
 
-  # GET /cinemas
-  # GET /cinemas.json
+  # GET /cinemas.json route
+  # Returns all cinemas managed my Silver
   def index
     @cinemas = Cinema.order(:name).all
   end
 
-  # GET /cinemas/1
-  # GET /cinemas/1.json
+  # GET /cinemas/1.json route
+  # Returns information about a single cinema
   def show
   end
 
-  # GET /cinemas/new
-  def new
-    @cinema = Cinema.new
-  end
-
-  # GET /cinemas/1/edit
-  def edit
-  end
-
-  # POST /cinemas
-  # POST /cinemas.json
-  def create
-    @cinema = Cinema.new(cinema_params)
-
-    respond_to do |format|
-      if @cinema.save
-        format.html { redirect_to @cinema, notice: 'Cinema was successfully created.' }
-        format.json { render :show, status: :created, location: @cinema }
-      else
-        format.html { render :new }
-        format.json { render json: @cinema.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /cinemas/1
-  # PATCH/PUT /cinemas/1.json
+  # PATCH/PUT /cinemas/1.json route
+  # Allows cinemas to be updated with new information
   def update
     respond_to do |format|
       if @cinema.update(cinema_params)
@@ -50,15 +25,13 @@ class CinemasController < ApplicationController
       end
     end
   end
-
-  # DELETE /cinemas/1
-  # DELETE /cinemas/1.json
-  def destroy
-    @cinema.destroy
-    respond_to do |format|
-      format.html { redirect_to cinemas_url, notice: 'Cinema was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+  
+  # GET /cinemas/1/schedules.json route
+  # Returns the cinema's schedules.
+  #
+  # TODO: allow all schedules for a specific date to be returned
+  def schedules
+    
   end
 
   private

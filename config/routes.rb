@@ -6,9 +6,15 @@ Rails.application.routes.draw do
   # Silver API
   # The frontend Quasar & backstage relies on this endpoint
   scope '/api' do
+    
     resources :movies, only: [:index, :show, :update] do
       post :update_scores, on: :member
     end
+    
+    resources :cinemas, only: [:index, :show, :update] do
+      get :schedules, on: :member
+    end
+    
     resources :sources, only: [:update, :destroy]
     resources :cinemas, :schedules
   end
