@@ -1,0 +1,20 @@
+<div class="cinema paper">
+
+  {{#if isEditing}}
+    {{partial 'movies/edit'}}
+  {{else}}
+  
+  {{map latitude longitude}}
+
+  <section>
+
+    <header>
+      <h2 class="cinema-name">{{name}}</h2>
+    </header>
+
+  <section>
+  
+  {{/if}}
+
+</div>
+<div class="curtains"></div>

@@ -1,0 +1,18 @@
+Ember.Handlebars.helper('map', function(latitude, longitude, options) {
+  var MAPBOX_JS = 'https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js',
+      MAPBOX_CSS = 'https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css',
+      el_id = 'map-' + (+new Date),
+      map = null;
+  $.ajax({
+    dataType: 'script',
+    cache: true,
+    url: MAPBOX_JS,
+    success: function() {
+      map = L.mapbox.map(el_id, {
+        accessToken: '<%= Rails.application.secrets.mapbox %>',
+      }).setView([38, -77], 5);
+    }
+  });
+  $('head').append('<link rel="stylesheet" href="%d" type="text/css">'.replace('%d', MAPBOX_CSS));
+  return new Ember.Handlebars.SafeString('<div id="'+ el_id +'" class="map"></div>');
+});

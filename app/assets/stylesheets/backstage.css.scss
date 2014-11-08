@@ -370,6 +370,23 @@ label {
   }
 }
 
+// Papers
+.paper {
+  background-color: #fff;
+  box-shadow: 0 0 16px rgba(black, 0.5);
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  right: -640px;
+  top: 0;
+  width: 640px;
+  z-index: 2;
+  
+  section {
+    padding: 30px;
+  }
+}
+
 // Editing UI
 .movie-content.editing {
   border-top: 10px solid $turqoise;
@@ -652,7 +669,7 @@ label {
 }
 
 // Cinemas
-.cinema {
+.cinemas .cinema {
   margin-bottom: 45px;
   padding-left: 80px;
   padding-top: 1px;
@@ -682,4 +699,8 @@ label {
     color: #999;
   }
   
+}
+
+.map {
+  height: 350px;
 }
