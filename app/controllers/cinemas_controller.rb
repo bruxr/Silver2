@@ -32,13 +32,8 @@ class CinemasController < ApplicationController
   # TODO: allow all schedules for a specific date to be returned
   def schedules
     
-    schedules = Schedule.upcoming.where(cinema_id: params[:id]).group(:room).order(:screening_time)
-    
-    if params[:by_room] == 1
-      schedules = schedules.uniq.pluck(:room)
-    end
-    
-    @schedules = schedules.all
+    cinema = Cinema.find(params[:id])
+    @schedules = cinema.schedules.scope.upcoming.select('DISTINCT ON (room) *').order(:room).includes(:movie)
     
   end
 

@@ -45,11 +45,11 @@
     
     <table class="table">
       <tbody>
-        {{#each schedules}}
+        {{#each movies}}
         <tr>
           <th>{{room}}</th>
-          <td>{{#link-to 'movie' this}}{{movie.name}}{{/link-to}}</td>
-          <td>{{calendarTime screeningTime}}</td>
+          <td>{{#link-to 'movie' movie_id}}{{movie}}{{/link-to}}</td>
+          <td>{{calendarTime screening_time}}</td>
           <td><span class="format">{{format}}</span></td>
         </tr>
         {{/each}}

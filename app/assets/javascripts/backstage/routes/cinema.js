@@ -5,13 +5,15 @@ Backstage.CinemaRoute = Ember.Route.extend({
   },
   
   // Load each of our cinema's upcoming movie.
+  // TODO: merge schedules & movies to store?
   afterModel: function(cinema, transition) {
-    var store = this.store;
     return $.getJSON('/api/cinemas/'+ cinema.id +'/schedules', function(resp) {
-      $.each(resp, function() {
-        var i = Backstage.Utils.unserialize(this);
-        store.push('schedule', i);
+      skeds = []
+      $.each(resp.schedules, function(i, v) {
+        v.screeningTime = Date.parse(v);
+        skeds.push(v)
       });
+      cinema.set('movies', skeds);
     });
   },
   
