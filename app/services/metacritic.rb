@@ -20,7 +20,17 @@ class Metacritic < WebClient
       max_pages: 1,
       title: title
     }
-    resp = query('/search/movie', data)
+    
+    begin
+      resp = query('/search/movie', data)
+    # If we receive a 502, the movie isn't on metacritic.
+    rescue WebClient::HTTPError => e
+      resp = nil if e.code == 502
+    # Otherwise if the API goes through and we hit a false result,
+    # set the response to nil
+    else
+      resp = nil if resp['result'] == false
+    end
 
     # Exit early if response is nil or there are no items/results to process
     return nil if resp.nil? || resp['count'] == 0
@@ -140,14 +150,9 @@ class Metacritic < WebClient
     headers['X-Mashape-Key'] = @api_key
     
     url = "#{@@endpoint}#{method}"
-    begin
-      response = post(url, data, headers)
-    rescue WebClient::HTTPError => e
-      # Mashape returns a 502 whenever we "overquery" the server.
-      raise Exceptions::QuotaReached.new(self.class.to_s) if e.code == 502
-    else
-      JSON.parse(response)
-    end
+    
+    response = post(url, data, headers)
+    JSON.parse(response)
 
   end
 
