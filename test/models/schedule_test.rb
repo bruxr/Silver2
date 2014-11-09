@@ -2,14 +2,10 @@ require 'test_helper'
 
 class ScheduleTest < ActiveSupport::TestCase
 
-  test 'old schedules scope' do
-    sked = Schedule.old.first
-    assert_equal('IMAX', sked.format)
-  end
-
-  test 'archiving old records' do
-    count = Schedule.archive_old_records
-    assert_equal(1, count)
+  test 'should accept a non-hash ticket price' do
+    c = Schedule.new
+    c.ticket_price = 150
+    assert_equal(150, c.ticket_price.to_i)
   end
 
 end

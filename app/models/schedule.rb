@@ -110,5 +110,21 @@ class Schedule < ActiveRecord::Base
     count
 
   end
+  
+  def ticket_price
+    if self[:ticket_price].has_key? 'default'
+      self[:ticket_price]['default']
+    else
+      self[:ticket_price]
+    end
+  end
+  
+  def ticket_price=(v)
+    if v.instance_of? Hash
+      self[:ticket_price] = v
+    else
+      self[:ticket_price] = {'default' => v}
+    end
+  end
 
 end
