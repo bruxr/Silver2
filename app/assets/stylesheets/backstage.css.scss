@@ -396,7 +396,7 @@ label {
   }
 }
 
-// Papers
+// options
 .paper {
   background-color: #fff;
   box-shadow: 0 0 16px rgba(black, 0.5);
@@ -417,6 +417,34 @@ label {
     margin-bottom: 30px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+  
+  .section-title {
+    margin-bottom: 30px;
+  }
+  
+  .table td,
+  .table tbody th {
+    border-top: 1px solid #eee;
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  
+  .table tr:first-child td, 
+  .table tr:first-child th {
+    border-top: none;
+  }
+  
+  .table a {
+    text-decoration: none;
+  }
+  
+  .format {
+    border: 1px solid $midnight;
+    border-radius: 22px;
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 
@@ -625,9 +653,6 @@ label {
   }
   
   .table td {
-    border-top: 1px solid #eee;
-    padding-bottom: 15px;
-    padding-top: 15px;
     text-align: center;
     width: 15%;
   }
@@ -639,18 +664,6 @@ label {
   
   .table tbody td:nth-child(2) {
     width: 35%;
-  }
-  
-  .table a {
-    text-decoration: none;
-  }
-  
-  .format {
-    border: 1px solid $midnight;
-    border-radius: 22px;
-    display: inline-block;
-    padding-left: 8px;
-    padding-right: 8px;
   }
   
 }
