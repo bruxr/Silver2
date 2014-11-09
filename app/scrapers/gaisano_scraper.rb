@@ -202,11 +202,15 @@ class GaisanoScraper < Scraper
             sked[:schedules] = []
             times = []
             prices = nil
+            format = '2D'
             
             # The title is in the first line and it contains
             # a (3D) suffix if it is in 3D.
             title = lines[0].strip
-            title.gsub('(3D)', '').strip if title =~ /\(3D\)\Z/i
+            if title =~ /\(3D\)\Z/i
+              title = title.gsub('(3D)', '').strip
+              format = '3D'
+            end
             sked[:name] = title
 
             # Find for stuff in the lines
@@ -245,7 +249,7 @@ class GaisanoScraper < Scraper
                 cinema_name: cinema.downcase.capitalize,
                 price: prices,
                 time: time,
-                format: '2D',
+                format: format,
                 ticket_url: nil
               }
             end

@@ -1,0 +1,784 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.1/gmallcinemas/posts?access_token=717895564958456%7C3b95cbd9ca4a0a73dbaf35af149ac070
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Facebook-Api-Version:
+      - v2.1
+      Etag:
+      - '"7d683f05d36e72b132810ef508899e0539fac3e3"'
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Rev:
+      - '1486784'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - RgqHi+evlK58PENf2XTwsJsf1IShUfLSi05EyyBTxJdoD78gRXSvWYR1GtchksNM3VuXpgC+P9Rz/fX9oQY//Q==
+      Date:
+      - Sun, 09 Nov 2014 10:08:13 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"130984640252671_898630106821450","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"FREQUENTLY ASKED QUESTIONS (FAQ)\n\n1)
+        Is this the official FB page of Gaisano Cinemas?\n\nThis is maintained by
+        a movie fan, but the GMall Cinemas management recognizes this page.\nAdmin
+        is not an employee of Gaisano Mall Davao nor its cinema. So please don''t
+        demand \"customer service\" from the admin.\nThe admin updates the page as
+        soon as the information is available. So if the information is not yet posted,
+        it means the admin has not received information yet. So please just wait for
+        the info to be posted.\nBelieving on the saying \"Give a man a fish, and you
+        feed him for a day; teach him how to catch fish, and you feed him for a lifetime,\"
+        the admin is asking peeps to read this FAQ first before posting questions
+        because most questions are already answered here. It''s better that peeps
+        will know how to explore our page rather than keep on asking questions. By
+        reading this and not posting questions that already explained here, you are
+        helping the admin in maintaining this page easily.\nWe will only be answering
+        questions that are not stated here.\nThe admin can''t directly answer complaints\/other
+        inquiries in behalf of the management. \n\n2 ) What''s the schedule this week?\n\nThe
+        sked of the week is always pinned atop the main page. It contains the stars,
+        genre, MTRCB rating, and running time, and the ticket prices. If the sked
+        is only listed for a certain day, it means a new movie is set to debut after
+        that day but the information has yet to be given. so please just wait for
+        it to be posted. No need to asked where and why.\n\nFor particular info about
+        the movies, please go to their respective pages posted at the NOW SHOWING\/SHOWING
+        THIS WEEK album (https:\/\/www.facebook.com\/media\/set\/?set=a.732319560119173.1073741840.130984640252671)\n\nPlease
+        click the particular poster for more information (trailer, link). If the info
+        such as rating or running time is not listed (especially on the first day),
+        it means the info is not yet released by the management.\nIt is always on
+        the afternoon before the opening of the movie that the running time schedule
+        is posted here (Some distributors are giving the information late Tuesday
+        afternoon). So, please don''t demand before Tuesday afternoon the time schedule
+        of the movie opening on a Wednesday, and so on.\n\nSCHEDULE IS SUBJECT TO
+        CHANCE WITHOUT PRIOR NOTICE!\nSo please don''t scold the ticket seller if
+        the sked posted here is different from the actual sked on the theaters. The
+        management could have change the line-up without informing the FB admin.\n\nThe
+        NOW SHOWING album is renamed MOVIES THIS WEEK on MONDAY or TUESDAY since the
+        album already posted movies opening on the week. List is often updated on
+        Tuesday, or a day before a new movie opens.\n\n3 ) Price of the ticket?\n\nTicket
+        price varies per cinema. Please check the main wall post for the price of
+        each movie.\nHere''s the general rate\nDavao\nCinema 1 (3D) (XTREME) - P130\/P200.
+        no extra charge for the 3D glasses\nCinemas 2 to 4 - P110\/P130\nCinemas 5
+        to 7 (VIP) - P130\nCinema 8 (Red Carpet) - P200\n\nToril\nCinemas 1, 2, 3,
+        4 - P130\n\nTagum\nCinema 1 (XTREME) - P150 no extra charge for the 3D glasses\nCinema
+        2 (VIP) - P130\nCinemas 3 to 6 - P130\n\nSeating capacity of the cinemas?\nDAVAO
+        - Cinema 1 (upper deck - 126\/lower deck - 332); Cinema 2 (upper deck - 306\/lower
+        deck - 364), Cinema 3 (upper deck - 322\/lower deck - 364), Cinema 4 (upper
+        deck - 344\/lower deck- 390), Cinema 5 (306), Cinema 6 (185), Cinema 7 (175),
+        Cinema 8 (106).\nTagum - Cinema 1 (upper deck - 245\/lower deck -233); Cinema
+        2 (upper deck - 237\/lower deck - 221); Cinema 3 (254); Cinema 4 (209); Cinema
+        5 - (202); Cinema 6 (266)\nToril - Cinema 1 (307); Cinema 2 (196); Cinema
+        3 (179); Cinema 3 (143)\n\n4 ) When will be the last day of this movie? Will
+        this movie be extended? Is this movie still screening on (particular day)?\n\nWE
+        CERTAINLY DON''T KNOW until when the movie will run because it all depends
+        on the ticket sales of the existing day.\nA regular run of a movie is seven
+        days. It usually starts on Wednesday and ends Tuesday the following week.
+        Some expected blockbusters open on Thursday or Friday for a simultaneous US\/worldwide
+        release. Friday is the usual opening date in US.\nBlockbusters generally command
+        a week extension. If the movie opens in at least two movie houses, there is
+        a possibility that it will run for another week.\nHowever, as general rule,
+        movies are subject to change without prior notice -- they may be pulled out
+        any time due to various reasons.\nIf the movie gets satisfying ticket sales,
+        it will be extended for another week.\nIf it lacks ticket sales before the
+        weekend, there will be two options: it will be pulled out before its week-long
+        run or will be given a lesser run date (usually it will be played either in
+        the morning or early afternoon). Having two (or more) movies screened in a
+        cinema (one in the afternoon and another in the evening) is called slideshow.
+        If the movie is in slideshow on its first week, it is due to weak ticket sales.
+        There are also instances that movies need to be on a slideshow due to lack
+        of movie houses (especially, if the movie is having strong box office, yet
+        a batch of new movies are coming -- the management are forced to put those
+        extended movies in one cinema). There are weeks that more than 8 movies are
+        being released, and none of the distributors are willing to cancel the release.\n\nAs
+        we repeatedly stated, schedule is subject to change without prior notice,
+        so watch the movie as soon as you can before it will be pulled out unexpectedly.\nIt''s
+        so annoying to read complaints regarding pulled-out movies.\n\n5 ) Schedule
+        of the upcoming movies? Are you showing this movie?\n\nGo to NEXT PICTURE
+        album page (for the movies opening in the following week or within the month).\nhttps:\/\/www.facebook.com\/media\/set\/?set=a.482392871778511.119723.130984640252671\n\nGo
+        to COMING SOON (for movies line-up for the rest of the year).\nwww.facebook.com\/media\/set\/?set=a.595094363841694.1073741830.130984640252671\n\nGo
+        to IN PRODUCTION for in-production movies produced by major companies that
+        are set in 2015 and beyond. The titles listed there are produced by major
+        productions, but there are instance that they may not be distributed in the
+        Philippines.\nwww.facebook.com\/media\/set\/?set=a.432606606757138.108635.130984640252671\n\nIf
+        still, you can''t find the movie you''re looking for, please go to the BUMPED
+        folder. This is for movies that were previously scheduled by the distributors
+        but were later pulled out for distribution. So we have no information when
+        they will be screened. They may or may not be screened at GMALL cinemas.\nhttps:\/\/www.facebook.com\/media\/set\/?set=a.738068502877612.1073741841.130984640252671\n\nThere
+        is a list of movies posted on the main page of NEXT PICTURE and COMING SOON.\n\nPosted
+        schedule is tentative, as it is based on the movie release date in Manila.
+        Some movies, particularly those non-blockbusters, may be delayed in the region.
+        Again, the schedule is subject to change without prior notice!\n\nThere are
+        instances that some movies may not be distributed in Davao or at GMall Cinemas.
+        Other cinema chains are claiming exclusive rights on some movies, and we are
+        not allowed to promote\/discuss such movies until we get confirmation that
+        GMall Cinemas will be screening them on later date. We immediately pull out
+        those movies on the album section if they are no longer listed for release
+        at GMall Cinemas.\n\nIf the movie you are looking is not the above photo albums,
+        here are the possibilities -- the movie was already screened (please go to
+        the DONE albums), the movie will not be screened at GMall Cinemas, or the
+        movie has no distributor yet (it may or may not be released in the future).\n\nDONE
+        (latest quarter)\nhttps:\/\/www.facebook.com\/media\/set\/?set=a.770266759657786.1073741843.130984640252671&type=3\n\nDONE
+        (JAN-SEP 2014)\nhttps:\/\/www.facebook.com\/media\/set\/?set=a.723288817688914.1073741839.130984640252671&type=3\n\nDONE
+        (2013)\nhttps:\/\/www.facebook.com\/media\/set\/?set=a.632259450125185.1073741835.130984640252671&type=3\n\n6
+        ) The movie listed in NOW SHOWING section is different from the actual cinema
+        schedule. Why?\nAs we are not online 24\/7, there are instances that we can''t
+        update unexpected schedule changes. Schedules, as we stated above, are subject
+        to chance without prior notice. But we always stride to post whatever is available.
+        We may have no internet connection when the movie sked was change.  \nThere
+        are several reasons for an unexpected changes. Among them are: permit doesn''t
+        arrive on time, 2D\/3D material or its computer key doesn''t run, and weak
+        ticket sales.\nGMall Cinemas can''t run a movie, even if it''s already on
+        sked and approved by MTRCB, if there is no MTRCB permit sent to the cinema.
+        GMall Cinemas can''t also run a movie if there is no available material.\nNo
+        cinema will continue playing a movie if there''s a low audience turnout. Don''t
+        wait for the movie to pass by, go to the cinema on the first day, if possible,
+        if you think that the movie you like to watch is not a good ticket seller.
+        Common examples for these are art, drama and indie films.\n\n7 ) Why the same
+        3D price for a 2D movie on your Xtreme Cinema?\nOperating a 3D cinema is more
+        expensive that 2D. At GMall Cinemas you are actually not paying for the 3D
+        glass in its Xtreme Cinema, even if the movie is on 3D (unlike other cinemas
+        that you are paying for the glass rental). It''s already the fixed price,
+        with or without the 3D glass, 2D or 3D. It is the lowest 3D price in Davao.
+        The P130 for the lower deck of Xtreme Cinema in Davao is just the same as
+        the price of the VIP theaters (Cinemas 6 and 7) and the upper deck of our
+        regular theaters (Cinemas 2 to 5). The P200 is the same as our Red Carpet
+        (Cinema 8 ), both have lounge chairs.\n\n8 ) The movie was listed on NEXT
+        PICTURE last week, yet it is not screening this week. Why?\nThose posted on
+        the NEXT PICTURE are movies scheduled within the month. They are not all set
+        for screening on the following week. Sometime, a movie is pulled out from
+        its initial schedule by the distributor. The cinema doesn''t have control
+        in that situation, it''s the distributor''s prerogative. Being marked BUMPED
+        means that we don''t have current info on its release date. We will put the
+        sked as soon as we have it.\n\n9 ) Will you extend a movie for another week?
+        Will you still screen it again?\nAs general rule, only movie that generates
+        enough ticket sale gets extension. If you think the movie you want to watch
+        is not making money, prioritize it. Don''t reason us that you''re too busy
+        to watch the movie on the date it is showing, and demand for it on your available
+        time.\nBringing back a pulled-out movie rarely happens. If the movie was pulled
+        out only after or less than a week of run, it means it is not selling well,
+        therefore it is not getting a rerun. A movie only gets a rerun if there is
+        a substantial public demand. The cinema can accommodate a special screening
+        for a pull-out movie if the audience can reach a hundred. Sometimes, pulled-out
+        movie is returned to the big-screen if a new film doesn''t make such money.\n\n10
+        ) Is this movie in 3D?\nThe Xtreme Cinemas (one in Davao City and one in Tagum
+        City) cater 3D movies. 3D movies are played on those cinemas. But on instances
+        that there are no available 3D, 2D movies are instead played on Xtreme Cinemas.
+        There are rare occasions that a 2D version of a 3D movie is screened on its
+        3D cinema or a supposed 3D movie is released only on 2D (usually, the distributor
+        is only releasing a 2D version). Our sked, found on our main wall, will always
+        states if the movie is in 3D. \nSome customers are also demanding for a 3D
+        version of a movie that actually doesn''t have a 3D version. Go check information
+        on imdb.com if the movie has 3D version, or visit the movie page at impawards.com
+        (the poster generally carries a 3D if it is released in 3D in US, but again
+        not all 3D movies are released in 3D in the Philippines). Lastly, go to wikipedia.org,
+        search the movie and read if the movie has a 3D version.\nIn instances that
+        there are two 3D movies released on the same week, the cinema picks the movie
+        that caters to the children (eg. animation over action movie). More children
+        patronize 3D movies than adults. Or perhaps, there will be a slideshow.\n\n11
+        ) Why move a 3D movie to a non-3D cinema.\nDue to high number of 3D movies,
+        some 3D movies are moved to the 2D cinema on its second week to cater a new
+        one. So again, watch the movie on the first week as possible instead of posting
+        demand to extend a movie.\n\n12 ) Why screen a 2D version of a 3D movie?\nIt''s
+        the distributor''s prerogative. If there are available 3D, the cinemas will
+        be releasing a 3D version. If the distributor releases a 2D for a 3D movie,
+        then the cinemas will be releasing 2D. If the movie carries a 3D in the title,
+        the cinemas usually omit it on the non-3D release. But in some instances (eg.
+        Piranha 3DD), we stick with the title even if the movie is not released on
+        3D.\nThere are also instances that the film has both 3D and 2D, and there
+        is only one cinema allocated for them (due to the influx of new movies opening).
+        It is usually placed on Xtreme Cinema, yet we run sometimes the 2D version
+        of the film in the night since some viewers don''t like to watch 3D. This
+        give option to those who like to watch it on 3D to watch it on certain time,
+        and for those who don''t like to watch on a certain time.\n\n13 ) What is
+        3D? What is 2D?\nBoth 2D and 3D are digital.\n2D refers to two-dimensional.
+        This basically means flat.\n3D equals three-dimensional. This refers to the
+        added dimension of depth. Most modern movies have a 3D version, most of which
+        require you to wear 3D glasses so that your eyes put the very odd-seeming
+        pictures into an optical illusion that makes the image ''pop'' out at you.\nA
+        3D cinema can play 2D movies but a 2D cinema can''t play a 3D movie.\nIn Davao
+        City, Xtreme Cinema 1 is 3D, while the rest are in 2D.\nIn Tagum, Xtreme Cinema
+        1 is 3D, while the rest are in 2D.\n\n14 ) Why this movie has so many cuts?\nCinemas
+        don''t cut movies and have no right to cut a movie. It''s the MTRCB''s task,
+        with the producer''s approval, to cut certain part(s) of the movie to get
+        favorable rating. We can''t run anything that doesn''t pass the MTRCB.\nDon''t
+        demand from the cinema to screen an uncut version. If you have problem about
+        the cuts, raise your concerns to the MTRCB or to the production. So please
+        don''t post such issue on our page.\n\n15 ) The movie is already released
+        in Manila and pirated copies are already in the streets, why are you still
+        not showing the film?\nAgain, it''s the distributors'' prerogative. The distributors
+        could have delay the release of the movie to avoid competition against blockbusters.
+        Also, some distributors have \"exclusive\" deals with other cinema chains
+        on a particular movie. Certainly, we can not promote\/discuss those \"exclusive\"
+        movies unless we got play dates (after the other cinemas screened it).\n\n16
+        ) This movie is already released in Davao but not in Tagum and\/or Toril?
+        Why the delay in Tagum\/Toril?\nLacks of cinemas. Davao has 8, Tagum has 6.
+        and Toril has 4. As much as possible, the cinemas want to simultaneously release
+        all the new titles. But since there are times that more than 10 movies are
+        released in Manila, that even in Davao we have to prioritize movies that have
+        potential strong box office.\n\n17 ) What''s the rating of the movie? Can
+        children watch this movie?\nMTRCB ratings are only available for movie that
+        is currently showing. The MTRCB info is listed in the NOW SHOWING sked on
+        the main page.\nR18 = For adult only (Below 18 is not allowed).\nR16 = Children
+        below 16 are not allowed.\nR13 = Children below 13 are not allowed.\nPG13
+        = Children below 13 are only allowed if accompanied by parents or adults.\nG
+        = General patronage, all ages are allowed.\n\n18 ) Are children free to watch
+        movie?\nChildren, even a one-day-old baby, are subject to pay. We are advising
+        moviegoers to avoid bringing infant or toddler who can''t appreciate movies
+        yet. Children sometime cause disturbance (crying, shouting, running around,
+        playing on chairs, etc). So if you are bringing children, please be responsible
+        enough to take care of the children so others will not be disturbed.\n\n19
+        ) Why the title of the movie you are releasing is not on its original title?\nIt''s
+        the distributor''s prerogative to re-title the films they are releasing. We
+        can''t change the title, even we know its actual title. The title used by
+        the distributors is the one approved by the Movie and Television Review and
+        Classification Board (MTRCB). But we put the IMBD and youtube links that carry
+        the movie''s original title, or sometimes used its original poster. Distributors
+        buy the films from the producers, and they have the right on how to market
+        the product and make profit from it. It''s now a common practice to download
+        or buy pirated copies, hence distributors will market that everyone will be
+        enticed to watch it. If you complain that you have already seen the film before,
+        blame yourself for illegally downloading or buying the pirated version of
+        the film. Or go, complain the distributors.\n\n20 ) Is the date on the posted
+        movie poster the actual date?\nNope, not all the time. The date on the poster
+        usually reflects its US release, which usually falls on a Friday. Some movies
+        are simultaneously released here, but most titles are not. As much as possible
+        we want to put poster that doesn''t carry the date, but most posters carry
+        US-release date. Please go to our coming soon photo album for the sked (check
+        discussion somewhere above).\n\n21 ) What time the mall opens? the cinemas?
+        Closing time?\nThe Davao City mall opens at 10 am. The cinemas opens at least
+        10 minutes before the earliest time sked. If one of the movies is set to start
+        at 10:30 a.m., the ticket booth opens at 10:20 a.m. Cinema''s regular last
+        full show is 9:30 pm (Davao) and 9:00 pm (Tagum and Toril). So be there before
+        that time. In Davao, guards at the side main entrance (beside San Pedro Hospital)
+        allow patrons to enter before that time.\n\n22 ) What is a recliner chair?
+        What is a lounge chair.\nFor recliner chair, view http:\/\/i01.i.aliimg.com\/photo\/v16\/233344483\/Hot_sale_Reclining_Cinema_Chair_HJ95B.jpg_140x140.jpg.\nRecliner
+        chair is individual but its arm rest can be pulled up. In Davao, Cinema 1
+        (lower deck, Cinemas 2 and 4 (upper deck) and Cinemas 6 and 7 use recliner
+        chair. In Tagum, lower deck of Cinema 1 uses recliner.\nFor lounge chair,
+        view http:\/\/www.harvestdualmoon.co.uk\/images\/sweet-dreams\/sw-sorbin-ch-500.jpg.
+        Cinemas 1 (upper deck) and 8 use lounger chairs. Lounge chair is usually two-seater,
+        but there are limited three-seater chairs in both cinemas.\n\n23 ) Complimentary
+        passes are valid for?\nComplimentary pass is not valid for first-week run
+        of major productions (especially expected blockbuster). There are some productions
+        that don''t accept complimentary pass at all, and some only allow certain
+        number. We put a list of movies accepting passes on our main wall. But since
+        the acceptance of complimentary pass has limit and we are not online 24\/7,
+        we could not certain what movies are still accepting passes even if we list
+        down here. So whatever is posted is first-come-first-serve basis. Please call
+        (082)226-22-44 for Davao\/(084)655-77-77 for Tagum City\/(082)-285-75-79 for
+        Toril.\n\n24 ) Movies available for the senior citizens on Tuesday?\nPlease
+        call 226-22-44 for Davao City only.\nThe free viewing given to senior citizens
+        every Tuesday is not absolute, it''s not a law. It''s just a request by the
+        Davao City government, through a resolution, requesting theaters to accommodate
+        the senior citizen. It is just a privilege given to the senior citizens. It
+        is subject to certain conditions (eg. prohibition on first-week run, number
+        of slot available). It''s a first come-first serve basis. Tagum has no such
+        resolution.\n\n25 ) Can I make reservation? Is there a reservation for this
+        movie?\nThere is no online reservation. To make reservation, please call (082)226-22-44
+        for Davao City \/ (084)655-77-77 for Tagum City \/ 285-75-79 for Toril. Reservation
+        should be paid at the ticket booth 10 minutes before the screening of the
+        movie.\n\n26 ) When can I buy advance tickets for this movie?\nIf the information
+        is already available, we will post it on the main board. If it is not listed
+        on the main page, please call (082)226-22-44 for Davao City \/ (084)655-77-77
+        for Tagum City \/ 285-75-79 for Torill for reservation.\n\n27 ) How many cinemas
+        do you have?\nEight for Davao City, six for Tagum City, and four in Toril.\nFor
+        Davao, Cinemas 1 and 8 are always guaranteed seating, viewers can only watch
+        the movie once. VIP Cinemas 6 and 7 are sometimes open seating and sometimes
+        guaranteed seating, depending on the movie. First week releases are usually
+        on guaranteed seating.\nCinemas 2, 3, 4, 5 are open seating, you can watch
+        the movie again and again for a single ticket in a day.\nFor Tagum, Cinemas
+        1 and 2 are guaranteed seating. Cinema 3, 4, 5 and 6 are open seating.\nIn
+        Toril, Cinema 1 is guaranteed seating, the rest are open seating.\n\n28 )
+        What are prohibited inside the cinema?\nHere''s the list:\nFOOD\nAll kind
+        of fresh fruits\nAny food on stick\ndurian-flavored food\nice cream\ncorn
+        (except popcorn)\nchewing gums\ndrinks in glass and bottle\ndrinks in can\nliquor
+        \/ beer\negg (except shelf is taken off)\nOTHERS\ngun\/explosive\/firecraker\/pyrotechnic\nelectrical
+        wire\ncellphone charger\npointed umbrella\nbladed weapon (knife\/cutter\/scissor)\nlighter\/match\ncigarette\/cigar
+        (including its pack)\npaint\nsolvent (rugby\/thinner)\nmuriactic acid\nany
+        kind of tools\nany sharp object\npet\npetroleum-based products (gas\/kerosene\/diesel\/others)\nvideo
+        camera\nballoon\ncertain toys (toy gun\/toy sword)\nbaseball bat\nball\nExcept
+        for perishable foods (which we ask the customers to consume), all the things
+        listed should be surrendered to the guard before entering the cinemas.\nWe
+        also demand customers to observe proper decorum (turn off the cellphone, don''t
+        put your feet\/shoes\/sandals atop the adjacent chair, observe silence, etc).
+        The cinema is a public place, not your home. if you noted some customers are
+        making loud unnecessary noise, please do inform the guard.\n\n29 ) Why the
+        ban on this page?\nWe ban users for extreme reasons. Among them are threatening
+        the admin, posting malicious and annoying messages, encouraging illegal download,
+        promoting non-movie products, promoting other cinemas, badmouthing a movie,
+        or posting a spoiler.\nThis is a page solely to promote movies scheduled at
+        Gaisano Mall Cinemas in Davao and Tagum, hence rants or negative remarks against
+        a movie are NOT welcome here. And certainly no spoiler.\nThis is not a critic
+        page, and negative comments (against the movie, its poster, its production
+        or its cast) certainly have no space here. You can post those rants on the
+        facebook page of that particular movie. Your complaints against the movie
+        are not our concerns and we don''t want to see such message on our page.\nMovie
+        pirates who keep on bragging they have already seen the movie, or complaining
+        that the movie is released to late, also have no place on this page.\nSo please
+        don''t post if you have nothing good to say.\nQuestions on plot of the movie
+        is not encouraged on this site. Please go to the official facebook page of
+        the movie, or go to movie site to discuss movie plots.\nThe admin reserves
+        the right to delete comments containing advertising, personal attacks, off-topic
+        remarks, and any other objectionable content.\n\n30) The cinema has defect
+        when I watched a movie. What to do? Where to report complain?\nFirst, inform
+        the usherette about the defect (problem on sounds, etc). If there''s no usherette,
+        call the attention of the guard or the porter. If the defect continues and
+        it gives you discomfort, demand to see the supervisor. If it''s already after
+        cinema office hour (past 7 pm), please have your complaint logged by the guard
+        for future reference. (In Davao, guards are stationed at Cinema 5 during the
+        last full show). So please don''t post here or PM us such complaint if you
+        did nothing to inform the staff on the spot.\n\n31 ) Is this movie making
+        money?\nSorry, movie box office gross will not be revealed.\n\n32) Why I see
+        . (period) on the comment box on your album pictures?\nIt''s because you could
+        have open it on the time that we are updating the page. We usually reserved
+        the first four comment boxes to trailers, official website, links, etc. So
+        please don''t demand us to post the trailers, just wait for it.\n\n33) What
+        is a sneak preview? What is a premiere? What is a blocked screening?\nFor
+        sneak preview, check this the wiki post of film screening at http:\/\/en.wikipedia.org\/wiki\/Film_screening\nFor
+        premiere, check the wiki post http:\/\/en.wikipedia.org\/wiki\/Premiere\nBlocked
+        screening means a certain group has bought the ticket of a certain movie in
+        a particular time. This usually happens on the first night of a blockbuster.\n\n34)
+        How to arrange a block screening\/sneak preview\/advance screening?\nPlease
+        contact the cinema thru phone number stated above.\n\nPag adunay mali sa naasoy
+        sa taas (grammar, fact, etc), kindly hit our PM. We appreciate it.","picture":"https:\/\/scontent-b.xx.fbcdn.net\/hphotos-xpa1\/v\/t1.0-9\/s130x130\/10784_898630093488118_1628917344434021328_n.jpg?oh=498128752c044289f547c7bdfe597e3e&oe=54F1FF34","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.898630013488126.1073741848.130984640252671\/898630093488118\/?type=1&relevant_count=1","name":"FAQ","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"898630093488118","created_time":"2014-11-06T23:25:48+0000","updated_time":"2014-11-07T03:59:16+0000","likes":{"data":[{"id":"711760168871535","name":"Christian
+        Sarno Caballero"},{"id":"10203093671769356","name":"AudioVan Adan Vmobile"},{"id":"684855131594535","name":"Antonette
+        Arduo Bacani"},{"id":"501927723277309","name":"Jaydon Samuel"},{"id":"10152440461123531","name":"Wayne
+        Andrew Tan"},{"id":"4717320787368","name":"Elaiza Marie"},{"id":"1665218403703403","name":"Shelly
+        Escuadro"},{"id":"833309440033642","name":"Rizza Bacaron"},{"id":"857627467602193","name":"Ingrata
+        Lugar Sanada"},{"id":"878116742200076","name":"Kiel"},{"id":"964804020214593","name":"Ra
+        Zi"},{"id":"10204584576828396","name":"Laius Salingay"},{"id":"845937385446956","name":"Jennifer
+        Marie Pa\u00f1a Baniog"},{"id":"859998547357070","name":"Geraldine Borinaga
+        Celin"},{"id":"4795538703258","name":"Knoll Orque"},{"id":"884795198206107","name":"Milan
+        Ni"},{"id":"10204639871301167","name":"Raymark Rentura Barroga"}],"paging":{"cursors":{"after":"MTAyMDQ2Mzk4NzEzMDExNjc=","before":"NzExNzYwMTY4ODcxNTM1"}}},"comments":{"data":[{"id":"898630093488118_898630446821416","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"we have to move the FAQ here since
+        the info page is no longer accepting long messages.","can_remove":false,"created_time":"2014-11-06T23:26:43+0000","like_count":1,"user_likes":false},{"id":"898630093488118_898825240135270","from":{"id":"10152440461123531","name":"Wayne
+        Andrew Tan"},"message":"more power to this FB page!","can_remove":false,"created_time":"2014-11-07T03:59:16+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGs0T0RJMU1qUXdNVE0xTWpjd09qRTBNVFV6TXpJM05UWTZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGs0TmpNd05EUTJPREl4TkRFMk9qRTBNVFV6TVRZME1ETTZNUT09"}}}},{"id":"130984640252671_897343390283455","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"MOVIES THIS WEEK","story":"GMALL
+        Cinemas shared an album: MOVIES THIS WEEK - DAVAO\/TORIL\/TAGUM.","story_tags":{"0":[{"id":"130984640252671","name":"GMALL
+        Cinemas","offset":0,"length":13,"type":"page"}]},"picture":"https:\/\/scontent-b.xx.fbcdn.net\/hphotos-xfa1\/v\/t1.0-9\/s130x130\/10678701_880714251946369_8979025750157464484_n.jpg?oh=4b366509281ba40bafb139aa14569d3c&oe=54D82C00","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.732319560119173.1073741840.130984640252671\/880714251946369\/?type=1","name":"MOVIES
+        THIS WEEK - DAVAO\/TORIL\/TAGUM","description":"FOR THE SKED, PLEASE CHECK
+        OUR MAIN PAGE.","properties":[{"name":"By","text":"GMALL Cinemas","href":"https:\/\/www.facebook.com\/gmallcinemas"},{"name":"Photos","text":"12"}],"icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yD\/r\/aS8ecmYRys0.gif","privacy":{"value":""},"type":"photo","status_type":"shared_story","object_id":"880714251946369","created_time":"2014-11-04T16:33:12+0000","updated_time":"2014-11-04T16:33:12+0000","likes":{"data":[{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"},{"id":"960349873981342","name":"Cristyne Alo Eda\u00f1o"},{"id":"817734651602093","name":"Leunamme
+        Larotsap Jr"},{"id":"684855131594535","name":"Antonette Arduo Bacani"}],"paging":{"cursors":{"after":"Njg0ODU1MTMxNTk0NTM1","before":"MTAyMDQ2Mzk4NzEzMDExNjc="}}}},{"id":"130984640252671_897232046961256","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"story":"GMALL Cinemas commented on their
+        own link.","story_tags":{"0":[{"id":"130984640252671","name":"GMALL Cinemas","offset":0,"length":13,"type":"page"}]},"privacy":{"value":""},"type":"status","created_time":"2014-11-04T13:11:05+0000","updated_time":"2014-11-04T13:11:05+0000"},{"id":"130984640252671_897110990306695","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"SKED FOR NOV 8 (SATURDAY)-NOV
+        11 (TUESDAY). MOVIES ARE IN 2D, UNLESS INDICATED. SUBJECT TO CHANGE WITHOUT
+        PRIOR NOTICE. PLEASE READ THE FAQ BEFORE POSTING QUESTION BECAUSE THE ANSWER
+        YOU ARE SEEKING MAY ALREADY BE STATED THERE. \nhttps:\/\/www.facebook.com\/gmallcinemas\/photos\/a.898630013488126.1073741848.130984640252671\/898630093488118\/\n\nDAVAO\n\nCINEMA
+        1\nBIG HERO 6 (3D)\nRYAN POTTER|SCOTT ADSIT\nPG13- ACTION|COMEDY|ANIMATION\n12:10|2:30|4:50|7:10|9:30\nP200\/P130\n\nCINEMA
+        2\nMORON 5.2: THE TRANSFORMATION \nLUIS MANZANO|BILLY CRAWFORD\nPG13 - Comedy|Drama\n11:30|1:30|3:30|5:30|7:30|9:30\nP130\/P110\n\nCINEMA
+        3\nINTERSTELLAR\nMATHEW MCCONAUHGY|ANNE HATHAWAY\nPG13- ADVENTURE|MYSTERY|SCI-FI\n11:00|2:30|6:00|9:30\nP130\/P110\n\nCINEMA
+        4\nBEAUTY IN A BOTTLE\nANGELICA PANGANIBAN|ANGELIE QUINTO\nPG13- Comedy|Drama\n1:30|1:30|3:30\nP130\/P110\n\nOUIJA
+        \nOLIVIA COOKE|ANNA COTO\nR13 - Horror\n5:30|7:30|9:30\nP130\/P110\n\nCINEMA
+        5\nTHE POSSESSION AT GALLOWS HILL\nPETER FACINELLI|SOPHIA MYLES\nR16 - Horror|Mystery|Thriller\n11:30|1:30|3:30|5:30|7:30|9:30\nP130\n\nCINEMA
+        6\nLET\u2019S BE COPS\nJAKE JOHNSON|DAMON WAYANS JR.\nR16 - Comedy\n11:30|1:30|3:30|5:30|7:30\nP130\n\nINTERSTELLAR\nMATHEW
+        MCCONAUHGY|ANNE HATHAWAY\nPG13- ADVENTURE|MYSTERY|SCI-FI\n9:30\nP130\n\nCINEMA
+        7\nBLOOD RANSOM \nALEXANDER DREYMON|ANNE CURTIS\nR16- Thriller|Fantasy|Romance\n10:40|12:40|2:40\nP130\n\nSTONEHEARST
+        ASYLUM \nJIM STURGESS|KATE BECKINSALE\nR13- Thriller|Drama\n4:40|7:05|9:30\nP130\n\nCINEMA
+        8\nBIG HERO 6 \nRYAN POTTER|SCOTT ADSIT\nPG13- ACTION|COMEDY|ANIMATION\n11:40|2:00|4:20|6:45|9:00\nP200\n\nTAGUM\n\nCINEMA
+        1\nBIG HERO 6 (3D)\nRYAN POTTER|SCOTT ADSIT\nPG13- ACTION|COMEDY|ANIMATION\n11:40|2:00|4:20|6:40|9:00\nP150\n\nCINEMA
+        2\nMORON 5.2: THE TRANSFORMATION  \nLUIS MANZANO|BILLY CRAWFORD\nPG13 - Comedy|Drama\n11:00|1:00|3:00|5:00|7:00|9:00\nP130\n\nCINEMA
+        3\nINTERSTELLAR\nMATHEW MCCONAUHGY|ANNE HATHAWAY\nPG13- ADVENTURE|MYSTERY|SCI-FI\n10:30|2:00|5:30|9:00\nP130\n\nCINEMA
+        4\nOUIJA \nOLIVIA COOKE|ANNA COTO\nR13 - Horror\n10:30|12:20|2:10\nP130\n\nSTONEHEARST
+        ASYLUM \nJIM STURGESS|KATE BECKINSALE\nR13- Thriller|Drama\n4:00|6:30|9:00\nP130\n\nCINEMA
+        5\nLET\u2019S BE COPS\nJAKE JOHNSON|DAMON WAYANS JR.\nR16 - Comedy\n11:00|1:00|3:00|5:00|7:00|9:00\nP130\n\nCINEMA
+        6\nBEAUTY IN A BOTTLE \nANGELICA PANGANIBAN|ANGELINE QUINTO\nPG13 - Comedy|Romance\n10:35|12:40|2:45|4:50|6:55|9:00\nP130\n\nTORIL\n\nCINEMA
+        1\nBIG HERO 6 \nRYAN POTTER|SCOTT ADSIT\nPG13- ACTION|COMEDY|ANIMATION\n11:40|2:00|4:20|6:40|9:00\nP130\n\nCINEMA
+        2\nMORON 5.2: THE TRANSFORMATION \nLUIS MANZANO|BILLY CRAWFORD\nPG13 - Comedy|Drama\n11:00|1:00|3:00|5:00|7:00|9:00\nP130\n\nCINEMA
+        3\nINTERSTELLAR\nMATHEW MCCONAUHGY|ANNE HATHAWAY\nPG13- ADVENTURE|MYSTERY|SCI-FI\n10:30|2:00|5:30|9:00\nP130\n\nCINEMA
+        4\nTHE BEST OF ME\nJAMES MARSDEN|MICHELLE MONAGHAN\nPG13- Drama|Romance\n11:00|1:30|4:00|6:30|9:00\nP130","picture":"https:\/\/fbcdn-profile-a.akamaihd.net\/hprofile-ak-xaf1\/v\/t1.0-1\/p200x200\/168799_456617934356005_1519432489_n.jpg?oh=9b3f56e5efce795ec297a987c68bbfbf&oe=54DC4475&__gda__=1423306872_83ff61c1400e135b2a2de82838349a23","link":"https:\/\/www.facebook.com\/gmallcinemas?sk=info&app_data","name":"GMALL
+        Cinemas","description":"DISCLAIMER: THIS IS A FAN-MAINTAINED PAGE of Gaisano
+        Mall Cinemas (Davao,  Tagum and Toril). Admin is not an employee of GMALL
+        nor its Cinema.  \n","properties":[{"name":"Movie Theatre","text":"16,824
+        like this"}],"icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yD\/r\/aS8ecmYRys0.gif","privacy":{"value":""},"type":"link","status_type":"shared_story","created_time":"2014-11-04T07:53:38+0000","updated_time":"2014-11-08T02:22:46+0000","likes":{"data":[{"id":"10203050327210297","name":"Sarah
+        Paclibar"},{"id":"10203159820063427","name":"Ben Whizben"},{"id":"991149180901968","name":"Witzshindle
+        Paler"},{"id":"964804020214593","name":"Ra Zi"},{"id":"10205132311733270","name":"Yllana
+        Belle Tan"},{"id":"960349873981342","name":"Cristyne Alo Eda\u00f1o"},{"id":"10205104862280008","name":"Jasper
+        Paciente Quitoras"},{"id":"684855131594535","name":"Antonette Arduo Bacani"},{"id":"983581355000664","name":"Maryjane
+        Bacalso Valiente"},{"id":"945001708848553","name":"Jai XD"},{"id":"982438588438261","name":"Dona
+        Sta Rita"},{"id":"837680769588349","name":"Ivan Moreno Fortyfive"},{"id":"845937385446956","name":"Jennifer
+        Marie Pa\u00f1a Baniog"},{"id":"10204639871301167","name":"Raymark Rentura
+        Barroga"},{"id":"10152723549779976","name":"Kria Aquino"}],"paging":{"cursors":{"after":"MTAxNTI3MjM1NDk3Nzk5NzY=","before":"MTAyMDMwNTAzMjcyMTAyOTc="}}},"comments":{"data":[{"id":"897110990306695_897134743637653","from":{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"},"message":"Hala ka. Asa ang Big Hero 6?","can_remove":false,"created_time":"2014-11-04T08:38:13+0000","like_count":0,"user_likes":false},{"id":"897110990306695_897232043627923","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"Big Hero 6 and Interstellar opens
+        on Thursday.","can_remove":false,"created_time":"2014-11-04T13:11:05+0000","like_count":3,"user_likes":false},{"id":"897110990306695_897814090236385","from":{"id":"10205104862280008","name":"Jasper
+        Paciente Quitoras"},"message":"when ang \"FURY\" showing?","can_remove":false,"created_time":"2014-11-05T11:59:01+0000","like_count":0,"user_likes":false},{"id":"897110990306695_897834963567631","from":{"id":"10202806334021973","name":"Laudemhir
+        Jan"},"message":"Will Interstellar be screened in 3D? It would be a mess if
+        it won''t be!","can_remove":false,"created_time":"2014-11-05T12:27:33+0000","like_count":1,"user_likes":false},{"id":"897110990306695_898353673515760","from":{"id":"789825647722761","name":"Raul
+        O\u00f1ez Custodio"},"message":"no it won''t since it''s Christopher Nolan''s.
+        . he never transform\/convert\/shot it in 3D. .","can_remove":false,"created_time":"2014-11-06T12:34:59+0000","like_count":1,"user_likes":false},{"id":"897110990306695_898353830182411","from":{"id":"789825647722761","name":"Raul
+        O\u00f1ez Custodio"},"message":"GMall? why the sched is only on thursday?","can_remove":false,"created_time":"2014-11-06T12:35:24+0000","like_count":0,"user_likes":false},{"id":"897110990306695_899220860095708","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"Guys, for your questions please
+        read the FAQ. Those are explained there.","can_remove":false,"created_time":"2014-11-07T13:28:02+0000","like_count":0,"user_likes":false},{"id":"897110990306695_899940136690447","from":{"id":"819255928125054","name":"Layla
+        Marikit Busano Abian"},"message":"Ma-show ang blood ransom sa tagum?","can_remove":false,"created_time":"2014-11-08T02:22:46+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGs1T1RRd01UTTJOamt3TkRRM09qRTBNVFUwTVRNek5qWTZNVEE9","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGszTVRNME56UXpOak0zTmpVek9qRTBNVFV3T1RBeU9UTTZNUT09"}}}},{"id":"130984640252671_896948466989614","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"story":"GMALL Cinemas added a new photo.","story_tags":{"0":[{"id":"130984640252671","name":"GMALL
+        Cinemas","offset":0,"length":13,"type":"page"}]},"picture":"https:\/\/fbcdn-sphotos-a-a.akamaihd.net\/hphotos-ak-xaf1\/v\/t1.0-9\/s130x130\/10341584_896948453656282_8152884701854255211_n.jpg?oh=58f2414931c96595d80b1cb2ff022d1d&oe=54D7ABC9&__gda__=1423973678_a8fae8fcb9f4ea4e721278746b08b1db","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.763929073624888.1073741842.130984640252671\/896948453656282\/?type=1&relevant_count=1","name":"OTHER
+        POSTERS","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"896948453656282","created_time":"2014-11-04T00:33:35+0000","updated_time":"2014-11-04T00:33:35+0000","likes":{"data":[{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"}],"paging":{"cursors":{"after":"MTAyMDQ2Mzk4NzEzMDExNjc=","before":"MTAyMDQ2Mzk4NzEzMDExNjc="}}}},{"id":"130984640252671_10152388584931128","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"story":"\"Can you post the plot summary
+        of Moron 5.2: The Transformation? Need it for our page. \nhttps:\/\/www.facebook.com\/gmallcinemas\/photos\/a.482392871778511.119723.130984640252671\/880714251946369\/?type=3&src=https\u00253A\u00252F\u00252Fscontent-b-sjc.xx.fbcdn.net\u00252Fhphotos-xap1\u00252Ft31.0-8\u00252F10668912_880714251946369_8979025750157464484_o.jpg&smallsrc=https\u00253A\u00252F\u00252Fscontent-b-sjc.xx.fbcdn.net\u00252Fhphotos-xaf1\u00252Fv\u00252Ft1.0-9\u00252F10678701_880714251946369_8979025750157464484_n.jpg\u00253Foh\u00253Ddd8423a0d8a07a8fbccac1130bebea47\u002526oe\u00253D54ABBCD8&size=1000\u00252C1481&fbid=880714251946369\"
+        on Viva Entertainment, Inc.''s timeline.","story_tags":{"552":[{"id":"135331151127","name":"Viva
+        Entertainment, Inc.","offset":552,"length":24,"type":"page"}]},"privacy":{"value":""},"type":"status","status_type":"wall_post","created_time":"2014-11-02T14:00:28+0000","updated_time":"2014-11-02T14:00:28+0000"},{"id":"130984640252671_896111890406605","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"NOW SHOWING\nINTERSTELLAR\nMatthew
+        McConaughey, Anne Hathaway, Jessica Chastain \nAdventure  | Mystery  | Sci-Fi\n\nFor
+        the sked, please check our main post.\n\nIn the near future Earth has been
+        devastated by drought and famine, causing a scarcity in food and extreme changes
+        in climate. When humanity is facing extinction, a mysterious rip in the space-time
+        continuum is discovered, giving mankind the opportunity to widen their lifespan.
+        A group of explorers must travel beyond our solar system in search of a planet
+        that can sustain life. The crew of the Endurance are required to think bigger
+        and go further than any human in history as they embark on an interstellar
+        voyage, into the unknown. However, through the wormhole, one hour is the equivalent
+        of seven years back on Earth, so the mission won''t work if the people on
+        Earth are dead by the time they pull it off. And Coop, the pilot of the Endurance,
+        must decide between seeing his children again and the future of the human
+        race.","picture":"https:\/\/fbcdn-sphotos-e-a.akamaihd.net\/hphotos-ak-xpa1\/v\/t1.0-9\/q86\/s130x130\/522059_896111810406613_333573719219590203_n.jpg?oh=2760f4f57649f3148cf3f71f0ab0c25d&oe=54ED8302&__gda__=1423385287_bc25deb81e755dc8c6ca91a71560f87a","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.732319560119173.1073741840.130984640252671\/896111810406613\/?type=1&relevant_count=1","name":"MOVIES
+        THIS WEEK - DAVAO\/TORIL\/TAGUM","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"896111810406613","created_time":"2014-11-02T13:48:40+0000","updated_time":"2014-11-02T15:01:49+0000","likes":{"data":[{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"},{"id":"10204586860929544","name":"Danica Madaje Hibaya"}],"paging":{"cursors":{"after":"MTAyMDQ1ODY4NjA5Mjk1NDQ=","before":"MTAyMDQ2Mzk4NzEzMDExNjc="}}},"comments":{"data":[{"id":"896111810406613_896146297069831","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt0816692","can_remove":false,"created_time":"2014-11-02T15:01:39+0000","like_count":0,"user_likes":false},{"id":"896111810406613_896146377069823","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=0vxOhd4qlnA","can_remove":false,"created_time":"2014-11-02T15:01:49+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGsyTVRRMk16YzNNRFk1T0RJek9qRTBNVFE1TkRBMU1EazZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGsyTVRRMk1qazNNRFk1T0RNeE9qRTBNVFE1TkRBME9UazZNUT09"}}}},{"id":"130984640252671_896111897073271","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"NOW SHOWING\nPOSSESSION ON GALLOWS
+        HILL\nPeter Facinelli, Sophia Myles\nHorror  | Mystery  | Thriller    \n\nFor
+        the sked, please check our main post.\n\nAmerican widower David Reynolds (Peter
+        Facinelli) and his new fianc\u00e9e (Sophia Myles) fly to Colombia to fetch
+        his strong-willed and reluctant daughter Jill  (Nathalia Ramos) for their
+        wedding ceremony. However, Jill has forgotten her passport and they, together
+        with Jill''s boyfriend Ramon and her aunt, must travel in torrential rain
+        along poor roads made treacherous because of the constant downpour. Ignoring
+        the warning they were given by a cop who had advised them to turn back, they
+        continue on for a short while until they end up being washed off the road
+        in a mudslide. They head to a nearby guest house hoping to get out of the
+        rain. The old innkeeper appears to live alone but doesn\u2019t have a phone.
+        The old man warns them not to snoop about the place but that\u2019s precisely
+        what Jill and Ramon do. \nThey get a shock when they discover a young girl
+        locked up in a room. It\u2019s not long after they free her, that the terrified
+        group find out just why she was locked up in the first place.","picture":"https:\/\/fbcdn-sphotos-c-a.akamaihd.net\/hphotos-ak-xpa1\/v\/t1.0-9\/s130x130\/522059_896111813739946_85574589760982084_n.jpg?oh=d8ff413d66e04691919c65fea96de723&oe=54D6FD17&__gda__=1423617681_4e0b72b927fc18ea2ba8a2ab4ccf99f3","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.732319560119173.1073741840.130984640252671\/896111813739946\/?type=1&relevant_count=1","name":"MOVIES
+        THIS WEEK - DAVAO\/TORIL\/TAGUM","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"896111813739946","created_time":"2014-11-02T13:48:40+0000","updated_time":"2014-11-02T15:27:55+0000","likes":{"data":[{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"}],"paging":{"cursors":{"after":"MTAyMDQ2Mzk4NzEzMDExNjc=","before":"MTAyMDQ2Mzk4NzEzMDExNjc="}}},"comments":{"data":[{"id":"896111813739946_896158153735312","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt2387408","can_remove":false,"created_time":"2014-11-02T15:27:45+0000","like_count":0,"user_likes":false},{"id":"896111813739946_896158247068636","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=HcaVqCbsXro","can_remove":false,"created_time":"2014-11-02T15:27:55+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGsyTVRVNE1qUTNNRFk0TmpNMk9qRTBNVFE1TkRJd056VTZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGsyTVRVNE1UVXpOek0xTXpFeU9qRTBNVFE1TkRJd05qVTZNUT09"}}}},{"id":"130984640252671_896110733740054","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"NOW SHOWING\nLET''S BE COP\nJake
+        Johnson, Damon Wayans Jr.\nComedy \n\nFor the sked, please check our main
+        post.\n\nRyan O\u2019Malley (Jake M. Johnson) and Justin Miller (Damon Wayans,
+        Jr.) are two 30-year-old struggling pals who dress as police officers for
+        a costume party. Upon arriving to the party, Ryan\u2019s overactive imagination
+        decides to play the gag for all its worth and they become neighborhood sensations.
+        Justin is initially apprehensive, fearing jailtime and unintended consequences,
+        but goes along with it once he is able to attract the attention of Josie (Nina
+        Dobrev), his longtime crush, who works as a hostess and is a part-time makeup
+        designer. However, Ryan and Justin become far too immersed in the police life,
+        eventually finding themselves wrapped up in a real-life drug ring, with dangerous
+        men who need to be stopped in order to reassure the city\u2019s safety. The
+        two, despite their better judgment, act on impulse and decide to try and bring
+        down the men responsible for the heinous crimes of the city.","picture":"https:\/\/scontent-b.xx.fbcdn.net\/hphotos-xap1\/v\/t1.0-9\/s130x130\/250396_896110720406722_8435825115967566411_n.jpg?oh=9b0977a6e42aa8141b5e3d16c7f8b398&oe=54F1F690","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.732319560119173.1073741840.130984640252671\/896110720406722\/?type=1&relevant_count=1","name":"MOVIES
+        THIS WEEK - DAVAO\/TORIL\/TAGUM","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"896110720406722","created_time":"2014-11-02T13:47:38+0000","updated_time":"2014-11-05T12:31:02+0000","likes":{"data":[{"id":"817734651602093","name":"Leunamme
+        Larotsap Jr"},{"id":"10204639871301167","name":"Raymark Rentura Barroga"}],"paging":{"cursors":{"after":"MTAyMDQ2Mzk4NzEzMDExNjc=","before":"ODE3NzM0NjUxNjAyMDkz"}}},"comments":{"data":[{"id":"896110720406722_896148067069654","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt1924435","can_remove":false,"created_time":"2014-11-02T15:05:27+0000","like_count":0,"user_likes":false},{"id":"896110720406722_896148203736307","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=UKIAZjs__Xc","can_remove":false,"created_time":"2014-11-02T15:05:45+0000","like_count":0,"user_likes":false},{"id":"896110720406722_897836713567456","from":{"id":"817734651602093","name":"Leunamme
+        Larotsap Jr"},"message":"hahah kataw-anan kaau ni!!","can_remove":false,"created_time":"2014-11-05T12:31:02+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGszT0RNMk56RXpOVFkzTkRVMk9qRTBNVFV4T1RBMk5qSTZNdz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGsyTVRRNE1EWTNNRFk1TmpVME9qRTBNVFE1TkRBM01qYzZNUT09"}}}},{"id":"130984640252671_896110400406754","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"NOW SHOWING\nBIG HERO 6 \nRyan
+        Potter, Scott Adsit\nAnimation  | Action  | Comedy  \n\nFor the sked, please
+        check our main post.\n\nFrom Walt Disney Animation Studios, the team behind
+        \"Frozen\" and \"Wreck-It Ralph,\" comes \"Big Hero 6,\" an action-packed
+        comedy-adventure about the special bond that develops between Baymax, a plus-sized
+        inflatable robot, and prodigy Hiro Hamada. When a devastating event befalls
+        the city of San Fransokyo and catapults Hiro into the midst of danger, he
+        turns to Baymax and his close friends adrenaline junkie Go Go Tomago, neatnik
+        Wasabi, chemistry whiz Honey Lemon and fanboy Fred. Determined to uncover
+        the mystery, Hiro transforms his friends into a band of high-tech heroes called
+        \"Big Hero 6.\"","picture":"https:\/\/fbcdn-sphotos-g-a.akamaihd.net\/hphotos-ak-xaf1\/v\/t1.0-9\/s130x130\/10801799_896110377073423_4314511861075387086_n.jpg?oh=7167b7e091462e7e9aa0dc383f40f2fb&oe=54D1A267&__gda__=1428100992_259c077188520b381d9575e6e111bbcb","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.732319560119173.1073741840.130984640252671\/896110377073423\/?type=1&relevant_count=1","name":"MOVIES
+        THIS WEEK - DAVAO\/TORIL\/TAGUM","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"896110377073423","created_time":"2014-11-02T13:47:02+0000","updated_time":"2014-11-05T09:22:50+0000","likes":{"data":[{"id":"485088994966494","name":"Galido
+        Doroteo"},{"id":"893438820666139","name":"Japoy Davao"},{"id":"306881752839434","name":"Jairus
+        Earl Dizon"},{"id":"10204639871301167","name":"Raymark Rentura Barroga"},{"id":"834867493201290","name":"Jan
+        Daniel Bautista Bantan"},{"id":"911136262247845","name":"Shiela Mae Barral
+        Carriedo"}],"paging":{"cursors":{"after":"OTExMTM2MjYyMjQ3ODQ1","before":"NDg1MDg4OTk0OTY2NDk0"}}},"comments":{"data":[{"id":"896110377073423_896145017069959","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt2245084","can_remove":false,"created_time":"2014-11-02T14:58:50+0000","like_count":0,"user_likes":false},{"id":"896110377073423_896145103736617","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=z3biFxZIJOQ","can_remove":false,"created_time":"2014-11-02T14:59:04+0000","like_count":0,"user_likes":false},{"id":"896110377073423_896145153736612","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=8IdMPpKMdcc","can_remove":false,"created_time":"2014-11-02T14:59:12+0000","like_count":0,"user_likes":false},{"id":"896110377073423_896145223736605","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=Oe2fqoy0L_s","can_remove":false,"created_time":"2014-11-02T14:59:18+0000","like_count":0,"user_likes":false},{"id":"896110377073423_896145267069934","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=m781Nue7pu0","can_remove":false,"created_time":"2014-11-02T14:59:23+0000","like_count":0,"user_likes":false},{"id":"896110377073423_897640860253708","from":{"id":"10204801835792227","name":"Jude
+        U. Dejacto"},"message":"Vincent Bongabong Agda teng libriha ko ani please
+        :)","message_tags":[{"id":"10152793015219839","name":"Vincent Bongabong Agda","type":"user","offset":0,"length":22}],"can_remove":false,"created_time":"2014-11-05T04:34:27+0000","like_count":0,"user_likes":false},{"id":"896110377073423_897738433577284","from":{"id":"10152793015219839","name":"Vincent
+        Bongabong Agda"},"message":"Aw pila kabuok Juday imo gusto ilibre lolz","can_remove":false,"created_time":"2014-11-05T09:22:50+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGszTnpNNE5ETXpOVGMzTWpnME9qRTBNVFV4Tnprek56QTZOdz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGsyTVRRMU1ERTNNRFk1T1RVNU9qRTBNVFE1TkRBek16QTZNUT09"}}}},{"id":"130984640252671_892670170750777","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"story":"GMALL Cinemas commented on their
+        own photo.","story_tags":{"0":[{"id":"130984640252671","name":"GMALL Cinemas","offset":0,"length":13,"type":"page"}]},"privacy":{"value":""},"type":"status","application":{"name":"Photos","id":"2305272732"},"created_time":"2014-10-27T12:33:10+0000","updated_time":"2014-10-27T12:33:10+0000"},{"id":"130984640252671_892606284090499","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"story":"GMALL Cinemas added a new photo.","story_tags":{"0":[{"id":"130984640252671","name":"GMALL
+        Cinemas","offset":0,"length":13,"type":"page"}]},"picture":"https:\/\/fbcdn-sphotos-b-a.akamaihd.net\/hphotos-ak-xap1\/v\/t1.0-9\/s130x130\/1912282_892606267423834_6590582873371757645_n.jpg?oh=6b5ccf34f7126ad5afd87ee18eff8e9b&oe=54E9C9B1&__gda__=1423604632_717248e92f10712c9649c4880585d9a5","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.763929073624888.1073741842.130984640252671\/892606267423834\/?type=1&relevant_count=1","name":"OTHER
+        POSTERS","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"892606267423834","created_time":"2014-10-27T10:35:52+0000","updated_time":"2014-10-27T10:35:52+0000","likes":{"data":[{"id":"387368384744555","name":"Jennylyn
+        Tormis Amoroto"},{"id":"10204639871301167","name":"Raymark Rentura Barroga"},{"id":"569141086549734","name":"Eligio
+        Angelo Garte"},{"id":"688265297948308","name":"Nardong Putik"},{"id":"10202550988690542","name":"Pot
+        Pot"},{"id":"883240948354305","name":"Daniel Mallah"},{"id":"10202705412696539","name":"Alvin
+        R. Cadavedo"},{"id":"684855131594535","name":"Antonette Arduo Bacani"},{"id":"711760168871535","name":"Christian
+        Sarno Caballero"},{"id":"833309440033642","name":"Rizza Bacaron"},{"id":"923303997697749","name":"Princess
+        Joy Deloy"},{"id":"921687074527589","name":"Wil Aris"},{"id":"1543176009248682","name":"Dod''z
+        C. Domingo"},{"id":"4815934812407","name":"Jose Aguirre Guerrero III"},{"id":"790682750996281","name":"Abegail
+        Bahalla Magada"},{"id":"952034838144293","name":"Wong Fei Hung"},{"id":"967945906554246","name":"Charlito
+        Go"},{"id":"10152723549779976","name":"Kria Aquino"},{"id":"10204801835792227","name":"Jude
+        U. Dejacto"},{"id":"949996341694799","name":"RayAllen Ko"},{"id":"800716879987136","name":"Jesa
+        Mae Francisco Argones"},{"id":"10201622586764900","name":"Cielo Paracha"},{"id":"10202621991897819","name":"Moving
+        On Hazeld"},{"id":"720227418057742","name":"Au Velasco Raza"},{"id":"915048765190354","name":"Roselle
+        Gamit"}],"paging":{"cursors":{"after":"OTE1MDQ4NzY1MTkwMzU0","before":"Mzg3MzY4Mzg0NzQ0NTU1"}}}},{"id":"130984640252671_890426074308520","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"avengers: age of ultron","picture":"https:\/\/fbexternal-a.akamaihd.net\/safe_image.php?d=AQB2Um6s-aq2MCOC&w=130&h=130&url=http\u00253A\u00252F\u00252Fi.ytimg.com\u00252Fvi\u00252FtmeOjFno6Do\u00252Fmaxresdefault.jpg","link":"https:\/\/www.youtube.com\/watch?v=tmeOjFno6Do","source":"http:\/\/www.youtube.com\/v\/tmeOjFno6Do?version=3&autohide=1&autoplay=1","name":"Marvel''s
+        \"Avengers: Age of Ultron\" - Teaser Trailer (OFFICIAL)","description":"Get
+        your first look at Ultron trying to tear apart Captain America, Iron Man,
+        Thor and the rest of the world in the first official teaser trailer for Marvel''...","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yj\/r\/v2OnaTyTQZE.gif","privacy":{"value":""},"type":"video","status_type":"shared_story","created_time":"2014-10-23T10:32:34+0000","updated_time":"2014-10-23T12:26:09+0000","likes":{"data":[{"id":"831694676851773","name":"Jovanni
+        Silagan"},{"id":"818455128205645","name":"Charles Villareal"},{"id":"10201907536370132","name":"Bryan
+        Michael Cayangcang"},{"id":"553508088127931","name":"Em Payot Laurel"},{"id":"834225756627964","name":"Ienro
+        Adlomar"},{"id":"10204639871301167","name":"Raymark Rentura Barroga"},{"id":"736248999783533","name":"Leonel
+        Ba\u00f1o"},{"id":"833309440033642","name":"Rizza Bacaron"},{"id":"711760168871535","name":"Christian
+        Sarno Caballero"},{"id":"684855131594535","name":"Antonette Arduo Bacani"},{"id":"837818062929011","name":"Angelo
+        Rallon Rocaberte"},{"id":"1507996586115187","name":"Stephanie Tan Uy"},{"id":"546729428791553","name":"John
+        Paul Cortez"},{"id":"4478680943055","name":"Yong Sanchez Cuarteron"},{"id":"800716879987136","name":"Jesa
+        Mae Francisco Argones"},{"id":"10203564334402461","name":"Crestel Paloma"},{"id":"843659975674490","name":"Rommel
+        Dinzon Aquino"}],"paging":{"cursors":{"after":"ODQzNjU5OTc1Njc0NDkw","before":"ODMxNjk0Njc2ODUxNzcz"}}},"comments":{"data":[{"id":"890426074308520_890464147638046","from":{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"},"message":"ULTRON","can_remove":false,"created_time":"2014-10-23T12:26:09+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGt3TkRZME1UUTNOak00TURRMk9qRTBNVFF3TmpjeE5qazZNUT09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGt3TkRZME1UUTNOak00TURRMk9qRTBNVFF3TmpjeE5qazZNUT09"}}}},{"id":"130984640252671_888332237851237","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"WOLVES","picture":"https:\/\/scontent-a.xx.fbcdn.net\/hphotos-prn1\/v\/t1.0-9\/s130x130\/10437509_888332187851242_9183905237488707416_n.jpg?oh=eceb315d4a4a466b92885453c2692516&oe=54D75767","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.595094363841694.1073741830.130984640252671\/888332187851242\/?type=1&relevant_count=1","name":"COMING
+        SOON","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"888332187851242","created_time":"2014-10-19T14:48:35+0000","updated_time":"2014-10-19T14:50:23+0000","likes":{"data":[{"id":"10203564334402461","name":"Crestel
+        Paloma"},{"id":"10204639871301167","name":"Raymark Rentura Barroga"},{"id":"845937385446956","name":"Jennifer
+        Marie Pa\u00f1a Baniog"}],"paging":{"cursors":{"after":"ODQ1OTM3Mzg1NDQ2OTU2","before":"MTAyMDM1NjQzMzQ0MDI0NjE="}}},"comments":{"data":[{"id":"888332187851242_888333161184478","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":".","can_remove":false,"created_time":"2014-10-19T14:50:19+0000","like_count":0,"user_likes":false},{"id":"888332187851242_888333204517807","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":".","can_remove":false,"created_time":"2014-10-19T14:50:23+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGc0TXpNek1qQTBOVEUzT0RBM09qRTBNVE0zTXpBeU1qTTZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGc0TXpNek1UWXhNVGcwTkRjNE9qRTBNVE0zTXpBeU1UazZNUT09"}}}},{"id":"130984640252671_888332247851236","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"SAINTS AND SOLDIERS: BATTLE OF
+        THE TANKS\nAdam Gregory, Timothy S. Shoemaker\nWar|Action|Drama\n\nGermany,
+        May 1945, the twilight of WWII. On a final mission deep in the Harz mountains
+        a U.S. tank crew discovers a platoon of Germans, including three infamous
+        Panzer tanks, preparing to ambush allied supply trucks. As the Germans bear
+        down on the Americans, Owens fights the Axis powers for a freedom he and his
+        fellow African American soldiers have never felt.","picture":"https:\/\/fbcdn-sphotos-d-a.akamaihd.net\/hphotos-ak-prn2\/v\/t1.0-9\/s130x130\/10437509_888332181184576_3970795196789978639_n.jpg?oh=51738187ee6133d22f7afd4ddb785d15&oe=54EF44D5&__gda__=1423595469_4dcd77d56e3e9853f0fe3d51ff73853e","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.770266759657786.1073741843.130984640252671\/888332181184576\/?type=1&relevant_count=1","name":"DONE
+        - 2014 4TH QUARTER","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"888332181184576","created_time":"2014-10-19T14:48:35+0000","updated_time":"2014-10-19T14:50:14+0000","likes":{"data":[{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"}],"paging":{"cursors":{"after":"MTAyMDQ2Mzk4NzEzMDExNjc=","before":"MTAyMDQ2Mzk4NzEzMDExNjc="}}},"comments":{"data":[{"id":"888332181184576_888333077851153","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt1270114","can_remove":false,"created_time":"2014-10-19T14:50:12+0000","like_count":0,"user_likes":false},{"id":"888332181184576_888333104517817","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=0hsKRqjZoD8","can_remove":false,"created_time":"2014-10-19T14:50:14+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGc0TXpNek1UQTBOVEUzT0RFM09qRTBNVE0zTXpBeU1UUTZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGc0TXpNek1EYzNPRFV4TVRVek9qRTBNVE0zTXpBeU1USTZNUT09"}}}},{"id":"130984640252671_888332254517902","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"VIY: SPIRIT OF EVIL  \nJason Flemyng,
+        Andrey Smolyakov\nAdventure|Fantasy|Mystery \n\nEarly 18th century. Cartographer
+        Jonathan Green undertakes a scientific voyage from Europe to the East. Having
+        passed through Transylvania and crossed the Carpathian Mountains, he finds
+        himself in a small village lost in impassible woods. Nothing but chance and
+        heavy fog could bring him to this cursed place. People who live here do not
+        resemble any other people which the traveler saw before that. The villagers,
+        having dug a deep moat to fend themselves from the rest of the world, share
+        a naive belief that they could save themselves from evil, failing to understand
+        that evil has made its nest in their souls and is waiting for an opportunity
+        to gush out upon the world.","picture":"https:\/\/scontent-b.xx.fbcdn.net\/hphotos-prn2\/v\/t1.0-9\/s130x130\/10437509_888332184517909_6839279077065178122_n.jpg?oh=d1a4a6d8cc9f3809cd89e9e1ec330dff&oe=54D795DD","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.770266759657786.1073741843.130984640252671\/888332184517909\/?type=1&relevant_count=1","name":"DONE
+        - 2014 4TH QUARTER","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"888332184517909","created_time":"2014-10-19T14:48:35+0000","updated_time":"2014-10-19T15:03:33+0000","likes":{"data":[{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"}],"paging":{"cursors":{"after":"MTAyMDQ2Mzk4NzEzMDExNjc=","before":"MTAyMDQ2Mzk4NzEzMDExNjc="}}},"comments":{"data":[{"id":"888332184517909_888338324517295","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt1224378","can_remove":false,"created_time":"2014-10-19T15:03:03+0000","like_count":0,"user_likes":false},{"id":"888332184517909_888338554517272","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=Wsp0CPYXvo4","can_remove":false,"created_time":"2014-10-19T15:03:33+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGc0TXpNNE5UVTBOVEUzTWpjeU9qRTBNVE0zTXpFd01UTTZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGc0TXpNNE16STBOVEUzTWprMU9qRTBNVE0zTXpBNU9ETTZNUT09"}}}},{"id":"130984640252671_888331274518000","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"NOW SHOWING\nBLOOD RANSOM\nAnne
+        Curtis, Alexander Dreymon\nFantasy | Romance | Thriller\n\nFor the sked, please
+        check our main post.\n\nJeremiah (Alexander Dreymon) is caught in the middle
+        of an ill-fated plot to kidnap Crystal (Anne Curtis), his boss Roman''s (Caleb
+        Hunt) beautiful young girlfriend. Roman unleashes the psychopath, Bill (james
+        Harris), to hunt Jeremiah down. But when Crystal refuses Jeremiah\u2019s offer
+        to return her to Roman, they begin a dangerous love affair on the run. And
+        with every hour they\u2019re together, a darker deeper secret burns within
+        Crystal\u2014something even more sinister than the killer who is after them.","picture":"https:\/\/scontent-a.xx.fbcdn.net\/hphotos-xpa1\/v\/t1.0-9\/s130x130\/65073_888331194518008_1229324420802152419_n.jpg?oh=81a74b62842b4ab58b03630141627b1b&oe=54DE4346","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.732319560119173.1073741840.130984640252671\/888331194518008\/?type=1&relevant_count=1","name":"MOVIES
+        THIS WEEK - DAVAO\/TORIL\/TAGUM","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"888331194518008","created_time":"2014-10-19T14:46:31+0000","updated_time":"2014-10-19T14:47:06+0000","likes":{"data":[{"id":"10203721591378013","name":"Tonix
+        C Iligan"},{"id":"10204639871301167","name":"Raymark Rentura Barroga"},{"id":"845937385446956","name":"Jennifer
+        Marie Pa\u00f1a Baniog"}],"paging":{"cursors":{"after":"ODQ1OTM3Mzg1NDQ2OTU2","before":"MTAyMDM3MjE1OTEzNzgwMTM="}}},"comments":{"data":[{"id":"888331194518008_888331621184632","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt2173248","can_remove":false,"created_time":"2014-10-19T14:47:05+0000","like_count":0,"user_likes":false},{"id":"888331194518008_888331641184630","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=CUKcSzITIKg","can_remove":false,"created_time":"2014-10-19T14:47:06+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGc0TXpNeE5qUXhNVGcwTmpNd09qRTBNVE0zTXpBd01qWTZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGc0TXpNeE5qSXhNVGcwTmpNeU9qRTBNVE0zTXpBd01qVTZNUT09"}}}},{"id":"130984640252671_888331251184669","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"NOW SHOWING\nBEAUTY IN A BOTTLE\nAngeline
+        Quinto, Angelica Panganiban\nComedy|Romance \n\nFor the sked, please check
+        our main post.\n\nJudith (Angeline Quinto), Vilma (Assunta De Rossi), and
+        Estelle (Angelica Panganiban) are three women  with different insecurities.
+        Their lives intertwine when Vilma''s advertising agency is looking for an
+        endorser for a new beauty pill product called \"Beauty in a Bottle.\" Little
+        did they know, their lives will change when they finally accept what''s inside
+        the \"Beauty in a Bottle.\"","picture":"https:\/\/fbcdn-sphotos-a-a.akamaihd.net\/hphotos-ak-xpa1\/v\/t1.0-9\/s130x130\/65073_888331191184675_43965594064516236_n.jpg?oh=8d2a8611db04509b175463351277fc34&oe=54DE61F4&__gda__=1428136903_a95be8df46984ace40f1f9a1c13a2564","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.732319560119173.1073741840.130984640252671\/888331191184675\/?type=1&relevant_count=1","name":"MOVIES
+        THIS WEEK - DAVAO\/TORIL\/TAGUM","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"888331191184675","created_time":"2014-10-19T14:46:30+0000","updated_time":"2014-10-29T04:04:27+0000","likes":{"data":[{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"},{"id":"10203267797437166","name":"Hannah Chloe"}],"paging":{"cursors":{"after":"MTAyMDMyNjc3OTc0MzcxNjY=","before":"MTAyMDQ2Mzk4NzEzMDExNjc="}}},"comments":{"data":[{"id":"888331191184675_888331577851303","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt3825444","can_remove":false,"created_time":"2014-10-19T14:47:00+0000","like_count":0,"user_likes":false},{"id":"888331191184675_888331587851302","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=uwVaKBhK-hc","can_remove":false,"created_time":"2014-10-19T14:47:01+0000","like_count":0,"user_likes":false},{"id":"888331191184675_893725137311947","from":{"id":"10202077831387876","name":"Barry
+        Rosil"},"message":"PILA GNI ANG CINE","can_remove":false,"created_time":"2014-10-29T04:04:27+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGt6TnpJMU1UTTNNekV4T1RRM09qRTBNVFExTlRVME5qYzZNdz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGc0TXpNeE5UYzNPRFV4TXpBek9qRTBNVE0zTXpBd01qQTZNUT09"}}}},{"id":"130984640252671_888331257851335","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"NOW SHOWING\nOUIJA\nOlivia Cooke,
+        Ana Coto\nHorror \n\nFor the sked, please check our main post.\n\nA girl is
+        brutally killed in an accident after recording herself playing with an ancient
+        Ouija Board. A group of close group teenage friends investigates the mysterious
+        incident and it leads them to the board. They must confront their most evil
+        and demonic fears when they awaken the dark powers of an ancient spirit board
+        by attempting to contact their friend. They later find out that some things
+        aren''t meant to be played with, especially the ''other side''. They soon
+        realize that the Ouija Board is not just a game; it''s real life.","picture":"https:\/\/fbcdn-sphotos-b-a.akamaihd.net\/hphotos-ak-xpa1\/v\/t1.0-9\/s130x130\/65073_888331201184674_2607490284833424111_n.jpg?oh=ff3ba9a0082da22885821de94c67b57a&oe=54ED31AE&__gda__=1424764709_aa786599ba406ccdf02a6e762edc1cf7","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.732319560119173.1073741840.130984640252671\/888331201184674\/?type=1&relevant_count=1","name":"MOVIES
+        THIS WEEK - DAVAO\/TORIL\/TAGUM","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"888331201184674","created_time":"2014-10-19T14:46:30+0000","updated_time":"2014-10-22T00:03:31+0000","likes":{"data":[{"id":"10152723549779976","name":"Kria
+        Aquino"},{"id":"772692189439464","name":"Zhan Mard Law"},{"id":"967945906554246","name":"Charlito
+        Go"},{"id":"10204639871301167","name":"Raymark Rentura Barroga"}],"paging":{"cursors":{"after":"MTAyMDQ2Mzk4NzEzMDExNjc=","before":"MTAxNTI3MjM1NDk3Nzk5NzY="}}},"comments":{"data":[{"id":"888331201184674_888331714517956","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt1204977\/","can_remove":false,"created_time":"2014-10-19T14:47:16+0000","like_count":0,"user_likes":false},{"id":"888331201184674_888337347850726","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=_T1Jj1inE8M","can_remove":false,"created_time":"2014-10-19T15:00:37+0000","like_count":0,"user_likes":false},{"id":"888331201184674_889424567742004","from":{"id":"772692189439464","name":"Zhan
+        Mard Law"},"message":"Tur Di, Ivie Ghirl kni nalang hahaha, EL Gin","message_tags":[{"id":"4728100817304","name":"Tur
+        Di","type":"user","offset":0,"length":6},{"id":"10202985890625024","name":"Ivie
+        Ghirl","type":"user","offset":8,"length":10},{"id":"10203570291881534","name":"EL
+        Gin","type":"user","offset":38,"length":6}],"can_remove":false,"created_time":"2014-10-21T12:08:56+0000","like_count":1,"user_likes":false},{"id":"888331201184674_889427311075063","from":{"id":"10202985890625024","name":"Ivie
+        Ghirl"},"message":"Ay woie. Horror npd","can_remove":false,"created_time":"2014-10-21T12:16:07+0000","like_count":1,"user_likes":false},{"id":"888331201184674_889711291046665","from":{"id":"10203570291881534","name":"EL
+        Gin"},"message":".ok lang, hehe,","can_remove":false,"created_time":"2014-10-22T00:03:31+0000","like_count":1,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGc1TnpFeE1qa3hNRFEyTmpZMU9qRTBNVE01TXpZeU1URTZOZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGc0TXpNeE56RTBOVEUzT1RVMk9qRTBNVE0zTXpBd016WTZNUT09"}}}},{"id":"130984640252671_888067371211057","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"story":"GMALL Cinemas commented on their
+        own photo.","story_tags":{"0":[{"id":"130984640252671","name":"GMALL Cinemas","offset":0,"length":13,"type":"page"}]},"privacy":{"value":""},"type":"status","application":{"name":"Photos","id":"2305272732"},"created_time":"2014-10-19T04:36:27+0000","updated_time":"2014-10-19T04:36:27+0000"},{"id":"130984640252671_884977921520002","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"THE TRIAL\nRichard Gomez, John
+        Lloyd Cruz \nCrime|Romance|Drama   \n\nBorn with a mild case of mental disability,
+        Ronald (John Lloyd Cruz) was stuck in elementary for years. His classmates
+        are way younger than him. Because they couldn\u2019t fully understand his
+        case, he is often bullied and compared with the iconic character Budoy.\nDespite
+        this, Ronald is well loved by his unconventional parents - his mother (Sylvia
+        Sanchez) is a lesbian, while his father (Vincent de Jesus) is a gay.\nMoreover,
+        Ronald has his Teacher Bessy\u2019s (Jessy Mendiola) support. However, his
+        number one supporter in school was also the reason why he is put into trial.\nHow
+        will you treat someone like Ronald? Will you be like his younger classmates
+        or will you be kind with him?","picture":"https:\/\/fbcdn-sphotos-e-a.akamaihd.net\/hphotos-ak-xfa1\/v\/t1.0-9\/s130x130\/1901773_884977911520003_2025922632157124453_n.jpg?oh=75ecb8b3933afba1a0f6f7770f8387d3&oe=54EDBE80&__gda__=1424559086_f5570cd44331746b42e046168c4af293","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.770266759657786.1073741843.130984640252671\/884977911520003\/?type=1&relevant_count=1","name":"DONE
+        - 2014 4TH QUARTER","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"884977911520003","created_time":"2014-10-13T16:45:41+0000","updated_time":"2014-10-13T22:48:49+0000","likes":{"data":[{"id":"983581355000664","name":"Maryjane
+        Bacalso Valiente"},{"id":"10204639871301167","name":"Raymark Rentura Barroga"},{"id":"728462193906164","name":"Ernielyn
+        Carriedo"}],"paging":{"cursors":{"after":"NzI4NDYyMTkzOTA2MTY0","before":"OTgzNTgxMzU1MDAwNjY0"}}},"comments":{"data":[{"id":"884977911520003_885164054834722","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt3819170\/","can_remove":false,"created_time":"2014-10-13T22:48:41+0000","like_count":0,"user_likes":false},{"id":"884977911520003_885164098168051","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=6AdGJ4NMkQQ","can_remove":false,"created_time":"2014-10-13T22:48:49+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGcxTVRZME1EazRNVFk0TURVeE9qRTBNVE15TkRBMU1qazZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGcxTVRZME1EVTBPRE0wTnpJeU9qRTBNVE15TkRBMU1qRTZNUT09"}}}},{"id":"130984640252671_884976788186782","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"DRACULA UNTOLD\nLuke Evans, Dominic
+        Cooper \nAction|Fantasy|Drama \n\nAlmost an entire century after the world''s
+        first cinematic introduction to Dracula placed audiences under his haunting
+        spell, the studio that pioneered the genre reawakens one of legend''s most
+        captivating figures in an action-adventure that heralds a pulse-pounding rebirth
+        of the age of monsters. Luke Evans (Fast & Furious 6, The Hobbit series) transforms
+        from the cursed man history knows as Vlad the Impaler to an all-powerful creature
+        of the night in Universal Pictures'' Dracula Untold, the origin story of the
+        alluring immortal we have come to fear as the sun sets: Dracula.\nVlad is
+        a brutal slayer nicknamed \"The Impaler\". But he''s given up fighting and
+        has retired home to Transylvania with his lovely wife Mirena (Sarah Gadon)
+        and young son Ingeras (Art Parkinson). However when Turkish ruler Mehmet II
+        (Dominic Cooper) demands 1,000 boys to fill his army''s rank, Vlad does what
+        any self-respecting leader would do. He climbs a mountain where he encounters
+        a vicious creature (Game of Thrones'' Charles Dance) and enters into a Faustian
+        bargain he may soon regret.","picture":"https:\/\/scontent-b.xx.fbcdn.net\/hphotos-xpa1\/v\/t1.0-9\/s130x130\/10698625_884976734853454_4950207561291219244_n.jpg?oh=3c42fa059df70b7c7568baf7e76023c9&oe=54DE5D4C","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.770266759657786.1073741843.130984640252671\/884976734853454\/?type=1&relevant_count=1","name":"DONE
+        - 2014 4TH QUARTER","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"884976734853454","created_time":"2014-10-13T16:43:41+0000","updated_time":"2014-10-13T16:56:31+0000","likes":{"data":[{"id":"10203721591378013","name":"Tonix
+        C Iligan"},{"id":"1377545332536334","name":"Luiz Miguel Ribeiro"},{"id":"829635660412198","name":"Aaron
+        Separa"},{"id":"911136262247845","name":"Shiela Mae Barral Carriedo"},{"id":"772692189439464","name":"Zhan
+        Mard Law"},{"id":"366785860152770","name":"SC Ming"},{"id":"951423701550887","name":"Kelvin
+        Ken"},{"id":"983581355000664","name":"Maryjane Bacalso Valiente"},{"id":"797071403676278","name":"Iven
+        Vincent Cuaton"},{"id":"899407703404832","name":"Izza Lei Capao-an"},{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"}],"paging":{"cursors":{"after":"MTAyMDQ2Mzk4NzEzMDExNjc=","before":"MTAyMDM3MjE1OTEzNzgwMTM="}}},"comments":{"data":[{"id":"884976734853454_884983761519418","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt0829150\/","can_remove":false,"created_time":"2014-10-13T16:56:19+0000","like_count":0,"user_likes":false},{"id":"884976734853454_884983884852739","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=_2aWqecTTuE","can_remove":false,"created_time":"2014-10-13T16:56:31+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGcwT1Rnek9EZzBPRFV5TnpNNU9qRTBNVE15TVRrek9URTZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGcwT1Rnek56WXhOVEU1TkRFNE9qRTBNVE15TVRrek56azZNUT09"}}}},{"id":"130984640252671_884976794853448","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"NOW SHOWING\nAWAKENED \nJulianne
+        Michelle, Edward Furlong\nDrama|Mystery|Thriller \n\nSamantha Winston (Julianne
+        Michelle) returns home after 14 years to unravel the mystery surrounding her
+        young mother\u2019s death. She suspects her father (John Savage) and seeks
+        guidance and answers from her mother\u2019s close friends Lucas Drake (Steven
+        Bauer) and Harriet Bendi (Sally Kirkland), her uncle Thomas (Edward Furlong),
+        and new friend Liam Dawson (Bryan Dechart). However, Drake\u2019s business
+        partner (Stelio Savante) is more than displeased with Samantha''s investigation
+        and seeks to derail it before the entire town is awakened. Samantha seeks
+        help from beyond the grave.\nWon Best Film in the 168 Film Festival, USA (2013)
+        and Best Feature in the LA Femme Film Festival, USA 2013.","picture":"https:\/\/fbcdn-sphotos-g-a.akamaihd.net\/hphotos-ak-xap1\/v\/t1.0-9\/s130x130\/10698625_884976738186787_6794719782549381874_n.jpg?oh=41e9d27c763e17c23967df327dcf1df0&oe=551C1DE7&__gda__=1423506617_8525d6132fee14bb3c39bb60129183d1","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.770266759657786.1073741843.130984640252671\/884976738186787\/?type=1&relevant_count=1","name":"DONE
+        - 2014 4TH QUARTER","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"884976738186787","created_time":"2014-10-13T16:43:41+0000","updated_time":"2014-10-13T22:33:49+0000","likes":{"data":[{"id":"355142331315623","name":"Grace
+        Darling Llanes"},{"id":"10204639871301167","name":"Raymark Rentura Barroga"},{"id":"520691041409662","name":"Miracle
+        Chii"},{"id":"728462193906164","name":"Ernielyn Carriedo"}],"paging":{"cursors":{"after":"NzI4NDYyMTkzOTA2MTY0","before":"MzU1MTQyMzMxMzE1NjIz"}}},"comments":{"data":[{"id":"884976738186787_885156958168765","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt1669268\/","can_remove":false,"created_time":"2014-10-13T22:30:43+0000","like_count":0,"user_likes":false},{"id":"884976738186787_885158391501955","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=O6evmSeIPkY","can_remove":false,"created_time":"2014-10-13T22:33:49+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGcxTVRVNE16a3hOVEF4T1RVMU9qRTBNVE15TXprMk1qazZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGcxTVRVMk9UVTRNVFk0TnpZMU9qRTBNVE15TXprME5ETTZNUT09"}}}},{"id":"130984640252671_884976798186781","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"ARE YOU HERE \nOwen Wilson, Zach
+        Galifianakis\nComedy \n\nBen Baker (Zach Galifianakis of HangOver fame) is
+        a man-child who lives on his friend''s couch getting high. His friend, Steve
+        Dallas (Owen Wilson), is a moderately successful weather reporter who is living
+        a superficial life. When Ben receives word that his father has died, Steve
+        drives him home and they re-connect with Ben''s successful and driven sister
+        Terri (Amy Poehler) and hippie step-mother Angela (Laura Ramsey) who is the
+        same age as they are. The reading of the will drives Ben to come up with a
+        new purpose in life, but those around him don''t prove to be very supportive,
+        and then they all re-examine their own life.","picture":"https:\/\/fbcdn-sphotos-a-a.akamaihd.net\/hphotos-ak-xpa1\/v\/t1.0-9\/s130x130\/10698625_884976744853453_3265789291648700161_n.jpg?oh=9fb91c208db6fb15580297a9527957f0&oe=54D5EBEE&__gda__=1425146632_b5bc093c5581798cac07c7c206226021","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.770266759657786.1073741843.130984640252671\/884976744853453\/?type=1&relevant_count=1","name":"DONE
+        - 2014 4TH QUARTER","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"884976744853453","created_time":"2014-10-13T16:43:41+0000","updated_time":"2014-10-13T22:44:32+0000","likes":{"data":[{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"},{"id":"728462193906164","name":"Ernielyn Carriedo"}],"paging":{"cursors":{"after":"NzI4NDYyMTkzOTA2MTY0","before":"MTAyMDQ2Mzk4NzEzMDExNjc="}}},"comments":{"data":[{"id":"884976744853453_885162394834888","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt1545754\/","can_remove":false,"created_time":"2014-10-13T22:44:22+0000","like_count":0,"user_likes":false},{"id":"884976744853453_885162458168215","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=uMtNpu6xBvU","can_remove":false,"created_time":"2014-10-13T22:44:32+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGcxTVRZeU5EVTRNVFk0TWpFMU9qRTBNVE15TkRBeU56STZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGcxTVRZeU16azBPRE0wT0RnNE9qRTBNVE15TkRBeU5qSTZNUT09"}}}},{"id":"130984640252671_884976801520114","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"NOW SHOWING\nKILL THE MESSENGER\nJeremy
+        Renner, Robert Patrick\nBiography|Crime|Drama  \n\nBased on the True story
+        of Journalist Gary Webb. The film takes place in the mid 1990s, when Webb
+        uncovered the CIA''s past role in importing huge amounts of cocaine into the
+        U.S. that was aggressively sold in ghettos across the Country to raise money
+        for the Nicaraguan Contras rebel army. Despite enormous pressure not to, Webb
+        chose to pursue the story and went public with his evidence, publishing the
+        series \"Dark Alliance\". As a result he experienced a vicious smear campaign
+        fueled by the CIA. At that point Webb found himself defending his integrity,
+        his family, and his life.","picture":"https:\/\/scontent-b.xx.fbcdn.net\/hphotos-xpa1\/v\/t1.0-9\/s130x130\/10698625_884976741520120_7466268051527867438_n.jpg?oh=989e982c111fa3199eadc32f10a39b0d&oe=54EC7225","link":"https:\/\/www.facebook.com\/gmallcinemas\/photos\/a.770266759657786.1073741843.130984640252671\/884976741520120\/?type=1&relevant_count=1","name":"DONE
+        - 2014 4TH QUARTER","icon":"https:\/\/fbstatic-a.akamaihd.net\/rsrc.php\/v2\/yz\/r\/StEh3RhPvjk.gif","privacy":{"value":""},"type":"photo","status_type":"added_photos","object_id":"884976741520120","created_time":"2014-10-13T16:43:41+0000","updated_time":"2014-10-13T17:11:25+0000","likes":{"data":[{"id":"10204639871301167","name":"Raymark
+        Rentura Barroga"},{"id":"728462193906164","name":"Ernielyn Carriedo"}],"paging":{"cursors":{"after":"NzI4NDYyMTkzOTA2MTY0","before":"MTAyMDQ2Mzk4NzEzMDExNjc="}}},"comments":{"data":[{"id":"884976741520120_884990948185366","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"http:\/\/www.imdb.com\/title\/tt1216491","can_remove":false,"created_time":"2014-10-13T17:11:16+0000","like_count":0,"user_likes":false},{"id":"884976741520120_884991031518691","from":{"category":"Movie
+        theater","category_list":[{"id":"192511100766680","name":"Movie Theatre"}],"name":"GMALL
+        Cinemas","id":"130984640252671"},"message":"https:\/\/www.youtube.com\/watch?v=ksl-u4MONls","can_remove":false,"created_time":"2014-10-13T17:11:25+0000","like_count":0,"user_likes":false}],"paging":{"cursors":{"after":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGcwT1RreE1ETXhOVEU0TmpreE9qRTBNVE15TWpBeU9EVTZNZz09","before":"WTI5dGJXVnVkRjlqZFhKemIzSTZPRGcwT1Rrd09UUTRNVGcxTXpZMk9qRTBNVE15TWpBeU56WTZNUT09"}}}}],"paging":{"previous":"https:\/\/graph.facebook.com\/v2.1\/130984640252671\/posts?access_token=717895564958456|3b95cbd9ca4a0a73dbaf35af149ac070&limit=25&since=1415316348&__previous=1","next":"https:\/\/graph.facebook.com\/v2.1\/130984640252671\/posts?access_token=717895564958456|3b95cbd9ca4a0a73dbaf35af149ac070&limit=25&until=1413218617"}}'
+    http_version: 
+  recorded_at: Sun, 09 Nov 2014 10:08:13 GMT
+recorded_with: VCR 2.9.3
