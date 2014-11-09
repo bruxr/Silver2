@@ -4,6 +4,7 @@ class CreateMovies < ActiveRecord::Migration
     create_table :movies do |t|
       t.string :title, null: false
       t.string :slug, null: false
+      t.string :tagline
       t.text :overview
       t.integer :runtime
       t.float :aggregate_score
@@ -12,6 +13,8 @@ class CreateMovies < ActiveRecord::Migration
       t.text :trailer
       t.string :mtrcb_rating
       t.string :status, null: false, default: 'incomplete'
+      t.text :website
+      t.date :release_date
       t.timestamps
     end
     

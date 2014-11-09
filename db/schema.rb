@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109062910) do
+ActiveRecord::Schema.define(version: 20141030060609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20141109062910) do
     t.decimal  "longitude",    precision: 15, scale: 10, default: 0.0,      null: false
     t.string   "status",                                 default: "active", null: false
     t.string   "fetcher"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "phone_number"
     t.text     "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "cinemas", ["name"], name: "index_cinemas_on_name", using: :btree
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20141109062910) do
   create_table "movies", force: true do |t|
     t.string   "title",                                  null: false
     t.string   "slug",                                   null: false
+    t.string   "tagline"
     t.text     "overview"
     t.integer  "runtime"
     t.float    "aggregate_score"
@@ -72,11 +73,10 @@ ActiveRecord::Schema.define(version: 20141109062910) do
     t.text     "trailer"
     t.string   "mtrcb_rating"
     t.string   "status",          default: "incomplete", null: false
+    t.text     "website"
+    t.date     "release_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "website"
-    t.string   "tagline"
-    t.date     "release_date"
   end
 
   add_index "movies", ["slug"], name: "index_movies_on_slug", unique: true, using: :btree
@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 20141109062910) do
     t.datetime "screening_time",                null: false
     t.string   "format",         default: "2D", null: false
     t.text     "ticket_url"
-    t.string   "room",                          null: false
     t.hstore   "ticket_price"
+    t.string   "room",                          null: false
   end
 
   create_table "sources", force: true do |t|
@@ -103,17 +103,17 @@ ActiveRecord::Schema.define(version: 20141109062910) do
   add_index "sources", ["movie_id"], name: "index_sources_on_movie_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                              null: false
-    t.string   "encrypted_password",                 null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0, null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "failed_attempts",        default: 0, null: false
+    t.integer  "failed_attempts",        default: 0,  null: false
     t.datetime "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"

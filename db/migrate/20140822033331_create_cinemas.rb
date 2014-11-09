@@ -8,6 +8,8 @@ class CreateCinemas < ActiveRecord::Migration
       t.decimal :longitude, null: false, precision: 15, scale: 10, default: 0.0
       t.string :status, null: false, default: 'active'
       t.string :fetcher
+      t.string :phone_number
+      t.text :website
       t.timestamps
     end
     
