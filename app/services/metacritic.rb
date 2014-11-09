@@ -150,9 +150,16 @@ class Metacritic < WebClient
     headers['X-Mashape-Key'] = @api_key
     
     url = "#{@@endpoint}#{method}"
-    
-    response = post(url, data, headers)
-    JSON.parse(response)
+
+    begin
+      response = post(url, data, headers)
+    rescue WebClient::HTTPError => e
+      resp = JSON.parse(response)
+      raise Exceptions::QuotaReached.new(self.class.to_s) if resp['error'] =~ /429\Z/
+      nil
+    else
+      JSON.parse(response)
+    end
 
   end
 
