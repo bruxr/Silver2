@@ -413,6 +413,10 @@ label {
     padding: 30px 30px 0 30px;
   }
   
+  header h5 {
+    color: lighten($midnight, 5%);
+  }
+  
   section {
     margin-bottom: 30px;
     padding-left: 30px;
