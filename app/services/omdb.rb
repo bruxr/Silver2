@@ -95,7 +95,11 @@ class Omdb < WebClient
   # Params reference: http://www.omdbapi.com/
   def query(data)
 
-    response = get(@@endpoint, data)
+    begin
+      response = get(@@endpoint, data)
+    rescue Net::OpenTimeout, Net::ReadTimeout
+      Rails.logger.warn("OMDB - Request timed out while querying the API. Request payload: #{data.inspect}")
+    
     JSON.parse(response)
 
   end
