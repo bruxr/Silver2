@@ -410,7 +410,11 @@ label {
   
   header {
     margin-bottom: 45px;
-    padding: 30px 30px 0 30px;
+    padding: 45px 30px 0 30px;
+  }
+  
+  header h2 {
+    margin-top: 0;
   }
   
   header h5 {
