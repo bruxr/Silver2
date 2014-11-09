@@ -11,7 +11,8 @@ one:
   screening_time: <%= Time.now - 1.day %>
   format: 2D
   ticket_url: http://buymesometickets.com/guardians-of-the-galaxy
-  ticket_price: 150
+  ticket_price:
+     :default: 150
   room: Cinema 2
 
 two:
@@ -20,7 +21,8 @@ two:
   screening_time: <%= Time.now - 1.day - 2.hours %>
   format: 2D
   ticket_url: http://buymesometickets.com/guardians-of-the-galaxy
-  ticket_price: 150
+  ticket_price:
+     :default: 150
   room: Cinema 2
 
 three:
@@ -29,7 +31,8 @@ three:
   screening_time: <%= Time.now - 1.week %>
   format: 3D
   ticket_url: http://buymesometickets.com/the-amazing-spider-man
-  ticket_price: 250
+  ticket_price: 
+     :default: 250
   room: Cinema 5
 
 four:
