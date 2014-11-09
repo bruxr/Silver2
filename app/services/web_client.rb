@@ -9,6 +9,8 @@
 class WebClient
   include HTTParty
   
+  default_timeout 15
+  
   # Returned when the WebClient receives a
   # non 200 OK response.
   class HTTPError < StandardError
