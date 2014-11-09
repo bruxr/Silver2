@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108070154) do
+ActiveRecord::Schema.define(version: 20141109062910) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "artists", force: true do |t|
     t.string "name", null: false
@@ -58,16 +62,16 @@ ActiveRecord::Schema.define(version: 20141108070154) do
   add_index "genres_movies", ["movie_id"], name: "index_genres_movies_on_movie_id", using: :btree
 
   create_table "movies", force: true do |t|
-    t.string   "title",                                             null: false
-    t.string   "slug",                                              null: false
+    t.string   "title",                                  null: false
+    t.string   "slug",                                   null: false
     t.text     "overview"
     t.integer  "runtime"
-    t.float    "aggregate_score", limit: 24
+    t.float    "aggregate_score"
     t.text     "poster"
     t.text     "backdrop"
     t.text     "trailer"
     t.string   "mtrcb_rating"
-    t.string   "status",                     default: "incomplete", null: false
+    t.string   "status",          default: "incomplete", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "website"
@@ -84,32 +88,32 @@ ActiveRecord::Schema.define(version: 20141108070154) do
     t.datetime "screening_time",                null: false
     t.string   "format",         default: "2D", null: false
     t.text     "ticket_url"
-    t.text     "ticket_price"
     t.string   "room",                          null: false
+    t.hstore   "ticket_price"
   end
 
   create_table "sources", force: true do |t|
-    t.integer "movie_id",               null: false
-    t.string  "name",                   null: false
-    t.string  "external_id",            null: false
-    t.text    "url",                    null: false
-    t.float   "score",       limit: 24
+    t.integer "movie_id",    null: false
+    t.string  "name",        null: false
+    t.string  "external_id", null: false
+    t.text    "url",         null: false
+    t.float   "score"
   end
 
   add_index "sources", ["movie_id"], name: "index_sources_on_movie_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                              null: false
+    t.string   "encrypted_password",                 null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "failed_attempts",        default: 0,  null: false
+    t.integer  "failed_attempts",        default: 0, null: false
     t.datetime "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
