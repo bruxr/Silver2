@@ -128,6 +128,9 @@ class RottenTomatoes < WebClient
       response = get(url, data)
     rescue WebClient::HTTPError => e
       raise Exceptions::QuotaReached.new(self.class.to_s) if e.code == 403
+    rescue Errno::ETIMEDOUT
+      Rails.logger.warn("RottenTomatoes - Request timed out while querying the API. URL: #{url}.")
+      nil
     else
       JSON.parse(response)
     end
