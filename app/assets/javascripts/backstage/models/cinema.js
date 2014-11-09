@@ -8,6 +8,7 @@ Backstage.Cinema = DS.Model.extend({
   fetcher:      DS.attr('string'),
   phoneNumber:  DS.attr('string'),
   website:      DS.attr('string'),
+  address:      DS.attr('string'),
   createdAt:    DS.attr('date'),
   updatedAt:    DS.attr('date')
 })

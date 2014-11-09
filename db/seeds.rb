@@ -13,7 +13,8 @@ Cinema.create([
   longitude: 125.610936,
   status: 'active',
   fetcher: 'Abreeza',
-  website: 'http://www.sureseats.com'
+  website: 'http://www.sureseats.com',
+  address: 'Abreeza Ayala Business Park, J.P. Laurel Ave, Davao City'
 },
 {
   name: 'Gaisano Mall of Davao',
@@ -22,7 +23,8 @@ Cinema.create([
   status: 'active',
   fetcher: 'GaisanoMall',
   phone_number: '(082) 226-2244',
-  website: 'https://www.facebook.com/gmallcinemas'
+  website: 'https://www.facebook.com/gmallcinemas',
+  address: 'J.P. Laurel Ave, Davao City'
 },
 {
   name: 'Gaisano Grand Mall',
@@ -31,7 +33,8 @@ Cinema.create([
   status: 'active',
   fetcher: 'GaisanoGrand',
   phone_number: '(082) 285-7579',
-  website: 'https://www.facebook.com/gmallcinemas'
+  website: 'https://www.facebook.com/gmallcinemas',
+  address: 'Toril, Davao City'
 },
 {
   name: 'NCCC Mall',
@@ -40,7 +43,8 @@ Cinema.create([
   status: 'active',
   fetcher: 'NcccMall',
   phone_number: '(082) 305-0744',
-  website: 'http://nccc.com.ph/main/page/cinema/'
+  website: 'http://nccc.com.ph/main/page/cinema/',
+  address: 'McArthur Highway corner Ma-a Road, Davao City'
 },
 {
   name: 'SM City Davao',
@@ -48,7 +52,8 @@ Cinema.create([
   longitude: 125.588078,
   status: 'active',
   fetcher: 'SmCityDavao',
-  website: 'https://smcinema.com'
+  website: 'https://smcinema.com',
+  address: 'Quimpo Boulevard, Ecoland, Davao City'
 },
 {
   name: 'SM Lanang Premiere',
@@ -56,12 +61,14 @@ Cinema.create([
   longitude: 125.630645,
   status: 'active',
   fetcher: 'SmLanang',
-  website: 'https://smcinema.com'
+  website: 'https://smcinema.com',
+  address: 'J.P. Laurel Ave, Lanang, Davao City'
 },
 {
   name: 'Victoria Plaza Mall',
   latitude: 7.086986,
   longitude: 125.611996,
-  status: 'hidden'
+  status: 'hidden',
+  address: 'J.P. Laurel Avenue, Bajada, Davao City'
 }
 ])
