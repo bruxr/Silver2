@@ -421,6 +421,25 @@ label {
     color: lighten($midnight, 5%);
   }
   
+  .paper-actions {
+    position: absolute;
+    right: 30px;
+    top: 410px;
+  }
+  
+  .paper-actions .btn {
+    min-width: 100px;
+  }
+  
+  .paper-actions .btn .fa {
+    margin-left: -10px;
+    margin-right: 5px;
+  }
+  
+  .paper-actions + header {
+    padding-right: 150px;
+  }
+  
   section {
     margin-bottom: 30px;
     padding-left: 30px;
