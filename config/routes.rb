@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     end
     
     resources :sources, only: [:update, :destroy]
-    resources :cinemas, :schedules
+    
+    resources :schedules, only: [:index]
+    
   end
 
   # Devise login

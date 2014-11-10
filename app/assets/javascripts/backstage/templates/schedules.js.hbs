@@ -1,0 +1,69 @@
+<div id="movies">
+
+  <div class="page-header">
+  
+    <h2>Schedules</h2>
+    
+  </div>
+  
+  <div class="schedules-filter row">
+    
+    <div class="col-md-3">
+      <div class="input-group">
+        <input type="date" class="form-control inline">
+        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="input-group">
+        <select class="form-control">
+          <option>Cinema</option>
+          <option>Abreeza</option>
+        <select>
+        <span class="input-group-addon"><i class="fa fa-building"></i></span>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="input-group">
+        <select class="form-control">
+          <option>Movie</option>
+          <option>Abreeza</option>
+        <select>
+        <span class="input-group-addon"><i class="fa fa-film"></i></span>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <button class="btn btn-primary">Filter</button>
+    </div>
+    
+  </div>
+  
+  <table class="schedules table">
+    <thead>
+      <tr>
+        <th>Movie</th>
+        <th>Mall</th>
+        <th>Screening Time</th>
+        <th>Cinema</th>
+        <th>Price</th>
+        <th>Format</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each}}
+      <tr>
+        <th>{{#link-to 'movie' movie}}{{movie.title}}{{/link-to}}</th>
+        <td>{{#link-to 'cinema' cinema}}{{cinema.name}}{{/link-to}}</td>
+        <td>{{duration screeningTime}}</td>
+        <td>{{room}}</td>
+        <td>{{price}}</td>
+        <td>{{format}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</div>

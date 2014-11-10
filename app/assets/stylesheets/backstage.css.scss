@@ -762,3 +762,35 @@ label {
 .cinema-phone {
   color: #999;
 }
+
+// Schedules
+.schedules-filter {
+  margin-bottom: 30px;
+  
+  .btn {
+    display: block;
+    width: 100%;
+  }
+  
+  input[type=date] {
+    padding-right: 0;
+    width: 167px;
+  }
+}
+
+.schedules.table {
+  
+  td, th {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  
+  tbody th {
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 40%;
+  }
+  
+}

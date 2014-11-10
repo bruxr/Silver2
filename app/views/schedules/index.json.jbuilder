@@ -1,4 +1,5 @@
-json.array!(@schedules) do |schedule|
-  json.extract! schedule, :id
-  json.url schedule_url(schedule, format: :json)
+json.schedules do |json|
+  json.array! @schedules do |schedule|
+    json.merge! schedule.attributes
+  end
 end
