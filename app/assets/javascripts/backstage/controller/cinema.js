@@ -1,11 +1,13 @@
 Backstage.CinemaController = Ember.ObjectController.extend({
   isEditing: false,
   
+  statuses: ['active', 'hidden', 'disabled'],
+  
   actions: {
     
     edit: function() {
       this.set('isEditing', true);
-      $('.movie-popover').animate({scrollTop: 0}, 'fast');
+      $('.paper').animate({scrollTop: 0}, 'fast');
     },
     
     doneEditing: function() {
@@ -17,19 +19,7 @@ Backstage.CinemaController = Ember.ObjectController.extend({
     
     cancelEditing: function() {
       this.set('isEditing', false);
-    },
-    
-    removeSource: function(source) {
-      movie = this.get('model');
-      movie.get('sources').removeObject(source);
-      movie.save();
-      source.deleteRecord();
-      source.save();
-    },
-    
-    updateScores: function(movie) {
-      movie.updateScores();
-    },
+    }
     
   }
   

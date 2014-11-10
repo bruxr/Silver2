@@ -1,0 +1,77 @@
+<div class="editing">
+  
+  <header>
+    <h2>Edit Cinema</h2>
+  </header>
+  
+  <a {{action 'cancelEditing'}} href="#" class="close-btn"></a>
+  
+  <section>
+
+    <div class="form-group">
+      <label>
+        Name
+        {{input value=name class="form-control"}}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Address
+        {{input value=address class="form-control"}}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Phone Number
+        {{input value=phoneNumber class="form-control"}}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Website
+        {{input value=website class="form-control"}}
+      </label>
+    </div>
+
+    <div class="row">
+      
+      <div class="col-md-6 form-group">
+        <label>
+          Latitude
+          {{input value=latitude type="number" class="form-control fixed-font"}}
+        </label>
+      </div>
+      
+      <div class="col-md-6 form-group">
+        <label>
+          Longitude
+          {{input value=longitude type="number" class="form-control fixed-font"}}
+        </label>
+      </div>
+      
+    </div>
+
+    <div class="form-group">
+      <label>
+        Status
+        {{view "select" content=statuses value=status class="form-control"}}
+      </label>
+    </div>
+    
+    <div class="form-group">
+      <label>
+        Scraper
+        {{input value=fetcher class="form-control fixed-font" readonly=true}}
+      </label>
+    </div>
+  
+  </section>
+
+  <section>
+    <button {{action 'doneEditing'}} class="btn btn-primary btn-block">Save Changes</button>
+  </section>
+  
+</div>

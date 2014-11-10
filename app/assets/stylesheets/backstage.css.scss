@@ -79,14 +79,15 @@ code {
   display: block;
   font-size: 32px;
   height: 35px;
+  line-height: 22px;
   text-align: center;
   width: 35px;
   @include translate3d(0, 0, 0);
-  @include transition(all 300ms ceaser($easeOutQuint));
+  @include transition(all 500ms ease-in);
   
   &:before {
     content: '\00d7';
-    line-height: 29px;
+    vertical-align: middle;
   }
   
   &:hover {
@@ -135,6 +136,10 @@ label {
 
 .form-control {
   font-weight: normal;
+ 
+  &.fixed-font {
+    font-family: monospace;
+  }
   
   &.inline {
     display: inline-block;
@@ -473,6 +478,16 @@ label {
     padding-left: 8px;
     padding-right: 8px;
   }
+  
+  .editing {
+    border-top: 10px solid $turqoise;
+  }
+  
+  .editing .close-btn {
+    position: absolute;
+    right: 30px;
+    top: 50px;
+  }
 }
 
 // Editing UI
@@ -487,17 +502,6 @@ label {
   section {
     margin-bottom: 30px;
   }
-}
-
-.editing h2 {
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-}
-
-.editing .close-btn {
-  position: absolute;
-  right: 30px;
-  top: 40px;
 }
 
 // Movie Popover
