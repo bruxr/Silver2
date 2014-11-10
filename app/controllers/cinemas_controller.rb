@@ -17,10 +17,8 @@ class CinemasController < ApplicationController
   def update
     respond_to do |format|
       if @cinema.update(cinema_params)
-        format.html { redirect_to @cinema, notice: 'Cinema was successfully updated.' }
         format.json { render :show, status: :ok, location: @cinema }
       else
-        format.html { render :edit }
         format.json { render json: @cinema.errors, status: :unprocessable_entity }
       end
     end
@@ -45,6 +43,6 @@ class CinemasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cinema_params
-      params[:cinema]
+      params.require(:cinema).permit(:name, :address, :phone_number, :website, :latitude, :longitude, :status)
     end
 end
