@@ -19,7 +19,9 @@
       <div class="input-group">
         <select class="form-control">
           <option>Cinema</option>
-          <option>Abreeza</option>
+          {{#each cinemas}}
+          <option {{bind-attr value=id}}>{{name}}</option>
+          {{/each}}
         <select>
         <span class="input-group-addon"><i class="fa fa-building"></i></span>
       </div>
@@ -29,7 +31,9 @@
       <div class="input-group">
         <select class="form-control">
           <option>Movie</option>
-          <option>Abreeza</option>
+          {{#each movies}}
+          <option {{bind-attr value=id}}>{{title}}</option>
+          {{/each}}
         <select>
         <span class="input-group-addon"><i class="fa fa-film"></i></span>
       </div>

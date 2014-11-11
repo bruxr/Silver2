@@ -18,20 +18,28 @@ class MoviesController < ApplicationController
 
     offset = 0
     offset = params[:offset].to_i if params[:offset] =~ /\A\d+\Z/ && params[:offset] >= 0
-
     limit = 25
     
-    @schedules_filter = :upcoming
-
-    if params[:filter].nil? || params[:filter] == 'now-showing'
-      @movies = Movie.now_showing.limit(limit).offset(offset).all
-    elsif params[:filter] == 'past' || params[:filter] == 'finished'
-      @movies = Movie.past.limit(limit).offset(offset).all
-    elsif params[:filter] == 'all'
-      @schedules_filter = :all
-      @movies = Movie.all.limit(limit).offset(offset).all
+    if params[:type] == 'list' && user_signed_in?
+    
+      @movies = Movie.select('id,title').order('title')
+      render :list
+    
     else
-      raise "Invalid movie filter #{params[:filter]}"
+      
+      @schedules_filter = :upcoming
+
+      if params[:filter].nil? || params[:filter] == 'now-showing'
+        @movies = Movie.now_showing.limit(limit).offset(offset).all
+      elsif params[:filter] == 'past' || params[:filter] == 'finished'
+        @movies = Movie.past.limit(limit).offset(offset).all
+      elsif params[:filter] == 'all'
+        @schedules_filter = :all
+        @movies = Movie.all.limit(limit).offset(offset).all
+      else
+        raise "Invalid movie filter #{params[:filter]}"
+      end
+      
     end
 
   end

@@ -4,7 +4,12 @@ class CinemasController < ApplicationController
   # GET /cinemas.json route
   # Returns all cinemas managed my Silver
   def index
-    @cinemas = Cinema.order(:name).all
+    if params[:type] == 'list' && user_signed_in?
+      @cinemas = Cinema.select(:id, :name).order(:name)
+      render :list
+    else
+      @cinemas = Cinema.order(:name)
+    end
   end
 
   # GET /cinemas/1.json route
