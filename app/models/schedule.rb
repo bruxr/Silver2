@@ -112,7 +112,9 @@ class Schedule < ActiveRecord::Base
   end
   
   def ticket_price
-    if self[:ticket_price].has_key? 'default'
+    if self[:ticket_price].nil?
+      nil
+    elsif self[:ticket_price].has_key? 'default'
       self[:ticket_price]['default']
     else
       self[:ticket_price]
