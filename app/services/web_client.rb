@@ -79,6 +79,7 @@ class WebClient
   # Works the same as sanitize_string except it works
   # for hashes.
   def sanitize_hash(hash)
+    return hash unless hash.instance_of? Hash
     require 'sanitize'
     cleaned = {}
     hash.each do |key, value|
