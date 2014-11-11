@@ -18,7 +18,7 @@
 # otherwise try using other means like extracting using regex, split>join>split
 class GaisanoScraper < Scraper
 
-  ENDPOINT = 'https://graph.facebook.com/v2.1/gmallcinemas/posts'
+  ENDPOINT = 'https://graph.facebook.com/v2.2/gmallcinemas/posts'
 
   def schedules
     
