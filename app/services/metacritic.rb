@@ -8,7 +8,7 @@ class Metacritic < WebClient
   @@endpoint = 'https://byroredux-metacritic.p.mashape.com'
 
   def initialize
-    @api_key = ENV['MASHAPE_API_KEY']
+    @api_key = Rails.application.secrets.mashape_api_key
   end
 
   # Searches the API for a movie that matches the
