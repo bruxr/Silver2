@@ -10,4 +10,5 @@
 //= require ./backstage/app
 //= require ./backstage/utils
 //= require ./backstage/router
+//= require_tree ./backstage/mixins
 //= require_tree ./backstage

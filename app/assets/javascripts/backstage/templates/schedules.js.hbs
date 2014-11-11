@@ -37,7 +37,7 @@
       </tr>
     </thead>
     <tbody>
-      {{#each}}
+      {{#each controller.paginatedContent}}
       <tr>
         <th>{{#link-to 'movie' movie}}{{movie.title}}{{/link-to}}</th>
         <td>{{#link-to 'cinema' cinema}}{{cinema.name}}{{/link-to}}</td>
@@ -47,6 +47,16 @@
       </tr>
       {{/each}}
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5">
+          <ul class="pagination">
+            {{#each p in pages}}
+            <li>{{#link-to 'schedules' (query-params page=p)}}{{p}}{{/link-to}}</li>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
   </table>
 
 </div>

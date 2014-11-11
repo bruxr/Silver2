@@ -779,10 +779,22 @@ label {
 
 .schedules.table {
   
+  a {
+    text-decoration: none;
+    
+    &.active {
+      background-color: #0f7864;
+    }
+  }
+  
   td, th {
     border-bottom: 1px solid #eee;
     padding-bottom: 15px;
     padding-top: 15px;
+  }
+  
+  & > thead:first-child > tr:first-child > th {
+    border-top: 1px solid #eee;
   }
   
   tbody th {
@@ -790,6 +802,11 @@ label {
     white-space: nowrap;
     text-overflow: ellipsis;
     width: 40%;
+  }
+  
+  tfoot td {
+    border-bottom: 0;
+    text-align: center;
   }
   
 }
