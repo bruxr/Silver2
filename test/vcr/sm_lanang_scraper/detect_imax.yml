@@ -1,0 +1,355 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.smcinema.com/ajaxMovies.php
+    body:
+      encoding: UTF-8
+      string: method=listMovies&branch_code=SMLA
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Nov 2014 06:16:11 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Expires:
+      - Sun, 19 Nov 1978 05:00:00 GMT
+      Last-Modified:
+      - Tue, 11 Nov 2014 06:16:11 +0000
+      Cache-Control:
+      - no-cache, must-revalidate, post-check=0, pre-check=0
+      Etag:
+      - '"1415686571"'
+      Content-Length:
+      - '423'
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '[{"movie_name":"Beauty in a Bottle","movie_code":"BIAB-2D"},{"movie_name":"Big
+        Hero 6","movie_code":"BIGHERO6-2D"},{"movie_name":"Interstellar","movie_code":"INTRSTELR-2D"},{"movie_name":"John
+        Wick","movie_code":"JOHNWICK-2D"},{"movie_name":"Moron 5.2","movie_code":"MORON5.2-2D"},{"movie_name":"Stonehearst
+        Asylum","movie_code":"STONASYLUM2D"},{"movie_name":"The Hunger Games: Mockingjay
+        Part 1","movie_code":"HG3MJ1-2D"}]'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 06:16:26 GMT
+- request:
+    method: post
+    uri: https://www.smcinema.com/ajaxMovies.php
+    body:
+      encoding: UTF-8
+      string: method=listScreeningTime&branch_code=SMLA&movie_name=Beauty%20in%20a%20Bottle
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Nov 2014 06:16:11 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Expires:
+      - Sun, 19 Nov 1978 05:00:00 GMT
+      Last-Modified:
+      - Tue, 11 Nov 2014 06:16:11 +0000
+      Cache-Control:
+      - no-cache, must-revalidate, post-check=0, pre-check=0
+      Etag:
+      - '"1415686571"'
+      Content-Length:
+      - '2193'
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"Cinema 6 (REGULAR)":[{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"BIAB-2D","MovieName":"Beauty
+        in a Bottle","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":104,"Genre":"Comedy","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        6","CinemaCode":"6","CinemaType":"REGULAR","MctKey":31211,"Price":"160.0000","ScreeningType":2,"StartTime":"2014-11-11T16:10:00","EndTime":"2014-11-11T17:55:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/Beauty-In-A-Bottle_20141023184032.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=uwVaKBhK-hc","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 04:10 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"BIAB-2D","MovieName":"Beauty
+        in a Bottle","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":104,"Genre":"Comedy","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        6","CinemaCode":"6","CinemaType":"REGULAR","MctKey":31212,"Price":"160.0000","ScreeningType":2,"StartTime":"2014-11-11T18:35:00","EndTime":"2014-11-11T20:20:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/Beauty-In-A-Bottle_20141023184032.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=uwVaKBhK-hc","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 06:35 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"BIAB-2D","MovieName":"Beauty
+        in a Bottle","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":104,"Genre":"Comedy","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        6","CinemaCode":"6","CinemaType":"REGULAR","MctKey":31213,"Price":"160.0000","ScreeningType":2,"StartTime":"2014-11-11T21:00:00","EndTime":"2014-11-11T22:45:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/Beauty-In-A-Bottle_20141023184032.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=uwVaKBhK-hc","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 09:00 PM"}]}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 06:16:27 GMT
+- request:
+    method: post
+    uri: https://www.smcinema.com/ajaxMovies.php
+    body:
+      encoding: UTF-8
+      string: method=listScreeningTime&branch_code=SMLA&movie_name=Big%20Hero%206
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Nov 2014 06:16:12 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Expires:
+      - Sun, 19 Nov 1978 05:00:00 GMT
+      Last-Modified:
+      - Tue, 11 Nov 2014 06:16:12 +0000
+      Cache-Control:
+      - no-cache, must-revalidate, post-check=0, pre-check=0
+      Etag:
+      - '"1415686572"'
+      Content-Length:
+      - '2166'
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"Cinema 3 (REGULAR)":[{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"BIGHERO6-2D","MovieName":"Big
+        Hero 6","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":117,"Genre":"Animation","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        3","CinemaCode":"3","CinemaType":"REGULAR","MctKey":31198,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T15:40:00","EndTime":"2014-11-11T17:40:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/big
+        hero 6_20141014172009.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=8IdMPpKMdcc","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 03:40 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"BIGHERO6-2D","MovieName":"Big
+        Hero 6","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":117,"Genre":"Animation","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        3","CinemaCode":"3","CinemaType":"REGULAR","MctKey":31197,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T18:20:00","EndTime":"2014-11-11T20:20:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/big
+        hero 6_20141014172009.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=8IdMPpKMdcc","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 06:20 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"BIGHERO6-2D","MovieName":"Big
+        Hero 6","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":117,"Genre":"Animation","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        3","CinemaCode":"3","CinemaType":"REGULAR","MctKey":31196,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T21:00:00","EndTime":"2014-11-11T23:00:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/big
+        hero 6_20141014172009.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=8IdMPpKMdcc","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 09:00 PM"}]}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 06:16:27 GMT
+- request:
+    method: post
+    uri: https://www.smcinema.com/ajaxMovies.php
+    body:
+      encoding: UTF-8
+      string: method=listScreeningTime&branch_code=SMLA&movie_name=Interstellar
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Nov 2014 06:16:13 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Expires:
+      - Sun, 19 Nov 1978 05:00:00 GMT
+      Last-Modified:
+      - Tue, 11 Nov 2014 06:16:13 +0000
+      Cache-Control:
+      - no-cache, must-revalidate, post-check=0, pre-check=0
+      Etag:
+      - '"1415686573"'
+      Content-Length:
+      - '3608'
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"IMAX (IMAX)":[{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"INTRSTE-IMAX","MovieName":"Interstellar","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":176,"Genre":"Sci-Fi","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"IMAX","CinemaCode":"IMAX","CinemaType":"IMAX","MctKey":31216,"Price":"450.0000","ScreeningType":1,"StartTime":"2014-11-11T14:20:00","EndTime":"2014-11-11T17:20:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/interstellar_20141015142359.png","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=Rt2LHkSwdPQ","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 02:20 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"INTRSTE-IMAX","MovieName":"Interstellar","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":176,"Genre":"Sci-Fi","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"IMAX","CinemaCode":"IMAX","CinemaType":"IMAX","MctKey":31215,"Price":"450.0000","ScreeningType":1,"StartTime":"2014-11-11T17:40:00","EndTime":"2014-11-11T20:40:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/interstellar_20141015142359.png","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=Rt2LHkSwdPQ","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 05:40 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"INTRSTE-IMAX","MovieName":"Interstellar","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":176,"Genre":"Sci-Fi","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"IMAX","CinemaCode":"IMAX","CinemaType":"IMAX","MctKey":31217,"Price":"450.0000","ScreeningType":1,"StartTime":"2014-11-11T21:00:00","EndTime":"2014-11-12T00:00:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/interstellar_20141015142359.png","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=Rt2LHkSwdPQ","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 09:00 PM"}],"Cinema 2 (DIGITAL)":[{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"INTRSTELR-2D","MovieName":"Interstellar","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":176,"Genre":"Sci-Fi","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        2","CinemaCode":"2","CinemaType":"DIGITAL","MctKey":31193,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T17:50:00","EndTime":"2014-11-11T20:50:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/interstellar_20141015142359.png","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=Rt2LHkSwdPQ","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 05:50 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"INTRSTELR-2D","MovieName":"Interstellar","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":176,"Genre":"Sci-Fi","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        2","CinemaCode":"2","CinemaType":"DIGITAL","MctKey":31192,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T21:30:00","EndTime":"2014-11-12T00:30:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/interstellar_20141015142359.png","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=Rt2LHkSwdPQ","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 09:30 PM"}]}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 06:16:28 GMT
+- request:
+    method: post
+    uri: https://www.smcinema.com/ajaxMovies.php
+    body:
+      encoding: UTF-8
+      string: method=listScreeningTime&branch_code=SMLA&movie_name=John%20Wick
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Nov 2014 06:16:13 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Expires:
+      - Sun, 19 Nov 1978 05:00:00 GMT
+      Last-Modified:
+      - Tue, 11 Nov 2014 06:16:13 +0000
+      Cache-Control:
+      - no-cache, must-revalidate, post-check=0, pre-check=0
+      Etag:
+      - '"1415686573"'
+      Content-Length:
+      - '2154'
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"Cinema 4 (REGULAR)":[{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"JOHNWICK-2D","MovieName":"John
+        Wick","ShowingFilters":"NOWSHOWING","MtrcbRating":"R16","RunningTime":102,"Genre":"Action","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        4","CinemaCode":"4","CinemaType":"REGULAR","MctKey":31202,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T16:10:00","EndTime":"2014-11-11T17:55:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/john
+        wick_20141014170208.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=2AUmvWm5ZDQ","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 04:10 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"JOHNWICK-2D","MovieName":"John
+        Wick","ShowingFilters":"NOWSHOWING","MtrcbRating":"R16","RunningTime":102,"Genre":"Action","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        4","CinemaCode":"4","CinemaType":"REGULAR","MctKey":31201,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T18:35:00","EndTime":"2014-11-11T20:20:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/john
+        wick_20141014170208.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=2AUmvWm5ZDQ","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 06:35 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"JOHNWICK-2D","MovieName":"John
+        Wick","ShowingFilters":"NOWSHOWING","MtrcbRating":"R16","RunningTime":102,"Genre":"Action","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        4","CinemaCode":"4","CinemaType":"REGULAR","MctKey":31200,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T21:00:00","EndTime":"2014-11-11T22:45:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/john
+        wick_20141014170208.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=2AUmvWm5ZDQ","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 09:00 PM"}]}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 06:16:29 GMT
+- request:
+    method: post
+    uri: https://www.smcinema.com/ajaxMovies.php
+    body:
+      encoding: UTF-8
+      string: method=listScreeningTime&branch_code=SMLA&movie_name=Moron%205.2
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Nov 2014 06:16:14 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Expires:
+      - Sun, 19 Nov 1978 05:00:00 GMT
+      Last-Modified:
+      - Tue, 11 Nov 2014 06:16:14 +0000
+      Cache-Control:
+      - no-cache, must-revalidate, post-check=0, pre-check=0
+      Etag:
+      - '"1415686574"'
+      Content-Length:
+      - '2148'
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"Cinema 1 (REGULAR)":[{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"MORON5.2-2D","MovieName":"Moron
+        5.2","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":94,"Genre":"Comedy","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        1","CinemaCode":"1","CinemaType":"REGULAR","MctKey":31189,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T16:30:00","EndTime":"2014-11-11T18:05:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/Moron
+        5.2_20140924173739.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=MK1CzlEcd1w","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 04:30 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"MORON5.2-2D","MovieName":"Moron
+        5.2","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":94,"Genre":"Comedy","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        1","CinemaCode":"1","CinemaType":"REGULAR","MctKey":31190,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T18:45:00","EndTime":"2014-11-11T20:20:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/Moron
+        5.2_20140924173739.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=MK1CzlEcd1w","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 06:45 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"MORON5.2-2D","MovieName":"Moron
+        5.2","ShowingFilters":"NOWSHOWING","MtrcbRating":"PG","RunningTime":94,"Genre":"Comedy","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        1","CinemaCode":"1","CinemaType":"REGULAR","MctKey":31191,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T21:00:00","EndTime":"2014-11-11T22:35:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/Moron
+        5.2_20140924173739.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=MK1CzlEcd1w","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 09:00 PM"}]}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 06:16:29 GMT
+- request:
+    method: post
+    uri: https://www.smcinema.com/ajaxMovies.php
+    body:
+      encoding: UTF-8
+      string: method=listScreeningTime&branch_code=SMLA&movie_name=Stonehearst%20Asylum
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Nov 2014 06:16:15 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Expires:
+      - Sun, 19 Nov 1978 05:00:00 GMT
+      Last-Modified:
+      - Tue, 11 Nov 2014 06:16:15 +0000
+      Cache-Control:
+      - no-cache, must-revalidate, post-check=0, pre-check=0
+      Etag:
+      - '"1415686575"'
+      Content-Length:
+      - '2211'
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"Cinema 5 (REGULAR)":[{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"STONASYLUM2D","MovieName":"Stonehearst
+        Asylum","ShowingFilters":"NOWSHOWING","MtrcbRating":"R13","RunningTime":117,"Genre":"Horror","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        5","CinemaCode":"5","CinemaType":"REGULAR","MctKey":31206,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T15:40:00","EndTime":"2014-11-11T17:40:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/stonehearts
+        asylum_20141028142805.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=K4vXJdAC-24","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 03:40 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"STONASYLUM2D","MovieName":"Stonehearst
+        Asylum","ShowingFilters":"NOWSHOWING","MtrcbRating":"R13","RunningTime":117,"Genre":"Horror","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        5","CinemaCode":"5","CinemaType":"REGULAR","MctKey":31207,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T18:20:00","EndTime":"2014-11-11T20:20:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/stonehearts
+        asylum_20141028142805.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=K4vXJdAC-24","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 06:20 PM"},{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"STONASYLUM2D","MovieName":"Stonehearst
+        Asylum","ShowingFilters":"NOWSHOWING","MtrcbRating":"R13","RunningTime":117,"Genre":"Horror","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        5","CinemaCode":"5","CinemaType":"REGULAR","MctKey":31208,"Price":"150.0000","ScreeningType":2,"StartTime":"2014-11-11T21:00:00","EndTime":"2014-11-11T23:00:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/stonehearts
+        asylum_20141028142805.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=K4vXJdAC-24","ImageNew":"","Recommended":false,"StartSched":"November
+        11, 2014 09:00 PM"}]}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 06:16:30 GMT
+- request:
+    method: post
+    uri: https://www.smcinema.com/ajaxMovies.php
+    body:
+      encoding: UTF-8
+      string: method=listScreeningTime&branch_code=SMLA&movie_name=The%20Hunger%20Games%3A%20Mockingjay%20Part%201
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Nov 2014 06:16:15 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Expires:
+      - Sun, 19 Nov 1978 05:00:00 GMT
+      Last-Modified:
+      - Tue, 11 Nov 2014 06:16:15 +0000
+      Cache-Control:
+      - no-cache, must-revalidate, post-check=0, pre-check=0
+      Etag:
+      - '"1415686575"'
+      Content-Length:
+      - '757'
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"Cinema 3 (REGULAR)":[{"BranchKey":46,"BranchCode":"SMLA","BranchName":"LANANG","CinemaCount":4,"MovieCode":"HG3MJ1-2D","MovieName":"The
+        Hunger Games: Mockingjay Part 1","ShowingFilters":"NEXTATTRACTION","MtrcbRating":"NYR","RunningTime":0,"Genre":"","FilmFormat":"F2D","Cinexclusive":"NO","CinemaName":"Cinema
+        3","CinemaCode":"3","CinemaType":"REGULAR","MctKey":30867,"Price":"160.0000","ScreeningType":2,"StartTime":"2014-11-19T20:00:00","EndTime":"2014-11-19T22:15:00","AllowOnlinePurchase":true,"OtherInfo":true,"Image":"http:\/\/tickets.smcinema.com\/BookingCMS\/Images\/mockingjay
+        1_20141015171554.jpg","Image2":"","Video":"https:\/\/www.youtube.com\/watch?v=IXshQ5mv1K8","ImageNew":"","Recommended":false,"StartSched":"November
+        19, 2014 08:00 PM"}]}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 06:16:31 GMT
+recorded_with: VCR 2.9.3

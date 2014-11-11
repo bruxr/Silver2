@@ -129,12 +129,12 @@ class SmScraper < Scraper
             end
 
             # Translate Film formats
-            if screening['FilmFormat'] == 'F2D'
+            if screening['CinemaType'] == 'IMAX'
+              sked[:format] = 'IMAX'
+            elsif screening['FilmFormat'] == 'F2D'
               sked[:format] = '2D'
             elsif screening['FilmFormat'] == 'F3D'
               sked[:format] = '3D'
-            elsif screening['FilmFormat'] == 'F3D' and screening['CinemaType'] == 'IMAX'
-              sked[:format] = 'IMAX'
             else
               next # Skip if we have no format, this can be a deformed schedule.
             end
