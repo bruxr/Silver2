@@ -154,8 +154,11 @@ class Metacritic < WebClient
     begin
       response = post(url, data, headers)
     rescue WebClient::HTTPError => e
-      raise Exceptions::QuotaReached.new(self.class.to_s) if e.code == 502
-      nil
+      if e.code == 502
+        raise Exceptions::QuotaReached.new(self.class.to_s) 
+      else
+        raise e
+      end
     else
       JSON.parse(response)
     end
