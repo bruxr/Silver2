@@ -18,4 +18,10 @@ Backstage.SchedulesRoute = Ember.Route.extend({
     });
   },
   
+  setupController: function(controller, model) {
+    controller.set('movies', this.get('movies'));
+    controller.set('cinemas', this.get('cinemas'));
+    this._super(controller, model);
+  }
+  
 });
