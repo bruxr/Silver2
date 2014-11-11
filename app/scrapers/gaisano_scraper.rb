@@ -54,26 +54,46 @@ class GaisanoScraper < Scraper
     # and then returns the post with the schedules.
     def find_post
       
-      data = { access_token: "#{ENV['FB_APP_ID']}|#{ENV['FB_APP_SECRET']}" }
-      response = get(ENDPOINT, data)
-      return nil if response.nil?
-      response = JSON.parse(response)
-
+      untl = ''
+      i = 0
       sked_post = nil
+        
+      loop do
+        
+        data = {
+          access_token: "#{ENV['FB_APP_ID']}|#{ENV['FB_APP_SECRET']}",
+          until: untl
+        }
+        response = get(ENDPOINT, data)
+        return nil if response.nil?
+        response = JSON.parse(response)
 
-      # Sked post is usually pinned as the first data
-      if response['data'].first['message'] =~ /\ASKED FOR/
-        sked_post = response['data'].first
+        # Sked post is usually pinned as the first data
+        if response['data'].first['message'] =~ /\ASKED FOR/
+          sked_post = response['data'].first
 
-      # Otherwise search for it
-      else
-        response['data'].each do |post|
-          next if post['message'].nil?
-          sked_post = post if post['message'] =~ /\ASKED FOR/
+        # Otherwise search for it
+        else
+          response['data'].each do |post|
+            next if post['message'].nil?
+            sked_post = post if post['message'] =~ /\ASKED FOR/
+          end
         end
+        
+        i += 1
+        break unless sked_post.nil?
+        break if i == 5
+        
+        untl = response['paging']['next'].match(/until=(\d+)&?/)[1]
+        
       end
       
-      Sanitize::fragment(sked_post['message'])
+      if sked_post.nil?
+        Rails.logger.warn("GaisanoScraper - Failed to find schedule post after #{i} pages.")
+        nil
+      else
+        Sanitize::fragment(sked_post['message'])
+      end
 
     end
 
