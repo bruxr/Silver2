@@ -22,8 +22,6 @@ module Silver
     
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
 
-    config.autoload_paths << Rails.root.join('lib')
-
     config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
   end
 end
