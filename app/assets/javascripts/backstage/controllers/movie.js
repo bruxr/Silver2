@@ -42,11 +42,13 @@ Backstage.MovieController = Ember.ObjectController.extend({
     },
     
     removeSource: function(source) {
-      movie = this.get('model');
-      movie.get('sources').removeObject(source);
-      movie.save();
-      source.deleteRecord();
-      source.save();
+      if (confirm('Are you sure you want to remove this source?')) {
+        movie = this.get('model');
+        movie.get('sources').removeObject(source);
+        movie.save();
+        source.deleteRecord();
+        source.save();
+      }
     },
     
     updateScores: function(movie) {
