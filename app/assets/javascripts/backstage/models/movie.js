@@ -30,5 +30,23 @@ Backstage.Movie = DS.Model.extend({
       }
     }, 'json');
     
+  },
+  
+  updateInfo: function() {
+    var url = '/api/movies/'+ this.get('id') +'/fetch_info',
+        self = this;
+    return new Promise(function(resolve, reject) {
+      $.ajax(url, {
+        accept: 'application/json',
+        cache: false,
+        timeout: 60 * 1000,
+        type: 'POST',
+        success: function(resp) {
+          self.reload();
+          resolve(resp);
+        },
+        error: reject
+      });
+    });
   }
 });

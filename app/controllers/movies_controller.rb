@@ -82,6 +82,26 @@ class MoviesController < ApplicationController
       format.json { render json: resp }
     end
   end
+  
+  # POST /movies/1/fetch_info route
+  # Forces a movie to update its details (overview, cast, etc...)
+  # Returning a status ok JSON object when done.
+  def fetch_info
+    movie_id = params[:id].to_i
+    since = Time.zone.now
+    job = UpdateMovieJob.perform_async(movie_id)
+    waited_for = 0
+    loop do
+      break if waited_for >= 60
+      break if Sidekiq::Status::complete? job
+      sleep 5
+      waited_for += 5
+    end
+    resp = { status: 'ok' }
+    respond_to do |format|
+      format.json { render json: resp }
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

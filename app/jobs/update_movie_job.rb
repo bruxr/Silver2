@@ -1,6 +1,7 @@
 # Updates a movie's details like overview, posters, backdrop
 class UpdateMovieJob
   include Sidekiq::Worker
+  include Sidekiq::Status::Worker
 
   sidekiq_options throttle: { threshold: 5, period: 1.second, key: 'rt-api-client' }
 

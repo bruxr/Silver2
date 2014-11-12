@@ -1,5 +1,11 @@
 <div class="movie paper">
 
+  {{#if isUpdatingInfo}}
+  <div class="alert alert-info">
+    <i class="fa fa-refresh fa-spin"></i> Updating movie details...
+  </div>
+  {{/if}}
+
   {{#if isEditing}}
     {{partial 'movies/edit'}}
   {{else}}
@@ -16,7 +22,7 @@
       <button {{action 'edit'}} type="button" class="movie-edit btn btn-primary">Edit</button>
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="caret"></i></button>
       <ul class="dropdown-menu">
-        <li><a {{action 'updateInfo'}} href="#">Update Info</a></li>
+        <li><a {{action 'updateInfo' this}} href="#">Update Info</a></li>
         <li><a {{action 'updateScores' this}} href="#">Update Scores</a></li>
       </ul>
     </div>

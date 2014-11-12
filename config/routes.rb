@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   scope '/api' do
     
     resources :movies, only: [:index, :show, :update] do
+      post :fetch_info, on: :member
       post :update_scores, on: :member
     end
     

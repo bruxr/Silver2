@@ -1,5 +1,6 @@
 Backstage.MovieController = Ember.ObjectController.extend({
   isEditing: false,
+  isUpdatingInfo: false,
   
   mtrcbRatings: ['None', 'G', 'PG', 'R-13', 'R-16', 'R-18'],
   sourceTypes: ['metacritic', 'omdb', 'rt', 'tmdb'],
@@ -51,6 +52,18 @@ Backstage.MovieController = Ember.ObjectController.extend({
     updateScores: function(movie) {
       movie.updateScores();
     },
+    
+    updateInfo: function(movie) {
+      var self = this;
+      if (this.get('isUpdatingInfo') === true) {
+        return;
+      }
+      this.set('isUpdatingInfo', true);
+      $('.movie.paper').animate({scrollTop: 0}, 'fast');
+      movie.updateInfo().then(function() {
+        self.set('isUpdatingInfo', false);
+      });
+    }
     
   }
   
