@@ -22,8 +22,12 @@ Backstage.CinemaRoute = Ember.Route.extend({
     // Invoked when the slidein modal is closed
     // e.g. clicking the curtains
     close: function() {
-      this.get('controller').set('isEditing', false);
-      this.transitionTo('cinemas');
+      if (this.get('controller').get('isEditing') === true) {
+        return;
+      }
+      else {
+        this.transitionTo('movies');
+      }
     }
     
   }
