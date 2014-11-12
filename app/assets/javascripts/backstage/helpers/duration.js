@@ -8,7 +8,7 @@ Ember.Handlebars.helper('duration', function(value, options) {
         mins = value % 60,
         str = '';
     if (hours > 0) { str += "%d hrs".replace('%d', hours); }
-    str += " %d mins".replace('%d', mins);
+    if (mins > 0) { str += " %d mins".replace('%d', mins); }
     return new Ember.Handlebars.SafeString(str);
   }
 });
