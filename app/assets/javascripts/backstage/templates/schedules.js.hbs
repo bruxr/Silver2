@@ -8,20 +8,16 @@
   
   <div class="schedules-filter row">
     
-    <div class="col-md-3">
-      <input type="date" class="form-control inline">
+    <div class="col-md-4">
+      {{input type="date" value=date class="form-control inline sked-filter-date"}}
     </div>
     
-    <div class="col-md-3">
-      {{view "select" content=cinemas value="" optionValuePath="content.id" optionLabelPath="content.name" class="form-control"}}
+    <div class="col-md-4">
+      {{view "select" content=cinemas value=cinema optionValuePath="content.id" optionLabelPath="content.name" class="form-control sked-filter-cinema"}}
     </div>
     
-    <div class="col-md-3">
-      {{view "select" content=movies value="" optionValuePath="content.id" optionLabelPath="content.title" class="form-control"}}
-    </div>
-    
-    <div class="col-md-3">
-      <button class="btn btn-primary">Filter</button>
+    <div class="col-md-4">
+      {{view "select" content=movies value=movie optionValuePath="content.id" optionLabelPath="content.title" class="form-control sked-filter-movie"}}
     </div>
     
   </div>

@@ -1,10 +1,17 @@
 Backstage.SchedulesRoute = Ember.Route.extend({
   
+  queryParams: {
+    page: { refreshModel: true },
+    date: { refreshModel: true },
+    cinema: { refreshModel: true },
+    movie: { refreshModel: true }
+  },
+  
   movies: null,
   cinemas: null,
   
   model: function(params) {
-  	return this.store.find('schedule');
+  	return this.store.find('schedule', params);
   },
   
   afterModel: function() {
@@ -18,12 +25,12 @@ Backstage.SchedulesRoute = Ember.Route.extend({
       $.when(
         $.getJSON('/api/movies?type=list', function(resp) {
           var movies = resp.movies
-          movies.unshift({id: '', title: 'Movie'})
+          movies.unshift({id: -1, title: 'Movie'})
           self.set('movies', movies);
         }),
         $.getJSON('/api/cinemas?type=list', function(resp) {
           var cinemas = resp.cinemas
-          cinemas.unshift({id: '', name: 'Cinema'})
+          cinemas.unshift({id: -1, name: 'Cinema'})
           self.set('cinemas', cinemas);
         })
       ).then(resolve);
