@@ -1,110 +1,111 @@
-<div class="movie-content editing">
+<div class="editing">
   
-  <h2>Edit Movie</h2>
+  <header>
+    <h2>Edit Movie</h2>
+  </header>
+  
   <a {{action 'cancelEditing'}} href="#" class="close-btn"></a>
   
-  <div class="movie-edit-controls">
-  
-    <section>
-  
-      <div class="form-group">
+  <section>
+
+    <div class="form-group">
+      <label>
+        Title
+        {{input value=title class="form-control"}}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Overview
+        {{textarea value=overview rows="6" class="form-control"}}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Tagline
+        {{input value=tagline class="form-control"}}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Website
+        {{input value=website class="form-control"}}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Trailer
+        <div class="form-control-prefixed">
+          <span class="prefix">http://www.youtube.com/watch?v=</span>
+          {{input type="url" value=trailer class="form-control trailer"}}
+        </div>
+      </label>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 form-group">
         <label>
-          Title
-          {{input value=title class="form-control"}}
+          Runtime<br>
+          {{input type="text" value=runtime class="form-control inline" size="4"}} mins
         </label>
       </div>
-  
-      <div class="form-group">
+      <div class="col-md-4 form-group">
         <label>
-          Overview
-          {{textarea value=overview rows="6" class="form-control"}}
+          MTRCB Rating
+          {{view "select" content=mtrcbRatings value=mtrcbRating class="form-control"}}
         </label>
       </div>
-  
-      <div class="form-group">
+      <div class="col-md-4 form-group">
         <label>
-          Tagline
-          {{input value=tagline class="form-control"}}
+          Release Date
+          {{input type="date" value=isoReleaseDate class="form-control inline form-date-input"}}
         </label>
       </div>
+    </div>
+    
+  </section>
+
+  <section>
   
-      <div class="form-group">
-        <label>
-          Website
-          {{input value=website class="form-control"}}
-        </label>
-      </div>
+    <h3>Sources</h3>
   
-      <div class="form-group">
-        <label>
-          Trailer
-          <div class="form-control-prefixed">
-            <span class="prefix">http://www.youtube.com/watch?v=</span>
-            {{input type="url" value=trailer class="form-control trailer"}}
-          </div>
-        </label>
-      </div>
-  
-      <div class="row">
-        <div class="col-md-4 form-group">
+    {{#each source in sources}}
+    
+      <div class="movie-source-edit row">
+        <div class="col-md-3">
           <label>
-            Runtime<br>
-            {{input type="text" value=runtime class="form-control inline" size="4"}} mins
+            Source
+            {{view "select" content=sourceTypes value=source.shortName class="form-control"}}
           </label>
         </div>
-        <div class="col-md-4 form-group">
+        <div class="col-md-4">
           <label>
-            MTRCB Rating
-            {{view "select" content=mtrcbRatings value=mtrcbRating class="form-control"}}
+            External ID
+            {{input value=source.externalId class="form-control"}}
           </label>
         </div>
-        <div class="col-md-4 form-group">
+        <div class="col-md-4">
           <label>
-            Release Date
-            {{input type="date" value=isoReleaseDate class="form-control inline form-date-input"}}
+            URL
+            {{input type="url" value=source.url class="form-control"}}
           </label>
+        </div>
+        <div class="col-md-1">
+          <a {{action "removeSource" source}} href="#" class="remove-source" data-confirm="Are you sure you want to remove this source?">&times;</a>
         </div>
       </div>
-      
-    </section>
+    
+    {{/each}}
   
-    <section>
-    
-      <h3>Sources</h3>
-    
-      {{#each source in sources}}
-      
-        <div class="movie-source-edit row">
-          <div class="col-md-3">
-            <label>
-              Source
-              {{view "select" content=sourceTypes value=source.shortName class="form-control"}}
-            </label>
-          </div>
-          <div class="col-md-4">
-            <label>
-              External ID
-              {{input value=source.externalId class="form-control"}}
-            </label>
-          </div>
-          <div class="col-md-4">
-            <label>
-              URL
-              {{input type="url" value=source.url class="form-control"}}
-            </label>
-          </div>
-          <div class="col-md-1">
-            <a {{action "removeSource" source}} href="#" class="remove-source" data-confirm="Are you sure you want to remove this source?">&times;</a>
-          </div>
-        </div>
-      
-      {{/each}}
-    
-    
-    </section>
   
+  </section>
+
+  <section>
     <button {{action 'doneEditing'}} class="btn btn-primary btn-block">Save Changes</button>
-    
-  </div>
+  </section>
   
 </div>
