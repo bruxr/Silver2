@@ -57,6 +57,13 @@
         </tr>
         {{/each}}
       </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            {{#link-to 'schedules' (query-params cinema=id) class="more-link"}}View More{{/link-to}}
+          </td>
+        </tr>
+      </tfoot>
     </table>
     
   </section>

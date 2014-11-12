@@ -95,8 +95,8 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="4" class="align-center">
-                <a href="#">View More</a>
+              <td colspan="4">
+                {{#link-to 'schedules' (query-params movie=id) class="view-more"}}View More{{/link-to}}
               </td>
             </tr>
           </tfoot>

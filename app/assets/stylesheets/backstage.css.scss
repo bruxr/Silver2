@@ -471,6 +471,11 @@ label {
     text-decoration: none;
   }
   
+  .table tfoot a.more-link {
+    display: block;
+    text-align: center;
+  }
+  
   .format {
     border: 1px solid $midnight;
     border-radius: 22px;
