@@ -45,6 +45,16 @@ class SchedulesController < ApplicationController
     
   end
   
+  # DELETE /sources/<id>.json route
+  # Deletes a source.
+  def destroy
+    @schedule = Schedule.find(params[:id])
+    @schedule.destroy
+    respond_to do |format|
+      format.json { head :no_content }
+    end
+  end
+  
   private
   
     def error(message, code = 400)

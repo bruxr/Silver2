@@ -25,21 +25,23 @@
   <table class="schedules table">
     <thead>
       <tr>
-        <th>Movie</th>
-        <th>Mall</th>
-        <th>Cinema</th>
-        <th>Price</th>
-        <th>Format</th>
+        <th class="sked-movie-col">Movie</th>
+        <th class="sked-mall-col">Mall</th>
+        <th class="sked-cinema-col">Cinema</th>
+        <th class="sked-price-col">Price</th>
+        <th class="sked-format-col">Format</th>
+        <th class="sked-actions-col">&nbsp;</th>
       </tr>
     </thead>
     <tbody>
       {{#each controller.paginatedContent}}
       <tr>
-        <th>{{#link-to 'movie' movie}}{{movie.title}}{{/link-to}}</th>
-        <td>{{#link-to 'cinema' cinema}}{{cinema.name}}{{/link-to}}</td>
-        <td>{{room}}</td>
-        <td>{{ticketPrice}}</td>
-        <td>{{format}}</td>
+        <th class="sked-movie">{{#link-to 'movie' movie}}{{movie.title}}{{/link-to}}</th>
+        <td class="sked-mall">{{#link-to 'cinema' cinema}}{{cinema.name}}{{/link-to}}</td>
+        <td class="sked-room">{{room}}</td>
+        <td class="sked-price">{{ticketPrice}}</td>
+        <td class="sked-format">{{format}}</td>
+        <td class="sked-actions"><a {{action 'deleteSchedule' this}} href="#" title="Delete this schedule."><i class="fa fa-trash"></i></a></td>
       </tr>
       {{/each}}
     </tbody>

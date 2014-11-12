@@ -809,4 +809,23 @@ label {
     text-align: center;
   }
   
+  .sked-movie-col, .sked-movie {
+    width: 35%;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+  }
+  
+  .sked-format-col, .sked-format {
+    text-align: center;
+  }
+  
+  .sked-actions a {
+    color: #999;
+    
+    &:hover {
+      color: $turqoise;
+    }
+  }
+  
 }

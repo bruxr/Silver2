@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     
     resources :sources, only: [:update, :destroy]
     
-    resources :schedules, only: [:index]
+    resources :schedules, only: [:index, :destroy]
     
   end
 
