@@ -1,7 +1,10 @@
 Backstage.SchedulesController = Ember.ArrayController.extend(Backstage.PaginationMixin, {
   queryParams: ['page', 'date', 'cinema', 'movie'],
   page: 1,
-  date: '2014-11-11',
+  date: function() {
+    var d = new Date;
+    return d.toISOString().slice(0, 10);
+  },
   cinema: -1,
   movie: -1,
   itemsPerPage: 25,
