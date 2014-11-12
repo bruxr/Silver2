@@ -5,7 +5,7 @@ Backstage.MovieView = Ember.View.extend({
   // Slide in the modal & fade in the curtains
   // when our view is in the DOM.
   animateIn: function(done) {
-    this.$('.movie-popover').velocity({
+    this.$('.movie.paper').velocity({
       properties: { right: 0 },
       options: {
         duration: 300,
@@ -24,7 +24,7 @@ Backstage.MovieView = Ember.View.extend({
   },
   
   animateOut: function(done) {
-    this.$('.movie-popover').velocity('reverse');
+    this.$('.movie.paper').velocity('reverse');
     this.$('.curtains').velocity('reverse', { complete: done });
   },
   

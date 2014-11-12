@@ -1,114 +1,111 @@
-<div class="movie-popover">
+<div class="movie paper">
 
-  <div class="movie">
+  {{#if isEditing}}
+    {{partial 'movies/edit'}}
+  {{else}}
+  
+  {{view "trailer"}}
 
-    {{#if isEditing}}
-      {{partial 'movies/edit'}}
-    {{else}}
+  <header>
+    <h2 class="movie-title">{{title}}</h2>
+    {{#if tagline}}<h4 class="movie-tagline">{{tagline}}</h4>{{/if}}
+  </header>
+  
+  <div class="paper-actions">
+    <div class="btn-group movie-edit-btn-box">
+      <button {{action 'edit'}} type="button" class="movie-edit btn btn-primary"><i class="fa fa-pencil"></i> Edit</button>
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="caret"></i></button>
+      <ul class="dropdown-menu">
+        <li><a {{action 'updateInfo'}} href="#">Update Info</a></li>
+        <li><a {{action 'updateScores' this}} href="#">Update Scores</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section>
     
-    {{view "trailer"}}
-
-    <div class="movie-content">
-  
-      <div class="movie-header">
-        <hgroup>
-          <h2 class="movie-title">{{title}}</h2>
-          {{#if tagline}}<h4 class="movie-tagline">{{tagline}}</h4>{{/if}}
-        </hgroup>
-        <div class="btn-group movie-edit-btn-box">
-          <button {{action 'edit'}} type="button" class="movie-edit btn btn-primary"><i class="fa fa-pencil"></i> Edit</button>
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="caret"></i></button>
-          <ul class="dropdown-menu">
-            <li><a {{action 'updateInfo'}} href="#">Update Info</a></li>
-            <li><a {{action 'updateScores' this}} href="#">Update Scores</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="movie-overview">
-        <p>{{overview}}</p>
-      </div>
-      
-      <div class="movie-info row">
-        <div class="col-md-6">
-          <dl>
-            <dt><i class="fa fa-clock-o"></i> Runtime</dt>
-            <dd>{{duration runtime}}</dd>
-            <dt><i class="fa fa-child"></i> Rating</dt>
-            <dd>{{mtrcbRating}}</dd>
-            {{#if website}}
-            <dt><i class="fa fa-external-link"></i> Website</dt>
-            <dd><a {{bind-attr href=website}}>{{website}}</a></dd>
-            {{/if}}
-          </dl>
-        </div>
-        <div class="col-md-6">
-          <dl>
-            {{#if genres}}
-            <dt><i class="fa fa-tags"></i> Genres</dt>
-            <dd>{{commafy genres}}</dd>
-            {{/if}}
-            {{#if cast}}
-            <dt><i class="fa fa-group"></i>  Cast</dt>
-            <dd>{{commafy cast}}</dd>
-            {{/if}}
-          </dl>
-        </div>
-      </div>
-      
-      {{#if sources}}
-      <section class="movie-scores">
-        <h3>Scores</h3>
-        <div class="score-graph row">
-          {{#each source in sources}}
-          <div class="col-md-3 score">
-            {{scorebar source.score}}
-            <h4 class="source-name"><a {{bind-attr href=source.url}} target="_blank">{{source.name}}</a></h4>
-          </div>
-          {{/each}}
-          <div class="col-md-3 score">
-            {{scorebar aggregateScore}}
-            <h4 class="source-name">Aggregate Score</h4>
-          </div>
-          <hr>
-        </div>
-      </section>
-      {{/if}}
-      
-      {{#if schedules}}
-      <section class="movie-schedules">
-        <h3>Screening Times</h3>
-        <table class="table">
-          <tbody>
-            {{#each schedules}}
-            <tr>
-              <td>{{calendarTime screeningTime}}</td>
-              {{#if ticketUrl}}
-              <td><a {{bind-attr href=ticketUrl}} target="_blank">{{cinema.name}}</a></td>
-              {{else}}
-              <td>{{cinema.name}}</td>
-              {{/if}}
-              <td>{{#if ticketPrice}}&#8369; {{ticketPrice}}{{/if}}</td>
-              <td><span class="format">{{format}}</span></td>
-            </tr>
-            {{/each}}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="4">
-                {{#link-to 'schedules' (query-params movie=id) class="view-more"}}View More{{/link-to}}
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-      </section>
-      {{/if}}
-  
+    <div class="movie-overview">
+      <p>{{overview}}</p>
     </div>
     
-    {{/if}}
+    <div class="movie-info row">
+      <div class="col-md-6">
+        <dl>
+          <dt><i class="fa fa-clock-o"></i> Runtime</dt>
+          <dd>{{duration runtime}}</dd>
+          <dt><i class="fa fa-child"></i> Rating</dt>
+          <dd>{{mtrcbRating}}</dd>
+          {{#if website}}
+          <dt><i class="fa fa-external-link"></i> Website</dt>
+          <dd><a {{bind-attr href=website}}>{{website}}</a></dd>
+          {{/if}}
+        </dl>
+      </div>
+      <div class="col-md-6">
+        <dl>
+          {{#if genres}}
+          <dt><i class="fa fa-tags"></i> Genres</dt>
+          <dd>{{commafy genres}}</dd>
+          {{/if}}
+          {{#if cast}}
+          <dt><i class="fa fa-group"></i>  Cast</dt>
+          <dd>{{commafy cast}}</dd>
+          {{/if}}
+        </dl>
+      </div>
+    </div>
+    
+  </section>
+    
+  {{#if sources}}
+  <section class="movie-scores">
+    <h3>Scores</h3>
+    <div class="score-graph row">
+      {{#each source in sources}}
+      <div class="col-md-3 score">
+        {{scorebar source.score}}
+        <h4 class="source-name"><a {{bind-attr href=source.url}} target="_blank">{{source.name}}</a></h4>
+      </div>
+      {{/each}}
+      <div class="col-md-3 score">
+        {{scorebar aggregateScore}}
+        <h4 class="source-name">Aggregate Score</h4>
+      </div>
+      <hr>
+    </div>
+  </section>
+  {{/if}}
   
-  </div>
+  {{#if schedules}}
+  <section class="movie-schedules">
+    <h3>Screening Times</h3>
+    <table class="table">
+      <tbody>
+        {{#each schedules}}
+        <tr>
+          <td>{{calendarTime screeningTime}}</td>
+          {{#if ticketUrl}}
+          <td><a {{bind-attr href=ticketUrl}} target="_blank">{{cinema.name}}</a></td>
+          {{else}}
+          <td>{{cinema.name}}</td>
+          {{/if}}
+          <td>{{#if ticketPrice}}&#8369; {{ticketPrice}}{{/if}}</td>
+          <td><span class="format">{{format}}</span></td>
+        </tr>
+        {{/each}}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            {{#link-to 'schedules' (query-params movie=id) class="view-more"}}View More{{/link-to}}
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+  {{/if}}
+  
+  {{/if}}
 
 </div>
 <div class="curtains"></div>
