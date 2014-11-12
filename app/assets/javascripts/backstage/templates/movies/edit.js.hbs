@@ -47,22 +47,32 @@
     </div>
 
     <div class="row">
-      <div class="col-md-4 form-group">
+      <div class="col-md-6 form-group">
         <label>
           Runtime<br>
           {{input type="text" value=runtime class="form-control inline" size="4"}} mins
         </label>
       </div>
-      <div class="col-md-4 form-group">
+      <div class="col-md-6 form-group">
         <label>
           MTRCB Rating
           {{view "select" content=mtrcbRatings value=mtrcbRating class="form-control"}}
         </label>
       </div>
-      <div class="col-md-4 form-group">
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6 form-group">
         <label>
           Release Date
           {{input type="date" value=isoReleaseDate class="form-control inline form-date-input"}}
+        </label>
+      </div>
+      <div class="col-md-6 form-group">
+        <strong>Visibility</strong>
+        <label class="no-bold">          
+          {{input type="checkbox" checked=isHidden class="form-control radio"}} 
+          Hide this Movie
         </label>
       </div>
     </div>

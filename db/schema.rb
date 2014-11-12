@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109231616) do
+ActiveRecord::Schema.define(version: 20141112081215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20141109231616) do
     t.date     "release_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_hidden",       default: false
   end
 
   add_index "movies", ["slug"], name: "index_movies_on_slug", unique: true, using: :btree

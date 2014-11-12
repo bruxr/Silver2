@@ -129,6 +129,10 @@ a:hover {
 label {
   display: block;
   
+  &.no-bold {
+    font-weight: normal;
+  }
+  
   .form-control {
     margin-top: 5px;
   }
@@ -143,6 +147,14 @@ label {
   
   &.inline {
     display: inline-block;
+    width: auto;
+  }
+  
+  &.radio {
+    display: inline-block;
+    height: auto;
+    margin-right: 10px;
+    margin-top: 10px;
     width: auto;
   }
 }
