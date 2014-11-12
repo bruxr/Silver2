@@ -432,7 +432,7 @@ label {
     top: 410px;
   }
   
-  .paper-actions .btn {
+  .paper-actions .btn:not([data-toggle=dropdown]) {
     min-width: 100px;
   }
   
@@ -492,6 +492,15 @@ label {
     position: absolute;
     right: 30px;
     top: 50px;
+  }
+  
+  .alert {
+    border-radius: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
   }
 }
 
@@ -601,14 +610,8 @@ label {
   margin-top: 5px;
 }
 
-.movie-edit-btn-box {
-  position: absolute;
-  right: 0;
-  top: 0;
-  
-  .dropdown-menu {
-    left: -56px;
-  }
+.movie-edit-btn-box .dropdown-menu {
+    left: -31px;
 }
 
 .movie-edit {
