@@ -27,7 +27,7 @@ Backstage.MovieController = Ember.ObjectController.extend({
     
     edit: function() {
       this.set('isEditing', true);
-      $('.movie-popover').animate({scrollTop: 0}, 'fast');
+      $('.movie.paper').animate({scrollTop: 0}, 'fast');
     },
     
     doneEditing: function() {
