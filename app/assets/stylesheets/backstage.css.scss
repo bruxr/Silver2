@@ -432,7 +432,14 @@ label {
   
   header {
     margin-bottom: 45px;
-    padding: 45px 30px 0 30px;
+    padding: 45px 175px 0 30px;
+  }
+  
+  header h2,
+  header h5 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   
   header h2 {
