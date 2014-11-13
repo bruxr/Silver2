@@ -18,7 +18,7 @@ module Scheduler::Schedulable
   # - "every day strings" like "6:00 every day" or "every day"
   def next_run
     if @every.instance_of?(String)
-      if @every == 'every day' || @every == 'everyday'
+      if @every == 'every day' || @every == 'everyday' || @every == 'midnight'
         every = '0:00 today'
       else
         every = @every.gsub('every day', 'today')

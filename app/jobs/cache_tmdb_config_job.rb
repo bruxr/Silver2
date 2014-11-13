@@ -4,7 +4,7 @@ class CacheTmdbConfigJob
   include Sidekiq::Worker
   extend Scheduler::Schedulable
 
-  every 1.day
+  every 'midnight'
 
   def perform
 
