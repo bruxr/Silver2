@@ -709,6 +709,48 @@ label {
   }
 }
 
+.movie-media {
+  
+  .movie-media-box {
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .movie-media-box.movie-poster {
+    width: 137px;
+  }
+  
+  .movie-media-box img {
+    display: block;
+    height: 205px;
+  }
+  
+  .movie-media-replace {
+    background: rgba(black, 0.75);
+    color: #fff;
+    font-size: 32px;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    padding-top: 80px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    @include transition(opacity 300ms ease-out);
+  }
+  
+  .movie-media-replace:hover {
+    opacity: 1;
+  }
+  
+  .movie-media-popout {
+    color: #999;
+    margin-left: 5px;
+  }
+  
+}
+
 .movie-schedules {
   
   .table {

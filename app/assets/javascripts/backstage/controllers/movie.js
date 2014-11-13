@@ -33,7 +33,11 @@ Backstage.MovieController = Ember.ObjectController.extend({
     doneEditing: function() {
       var self = this;
       this.get('model').save().then(function() {
-        self.set('isEditing', false);
+        $.when($('.movie-media-replace.movie-poster').mirror('upload'),
+          $('.movie-media-replace.movie-backdrop').mirror('upload')
+        ).done(function() {
+          self.set('isEditing', false);
+        });
       });
     },
     

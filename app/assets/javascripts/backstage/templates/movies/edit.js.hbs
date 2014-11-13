@@ -78,6 +78,31 @@
     </div>
     
   </section>
+  
+  <section>
+    
+    <h3>Media</h3>
+    
+    <div class="row">
+      <div class="col-md-4 movie-media">
+        <div class="movie-media-box movie-poster">
+          <a href="#" class="movie-media-replace" data-mirror-to=".movie-poster-img" data-media-type="poster"><i class="fa fa-upload"></i></a>
+          <img {{bind-attr src=posterUrl}} class="movie-poster-img">
+        </div>
+        <h6 class="align-center">Poster
+          <a {{bind-attr href=posterUrl}} target="_blank" class="movie-media-popout"><i class="fa fa-external-link"></i></a></h6>
+      </div>
+      <div class="col-md-8 movie-media">
+        <div class="movie-media-box movie-backdrop">
+          <a href="#" class="movie-media-replace" data-mirror-to=".movie-backdrop-img" data-media-type="backdrop"><i class="fa fa-upload"></i></a>
+          <img {{bind-attr src=backdropUrl}} class="movie-backdrop-img">
+        </div>
+        <h6 class="align-center">Backdrop
+          <a {{bind-attr href=posterUrl}} target="_blank" class="movie-media-popout"><i class="fa fa-external-link"></i></a></h6>
+      </div>
+    </div>
+    
+  </section>
 
   <section>
   
@@ -115,7 +140,7 @@
   </section>
 
   <section>
-    <button {{action 'doneEditing'}} class="btn btn-primary btn-block">Save Changes</button>
+    <button {{action 'doneEditing'}} class="btn btn-primary btn-block save-changes">Save Changes</button>
   </section>
   
 </div>

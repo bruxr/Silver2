@@ -7,6 +7,7 @@
 //= require ember-animate/ember-animate
 //= require velocity
 //= require moment
+//= require ./mirror
 //= require ./backstage/app
 //= require ./backstage/utils
 //= require ./backstage/router
