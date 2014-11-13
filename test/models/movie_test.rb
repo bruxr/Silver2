@@ -83,5 +83,21 @@ class MovieTest < ActiveSupport::TestCase
     movie.schedules << Schedule.new(cinema_id: Cinema.first.id, screening_time: Time.now + 1.day, format: '2D', room: 'Cinema 9')
     assert_equal(1, movie.cinema_count(:upcoming))
   end
+  
+  test 'should be able to find movie images' do
+    VCR.use_cassette('movies/find_image') do
+      result = Movie.image_search('Moron 5.2', 'poster')
+      assert_not_nil(result)
+    end
+  end
+  
+  test 'should be able to find movie poster for unknown movies' do
+    VCR.use_cassette('movie/find_poster') do
+      m = Movie.new
+      m.title = "Devil's Pact"
+      m.find_poster!
+      assert_not_nil(m.poster)
+    end
+  end
 
 end

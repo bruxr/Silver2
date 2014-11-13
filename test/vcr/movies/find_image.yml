@@ -1,0 +1,287 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/customsearch/v1?cx=015038105167316597506:a4dt9shmeqy&imgSize=large&key=AIzaSyAfz3-gAZaNXsiUQqULkj4H8rKC9Z-SfeE&q=Moron%205.2%20poster%202014&safe=medium&searchType=image
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 13 Nov 2014 09:25:08 GMT
+      Date:
+      - Thu, 13 Nov 2014 09:25:08 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"icPN-8KDcAv-Pjt5sLxyRDyuN-0/gbKfSWpv0guGaLdINO9Qd3oSK-g"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '10861'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "customsearch#search",
+         "url": {
+          "type": "application/json",
+          "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&cref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+         },
+         "queries": {
+          "nextPage": [
+           {
+            "title": "Google Custom Search - Moron 5.2 poster 2014",
+            "totalResults": "35400",
+            "searchTerms": "Moron 5.2 poster 2014",
+            "count": 10,
+            "startIndex": 11,
+            "inputEncoding": "utf8",
+            "outputEncoding": "utf8",
+            "safe": "medium",
+            "cx": "015038105167316597506:a4dt9shmeqy",
+            "searchType": "image",
+            "imgSize": "large"
+           }
+          ],
+          "request": [
+           {
+            "title": "Google Custom Search - Moron 5.2 poster 2014",
+            "totalResults": "35400",
+            "searchTerms": "Moron 5.2 poster 2014",
+            "count": 10,
+            "startIndex": 1,
+            "inputEncoding": "utf8",
+            "outputEncoding": "utf8",
+            "safe": "medium",
+            "cx": "015038105167316597506:a4dt9shmeqy",
+            "searchType": "image",
+            "imgSize": "large"
+           }
+          ]
+         },
+         "context": {
+          "title": "Silver CSE"
+         },
+         "searchInformation": {
+          "searchTime": 0.261918,
+          "formattedSearchTime": "0.26",
+          "totalResults": "35400",
+          "formattedTotalResults": "35,400"
+         },
+         "items": [
+          {
+           "kind": "customsearch#result",
+           "title": "Moron 5 and the Crying Lady - Wikipedia, the free encyclopedia",
+           "htmlTitle": "\u003cb\u003eMoron\u003c/b\u003e 5 and the Crying Lady - Wikipedia, the free encyclopedia",
+           "link": "http://upload.wikimedia.org/wikipedia/en/e/ed/Moron_5_and_the_Crying_Lady.jpg",
+           "displayLink": "en.wikipedia.org",
+           "snippet": "Moron 5 and the Crying Lady.",
+           "htmlSnippet": "\u003cb\u003eMoron\u003c/b\u003e 5 and the Crying Lady.",
+           "mime": "image/jpeg",
+           "image": {
+            "contextLink": "http://en.wikipedia.org/wiki/Moron_5_and_the_Crying_Lady",
+            "height": 720,
+            "width": 499,
+            "byteSize": 130532,
+            "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2ONlW7QGhpzcYOss41DgUtlLyYmmV8ewRJI0FKwg-Be87_D1U6EaPbA",
+            "thumbnailHeight": 140,
+            "thumbnailWidth": 97
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "Photos and videos by Solid Matteo fans (@SolidMFGFans) | Twitter",
+           "htmlTitle": "Photos and videos by Solid Matteo fans (@SolidMFGFans) | Twitter",
+           "link": "https://pbs.twimg.com/media/ByBuvjVCYAAyCMK.jpg:large",
+           "displayLink": "twitter.com",
+           "snippet": "Embedded image permalink",
+           "htmlSnippet": "Embedded image permalink",
+           "mime": "image/",
+           "fileFormat": "Image Document",
+           "image": {
+            "contextLink": "https://twitter.com/SolidMFGFans/media",
+            "height": 629,
+            "width": 465,
+            "byteSize": 66266,
+            "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaeSp8Zj4T58gj7TVfIjQj_mhV2871LOXV8gZaGVWMyybzfIg-S4hX1Q",
+            "thumbnailHeight": 137,
+            "thumbnailWidth": 101
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "Successful 'Moron 5.2' Premiere Night Had The Audience Laughing ...",
+           "htmlTitle": "Successful &#39;\u003cb\u003eMoron 5.2\u003c/b\u003e&#39; Premiere Night Had The Audience Laughing \u003cb\u003e...\u003c/b\u003e",
+           "link": "http://3.bp.blogspot.com/-YPWeE7xLTnU/VFhljASEqRI/AAAAAAAAHrY/zAh4bwlTLto/s1600/Moron%2B5.2%2Bposter%2B(mario).png",
+           "displayLink": "www.showbiz-portal.com",
+           "snippet": "Successful 'Moron 5.2'",
+           "htmlSnippet": "Successful &#39;\u003cb\u003eMoron 5.2\u003c/b\u003e&#39;",
+           "mime": "image/png",
+           "fileFormat": "Image Document",
+           "image": {
+            "contextLink": "http://www.showbiz-portal.com/2014/11/successful-moron-52-premiere-night-had.html",
+            "height": 640,
+            "width": 640,
+            "byteSize": 728628,
+            "thumbnailLink": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSxIdUk6sxbWx5uYT7_zv6Bktl6jbmoAwnEZq4ub5JhDsbv1E3oW2a_knyZ",
+            "thumbnailHeight": 137,
+            "thumbnailWidth": 137
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "hqdefault.jpg",
+           "htmlTitle": "hqdefault.jpg",
+           "link": "http://i.ytimg.com/vi/VSjKXY8o_u4/hqdefault.jpg",
+           "displayLink": "www.youtube.com",
+           "snippet": "hqdefault.jpg",
+           "htmlSnippet": "hqdefault.jpg",
+           "mime": "image/jpeg",
+           "image": {
+            "contextLink": "http://www.youtube.com/watch?v=VSjKXY8o_u4",
+            "height": 360,
+            "width": 480,
+            "byteSize": 20103,
+            "thumbnailLink": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQvfXsegqKmPSr0t3UTyqBT7sxzLb-tbzr6WLZUgDjq9lC7ZOi6FZb-2lqB",
+            "thumbnailHeight": 97,
+            "thumbnailWidth": 129
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "10665703_857056000974292_ ...",
+           "htmlTitle": "10665703_857056000974292_ ...",
+           "link": "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/p350x350/10665703_857056000974292_7033135245076942649_n.jpg?oh=f9ffad0b56ab15ed8fd4cf389b17fb0f&oe=54D83777&__gda__=1424332197_de0ac769812d3ee7dd58f7e7200f5b40",
+           "displayLink": "www.facebook.com",
+           "snippet": "10665703_857056000974292_ ...",
+           "htmlSnippet": "10665703_857056000974292_ ...",
+           "mime": "image/jpeg",
+           "image": {
+            "contextLink": "https://www.facebook.com/vivaportal?fref=photo&filter=1",
+            "height": 525,
+            "width": 350,
+            "byteSize": 43781,
+            "thumbnailLink": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQA1Eqn_7-veXsoGXyXSiI9tW7YAdVrGUODGX1FePxRDXCe8bZ3MlwAsuHv",
+            "thumbnailHeight": 132,
+            "thumbnailWidth": 88
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "Movies playing this week: 'Interstellar,' 'Moron 5.2,' and more",
+           "htmlTitle": "Movies playing this week: &#39;Interstellar,&#39; &#39;\u003cb\u003eMoron 5.2\u003c/b\u003e,&#39; and more",
+           "link": "http://assets.rappler.com/612F469A6EA84F6BAE882D2B94A4B421/img/9D227852ABB44AAE9B6BD774C7047705/movies-playing-this-week-interstellar-201411105.jpg",
+           "displayLink": "www.rappler.com",
+           "snippet": "INTERSTELLAR.",
+           "htmlSnippet": "INTERSTELLAR.",
+           "mime": "image/jpeg",
+           "image": {
+            "contextLink": "http://www.rappler.com/entertainment/movies/74068-movies-playing-this-week-interstellar-moron",
+            "height": 360,
+            "width": 640,
+            "byteSize": 133088,
+            "thumbnailLink": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSlFf0eFo4tFnAlG0eUiCF5Bgt-Hxy-6V6U87rZx8p5Gtk4OltG9mR1qys",
+            "thumbnailHeight": 77,
+            "thumbnailWidth": 137
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "Syowing: Warcraft Teaser Posters Unveiled; UPDATE: Characters ...",
+           "htmlTitle": "Syowing: Warcraft Teaser \u003cb\u003ePosters\u003c/b\u003e Unveiled; UPDATE: Characters \u003cb\u003e...\u003c/b\u003e",
+           "link": "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/s720x720/559632_315345858541223_146884617_n.jpg?oh=1705b1f48f1906bd876fca4c6e37e4fe&oe=54F211A8&__gda__=1425143765_86793a3419dc32f58252d444c145c75f",
+           "displayLink": "syowing.blogspot.com",
+           "snippet": "Ouija (2014) | Moron 5.2",
+           "htmlSnippet": "Ouija (\u003cb\u003e2014\u003c/b\u003e) | \u003cb\u003eMoron 5.2\u003c/b\u003e",
+           "mime": "image/jpeg",
+           "image": {
+            "contextLink": "http://syowing.blogspot.com/2014/11/warcraft-teaser-posters-unveiled.html",
+            "height": 720,
+            "width": 455,
+            "byteSize": 107378,
+            "thumbnailLink": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQaMuDoG22zGy4VSyfFz_9VzbYV853t5QtCGzgz_q7j1Btv4thNJ_8dZTw",
+            "thumbnailHeight": 140,
+            "thumbnailWidth": 88
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "Previous Articles",
+           "htmlTitle": "Previous Articles",
+           "link": "http://assets.rappler.com/612F469A6EA84F6BAE882D2B94A4B421/img/0A3E2268008D431DB7405BD9D5B37B2D/moron-5-002_0A3E2268008D431DB7405BD9D5B37B2D.jpg",
+           "displayLink": "www.rappler.com",
+           "snippet": "'Moron 5.2' Review: Careless",
+           "htmlSnippet": "&#39;\u003cb\u003eMoron 5.2\u003c/b\u003e&#39; Review: Careless",
+           "mime": "image/jpeg",
+           "image": {
+            "contextLink": "http://www.rappler.com/previous-articles?filterCategory=55",
+            "height": 360,
+            "width": 640,
+            "byteSize": 151439,
+            "thumbnailLink": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTkrjQpeTuXmLDzP7bBK6pAvE-I9fiEJ53JRL7WgUr_GMvCIEzdRpkMfLDA",
+            "thumbnailHeight": 77,
+            "thumbnailWidth": 137
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "Viva Entertainment, Inc. | Facebook",
+           "htmlTitle": "Viva Entertainment, Inc. | Facebook",
+           "link": "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/s851x315/10409120_865210886825470_8345946383241270703_n.jpg?oh=58bb914699938d37f7aa8cc4e9f71bbe&oe=54DAFBAD&__gda__=1423915083_efa667bbd97ceb86b2de9fb93971f375",
+           "displayLink": "tl-ph.facebook.com",
+           "snippet": "MORON 5.2 The Transformation.",
+           "htmlSnippet": "\u003cb\u003eMORON 5.2\u003c/b\u003e The Transformation.",
+           "mime": "image/jpeg",
+           "image": {
+            "contextLink": "https://tl-ph.facebook.com/vivaportal?_ft_=src.9%3Asty.17%3Aactrs.167516826617439%3Apub_time.1309090092%3Afbid.178305862230382%3As_obj.5%3As_edge.1%3As_prnt.28%3Aft_story_name.StreamStoryCreateGeneric_ShareStreamContent_External_Other%3Aobject_id.10150091206362801%3Aobject_timeline_token_map.Array%3Apage_post_create_time.1309090092%3Apage_id.167516826617439%3Ainterface.m_basic&filter=3",
+            "height": 315,
+            "width": 525,
+            "byteSize": 46177,
+            "thumbnailLink": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTrdKPCOwSJLcgDyHp5rzTpd-jTaLKbHLNFO39WW4bKNPlgTWVJspZyb_aG",
+            "thumbnailHeight": 79,
+            "thumbnailWidth": 132
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "VIVA Films | Facebook",
+           "htmlTitle": "VIVA Films | Facebook",
+           "link": "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/p526x296/10636097_875866025759956_1587617246835374763_n.jpg?oh=0ede10c122fc95f584d963754420ed28&oe=551FA2A1&__gda__=1423769087_dfe18bd02d7784d040ff30710cc363b1",
+           "displayLink": "tl-ph.facebook.com",
+           "snippet": "Moron 5.2 The Transformation",
+           "htmlSnippet": "\u003cb\u003eMoron 5.2\u003c/b\u003e The Transformation",
+           "mime": "image/jpeg",
+           "image": {
+            "contextLink": "https://tl-ph.facebook.com/VIVAFilms",
+            "height": 344,
+            "width": 526,
+            "byteSize": 49276,
+            "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTCi3_8rJtgd2KyBY445dl2vD1J184MZ15byixvRoDR1Rq7R3P4HdDFzM",
+            "thumbnailHeight": 86,
+            "thumbnailWidth": 132
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Thu, 13 Nov 2014 09:25:08 GMT
+recorded_with: VCR 2.9.3

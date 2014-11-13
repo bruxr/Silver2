@@ -130,6 +130,54 @@ class Movie < ActiveRecord::Base
     
   end
   
+  # Searches the interwebs for a suitable movie poster or backdrop.
+  # type can either be 'poster' or 'backdrop'.
+  def self.image_search(title, type, year = Date.today.year)
+    
+    params = {
+      searchType: 'image',
+      safe: 'medium',
+      imgSize: 'large'
+    }
+    
+    resp = Google.new.search("#{title} #{type} #{year}", params)
+    
+    if resp['queries']['request'].first['count'].to_i == 0
+      Rails.logger.warn("Movie - Failed to find a movie #{type} for \"#{title}\.")
+      return nil
+    end
+    
+    result = nil
+    resp['items'].each do |i|
+      if type == 'poster'
+        if i['image']['height'] > i['image']['width']
+          Rails.logger.info("Movie - Using movie poster from i['image']['contextLink'] for #{title}.")
+          result = i['link']
+          break
+        end
+      elsif type == 'backdrop'
+        if i['image']['width'] > i['images']['height']
+          Rails.logger.info("Movie - Using movie backdrop from i['image']['contextLink'] for #{title}.")
+          result = i['items']['link']
+          break
+        end
+      end
+    end
+    
+    result
+    
+  end
+  
+  def self.find_poster_for(title)
+    url = self.image_search(title, 'poster')
+    Yoyo.download(url).upload_using! PosterUploader
+  end
+  
+  def self.find_backdrop_for(title)
+    url = self.image_search(title, 'poster')
+    Yoyo.download(url).upload_using! BackdropUploader
+  end
+  
   # Searches for this movie's sources.
   def find_sources!
     
@@ -166,6 +214,9 @@ class Movie < ActiveRecord::Base
     whitelist.each do |detail|
       self.send("#{detail}=", result[detail])
     end
+    
+    self.find_poster! if self.poster.nil?
+    self.find_backdrop! if self.backdrop.nil?
     
     unless result['genre'].blank?
       result['genre'].each do |g|
@@ -266,6 +317,12 @@ class Movie < ActiveRecord::Base
 
     self.aggregate_score = total / divisor if divisor > 0
 
+  end
+  
+  # Searches for a movie poster using Google and then
+  # sets it as the movie's current poster.
+  def find_poster!
+    self.poster = self.class.find_poster_for(self.title)
   end
 
   # Marks the movie as ready if it contains complete
