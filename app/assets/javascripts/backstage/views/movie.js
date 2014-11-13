@@ -1,6 +1,6 @@
 Backstage.MovieView = Ember.View.extend({
   name: 'movie',
-  templateName: 'movie/index',
+  templateName: 'movie',
   uploadersReady: false,
   isEditing: Ember.computed.alias('controller.isEditing'),
   
