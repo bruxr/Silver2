@@ -153,14 +153,14 @@ class Movie < ActiveRecord::Base
     resp['items'].each do |i|
       ext = File.extname(i['link'])
       if type == 'poster'
-          Rails.logger.info("Movie - Using movie poster from i['image']['contextLink'] for #{title}.")
         if i['image']['height'] > i['image']['width'] && allowed_types.include?(ext)
+          Rails.logger.info("Movie - Using movie poster %s for \"%s.\"" % [i['link'], title])
           result = i['link']
           break
         end
       elsif type == 'backdrop'
-          Rails.logger.info("Movie - Using movie backdrop from i['image']['contextLink'] for #{title}.")
         if i['image']['width'] > i['images']['height'] && allowed_types.include?(ext)
+          Rails.logger.info("Movie - Using movie backdrop %s for \"%s.\"" % [i['link'], title])
           result = i['items']['link']
           break
         end
