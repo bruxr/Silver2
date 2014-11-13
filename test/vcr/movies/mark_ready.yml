@@ -1,0 +1,680 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://byroredux-metacritic.p.mashape.com/search/movie
+    body:
+      encoding: UTF-8
+      string: max_pages=1&title=The%20Lord%20of%20the%20Rings%3A%20The%20Return%20of%20the%20King
+    headers:
+      X-Mashape-Key:
+      - Ox9v8xmk50mshP0TW0RpTdnNAQ6Up1FQyZBjsnTgPQUvFh8Pa2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 13 Nov 2014 08:01:11 GMT
+      Expires:
+      - "-1"
+      Pragma:
+      - no-cache
+      Server:
+      - Mashape/5.0.5
+      X-Powered-By:
+      - PleskLin
+      Content-Length:
+      - '568'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"max_pages":"1","count":1,"results":[{"name":"The Lord of the Rings:
+        The Return of the King","score":"94","url":"http:\/\/www.metacritic.com\/movie\/the-lord-of-the-rings-the-return-of-the-king","rlsdate":"2003-12-17","summary":"Sauron''s
+        forces have laid siege to Minas Tirith, the capital of Gondor, in their efforts
+        to eliminate the race of men.  The once-great kingdom, watched over by a fading
+        steward, has never been in...                    ","rating":"PG-13","cast":"Andy
+        Serkis","genre":"Action, Adventure, Fantasy","avguserscore":"9.0","runtime":"201
+        min"}]}'
+    http_version: 
+  recorded_at: Sat, 27 Dec 2003 04:00:01 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?s=The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King&y=2003
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=3600
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - Thu, 13 Nov 2014 09:01:08 GMT
+      Last-Modified:
+      - Thu, 13 Nov 2014 08:01:08 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 13 Nov 2014 08:01:08 GMT
+      Content-Length:
+      - '227'
+    body:
+      encoding: UTF-8
+      string: '{"Search":[{"Title":"The Lord of the Rings: The Return of the King","Year":"2003","imdbID":"tt0167260","Type":"movie"},{"Title":"The
+        Lord of the Rings: The Return of the King","Year":"2003","imdbID":"tt0387360","Type":"game"}]}'
+    http_version: 
+  recorded_at: Sat, 27 Dec 2003 04:00:02 GMT
+- request:
+    method: get
+    uri: http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=dzvhcez774keqnkankf8kt8z&page=1&q=The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Language:
+      - en-US
+      Content-Type:
+      - text/javascript;charset=ISO-8859-1
+      Date:
+      - Thu, 13 Nov 2014 07:50:03 GMT
+      Flx-Build-Date:
+      - '2014-11-11 12:19:33'
+      Flx-Commit:
+      - JOBRELEASE.2014-11-11.11-35-24 71d9305
+      Flx-Server:
+      - web236.flixster.com
+      Rt-Commit:
+      - ede253d
+      Server:
+      - Mashery Proxy
+      Set-Cookie:
+      - JSESSIONID=5C6D8A3659485AD1593D970B74555A1D; Path=/; HttpOnly
+      Vary:
+      - User-Agent,Accept-Encoding
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-67.mashery.com
+      Content-Length:
+      - '3038'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {"total":2,"movies":[{"id":"10156","title":"The Lord of the Rings: The Return of the King","year":2003,"mpaa_rating":"PG-13","runtime":201,"critics_consensus":"","release_dates":{"theater":"2003-12-17","dvd":"2004-05-25"},"ratings":{"critics_rating":"Certified Fresh","critics_score":94,"audience_rating":"Upright","audience_score":86},"synopsis":"","posters":{"thumbnail":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg","profile":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg","detailed":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg","original":"http://content9.flixster.com/movie/11/16/64/11166423_tmb.jpg"},"abridged_cast":[{"name":"Elijah Wood","id":"162652512","characters":["Frodo Baggins"]},{"name":"Ian McKellen","id":"162653241","characters":["Gandalf"]},{"name":"Viggo Mortensen","id":"162654541","characters":["Aragorn"]},{"name":"Sean Astin","id":"162659177","characters":["Samwise Gamgee"]},{"name":"Orlando Bloom","id":"162652240","characters":["Legolas"]}],"alternate_ids":{"imdb":"0167260"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156.json","alternate":"http://www.rottentomatoes.com/m/the_lord_of_the_rings_the_return_of_the_king/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/10156/similar.json"}},{"id":"771307026","title":"The Lord of the Rings: The Return of the King (Extended)","year":2003,"mpaa_rating":"PG-13","runtime":225,"release_dates":{"theater":"2003-12-05"},"ratings":{"critics_score":-1,"audience_rating":"Upright","audience_score":98},"synopsis":"","posters":{"thumbnail":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg","profile":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg","detailed":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg","original":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg"},"abridged_cast":[{"name":"Elijah Wood","id":"162652512"},{"name":"Liv Tyler","id":"162661412"},{"name":"Ian McKellen","id":"162653241"},{"name":"Viggo Mortensen","id":"162654541"},{"name":"Sean Astin","id":"162659177"}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026.json","alternate":"http://www.rottentomatoes.com/m/lord_of_the_rings_the_return_of_the_king_extended/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026/similar.json"}}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=The+Lord+of+the+Rings%3A+The+Return+of+the+King&page_limit=30&page=1"},"link_template":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"}
+    http_version: 
+  recorded_at: Sat, 27 Dec 2003 04:00:03 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=6bcb3eb09fa94f061923cdf517da3677&query=The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King&year=2003
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 13 Nov 2014 08:01:13 GMT
+      Etag:
+      - '"64dcc45935cd0f5a74bf23d766556057"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '3025'
+      X-Memc-Expires:
+      - '7775'
+      X-Memc-Key:
+      - 7030b841ffac43062618f4df08ddde5e
+      Content-Length:
+      - '397'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/8BPZO0Bf8TeAy8znF43z8soK3ys.jpg","id":122,"original_title":"The
+        Lord of the Rings: The Return of the King","release_date":"2003-12-17","poster_path":"/50LoR9gJhbWZ5PpoHgi8MNTYgzd.jpg","popularity":3.45283954245348,"title":"The
+        Lord of the Rings: The Return of the King","vote_average":7.6,"vote_count":3473}],"total_pages":1,"total_results":1}'
+    http_version: 
+  recorded_at: Sat, 27 Dec 2003 04:00:04 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/122?api_key=6bcb3eb09fa94f061923cdf517da3677
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=21600
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 13 Nov 2014 08:01:15 GMT
+      Etag:
+      - '"f5ff80c003decf409b2c0789676c9d4f"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '17693'
+      X-Memc-Expires:
+      - '3907'
+      X-Memc-Key:
+      - 47d1493884ae973483088902ea608d9f
+      Content-Length:
+      - '1330'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"adult":false,"backdrop_path":"/8BPZO0Bf8TeAy8znF43z8soK3ys.jpg","belongs_to_collection":{"id":119,"name":"The
+        Lord of the Rings Collection","poster_path":"/p4UokEk2XnjjRTdXGe6DLYXlbI1.jpg","backdrop_path":"/bccR2CGTWVVSZAG0yqmy3DIvhTX.jpg"},"budget":94000000,"genres":[{"id":28,"name":"Action"},{"id":12,"name":"Adventure"},{"id":14,"name":"Fantasy"}],"homepage":"http://www.lordoftherings.net","id":122,"imdb_id":"tt0167260","original_title":"The
+        Lord of the Rings: The Return of the King","overview":"Aragorn is revealed
+        as the heir to the ancient kings as he, Gandalf and the other members of the
+        broken fellowship struggle to save Gondor from Sauron''s forces. Meanwhile,
+        Frodo and Sam bring the ring closer to the heart of Mordor, the dark lord''s
+        realm.","popularity":3.45283954245348,"poster_path":"/50LoR9gJhbWZ5PpoHgi8MNTYgzd.jpg","production_companies":[{"name":"New
+        Line Cinema","id":12},{"name":"WingNut Films","id":11}],"production_countries":[{"iso_3166_1":"NZ","name":"New
+        Zealand"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2003-12-17","revenue":1118888979,"runtime":201,"spoken_languages":[{"iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        eye of the enemy is moving.","title":"The Lord of the Rings: The Return of
+        the King","vote_average":7.6,"vote_count":3473}'
+    http_version: 
+  recorded_at: Sat, 27 Dec 2003 04:00:06 GMT
+- request:
+    method: get
+    uri: http://api.rottentomatoes.com/api/public/v1.0/movies/771307026.json?apikey=dzvhcez774keqnkankf8kt8z
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Language:
+      - en-US
+      Content-Type:
+      - text/javascript;charset=ISO-8859-1
+      Date:
+      - Thu, 13 Nov 2014 08:01:16 GMT
+      Flx-Build-Date:
+      - '2014-11-11 12:19:33'
+      Flx-Commit:
+      - JOBRELEASE.2014-11-11.11-35-24 71d9305
+      Flx-Server:
+      - web236.flixster.com
+      Rt-Commit:
+      - ede253d
+      Server:
+      - Mashery Proxy
+      Set-Cookie:
+      - JSESSIONID=BF20715175A3E65015F80F183E577AE9; Path=/; HttpOnly
+      Vary:
+      - User-Agent,Accept-Encoding
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-53.mashery.com
+      Content-Length:
+      - '1380'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {"id":771307026,"title":"The Lord of the Rings: The Return of the King (Extended)","year":2003,"genres":["Drama","Action & Adventure"],"mpaa_rating":"PG-13","runtime":225,"release_dates":{"theater":"2003-12-05"},"ratings":{"critics_score":-1,"audience_rating":"Upright","audience_score":98},"synopsis":"","posters":{"thumbnail":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg","profile":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg","detailed":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg","original":"http://content8.flixster.com/movie/11/16/64/11166446_tmb.jpg"},"abridged_cast":[{"name":"Elijah Wood","id":"162652512"},{"name":"Liv Tyler","id":"162661412"},{"name":"Ian McKellen","id":"162653241"},{"name":"Viggo Mortensen","id":"162654541"},{"name":"Sean Astin","id":"162659177"}],"abridged_directors":[{"name":"Peter Jackson"}],"studio":"New Line Cinema","links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026.json","alternate":"http://www.rottentomatoes.com/m/lord_of_the_rings_the_return_of_the_king_extended/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/771307026/similar.json"}}
+    http_version: 
+  recorded_at: Sat, 27 Dec 2003 04:00:06 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?i=tt0167260
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=1988
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - Thu, 13 Nov 2014 08:34:22 GMT
+      Last-Modified:
+      - Thu, 13 Nov 2014 07:34:22 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 13 Nov 2014 08:01:13 GMT
+      Content-Length:
+      - '897'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"The Lord of the Rings: The Return of the King","Year":"2003","Rated":"PG-13","Released":"17
+        Dec 2003","Runtime":"201 min","Genre":"Action, Adventure, Fantasy","Director":"Peter
+        Jackson","Writer":"J.R.R. Tolkien (novel), Fran Walsh (screenplay), Philippa
+        Boyens (screenplay), Peter Jackson (screenplay)","Actors":"Noel Appleby, Alexandra
+        Astin, Sean Astin, David Aston","Plot":"Gandalf and Aragorn lead the World
+        of Men against Sauron''s army to draw his gaze from Frodo and Sam as they
+        approach Mount Doom with the One Ring.","Language":"English, Quenya, Old English,
+        Sindarin","Country":"USA, New Zealand","Awards":"Won 11 Oscars. Another 154
+        wins & 89 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMjE4MjA1NTAyMV5BMl5BanBnXkFtZTcwNzM1NDQyMQ@@._V1_SX300.jpg","Metascore":"94","imdbRating":"8.9","imdbVotes":"920,866","imdbID":"tt0167260","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Sat, 27 Dec 2003 04:00:07 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=AIzaSyAfz3-gAZaNXsiUQqULkj4H8rKC9Z-SfeE&part=snippet&q=The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King%202003%20trailer&type=video&videoDefinition=high&videoEmbeddable=true&videoSyndicated=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 13 Nov 2014 08:01:18 GMT
+      Date:
+      - Thu, 13 Nov 2014 08:01:18 GMT
+      Cache-Control:
+      - private, max-age=120, must-revalidate, no-transform
+      Etag:
+      - '"VWxPoEGGsFABuqUjd074WYFuSzg/4aCKbbh9EQNdXsRAWKYIovxuAJs"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '4947'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogImtpbmQiOiAieW91dHViZSNzZWFyY2hMaXN0UmVzcG9uc2UiLAogImV0
+        YWciOiAiXCJWV3hQb0VHR3NGQUJ1cVVqZDA3NFdZRnVTemcvNGFDS2JiaDlF
+        UU5kWHNSQVdLWUlvdnh1QUpzXCIiLAogIm5leHRQYWdlVG9rZW4iOiAiQ0FV
+        UUFBIiwKICJwYWdlSW5mbyI6IHsKICAidG90YWxSZXN1bHRzIjogMTM1ODks
+        CiAgInJlc3VsdHNQZXJQYWdlIjogNQogfSwKICJpdGVtcyI6IFsKICB7CiAg
+        ICJraW5kIjogInlvdXR1YmUjc2VhcmNoUmVzdWx0IiwKICAgImV0YWciOiAi
+        XCJWV3hQb0VHR3NGQUJ1cVVqZDA3NFdZRnVTemcvcWJHMkQzMUJoYnpPOV9X
+        SzBNUmtyanRJTlpZXCIiLAogICAiaWQiOiB7CiAgICAia2luZCI6ICJ5b3V0
+        dWJlI3ZpZGVvIiwKICAgICJ2aWRlb0lkIjogInI1WC1oRmY2QndvIgogICB9
+        LAogICAic25pcHBldCI6IHsKICAgICJwdWJsaXNoZWRBdCI6ICIyMDExLTA5
+        LTAyVDE2OjIzOjI2LjAwMFoiLAogICAgImNoYW5uZWxJZCI6ICJVQzNnTm1U
+        R3UtVFRiRlBwZlNzNWtOa2ciLAogICAgInRpdGxlIjogIlRoZSBMb3JkIG9m
+        IHRoZSBSaW5nczogVGhlIFJldHVybiBvZiB0aGUgS2luZyBPZmZpY2lhbCBU
+        cmFpbGVyICMxIC0gKDIwMDMpIEhEIiwKICAgICJkZXNjcmlwdGlvbiI6ICJM
+        T1RSOiBUaGUgUmV0dXJuIG9mIHRoZSBLaW5nIE1vdmllIFRyYWlsZXIgLSB3
+        YXRjaCBhbGwgY2xpcHMgaHR0cDovL2oubXAveTUwY0lPIGNsaWNrIHRvIHN1
+        YnNjcmliZSBodHRwOi8vai5tcC9zTkRVczUgVGhlIGZvcm1lciBGZWxsb3dz
+        aGlwIG9mIHRoZSBSaW5nIHByZXBhLi4uIiwKICAgICJ0aHVtYm5haWxzIjog
+        ewogICAgICJkZWZhdWx0IjogewogICAgICAidXJsIjogImh0dHBzOi8vaS55
+        dGltZy5jb20vdmkvcjVYLWhGZjZCd28vZGVmYXVsdC5qcGciCiAgICAgfSwK
+        ICAgICAibWVkaXVtIjogewogICAgICAidXJsIjogImh0dHBzOi8vaS55dGlt
+        Zy5jb20vdmkvcjVYLWhGZjZCd28vbXFkZWZhdWx0LmpwZyIKICAgICB9LAog
+        ICAgICJoaWdoIjogewogICAgICAidXJsIjogImh0dHBzOi8vaS55dGltZy5j
+        b20vdmkvcjVYLWhGZjZCd28vaHFkZWZhdWx0LmpwZyIKICAgICB9CiAgICB9
+        LAogICAgImNoYW5uZWxUaXRsZSI6ICJtb3ZpZWNsaXBzIiwKICAgICJsaXZl
+        QnJvYWRjYXN0Q29udGVudCI6ICJub25lIgogICB9CiAgfSwKICB7CiAgICJr
+        aW5kIjogInlvdXR1YmUjc2VhcmNoUmVzdWx0IiwKICAgImV0YWciOiAiXCJW
+        V3hQb0VHR3NGQUJ1cVVqZDA3NFdZRnVTemcvdHBYMFgtVEUwVlNRSGl5NHp4
+        NFFSR1E4QVdvXCIiLAogICAiaWQiOiB7CiAgICAia2luZCI6ICJ5b3V0dWJl
+        I3ZpZGVvIiwKICAgICJ2aWRlb0lkIjogInkycllSdThVVzhNIgogICB9LAog
+        ICAic25pcHBldCI6IHsKICAgICJwdWJsaXNoZWRBdCI6ICIyMDE0LTA1LTE1
+        VDAzOjU4OjU4LjAwMFoiLAogICAgImNoYW5uZWxJZCI6ICJVQ1RDakZGb1gx
+        dW4tajduaTRCNkhKM1EiLAogICAgInRpdGxlIjogIlRoZSBMb3JkIG9mIHRo
+        ZSBSaW5nczogVGhlIFJldHVybiBvZiB0aGUgS2luZyAoMjAwMykgT2ZmaWNp
+        YWwgVHJhaWxlciAtIFNlYW4gQXN0aW4gTW92aWUgSEQiLAogICAgImRlc2Ny
+        aXB0aW9uIjogIlN1YnNjcmliZSB0byBUUkFJTEVSUzogaHR0cDovL2JpdC5s
+        eS9zeGF3NmggU3Vic2NyaWJlIHRvIENPTUlORyBTT09OOiBodHRwOi8vYml0
+        Lmx5L0gydlpVbiBTdWJzY3JpYmUgdG8gQ0xBU1NJQyBUUkFJTEVSUzogaHR0
+        cDovL2JpdC5seS8xN3p2SlBwIExpa2UgdXMgb24gLi4uIiwKICAgICJ0aHVt
+        Ym5haWxzIjogewogICAgICJkZWZhdWx0IjogewogICAgICAidXJsIjogImh0
+        dHBzOi8vaS55dGltZy5jb20vdmkveTJyWVJ1OFVXOE0vZGVmYXVsdC5qcGci
+        CiAgICAgfSwKICAgICAibWVkaXVtIjogewogICAgICAidXJsIjogImh0dHBz
+        Oi8vaS55dGltZy5jb20vdmkveTJyWVJ1OFVXOE0vbXFkZWZhdWx0LmpwZyIK
+        ICAgICB9LAogICAgICJoaWdoIjogewogICAgICAidXJsIjogImh0dHBzOi8v
+        aS55dGltZy5jb20vdmkveTJyWVJ1OFVXOE0vaHFkZWZhdWx0LmpwZyIKICAg
+        ICB9CiAgICB9LAogICAgImNoYW5uZWxUaXRsZSI6ICJvbGRob2xseXdvb2R0
+        cmFpbGVycyIsCiAgICAibGl2ZUJyb2FkY2FzdENvbnRlbnQiOiAibm9uZSIK
+        ICAgfQogIH0sCiAgewogICAia2luZCI6ICJ5b3V0dWJlI3NlYXJjaFJlc3Vs
+        dCIsCiAgICJldGFnIjogIlwiVld4UG9FR0dzRkFCdXFVamQwNzRXWUZ1U3pn
+        L2VQYU5EWHdYWVFPeTFRbjZ2bjA3d19oeWE4d1wiIiwKICAgImlkIjogewog
+        ICAgImtpbmQiOiAieW91dHViZSN2aWRlbyIsCiAgICAidmlkZW9JZCI6ICJj
+        bzlTTmZKTkROOCIKICAgfSwKICAgInNuaXBwZXQiOiB7CiAgICAicHVibGlz
+        aGVkQXQiOiAiMjAxMS0wOS0wMlQxNjowMToxMi4wMDBaIiwKICAgICJjaGFu
+        bmVsSWQiOiAiVUMzZ05tVEd1LVRUYkZQcGZTczVrTmtnIiwKICAgICJ0aXRs
+        ZSI6ICJUaGUgTG9yZCBvZiB0aGUgUmluZ3M6IFRoZSBSZXR1cm4gb2YgdGhl
+        IEtpbmcgT2ZmaWNpYWwgVGVhc2VyICMxIC0gKDIwMDMpIEhEIiwKICAgICJk
+        ZXNjcmlwdGlvbiI6ICJMT1RSOiBUaGUgUmV0dXJuIG9mIHRoZSBLaW5nIE1v
+        dmllIFRyYWlsZXIgLSB3YXRjaCBhbGwgY2xpcHMgaHR0cDovL2oubXAveTUw
+        Y0lPIGNsaWNrIHRvIHN1YnNjcmliZSBodHRwOi8vai5tcC9zTkRVczUgVGhl
+        IGZvcm1lciBGZWxsb3dzaGlwIG9mIHRoZSBSaW5nIHByZXBhLi4uIiwKICAg
+        ICJ0aHVtYm5haWxzIjogewogICAgICJkZWZhdWx0IjogewogICAgICAidXJs
+        IjogImh0dHBzOi8vaS55dGltZy5jb20vdmkvY285U05mSk5ETjgvZGVmYXVs
+        dC5qcGciCiAgICAgfSwKICAgICAibWVkaXVtIjogewogICAgICAidXJsIjog
+        Imh0dHBzOi8vaS55dGltZy5jb20vdmkvY285U05mSk5ETjgvbXFkZWZhdWx0
+        LmpwZyIKICAgICB9LAogICAgICJoaWdoIjogewogICAgICAidXJsIjogImh0
+        dHBzOi8vaS55dGltZy5jb20vdmkvY285U05mSk5ETjgvaHFkZWZhdWx0Lmpw
+        ZyIKICAgICB9CiAgICB9LAogICAgImNoYW5uZWxUaXRsZSI6ICJtb3ZpZWNs
+        aXBzIiwKICAgICJsaXZlQnJvYWRjYXN0Q29udGVudCI6ICJub25lIgogICB9
+        CiAgfSwKICB7CiAgICJraW5kIjogInlvdXR1YmUjc2VhcmNoUmVzdWx0IiwK
+        ICAgImV0YWciOiAiXCJWV3hQb0VHR3NGQUJ1cVVqZDA3NFdZRnVTemcvS1VQ
+        NVZEbVo3dDY2a1Z3S3VxYnVrZWNpSFZJXCIiLAogICAiaWQiOiB7CiAgICAi
+        a2luZCI6ICJ5b3V0dWJlI3ZpZGVvIiwKICAgICJ2aWRlb0lkIjogIkREWHhZ
+        SFN6bFFvIgogICB9LAogICAic25pcHBldCI6IHsKICAgICJwdWJsaXNoZWRB
+        dCI6ICIyMDEzLTA3LTI1VDA3OjM1OjIwLjAwMFoiLAogICAgImNoYW5uZWxJ
+        ZCI6ICJVQ2gyZENQU08yY0JZaTRxZGs4eVdsc1EiLAogICAgInRpdGxlIjog
+        IlRoZSBMb3JkIG9mIHRoZSBSaW5nczogVGhlIFJldHVybiBvZiB0aGUgS2lu
+        ZyBUcmFpbGVyICgyMDAzKSBIRCIsCiAgICAiZGVzY3JpcHRpb24iOiAiTW9y
+        ZSBZb3VUdWJlIENsaXBzIGh0dHA6Ly9nb28uZ2wvcjJuT0lBIFRoYW5rcyBm
+        b3Igd2F0Y2hpbmcgdGhlIHZpZGVvIGFuZCBsZWF2aW5nIGEgY29tbWVudO+8
+        gSBUaGUgTG9yZCBvZiB0aGUgUmluZ3M6IFRoZSBSZXR1cm4gb2YgdGhlIEtp
+        bmcgVHJhaWxlciAoMjAwMykgLi4uIiwKICAgICJ0aHVtYm5haWxzIjogewog
+        ICAgICJkZWZhdWx0IjogewogICAgICAidXJsIjogImh0dHBzOi8vaS55dGlt
+        Zy5jb20vdmkvRERYeFlIU3psUW8vZGVmYXVsdC5qcGciCiAgICAgfSwKICAg
+        ICAibWVkaXVtIjogewogICAgICAidXJsIjogImh0dHBzOi8vaS55dGltZy5j
+        b20vdmkvRERYeFlIU3psUW8vbXFkZWZhdWx0LmpwZyIKICAgICB9LAogICAg
+        ICJoaWdoIjogewogICAgICAidXJsIjogImh0dHBzOi8vaS55dGltZy5jb20v
+        dmkvRERYeFlIU3psUW8vaHFkZWZhdWx0LmpwZyIKICAgICB9CiAgICB9LAog
+        ICAgImNoYW5uZWxUaXRsZSI6ICJDbGlwc3pvb24iLAogICAgImxpdmVCcm9h
+        ZGNhc3RDb250ZW50IjogIm5vbmUiCiAgIH0KICB9LAogIHsKICAgImtpbmQi
+        OiAieW91dHViZSNzZWFyY2hSZXN1bHQiLAogICAiZXRhZyI6ICJcIlZXeFBv
+        RUdHc0ZBQnVxVWpkMDc0V1lGdVN6Zy9Cc045OU9wUFZtV1ZzMDB3dWUxVmdj
+        cjFabXNcIiIsCiAgICJpZCI6IHsKICAgICJraW5kIjogInlvdXR1YmUjdmlk
+        ZW8iLAogICAgInZpZGVvSWQiOiAiR2hGMDYwVm1TMWciCiAgIH0sCiAgICJz
+        bmlwcGV0IjogewogICAgInB1Ymxpc2hlZEF0IjogIjIwMTEtMDUtMjlUMTg6
+        NDc6MDcuMDAwWiIsCiAgICAiY2hhbm5lbElkIjogIlVDM2dObVRHdS1UVGJG
+        UHBmU3M1a05rZyIsCiAgICAidGl0bGUiOiAiVGhlIExvcmQgb2YgdGhlIFJp
+        bmdzOiBUaGUgUmV0dXJuIG9mIHRoZSBLaW5nICgxLzkpIE1vdmllIENMSVAg
+        LSBNeSBQcmVjaW91cyAoMjAwMykgSEQiLAogICAgImRlc2NyaXB0aW9uIjog
+        IkxPVFI6IFRoZSBSZXR1cm4gb2YgdGhlIEtpbmcgTW92aWUgQ2xpcCAtIHdh
+        dGNoIGFsbCBjbGlwcyBodHRwOi8vai5tcC95NTBjSU8gQnV5IE1vdmllOiBo
+        dHRwOi8vai5tcC9yc3Jick8gY2xpY2sgdG8gc3Vic2NyaWJlIGh0dHA6Ly9q
+        Lm1wL3NORFVzNSBHb2xsdW0gKEFuZHkuLi4iLAogICAgInRodW1ibmFpbHMi
+        OiB7CiAgICAgImRlZmF1bHQiOiB7CiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9p
+        Lnl0aW1nLmNvbS92aS9HaEYwNjBWbVMxZy9kZWZhdWx0LmpwZyIKICAgICB9
+        LAogICAgICJtZWRpdW0iOiB7CiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9pLnl0
+        aW1nLmNvbS92aS9HaEYwNjBWbVMxZy9tcWRlZmF1bHQuanBnIgogICAgIH0s
+        CiAgICAgImhpZ2giOiB7CiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9pLnl0aW1n
+        LmNvbS92aS9HaEYwNjBWbVMxZy9ocWRlZmF1bHQuanBnIgogICAgIH0KICAg
+        IH0sCiAgICAiY2hhbm5lbFRpdGxlIjogIm1vdmllY2xpcHMiLAogICAgImxp
+        dmVCcm9hZGNhc3RDb250ZW50IjogIm5vbmUiCiAgIH0KICB9CiBdCn0K
+    http_version: 
+  recorded_at: Sat, 27 Dec 2003 04:00:08 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=AIzaSyAfz3-gAZaNXsiUQqULkj4H8rKC9Z-SfeE&part=snippet&q=The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King%202003%20trailer&type=video&videoDefinition=standard&videoEmbeddable=true&videoSyndicated=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 13 Nov 2014 08:01:19 GMT
+      Date:
+      - Thu, 13 Nov 2014 08:01:19 GMT
+      Cache-Control:
+      - private, max-age=120, must-revalidate, no-transform
+      Etag:
+      - '"VWxPoEGGsFABuqUjd074WYFuSzg/MRl7d_Wevu9j7NmbFvPnY5l05Xw"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '4672'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogImtpbmQiOiAieW91dHViZSNzZWFyY2hMaXN0UmVzcG9uc2UiLAogImV0
+        YWciOiAiXCJWV3hQb0VHR3NGQUJ1cVVqZDA3NFdZRnVTemcvTVJsN2RfV2V2
+        dTlqN05tYkZ2UG5ZNWwwNVh3XCIiLAogIm5leHRQYWdlVG9rZW4iOiAiQ0FV
+        UUFBIiwKICJwYWdlSW5mbyI6IHsKICAidG90YWxSZXN1bHRzIjogMTQxNDMs
+        CiAgInJlc3VsdHNQZXJQYWdlIjogNQogfSwKICJpdGVtcyI6IFsKICB7CiAg
+        ICJraW5kIjogInlvdXR1YmUjc2VhcmNoUmVzdWx0IiwKICAgImV0YWciOiAi
+        XCJWV3hQb0VHR3NGQUJ1cVVqZDA3NFdZRnVTemcvQWdGZnE5SDlSaWF4TW9q
+        QjZibFBVUEt0dWQ4XCIiLAogICAiaWQiOiB7CiAgICAia2luZCI6ICJ5b3V0
+        dWJlI3ZpZGVvIiwKICAgICJ2aWRlb0lkIjogIkJpa3NxeDRJQW1NIgogICB9
+        LAogICAic25pcHBldCI6IHsKICAgICJwdWJsaXNoZWRBdCI6ICIyMDEwLTA3
+        LTExVDE1OjA3OjM5LjAwMFoiLAogICAgImNoYW5uZWxJZCI6ICJVQ1Z5YkVr
+        RWtMdUtjbE1fdVhoOENaU3ciLAogICAgInRpdGxlIjogIkxvcmQgb2YgdGhl
+        IFJpbmdzIFJldHVybiBvZiB0aGUgS2luZyBFMyAyMDAzIFRyYWlsZXIiLAog
+        ICAgImRlc2NyaXB0aW9uIjogIkxvcmQgb2YgdGhlIFJpbmdzIFJldHVybiBv
+        ZiB0aGUgS2luZyBFMyAyMDAzIFRyYWlsZXIgRGV2ZWxvcGVyOiBFQSBSZWxl
+        YXNlOiAxMS81LzIwMDMgR2VucmU6IEFjdGlvbiBQbGF0Zm9ybTogUFMyL1hi
+        b3gvR0MvUEMgUHVibGlzaGVyOiBFQSBGb2xsb3cgLi4uIiwKICAgICJ0aHVt
+        Ym5haWxzIjogewogICAgICJkZWZhdWx0IjogewogICAgICAidXJsIjogImh0
+        dHBzOi8vaS55dGltZy5jb20vdmkvQmlrc3F4NElBbU0vZGVmYXVsdC5qcGci
+        CiAgICAgfSwKICAgICAibWVkaXVtIjogewogICAgICAidXJsIjogImh0dHBz
+        Oi8vaS55dGltZy5jb20vdmkvQmlrc3F4NElBbU0vbXFkZWZhdWx0LmpwZyIK
+        ICAgICB9LAogICAgICJoaWdoIjogewogICAgICAidXJsIjogImh0dHBzOi8v
+        aS55dGltZy5jb20vdmkvQmlrc3F4NElBbU0vaHFkZWZhdWx0LmpwZyIKICAg
+        ICB9CiAgICB9LAogICAgImNoYW5uZWxUaXRsZSI6ICJNYWNoaW5pbWFUcmFp
+        bGVyIiwKICAgICJsaXZlQnJvYWRjYXN0Q29udGVudCI6ICJub25lIgogICB9
+        CiAgfSwKICB7CiAgICJraW5kIjogInlvdXR1YmUjc2VhcmNoUmVzdWx0IiwK
+        ICAgImV0YWciOiAiXCJWV3hQb0VHR3NGQUJ1cVVqZDA3NFdZRnVTemcvSWlF
+        WXY3c2Q3YW1lVGZyX2tOSUlxZDN3ZmRBXCIiLAogICAiaWQiOiB7CiAgICAi
+        a2luZCI6ICJ5b3V0dWJlI3ZpZGVvIiwKICAgICJ2aWRlb0lkIjogImF0S0VW
+        T3BGTDVRIgogICB9LAogICAic25pcHBldCI6IHsKICAgICJwdWJsaXNoZWRB
+        dCI6ICIyMDA5LTA0LTE5VDE5OjI5OjI0LjAwMFoiLAogICAgImNoYW5uZWxJ
+        ZCI6ICJVQ01zOGlSZzBSekF3WXBlTFFxalVRY3ciLAogICAgInRpdGxlIjog
+        IlRoZSBMb3JkIG9mIHRoZSBSaW5nczogVGhlIFJldHVybiBvZiB0aGUgS2lu
+        ZyAtIE9mZmljaWFsIFRyYWlsZXIgWzIwMDNdIiwKICAgICJkZXNjcmlwdGlv
+        biI6ICJUaGUgV2FyIG9mIHRoZSBSaW5nIHJlYWNoZXMgaXRzIGNsaW1heCBh
+        cyB0aGUgZGFyayBsb3JkIFNhdXJvbiBzZXRzIGhpcyBzaWdodHMgb24gTWlu
+        YXMgVGlyaXRoLCB0aGUgY2FwaXRhbCBvZiBHb25kb3IuIFRoZSBtZW1iZXJz
+        IG9mIHRoZSBmZWxsb3dzaGlwIGluIFJvaGFuLi4uIiwKICAgICJ0aHVtYm5h
+        aWxzIjogewogICAgICJkZWZhdWx0IjogewogICAgICAidXJsIjogImh0dHBz
+        Oi8vaS55dGltZy5jb20vdmkvYXRLRVZPcEZMNVEvZGVmYXVsdC5qcGciCiAg
+        ICAgfSwKICAgICAibWVkaXVtIjogewogICAgICAidXJsIjogImh0dHBzOi8v
+        aS55dGltZy5jb20vdmkvYXRLRVZPcEZMNVEvbXFkZWZhdWx0LmpwZyIKICAg
+        ICB9LAogICAgICJoaWdoIjogewogICAgICAidXJsIjogImh0dHBzOi8vaS55
+        dGltZy5jb20vdmkvYXRLRVZPcEZMNVEvaHFkZWZhdWx0LmpwZyIKICAgICB9
+        CiAgICB9LAogICAgImNoYW5uZWxUaXRsZSI6ICJNb3ZpZXNIaXN0b3J5IiwK
+        ICAgICJsaXZlQnJvYWRjYXN0Q29udGVudCI6ICJub25lIgogICB9CiAgfSwK
+        ICB7CiAgICJraW5kIjogInlvdXR1YmUjc2VhcmNoUmVzdWx0IiwKICAgImV0
+        YWciOiAiXCJWV3hQb0VHR3NGQUJ1cVVqZDA3NFdZRnVTemcvRXkyS3o2V3l0
+        MGpTbGFzVmhTQVl5QzBEckNVXCIiLAogICAiaWQiOiB7CiAgICAia2luZCI6
+        ICJ5b3V0dWJlI3ZpZGVvIiwKICAgICJ2aWRlb0lkIjogIjVqV1lXT0Z2Tzlv
+        IgogICB9LAogICAic25pcHBldCI6IHsKICAgICJwdWJsaXNoZWRBdCI6ICIy
+        MDExLTEyLTI0VDIyOjE1OjI4LjAwMFoiLAogICAgImNoYW5uZWxJZCI6ICJV
+        Q0dMU1lyd3VvNDRLMFU2UFFtWXROM1EiLAogICAgInRpdGxlIjogIlwiVGhl
+        IExvcmQgb2YgdGhlIFJpbmdzOiBUaGUgUmV0dXJuIG9mIHRoZSBLaW5nICgy
+        MDAzKVwiIFRoZWF0cmljYWwgVHJhaWxlciAjMiIsCiAgICAiZGVzY3JpcHRp
+        b24iOiAiU2Vjb25kIG9yaWdpbmFsIHRoZWF0cmljYWwgdHJhaWxlciBmb3Ig
+        dGhlIDIwMDMgZmlsbSBcIlRoZSBMb3JkIG9mIHRoZSBSaW5nczogVGhlIFJl
+        dHVybiBvZiB0aGUgS2luZy5cIiBTdGFycmluZyBFbGlqYWggV29vZCwgSWFu
+        IE1jS2VsbGVuLCBTZWFuIEFzdGluLCBBbmR5IFNlLi4uIiwKICAgICJ0aHVt
+        Ym5haWxzIjogewogICAgICJkZWZhdWx0IjogewogICAgICAidXJsIjogImh0
+        dHBzOi8vaS55dGltZy5jb20vdmkvNWpXWVdPRnZPOW8vZGVmYXVsdC5qcGci
+        CiAgICAgfSwKICAgICAibWVkaXVtIjogewogICAgICAidXJsIjogImh0dHBz
+        Oi8vaS55dGltZy5jb20vdmkvNWpXWVdPRnZPOW8vbXFkZWZhdWx0LmpwZyIK
+        ICAgICB9LAogICAgICJoaWdoIjogewogICAgICAidXJsIjogImh0dHBzOi8v
+        aS55dGltZy5jb20vdmkvNWpXWVdPRnZPOW8vaHFkZWZhdWx0LmpwZyIKICAg
+        ICB9CiAgICB9LAogICAgImNoYW5uZWxUaXRsZSI6ICJjaW5lbWF0aWN0cmFp
+        bGVycyIsCiAgICAibGl2ZUJyb2FkY2FzdENvbnRlbnQiOiAibm9uZSIKICAg
+        fQogIH0sCiAgewogICAia2luZCI6ICJ5b3V0dWJlI3NlYXJjaFJlc3VsdCIs
+        CiAgICJldGFnIjogIlwiVld4UG9FR0dzRkFCdXFVamQwNzRXWUZ1U3pnL1dI
+        Nk1JRV84aDc2RDJWZXllMVQ4ZWxjMDYzc1wiIiwKICAgImlkIjogewogICAg
+        ImtpbmQiOiAieW91dHViZSN2aWRlbyIsCiAgICAidmlkZW9JZCI6ICJrRmxX
+        dC0yY05tWSIKICAgfSwKICAgInNuaXBwZXQiOiB7CiAgICAicHVibGlzaGVk
+        QXQiOiAiMjAwOC0wMy0wOFQxODowMjozMy4wMDBaIiwKICAgICJjaGFubmVs
+        SWQiOiAiVUNqOUpPRGJBV2RiQmhkY3dTanFpbk5RIiwKICAgICJ0aXRsZSI6
+        ICJUaGUgTG9yZCBvZiB0aGUgUmluZ3MgOiBUaGUgUmV0dXJuIG9mIHRoZSBL
+        aW5nIEdhbWUgVHJhaWxlciIsCiAgICAiZGVzY3JpcHRpb24iOiAiRm9yIGFs
+        bCB0aG9zZSB3aG8ga2VlcCBhc2tpbmc6IFRoZSBTb25nIGlzIGNhbGxlZCBy
+        ZXF1aWVtIGZvciBhIGRyZWFtLiIsCiAgICAidGh1bWJuYWlscyI6IHsKICAg
+        ICAiZGVmYXVsdCI6IHsKICAgICAgInVybCI6ICJodHRwczovL2kueXRpbWcu
+        Y29tL3ZpL2tGbFd0LTJjTm1ZL2RlZmF1bHQuanBnIgogICAgIH0sCiAgICAg
+        Im1lZGl1bSI6IHsKICAgICAgInVybCI6ICJodHRwczovL2kueXRpbWcuY29t
+        L3ZpL2tGbFd0LTJjTm1ZL21xZGVmYXVsdC5qcGciCiAgICAgfSwKICAgICAi
+        aGlnaCI6IHsKICAgICAgInVybCI6ICJodHRwczovL2kueXRpbWcuY29tL3Zp
+        L2tGbFd0LTJjTm1ZL2hxZGVmYXVsdC5qcGciCiAgICAgfQogICAgfSwKICAg
+        ICJjaGFubmVsVGl0bGUiOiAiVGhlR29uZG9yaWFuIiwKICAgICJsaXZlQnJv
+        YWRjYXN0Q29udGVudCI6ICJub25lIgogICB9CiAgfSwKICB7CiAgICJraW5k
+        IjogInlvdXR1YmUjc2VhcmNoUmVzdWx0IiwKICAgImV0YWciOiAiXCJWV3hQ
+        b0VHR3NGQUJ1cVVqZDA3NFdZRnVTemcvYnU5UHFrRGFXYllqT2ZuWm5qcmxo
+        amRyaWpRXCIiLAogICAiaWQiOiB7CiAgICAia2luZCI6ICJ5b3V0dWJlI3Zp
+        ZGVvIiwKICAgICJ2aWRlb0lkIjogInFseWFHYkVXUDRFIgogICB9LAogICAi
+        c25pcHBldCI6IHsKICAgICJwdWJsaXNoZWRBdCI6ICIyMDEzLTA4LTAxVDIw
+        OjM5OjU3LjAwMFoiLAogICAgImNoYW5uZWxJZCI6ICJVQ1VLb1NULU1zak5o
+        VzFFdlZxOU1IZ3ciLAogICAgInRpdGxlIjogIlRoZSBMb3JkIG9mIHRoZSBS
+        aW5ncyBUaGUgUmV0dXJuIG9mIHRoZSBLaW5nIDIwMDMgVHJhaWxlciAoUHJv
+        TW92aWVzKSIsCiAgICAiZGVzY3JpcHRpb24iOiAi2K/Yp9mG2YTZiNivINmB
+        2YrZhNmFIDogaHR0cDovL3Byb21vdmllcy5pbmZvLiIsCiAgICAidGh1bWJu
+        YWlscyI6IHsKICAgICAiZGVmYXVsdCI6IHsKICAgICAgInVybCI6ICJodHRw
+        czovL2kueXRpbWcuY29tL3ZpL3FseWFHYkVXUDRFL2RlZmF1bHQuanBnIgog
+        ICAgIH0sCiAgICAgIm1lZGl1bSI6IHsKICAgICAgInVybCI6ICJodHRwczov
+        L2kueXRpbWcuY29tL3ZpL3FseWFHYkVXUDRFL21xZGVmYXVsdC5qcGciCiAg
+        ICAgfSwKICAgICAiaGlnaCI6IHsKICAgICAgInVybCI6ICJodHRwczovL2ku
+        eXRpbWcuY29tL3ZpL3FseWFHYkVXUDRFL2hxZGVmYXVsdC5qcGciCiAgICAg
+        fQogICAgfSwKICAgICJjaGFubmVsVGl0bGUiOiAiIiwKICAgICJsaXZlQnJv
+        YWRjYXN0Q29udGVudCI6ICJub25lIgogICB9CiAgfQogXQp9Cg==
+    http_version: 
+  recorded_at: Sat, 27 Dec 2003 04:00:09 GMT
+recorded_with: VCR 2.9.3

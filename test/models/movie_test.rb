@@ -8,10 +8,14 @@ class MovieTest < ActiveSupport::TestCase
   end
 
   test 'should correctly update scores' do
-    movie = movies(:airforceone)
-    movie.sources.search!
-    movie.update_scores
-    assert_not_nil(movie.aggregate_score)
+    Delorean.time_travel_to('November 11 1997') do
+      VCR.use_cassette('movies/update_scores') do
+        movie = movies(:airforceone)
+        movie.find_sources!
+        movie.update_scores!
+        assert_not_nil(movie.aggregate_score)
+      end
+    end
   end
 
   test 'should find a trailer' do
@@ -23,19 +27,16 @@ class MovieTest < ActiveSupport::TestCase
   end
 
   test 'should be able to mark movies with complete details as ready' do
-    movie = movies(:aragorn)
-    movie.sources.search!
-    movie.find_details
-    movie.find_trailer
-    movie.update_status
-    assert_equal('ready', movie.status)
-  end
-
-  test 'should be able to fetch the best poster' do
-    movie = movies(:airforceone)
-    movie.sources.search!
-    movie.find_details
-    assert_not_nil(movie.poster_url)
+    Delorean.time_travel_to('December 27 2003') do
+      VCR.use_cassette('movies/mark_ready') do
+        movie = movies(:aragorn)
+        movie.find_sources!
+        movie.find_details!
+        movie.find_trailer!
+        movie.update_status
+        assert_equal('ready', movie.status)
+      end
+    end
   end
   
   test 'should be able to create movies from scraped info' do
