@@ -122,7 +122,12 @@ class Metacritic < WebClient
   # a score in the range of 0-10
   def get_score(id, actual = false)
 
-    resp = get_raw_details(id)
+    begin
+      resp = get_raw_details(id)
+    rescue WebClient::HTTPError => e
+      Rails.logger.warn("Received HTTP 502 error from Metacritic while fetching scores for movie \"#{id}\".")
+      resp = nil if e.code == 502
+    end
 
     # If we didn't get anything, return a nil
     return nil if resp.nil?
