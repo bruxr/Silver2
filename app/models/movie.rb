@@ -134,6 +134,8 @@ class Movie < ActiveRecord::Base
   # type can either be 'poster' or 'backdrop'.
   def self.image_search(title, type, year = Date.today.year)
     
+    allowed_types = ['.gif', '.jpeg', '.jpg', '.png']
+    
     params = {
       searchType: 'image',
       safe: 'medium',
@@ -149,15 +151,16 @@ class Movie < ActiveRecord::Base
     
     result = nil
     resp['items'].each do |i|
+      ext = File.extname(i['link'])
       if type == 'poster'
-        if i['image']['height'] > i['image']['width']
           Rails.logger.info("Movie - Using movie poster from i['image']['contextLink'] for #{title}.")
+        if i['image']['height'] > i['image']['width'] && allowed_types.include?(ext)
           result = i['link']
           break
         end
       elsif type == 'backdrop'
-        if i['image']['width'] > i['images']['height']
           Rails.logger.info("Movie - Using movie backdrop from i['image']['contextLink'] for #{title}.")
+        if i['image']['width'] > i['images']['height'] && allowed_types.include?(ext)
           result = i['items']['link']
           break
         end
