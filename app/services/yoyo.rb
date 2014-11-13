@@ -25,7 +25,7 @@ class Yoyo
   end
   
   def self.download(url)
-    name = SecureRandom.hex(10)
+    name = SecureRandom.hex(3) # Short & sweet
     ext = File.extname(url)
     target = "tmp/%s%s" % [name, ext]
     File.open(target, 'wb') do |destination|
