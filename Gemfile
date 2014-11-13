@@ -43,6 +43,11 @@ gem 'redis-rails'
 gem 'devise'
 gem 'sanitize'
 
+# External storage
+gem 'fog'
+gem 'rmagick', require: false
+gem 'carrierwave'
+
 # Clients for Web Services
 gem 'dropbox-sdk'
 
