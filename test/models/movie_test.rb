@@ -15,9 +15,11 @@ class MovieTest < ActiveSupport::TestCase
   end
 
   test 'should find a trailer' do
-    movie = movies(:aragorn)
-    movie.find_trailer
-    assert_not_nil(movie.trailer)
+    VCR.use_cassette('movies/find_trailer') do
+      movie = movies(:aragorn)
+      movie.find_trailer!
+      assert_not_nil(movie.trailer)
+    end
   end
 
   test 'should be able to mark movies with complete details as ready' do

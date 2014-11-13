@@ -1,0 +1,335 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=AIzaSyAfz3-gAZaNXsiUQqULkj4H8rKC9Z-SfeE&part=snippet&q=The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King%202014%20trailer&type=video&videoDefinition=high&videoEmbeddable=true&videoSyndicated=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 13 Nov 2014 07:46:53 GMT
+      Date:
+      - Thu, 13 Nov 2014 07:46:53 GMT
+      Cache-Control:
+      - private, max-age=120, must-revalidate, no-transform
+      Etag:
+      - '"VWxPoEGGsFABuqUjd074WYFuSzg/n22OdD-A0uLzCop203n7olLYYNg"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '4821'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "youtube#searchListResponse",
+         "etag": "\"VWxPoEGGsFABuqUjd074WYFuSzg/n22OdD-A0uLzCop203n7olLYYNg\"",
+         "nextPageToken": "CAUQAA",
+         "pageInfo": {
+          "totalResults": 34332,
+          "resultsPerPage": 5
+         },
+         "items": [
+          {
+           "kind": "youtube#searchResult",
+           "etag": "\"VWxPoEGGsFABuqUjd074WYFuSzg/tpX0X-TE0VSQHiy4zx4QRGQ8AWo\"",
+           "id": {
+            "kind": "youtube#video",
+            "videoId": "y2rYRu8UW8M"
+           },
+           "snippet": {
+            "publishedAt": "2014-05-15T03:58:58.000Z",
+            "channelId": "UCTCjFFoX1un-j7ni4B6HJ3Q",
+            "title": "The Lord of the Rings: The Return of the King (2003) Official Trailer - Sean Astin Movie HD",
+            "description": "Subscribe to TRAILERS: http://bit.ly/sxaw6h Subscribe to COMING SOON: http://bit.ly/H2vZUn Subscribe to CLASSIC TRAILERS: http://bit.ly/17zvJPp Like us on ...",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/y2rYRu8UW8M/default.jpg"
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/y2rYRu8UW8M/mqdefault.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/y2rYRu8UW8M/hqdefault.jpg"
+             }
+            },
+            "channelTitle": "oldhollywoodtrailers",
+            "liveBroadcastContent": "none"
+           }
+          },
+          {
+           "kind": "youtube#searchResult",
+           "etag": "\"VWxPoEGGsFABuqUjd074WYFuSzg/tVR31aVkvKKEsUTIlI8_IbLZkaI\"",
+           "id": {
+            "kind": "youtube#video",
+            "videoId": "TucIj1AddW0"
+           },
+           "snippet": {
+            "publishedAt": "2012-06-01T03:07:55.000Z",
+            "channelId": "UCbGOU5MTe9nU_hN7Mcl4cJg",
+            "title": "The Lord of the Rings: The Return of the King Review (Gamecube)",
+            "description": "Here is my The Lord of the Rings: The Return of the King review! Enjoy! :)",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/TucIj1AddW0/default.jpg"
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/TucIj1AddW0/mqdefault.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/TucIj1AddW0/hqdefault.jpg"
+             }
+            },
+            "channelTitle": "FreQuenczy",
+            "liveBroadcastContent": "none"
+           }
+          },
+          {
+           "kind": "youtube#searchResult",
+           "etag": "\"VWxPoEGGsFABuqUjd074WYFuSzg/TdLW9q_fs5UUKpyRnemQvEzEc98\"",
+           "id": {
+            "kind": "youtube#video",
+            "videoId": "jrsApleKeuQ"
+           },
+           "snippet": {
+            "publishedAt": "2014-07-18T13:51:58.000Z",
+            "channelId": "UCyljMu087r8UxnW9PiD7QOQ",
+            "title": "LEGO LOTR: The Return of the King - Lego Version Trailer",
+            "description": "Hi, Hello everyone! I bring you the trailer of the last movie of The Lord of the Rings but in Lego version. Original Movie Trailer of Lord of the Rings: The ...",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/jrsApleKeuQ/default.jpg"
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/jrsApleKeuQ/mqdefault.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/jrsApleKeuQ/hqdefault.jpg"
+             }
+            },
+            "channelTitle": "MaxeBaumannFilms2013",
+            "liveBroadcastContent": "none"
+           }
+          },
+          {
+           "kind": "youtube#searchResult",
+           "etag": "\"VWxPoEGGsFABuqUjd074WYFuSzg/sOaUEr99uAEYMisCFs5aXUn0bjw\"",
+           "id": {
+            "kind": "youtube#video",
+            "videoId": "EwOObWe4ZUg"
+           },
+           "snippet": {
+            "publishedAt": "2014-10-25T00:12:35.000Z",
+            "channelId": "UC_7-v7DNaJwpx-4e1jRzcbA",
+            "title": "\"Lord of the Rings: The Return of the King\" - Minecraft Parody",
+            "description": "ANNOUNCEMENT TIME: Thanks for all of your support throughout the LOTR trilogy. Now that that's wrapped up, it's time for something a little different. I'm su...",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/EwOObWe4ZUg/default.jpg"
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/EwOObWe4ZUg/mqdefault.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/EwOObWe4ZUg/hqdefault.jpg"
+             }
+            },
+            "channelTitle": "MinMinecraftParodies",
+            "liveBroadcastContent": "none"
+           }
+          },
+          {
+           "kind": "youtube#searchResult",
+           "etag": "\"VWxPoEGGsFABuqUjd074WYFuSzg/EhXuFW1ZyxMF2wE9-LeeMnd8geY\"",
+           "id": {
+            "kind": "youtube#video",
+            "videoId": "iAiE82PBPbM"
+           },
+           "snippet": {
+            "publishedAt": "2014-07-26T21:24:24.000Z",
+            "channelId": "UCpr3y3sc8njZsKIe2aYX0cg",
+            "title": "Billy Boyd - Edge of Night (The Hobbit: The Battle of the Five Armies Teaser Trailer #1 Music)",
+            "description": "The Hobbit: The Battle of the Five Armies - Teaser Trailer #1 Music \"Billy Boyd - Edge of Night\"/\"Pippin's Song - Edge of Night\".",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/iAiE82PBPbM/default.jpg"
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/iAiE82PBPbM/mqdefault.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/iAiE82PBPbM/hqdefault.jpg"
+             }
+            },
+            "channelTitle": "",
+            "liveBroadcastContent": "none"
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Thu, 13 Nov 2014 07:46:53 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=AIzaSyAfz3-gAZaNXsiUQqULkj4H8rKC9Z-SfeE&part=snippet&q=The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King%202014%20trailer&type=video&videoDefinition=standard&videoEmbeddable=true&videoSyndicated=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 13 Nov 2014 07:46:54 GMT
+      Date:
+      - Thu, 13 Nov 2014 07:46:54 GMT
+      Cache-Control:
+      - private, max-age=120, must-revalidate, no-transform
+      Etag:
+      - '"VWxPoEGGsFABuqUjd074WYFuSzg/tm94pMRSS-6KoUVg2yDbTK1sgi0"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '4587'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogImtpbmQiOiAieW91dHViZSNzZWFyY2hMaXN0UmVzcG9uc2UiLAogImV0
+        YWciOiAiXCJWV3hQb0VHR3NGQUJ1cVVqZDA3NFdZRnVTemcvdG05NHBNUlNT
+        LTZLb1VWZzJ5RGJUSzFzZ2kwXCIiLAogIm5leHRQYWdlVG9rZW4iOiAiQ0FV
+        UUFBIiwKICJwYWdlSW5mbyI6IHsKICAidG90YWxSZXN1bHRzIjogMTc4OTQs
+        CiAgInJlc3VsdHNQZXJQYWdlIjogNQogfSwKICJpdGVtcyI6IFsKICB7CiAg
+        ICJraW5kIjogInlvdXR1YmUjc2VhcmNoUmVzdWx0IiwKICAgImV0YWciOiAi
+        XCJWV3hQb0VHR3NGQUJ1cVVqZDA3NFdZRnVTemcvV0g2TUlFXzhoNzZEMlZl
+        eWUxVDhlbGMwNjNzXCIiLAogICAiaWQiOiB7CiAgICAia2luZCI6ICJ5b3V0
+        dWJlI3ZpZGVvIiwKICAgICJ2aWRlb0lkIjogImtGbFd0LTJjTm1ZIgogICB9
+        LAogICAic25pcHBldCI6IHsKICAgICJwdWJsaXNoZWRBdCI6ICIyMDA4LTAz
+        LTA4VDE4OjAyOjMzLjAwMFoiLAogICAgImNoYW5uZWxJZCI6ICJVQ2o5Sk9E
+        YkFXZGJCaGRjd1NqcWluTlEiLAogICAgInRpdGxlIjogIlRoZSBMb3JkIG9m
+        IHRoZSBSaW5ncyA6IFRoZSBSZXR1cm4gb2YgdGhlIEtpbmcgR2FtZSBUcmFp
+        bGVyIiwKICAgICJkZXNjcmlwdGlvbiI6ICJGb3IgYWxsIHRob3NlIHdobyBr
+        ZWVwIGFza2luZzogVGhlIFNvbmcgaXMgY2FsbGVkIHJlcXVpZW0gZm9yIGEg
+        ZHJlYW0uIiwKICAgICJ0aHVtYm5haWxzIjogewogICAgICJkZWZhdWx0Ijog
+        ewogICAgICAidXJsIjogImh0dHBzOi8vaS55dGltZy5jb20vdmkva0ZsV3Qt
+        MmNObVkvZGVmYXVsdC5qcGciCiAgICAgfSwKICAgICAibWVkaXVtIjogewog
+        ICAgICAidXJsIjogImh0dHBzOi8vaS55dGltZy5jb20vdmkva0ZsV3QtMmNO
+        bVkvbXFkZWZhdWx0LmpwZyIKICAgICB9LAogICAgICJoaWdoIjogewogICAg
+        ICAidXJsIjogImh0dHBzOi8vaS55dGltZy5jb20vdmkva0ZsV3QtMmNObVkv
+        aHFkZWZhdWx0LmpwZyIKICAgICB9CiAgICB9LAogICAgImNoYW5uZWxUaXRs
+        ZSI6ICJUaGVHb25kb3JpYW4iLAogICAgImxpdmVCcm9hZGNhc3RDb250ZW50
+        IjogIm5vbmUiCiAgIH0KICB9LAogIHsKICAgImtpbmQiOiAieW91dHViZSNz
+        ZWFyY2hSZXN1bHQiLAogICAiZXRhZyI6ICJcIlZXeFBvRUdHc0ZBQnVxVWpk
+        MDc0V1lGdVN6Zy8yLWJaWXBNbURzelFtY3hWN0JmN2RvaWZjcndcIiIsCiAg
+        ICJpZCI6IHsKICAgICJraW5kIjogInlvdXR1YmUjdmlkZW8iLAogICAgInZp
+        ZGVvSWQiOiAiTWdqYl9xZGE0TG8iCiAgIH0sCiAgICJzbmlwcGV0Ijogewog
+        ICAgInB1Ymxpc2hlZEF0IjogIjIwMDgtMDgtMzBUMTc6NTk6MTAuMDAwWiIs
+        CiAgICAiY2hhbm5lbElkIjogIlVDWjdJWE55Ujk5VTBGdG1CY0Y5SURNQSIs
+        CiAgICAidGl0bGUiOiAiTG9yZCBvZiB0aGUgUmluZ3MgUmV0dXJuIG9mIHRo
+        ZSBLaW5nIFRyYWlsZXIiLAogICAgImRlc2NyaXB0aW9uIjogIkhlcmUgaXMg
+        dGhlIGZpbmFsIHRyYWlsZXIgdG8gdGhlIHRyaWxvZ3kgdGhhdCBpIHN0YXJ0
+        ZWQgYSB5ZWFyIGFnbyBhbmQgaSB0aG91Z2h0IGkgd291bGRuJ3QgZmluaXNo
+        LiIsCiAgICAidGh1bWJuYWlscyI6IHsKICAgICAiZGVmYXVsdCI6IHsKICAg
+        ICAgInVybCI6ICJodHRwczovL2kueXRpbWcuY29tL3ZpL01namJfcWRhNExv
+        L2RlZmF1bHQuanBnIgogICAgIH0sCiAgICAgIm1lZGl1bSI6IHsKICAgICAg
+        InVybCI6ICJodHRwczovL2kueXRpbWcuY29tL3ZpL01namJfcWRhNExvL21x
+        ZGVmYXVsdC5qcGciCiAgICAgfSwKICAgICAiaGlnaCI6IHsKICAgICAgInVy
+        bCI6ICJodHRwczovL2kueXRpbWcuY29tL3ZpL01namJfcWRhNExvL2hxZGVm
+        YXVsdC5qcGciCiAgICAgfQogICAgfSwKICAgICJjaGFubmVsVGl0bGUiOiAi
+        Z3JpZXZvdXM1IiwKICAgICJsaXZlQnJvYWRjYXN0Q29udGVudCI6ICJub25l
+        IgogICB9CiAgfSwKICB7CiAgICJraW5kIjogInlvdXR1YmUjc2VhcmNoUmVz
+        dWx0IiwKICAgImV0YWciOiAiXCJWV3hQb0VHR3NGQUJ1cVVqZDA3NFdZRnVT
+        emcvcWtOUVdSdl8wVjlJcGRGOGtITE92bFp4aG40XCIiLAogICAiaWQiOiB7
+        CiAgICAia2luZCI6ICJ5b3V0dWJlI3ZpZGVvIiwKICAgICJ2aWRlb0lkIjog
+        IktPUVNRYUdnSnhzIgogICB9LAogICAic25pcHBldCI6IHsKICAgICJwdWJs
+        aXNoZWRBdCI6ICIyMDE0LTA3LTA4VDIyOjU5OjE4LjAwMFoiLAogICAgImNo
+        YW5uZWxJZCI6ICJVQ3NRUW84cWI2MmlrcDlrYzk1NFY3ZVEiLAogICAgInRp
+        dGxlIjogIkxvcmQgb2YgdGhlIFJpbmdzOiB0aGUgUmV0dXJuIG9mIHRoZSBL
+        aW5nIC0gT3JpZ2luYWwgVGhlYXRyaWNhbCBUcmFpbGVyIiwKICAgICJkZXNj
+        cmlwdGlvbiI6ICJPU0NBUiBXSU5ORVI6QmVzdCBQaWN0dXJlQmVzdCBEaXJl
+        Y3RvckJlc3QgU2NyZWVucGxheSBBZGFwdGF0aW9uQmVzdCBFZGl0aW5nQmVz
+        dCBBcnQgRGlyZWN0aW9uQmVzdCBDb3N0dW1lIERlc2lnbkJlc3QgTWFrZXVw
+        QmVzdCBWaXN1YWwgRWZmZWN0c0Jlc3QgLi4uIiwKICAgICJ0aHVtYm5haWxz
+        IjogewogICAgICJkZWZhdWx0IjogewogICAgICAidXJsIjogImh0dHBzOi8v
+        aS55dGltZy5jb20vdmkvS09RU1FhR2dKeHMvZGVmYXVsdC5qcGciCiAgICAg
+        fSwKICAgICAibWVkaXVtIjogewogICAgICAidXJsIjogImh0dHBzOi8vaS55
+        dGltZy5jb20vdmkvS09RU1FhR2dKeHMvbXFkZWZhdWx0LmpwZyIKICAgICB9
+        LAogICAgICJoaWdoIjogewogICAgICAidXJsIjogImh0dHBzOi8vaS55dGlt
+        Zy5jb20vdmkvS09RU1FhR2dKeHMvaHFkZWZhdWx0LmpwZyIKICAgICB9CiAg
+        ICB9LAogICAgImNoYW5uZWxUaXRsZSI6ICIiLAogICAgImxpdmVCcm9hZGNh
+        c3RDb250ZW50IjogIm5vbmUiCiAgIH0KICB9LAogIHsKICAgImtpbmQiOiAi
+        eW91dHViZSNzZWFyY2hSZXN1bHQiLAogICAiZXRhZyI6ICJcIlZXeFBvRUdH
+        c0ZBQnVxVWpkMDc0V1lGdVN6Zy9pU3FXRjdZNE4wVU5hS3k2TW9Mc3I1MUxN
+        SDBcIiIsCiAgICJpZCI6IHsKICAgICJraW5kIjogInlvdXR1YmUjdmlkZW8i
+        LAogICAgInZpZGVvSWQiOiAiX0hXb01Pelk1eTAiCiAgIH0sCiAgICJzbmlw
+        cGV0IjogewogICAgInB1Ymxpc2hlZEF0IjogIjIwMDktMDktMDZUMTA6NTQ6
+        MDYuMDAwWiIsCiAgICAiY2hhbm5lbElkIjogIlVDb2NsV1BYNVQ3SUFVSnd1
+        bDZWUEU2dyIsCiAgICAidGl0bGUiOiAiVGhlIExvcmQgb2YgdGhlIFJpbmdz
+        OiBUaGUgUmV0dXJuIG9mIHRoZSBLaW5nIChWaWRlbyBHYW1lKSAtIFRvcCBv
+        ZiB0aGUgV2FsbCIsCiAgICAiZGVzY3JpcHRpb24iOiAiT25lIG9mIG15IGZh
+        dm91cml0ZSBsZXZlbHMgZnJvbSB0aGUgZ2FtZS4iLAogICAgInRodW1ibmFp
+        bHMiOiB7CiAgICAgImRlZmF1bHQiOiB7CiAgICAgICJ1cmwiOiAiaHR0cHM6
+        Ly9pLnl0aW1nLmNvbS92aS9fSFdvTU96WTV5MC9kZWZhdWx0LmpwZyIKICAg
+        ICB9LAogICAgICJtZWRpdW0iOiB7CiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9p
+        Lnl0aW1nLmNvbS92aS9fSFdvTU96WTV5MC9tcWRlZmF1bHQuanBnIgogICAg
+        IH0sCiAgICAgImhpZ2giOiB7CiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9pLnl0
+        aW1nLmNvbS92aS9fSFdvTU96WTV5MC9ocWRlZmF1bHQuanBnIgogICAgIH0K
+        ICAgIH0sCiAgICAiY2hhbm5lbFRpdGxlIjogIkhlZXI2OSIsCiAgICAibGl2
+        ZUJyb2FkY2FzdENvbnRlbnQiOiAibm9uZSIKICAgfQogIH0sCiAgewogICAi
+        a2luZCI6ICJ5b3V0dWJlI3NlYXJjaFJlc3VsdCIsCiAgICJldGFnIjogIlwi
+        Vld4UG9FR0dzRkFCdXFVamQwNzRXWUZ1U3pnL3hLRmJoUnFZY3RIZGx1LVhm
+        VUtubkpuRGd5d1wiIiwKICAgImlkIjogewogICAgImtpbmQiOiAieW91dHVi
+        ZSN2aWRlbyIsCiAgICAidmlkZW9JZCI6ICI2Q2hld0hrZVlTayIKICAgfSwK
+        ICAgInNuaXBwZXQiOiB7CiAgICAicHVibGlzaGVkQXQiOiAiMjAxNC0wMi0y
+        MVQwMTowNjo1OC4wMDBaIiwKICAgICJjaGFubmVsSWQiOiAiVUNiLXZaV0Jl
+        V0E1UTI4MThKbW1KaXFRIiwKICAgICJ0aXRsZSI6ICJcIlRoZSBMb3JkIG9m
+        IHRoZSBSaW5nczogVGhlIFJldHVybiBvZiB0aGUgS2luZ1wiIHdpbm5pbmcg
+        YW4gQXJ0IERpcmVjdGlvbiBPc2NhcsKuIiwKICAgICJkZXNjcmlwdGlvbiI6
+        ICJBbmdlbGluYSBKb2xpZSBwcmVzZW50aW5nIHRoZSBPc2NhcsKuIGZvciBB
+        cnQgRGlyZWN0aW9uIGZvciBcIlRoZSBMb3JkIG9mIHRoZSBSaW5nczogVGhl
+        IFJldHVybiBvZiB0aGUgS2luZ1wiIHRvIEdyYW50IE1ham9yLCBEYW4gSGVu
+        bmFoIGFuZCBBbGFuIExlZSBhdCB0aGUgNzZ0Li4uIiwKICAgICJ0aHVtYm5h
+        aWxzIjogewogICAgICJkZWZhdWx0IjogewogICAgICAidXJsIjogImh0dHBz
+        Oi8vaS55dGltZy5jb20vdmkvNkNoZXdIa2VZU2svZGVmYXVsdC5qcGciCiAg
+        ICAgfSwKICAgICAibWVkaXVtIjogewogICAgICAidXJsIjogImh0dHBzOi8v
+        aS55dGltZy5jb20vdmkvNkNoZXdIa2VZU2svbXFkZWZhdWx0LmpwZyIKICAg
+        ICB9LAogICAgICJoaWdoIjogewogICAgICAidXJsIjogImh0dHBzOi8vaS55
+        dGltZy5jb20vdmkvNkNoZXdIa2VZU2svaHFkZWZhdWx0LmpwZyIKICAgICB9
+        CiAgICB9LAogICAgImNoYW5uZWxUaXRsZSI6ICJPc2NhcnMiLAogICAgImxp
+        dmVCcm9hZGNhc3RDb250ZW50IjogIm5vbmUiCiAgIH0KICB9CiBdCn0K
+    http_version: 
+  recorded_at: Thu, 13 Nov 2014 07:46:54 GMT
+recorded_with: VCR 2.9.3
