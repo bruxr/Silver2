@@ -92,7 +92,7 @@ class MovieTest < ActiveSupport::TestCase
   end
   
   test 'should be able to find movie poster for unknown movies' do
-    VCR.use_cassette('movie/find_poster') do
+    VCR.use_cassette('movies/find_poster') do
       m = Movie.new
       m.title = "Devil's Pact"
       m.find_poster!
