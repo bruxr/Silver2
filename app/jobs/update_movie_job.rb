@@ -7,6 +7,7 @@ class UpdateMovieJob
 
   def perform(movie_id)
 
+    movie_id = movie_id.to_i
     raise "Invalid Movie ID #{movie_id}" if movie_id <= 0
 
     movie = Movie.includes(:sources).find(movie_id)
