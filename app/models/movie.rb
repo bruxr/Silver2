@@ -146,7 +146,6 @@ class Movie < ActiveRecord::Base
       end
     end
     
-    mov.save!
     mov
     
   end

@@ -26,6 +26,8 @@ class GetSchedulesJob
         UpdateSingleMovieScoresJob.perform_async(m.id)
       end
       
+      m.save!
+      
     end
     
     Rails.logger.info("Successfully fetched new schedules for #{cinema.name}.")
