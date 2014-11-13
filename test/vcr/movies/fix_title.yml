@@ -1,0 +1,161 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?s=The%20Expandables&y=2004
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=2332
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - Thu, 13 Nov 2014 09:09:14 GMT
+      Last-Modified:
+      - Thu, 13 Nov 2014 08:09:14 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 13 Nov 2014 08:30:20 GMT
+      Content-Length:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"Response":"False","Error":"Movie not found!"}'
+    http_version: 
+  recorded_at: Sun, 06 Jun 2004 04:00:00 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=6bcb3eb09fa94f061923cdf517da3677&query=The%20Expandables&year=2004
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 13 Nov 2014 08:30:25 GMT
+      Etag:
+      - '"a8d277d2d95f2ea20f792a48c43093dc"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '1267'
+      X-Memc-Expires:
+      - '9533'
+      X-Memc-Key:
+      - 280964572d0399d4876518ed29b1ec8e
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":0,"total_results":0}'
+    http_version: 
+  recorded_at: Sun, 06 Jun 2004 04:00:01 GMT
+- request:
+    method: get
+    uri: http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=dzvhcez774keqnkankf8kt8z&page=1&q=The%20Expandables
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Language:
+      - en-US
+      Content-Type:
+      - text/javascript;charset=ISO-8859-1
+      Date:
+      - Thu, 13 Nov 2014 07:41:37 GMT
+      Flx-Build-Date:
+      - '2014-11-11 12:19:33'
+      Flx-Commit:
+      - JOBRELEASE.2014-11-11.11-35-24 71d9305
+      Flx-Server:
+      - web236.flixster.com
+      Rt-Commit:
+      - ede253d
+      Server:
+      - Mashery Proxy
+      Set-Cookie:
+      - JSESSIONID=2A702D4CD56A43A0DE39DF7FE720C086; Path=/; HttpOnly
+      Vary:
+      - User-Agent,Accept-Encoding
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-55.mashery.com
+      Content-Length:
+      - '3199'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {"total":1,"movies":[{"id":"770802244","title":"The Expendables","year":2010,"mpaa_rating":"R","runtime":103,"critics_consensus":"","release_dates":{"theater":"2010-08-13","dvd":"2010-11-23"},"ratings":{"critics_rating":"Rotten","critics_score":41,"audience_rating":"Upright","audience_score":64},"synopsis":"An all-star cast of action-movie icons headline Sylvester Stallone's explosive action thriller about a group of hard-nosed mercenaries who are double-crossed during a treacherous mission. Approached by the shadowy Church (Bruce Willis) to overthrow tyrannical South American dictator General Gaza (David Zayas) and restore order to the troubled island country of Vilena, stoic soldier of fortune Barney Ross (Stallone) rounds up an unstoppable team that includes former SAS soldier and blade specialist Lee Christmas (Jason Statham); martial arts expert Yin (Jet Li); trigger-happy Hale Caesar (Terry Crews); and cerebral demolitions expert Toll Road (Randy Couture). Traveling to Vilena on a reconnaissance mission with his old pal Christmas, Barney meets their local contact, a cagey guerrilla fighter named Sandra (Giselle Itie), and together the trio scopes out the landscape.. It isn't long before Barney and Christmas have discovered that their actual target is not General Gaza but James Monroe (Eric Roberts), a former CIA operative who has recently gone rogue. Monroe won't be easy to get to either, because his hulking bodyguard Paine (Steve Austin) is a force to be reckoned with. When their mission is compromised, Barney and Christmas are forced to flee, leaving Sandra behind to face almost certain death. But Barney isn't the kind of soldier to abandon a mission, or a hostage, and now in order to get the job done he'll need the help of his old crew. ~ Jason Buchanan, Rovi","posters":{"thumbnail":"http://content6.flixster.com/movie/11/17/44/11174488_tmb.jpg","profile":"http://content6.flixster.com/movie/11/17/44/11174488_tmb.jpg","detailed":"http://content6.flixster.com/movie/11/17/44/11174488_tmb.jpg","original":"http://content6.flixster.com/movie/11/17/44/11174488_tmb.jpg"},"abridged_cast":[{"name":"Steve 'Stone Cold' Austin","id":"771514558"},{"name":"Sylvester Stallone","id":"162664630","characters":["Barney Ross"]},{"name":"Jason Statham","id":"162653720","characters":["Lee Christmas"]},{"name":"Jet Li","id":"162652223","characters":["Yin Yang"]},{"name":"Dolph Lundgren","id":"162664307","characters":["Gunner Jensen"]}],"alternate_ids":{"imdb":"1320253"},"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/770802244.json","alternate":"http://www.rottentomatoes.com/m/the_expendables/","cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/770802244/cast.json","reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/770802244/reviews.json","similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/770802244/similar.json"}}],"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=The+Expandables&page_limit=30&page=1"},"link_template":"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"}
+    http_version: 
+  recorded_at: Sun, 06 Jun 2004 04:00:02 GMT
+recorded_with: VCR 2.9.3

@@ -60,38 +60,18 @@ class Movie < ActiveRecord::Base
   def self.fix_title(title)
 
     cache_key = "fixed_titles:#{title.parameterize}"
-
+    
     # Check cache if we already have searched for this title
     result = Rails.cache.fetch(cache_key) do
-
+      
       fixed = nil
-
-      # If we can't find it on both TMDB & RT, check OMDB/Freebase
-      omdb = Omdb.new
-      omdb_res = omdb.find_title(title)
-      unless omdb_res.nil?
-         fixed = omdb_res[:title]
+      
+      sources = [Omdb, Tmdb, RottenTomatoes]
+      sources.each do |source|
+        res = source.new.find_title(title)
+        fixed = res[:title] unless res.nil?
+        break unless fixed.nil?
       end
-
-      # Search TMDB
-      if fixed.nil?
-        tmdb = Tmdb.new
-        tmdb_res = tmdb.find_title(title)
-        unless tmdb_res.nil?
-          fixed = tmdb_res[:title]
-        end
-      end
-
-      # If we can't find it on TMDB, check Rotten Tomatoes
-      if fixed.nil?
-        rt = RottenTomatoes.new
-        rt_res = rt.find_title(title)
-        unless rt_res.nil?
-          fixed = rt_res[:title]
-        end
-      end
-
-      fixed
 
     end
 
