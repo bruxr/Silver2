@@ -44,6 +44,7 @@ class RottenTomatoes < WebClient
   # Returns the details for a movie
   # when provided with a movie ID.
   def get_raw_details(id)
+    raise 'Movie ID is empty.' if id.blank?
     result = query("/movies/#{id}")
     sanitize_hash(result)
   end
