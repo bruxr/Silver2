@@ -40,4 +40,6 @@ Rails.application.configure do
   # Ember dev mode
   config.ember.variant = :development
   
+  config.cache_store = :null_store
+  
 end
