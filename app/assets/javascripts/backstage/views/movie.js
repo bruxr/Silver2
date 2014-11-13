@@ -32,19 +32,21 @@ Backstage.MovieView = Ember.View.extend({
   
   willEdit: function() {
     if (this.get('isEditing')) {
+      
       if (this.get('uploadersReady') === true) return;
       
       $('.movie-media-replace').each(function() {
-        var el = $(this);
+        var el = $(this),
+            type = el.data('media-type');
         el.mirror({
           mirrorTo: el.data('mirror-to'),
-          url: '/api/backstage/movies/'+ this.get('controller.id') +'/upload_'+ el.data('media-type')
+          url: Backstage.api_url('movies', this.get('controller.id'), 'upload_'+ type)
         });
-        this.set('uploadersReady', true);
       });
+      this.set('uploadersReady', true);
       
     }
-  }.property('controller.id', 'isEditing'),
+  }.observes('isEditing'),
   
   // Clicking the curtains will close
   // the modal & go back to the movies route.

@@ -7,5 +7,12 @@ Backstage = Ember.Application.create({
     }
   }),
   LOG_TRANSITIONS: true,
-  LOG_VIEW_LOOKUPS: true
+  LOG_VIEW_LOOKUPS: true,
+  
+  // Builds a URL to Silver's JSON API.
+  // Usage:
+  // Backstage.api_url('movies', '1') -> /api/movies/1
+  api_url: function() {
+    return '/api/' + arguments.join('/')
+  }
 });
