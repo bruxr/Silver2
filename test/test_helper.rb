@@ -15,3 +15,9 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.allow_http_connections_when_no_cassette = true
 end
+
+# Mock Fog uploads
+Fog.mock!
+Fog.credentials_path = Rails.root.join('config', 'fog.yml')
+connection = Fog::Storage.new(provider: 'AWS')
+connection.directories.create(key: 'silver.bruxromuar.com')
