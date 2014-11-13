@@ -1,3 +1,5 @@
+require_dependency 'levenshtein'
+
 # Lightweight client to the OMDB API (http://www.omdbapi.com)
 class Omdb < WebClient
 

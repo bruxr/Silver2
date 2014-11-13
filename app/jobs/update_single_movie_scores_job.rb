@@ -1,3 +1,5 @@
+require_dependency 'exceptions'
+
 # Updates a movie's scores/ratings from its external sources.
 class UpdateSingleMovieScoresJob
   include Sidekiq::Worker

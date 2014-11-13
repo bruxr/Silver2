@@ -8,6 +8,7 @@ end
 
 Sidekiq.configure_server do |config|
   require 'scheduler/scheduler'
+  require 'scheduler/middleware'
 
   config.client_middleware do |chain|
     chain.add(Sidekiq::Status::ClientMiddleware)

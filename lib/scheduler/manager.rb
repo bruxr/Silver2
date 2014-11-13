@@ -1,4 +1,6 @@
 require 'singleton'
+require_dependency 'scheduler/storage'
+
 module Scheduler
 
   # Dispatcher is responsible for building schedules,
