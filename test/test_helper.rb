@@ -21,4 +21,4 @@ Fog.mock!
 fog_config = YAML.load(ERB.new(File.read(Rails.root.join('config', 'fog.yml'))).result)
 fog_config = fog_config['default'].symbolize_keys
 connection = Fog::Storage.new(fog_config)
-connection.directories.create(key: fog_config[:bucket])
+connection.directories.create(key: Rails.application.secrets.s3_bucket)

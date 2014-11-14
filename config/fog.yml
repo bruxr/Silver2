@@ -3,4 +3,3 @@ default:
   aws_access_key_id: <%= Rails.application.secrets.s3_key %>
   aws_secret_access_key: <%= Rails.application.secrets.s3_secret %>
   region: ap-northeast-1
-  bucket: silver-bruxromuar-com
