@@ -73,6 +73,8 @@ class Movie < ActiveRecord::Base
         break unless fixed.nil?
       end
 
+      fixed
+
     end
 
     result
