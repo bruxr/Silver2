@@ -29,7 +29,7 @@ class NcccMall < Scraper
 
         # Build movie hash
         movie = {}
-        movie[:name] = title.gsub(/\s(?:2|3)D\z/, '')
+        movie[:name] = title.gsub(/\s(?:2|3)D\Z/, '').strip
         movie[:schedules] = []
 
         # Extract the rating
@@ -45,11 +45,12 @@ class NcccMall < Scraper
         end
 
         # If for some reason the MTRCB rating is in the title, extract that.
-        if title =~ /\(G|PG|R-?13|R-?16|R-?18\)/
-          title.scan(/\(G|PG|R-?13|R-?16|R-?18\)/) do |mtrcb_rating|
+        suffix_rating_pattern = /\(G|PG|R-?13|R-?16|R-?18\)\Z/
+        if title =~ suffix_rating_pattern
+          title.scan(suffix_rating_pattern) do |mtrcb_rating|
             mtrcb_rating = mtrcb_rating.gsub('R', 'R-') if mtrcb_rating =~ /R13|R16|R18/ # Add dashes if they're missing
             movie[:rating] = mtrcb_rating
-            movie[:name] = title.gsub(/\(G|PG|R-?13|R-?16|R-?18\)/, '')
+            movie[:name] = title.gsub(suffix_rating_pattern, '').gsub(/\s?\(\)\Z/, '')
           end
         end
 
