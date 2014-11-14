@@ -17,4 +17,10 @@ class Scraper < WebClient
     raise NotImplementedError.new
   end
 
+  # Returns an array of movie titles from the
+  # scraped schedules.
+  def titles
+    schedules.map { |s| s[:name] }
+  end
+
 end
