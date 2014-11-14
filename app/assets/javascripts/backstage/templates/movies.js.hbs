@@ -20,13 +20,13 @@
     {{#each}}
     
       <div class="movie media-item">
-        {{#link-to 'movie' this}}
+        {{#link-to 'movie' this rel=id}}
           {{#if posterUrl}}
-            <div class="thumbnail">
+            <div class="thumbnail" {{bind-attr data-title=title}} draggable>
               <img {{bind-attr src=posterUrl}} {{bind-attr alt=title}}>
             </div>
           {{else}}
-            <div class="thumbnail no-thumbnail"></div>
+            <div class="thumbnail no-thumbnail" {{bind-attr data-title=title}}></div>
           {{/if}}
           <h4 class="movie-title">{{title}}</h4>
           <span class="media-info">{{duration runtime}}</span>

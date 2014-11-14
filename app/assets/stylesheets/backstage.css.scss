@@ -368,6 +368,10 @@ label {
   border-radius: 0;
   height: 211px;
   padding: 0;
+
+  &.over img {
+    border: 5px solid $turqoise;
+  }
 }
 
 .media-grid .media-item .thumbnail.no-thumbnail {

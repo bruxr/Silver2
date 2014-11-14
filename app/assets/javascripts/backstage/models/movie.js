@@ -49,5 +49,10 @@ Backstage.Movie = DS.Model.extend({
         error: reject
       });
     });
+  },
+  
+  mergeTo: function(dest) {
+    var url = Backstage.api_url('movies', this.get('id'), 'merge-to', dest.get('id'));
+    return $.post(url, {}, 'json');
   }
 });
