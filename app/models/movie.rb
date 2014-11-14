@@ -327,6 +327,12 @@ class Movie < ActiveRecord::Base
   def find_poster!
     self.poster = self.class.find_poster_for(self.title)
   end
+  
+  # Searches for a movie backdrop using Google and then
+  # sets it as the movie's current poster.
+  def find_backdrop!
+    self.backdrop = self.class.find_backdrop_for(self.title)
+  end
 
   # Marks the movie as ready if it contains complete
   # details like overview, plot, trailer, etc.
