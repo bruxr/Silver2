@@ -11,22 +11,23 @@ class UpdateMovieJob
     raise "Invalid Movie ID #{movie_id}" if movie_id <= 0
 
     movie = Movie.includes(:sources).find(movie_id)
-    movie.find_sources!
+
+    begin
+
+      movie.find_sources!
     
-    if movie.sources.count > 0
-      begin
+      if movie.sources.count > 0
         movie.find_details!
         movie.find_trailer!
-
-      rescue Exceptions::QuotaReached => e
-        self.class.perform_in(5.seconds, movie_id) # If we reach the quota, back off for 5 seconds.
-      else
         movie.update_status
-        movie.save
+        movie.save!
         Rails.logger.info("UpdateMovieJob - Successfully updated movie \"#{movie.title}\".")
+      else
+        Rails.logger.error("UpdateMovieJob - Failed to update movie \"#{movie.title}\", no sources found.")
       end
-    else
-      Rails.logger.error("UpdateMovieJob - Failed to update movie \"#{movie.title}\", no sources found.")
+
+    rescue Exceptions::QuotaReached => e
+      self.class.perform_in(5.seconds, movie_id) # If we reach the quota, back off for 5 seconds.
     end
 
   end
