@@ -1,6 +1,6 @@
-Fog.credentials_path = Rails.root.join('config', 'fog.yml')
-
 CarrierWave.configure do |config|
-  config.fog_credentials = { provider: 'AWS' }
+  fog_config = YAML.load(ERB.new(File.read(Rails.root.join('config', 'fog.yml'))).result)
+  fog_config = fog_config['default'].symbolize_keys
+  config.fog_credentials = fog_config
   config.fog_directory = 'silver.bruxromuar.com'
 end

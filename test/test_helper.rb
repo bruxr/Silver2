@@ -18,6 +18,7 @@ end
 
 # Mock Fog uploads
 Fog.mock!
-Fog.credentials_path = Rails.root.join('config', 'fog.yml')
-connection = Fog::Storage.new(provider: 'AWS')
+fog_config = YAML.load(ERB.new(File.read(Rails.root.join('config', 'fog.yml'))).result)
+fog_config = fog_config['default'].symbolize_keys
+connection = Fog::Storage.new(fog_config)
 connection.directories.create(key: 'silver.bruxromuar.com')
