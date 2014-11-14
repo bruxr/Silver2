@@ -1,3 +1,5 @@
+require 'scheduler/schedulable'
+
 # Enqueues a GetSchedulesJob for every cinema that is active
 # and has a scraper class.
 # Runs every 6 am, every day.

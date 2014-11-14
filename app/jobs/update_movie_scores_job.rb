@@ -1,3 +1,5 @@
+require_dependency 'scheduler/schedulable'
+
 # Updates Movie scores/ratings by enqueuing UpdateSingleMovieScores jobs
 # for every "now showing" movies.
 # Runs every 6 hours.

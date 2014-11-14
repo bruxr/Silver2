@@ -1,3 +1,5 @@
+require 'scheduler/schedulable'
+
 # Caches TMDB configuration which are used in building
 # backdrop and movie poster image URLs.
 class CacheTmdbConfigJob

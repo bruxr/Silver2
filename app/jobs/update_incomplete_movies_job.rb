@@ -1,3 +1,5 @@
+require_dependency 'scheduler/schedulable'
+
 # Master job for updating incomplete and still active
 # (still has future schedules) movies.
 # Enqueues UpdateMovieJob's that will perform the update.
