@@ -378,6 +378,7 @@ label {
 .media-grid .media-item .thumbnail img {
   border-radius: 5px;
   display: block;
+  height: 211px;
   opacity: 1;
   @include transition(opacity 300ms ceaser($easeInSine));
   -webkit-backface-visibility: hidden; // Prevent img from moving while animating
