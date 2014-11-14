@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   # Add a short 3 second sleep for simulating slow
   # responses in the internet
   before_action do
-    sleep 3 if Rails.env.development?
+    #sleep 3 if Rails.env.development?
   end
   
   def not_found
