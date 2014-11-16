@@ -62,8 +62,9 @@ class GaisanoScraper < Scraper
         
         data = {
           access_token: "#{ENV['FB_APP_ID']}|#{ENV['FB_APP_SECRET']}",
-          until: untl
         }
+        data[:until] = untl unless untl.empty?
+          
         response = get(ENDPOINT, data)
         return nil if response.nil?
         response = JSON.parse(response)
