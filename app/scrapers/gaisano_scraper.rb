@@ -199,7 +199,29 @@ class GaisanoScraper < Scraper
         end
       end
 
-      ap 
+      # Process "common ticket prices" which appear
+      # as a movie block with a single element containing the price.
+      price_block = []
+      price_block_index = nil
+      parsed.each do |mall, cinemas|
+        cinemas.each do |cinema, blocks|
+          
+          blocks.each_with_index do |block, index|
+            if block.length == 1 && block.first =~ /P\d+(\/P\d{3})?/
+              price_block = block 
+              price_block_index = index
+            end
+          end
+          
+          unless price_block_index.nil?
+            blocks.delete_at(price_block_index)
+            blocks.each do |block|
+              block.concat(price_block)
+            end
+          end
+          
+        end
+      end
 
       parsed
 
