@@ -179,7 +179,7 @@ class GaisanoScraper < Scraper
           parsed[location][cinema] = []
         else
           next if location.nil? || cinema.nil?
-          parsed[location][cinema] << line
+          parsed[location][cinema] << line.strip
         end
 
       end
@@ -197,6 +197,8 @@ class GaisanoScraper < Scraper
           parsed[location][cinema] = movies
         end
       end
+
+      ap 
 
       parsed
 
