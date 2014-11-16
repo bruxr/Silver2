@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.1/gmallcinemas/posts?access_token=717895564958456%7C3b95cbd9ca4a0a73dbaf35af149ac070
+    uri: https://graph.facebook.com/v2.2/gmallcinemas/posts?access_token=717895564958456%7C3b95cbd9ca4a0a73dbaf35af149ac070
     body:
       encoding: US-ASCII
       string: ''
