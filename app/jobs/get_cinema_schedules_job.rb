@@ -15,6 +15,8 @@ class GetCinemaSchedulesJob
     cinemas.all.each do |cinema|
       GetSchedulesJob.perform_async(cinema.id)
     end
+    
+    UpdateIncompleteMoviesJob.perform_in(30.minutes)
 
     Rails.logger.info("Successfully enqueued #{cinemas.count} GetSchedulesJob.")
 

@@ -20,12 +20,6 @@ class GetSchedulesJob
     movies.each do |movie|
       
       m = Movie.process_scraped_movie(movie, cinema)
-      
-      if m.incomplete?
-        UpdateMovieJob.perform_async(m.id)
-        UpdateSingleMovieScoresJob.perform_async(m.id)
-      end
-      
       m.save!
       
     end
