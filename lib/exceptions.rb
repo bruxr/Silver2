@@ -7,6 +7,8 @@ module Exceptions
   # Raised when we reach a web service's quota.
   class QuotaReached < StandardError
     
+    attr_reader :service
+    
     def initialize(service)
       @service = service
     end
