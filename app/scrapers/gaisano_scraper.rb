@@ -141,7 +141,14 @@ class GaisanoScraper < Scraper
 
       end
 
-      dates
+      today = Date.today.to_s
+      found_today = false
+      
+      dates.each do |date|
+        found_today = true if date.to_s == today.to_s
+      end
+      
+      Date.today if found_today
 
     end
 

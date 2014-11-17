@@ -12,16 +12,20 @@ class GaisanoScraperTest < ActiveSupport::TestCase
   end
   
   test 'should detect 3D movies' do
-    VCR.use_cassette('gaisano_scraper/detect_3d') do
-      skeds = GaisanoMall.new.schedules
-      assert_equal(skeds[0][:schedules][0][:format], '3D')
+    Delorean.time_travel_to 'Nov 8 2014' do
+      VCR.use_cassette('gaisano_scraper/detect_3d') do
+        skeds = GaisanoMall.new.schedules
+        assert_equal(skeds[0][:schedules][0][:format], '3D')
+      end
     end
   end
   
   test 'should remove 3D suffix from movie titles' do
-    VCR.use_cassette('gaisano_scraper/extract_3d_suffix') do
-      skeds = GaisanoMall.new.schedules
-      assert_equal(skeds[0][:name], 'BIG HERO 6')
+    Delorean.time_travel_to 'Nov 8 2014' do
+      VCR.use_cassette('gaisano_scraper/extract_3d_suffix') do
+        skeds = GaisanoMall.new.schedules
+        assert_equal(skeds[0][:name], 'BIG HERO 6')
+      end
     end
   end
   
@@ -40,9 +44,11 @@ class GaisanoScraperTest < ActiveSupport::TestCase
   #
   # P130 <-- shared ticket price
   test 'should detect shared ticket prices' do
-    VCR.use_cassette('gaisano_scraper/shared_prices') do
-      skeds = GaisanoMall.new.schedules
-      assert_equal(skeds[5][:schedules][11][:price], 130)
+    Delorean.time_travel_to 'Nov 15 2014' do
+      VCR.use_cassette('gaisano_scraper/shared_prices') do
+        skeds = GaisanoMall.new.schedules
+        assert_equal(skeds[5][:schedules][0][:price], 130)
+      end
     end
   end
   
