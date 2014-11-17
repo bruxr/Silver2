@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112081215) do
+ActiveRecord::Schema.define(version: 20141116103355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20141112081215) do
   end
 
   add_index "artists_movies", ["artist_id", "movie_id"], name: "index_artists_movies_on_artist_id_and_movie_id", using: :btree
+  add_index "artists_movies", ["movie_id", "artist_id"], name: "index_artists_movies_on_movie_id_and_artist_id", unique: true, using: :btree
   add_index "artists_movies", ["movie_id"], name: "index_artists_movies_on_movie_id", using: :btree
 
   create_table "cinemas", force: true do |t|
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 20141112081215) do
   end
 
   add_index "genres_movies", ["genre_id", "movie_id"], name: "index_genres_movies_on_genre_id_and_movie_id", using: :btree
+  add_index "genres_movies", ["movie_id", "genre_id"], name: "index_genres_movies_on_movie_id_and_genre_id", unique: true, using: :btree
   add_index "genres_movies", ["movie_id"], name: "index_genres_movies_on_movie_id", using: :btree
 
   create_table "movies", force: true do |t|

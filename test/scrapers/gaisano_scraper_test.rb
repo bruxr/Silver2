@@ -25,4 +25,25 @@ class GaisanoScraperTest < ActiveSupport::TestCase
     end
   end
   
+  # Found on Nov 16 2014
+  # -------------------------------
+  # CINEMA 5
+  # THE DROP 
+  # TOM HARDY|NOOMI RAPACE
+  # R16- Crime|Drama
+  # 10:40|12:35|2:35
+  #
+  # NIGHTCRAWLER 
+  # JAKE GYLLENHAAL|RENE RUSSO
+  # R16- Crime|Thriller|Drama
+  # 4:40|7:10|9:30
+  #
+  # P130 <-- shared ticket price
+  test 'should detect shared ticket prices' do
+    VCR.use_cassette('gaisano_scraper/shared_prices') do
+      skeds = GaisanoMall.new.schedules
+      assert_equal(skeds[5][:schedules][11][:price], 130)
+    end
+  end
+  
 end

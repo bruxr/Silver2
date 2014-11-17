@@ -125,7 +125,7 @@ class Schedule < ActiveRecord::Base
     if v.instance_of? Hash
       self[:ticket_price] = v
     else
-      self[:ticket_price] = {'default' => v}
+      self[:ticket_price] = {'default' => v} unless v.nil?
     end
   end
 

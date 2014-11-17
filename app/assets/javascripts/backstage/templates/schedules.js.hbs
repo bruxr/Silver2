@@ -39,7 +39,7 @@
         <th class="sked-movie">{{#link-to 'movie' movie}}{{movie.title}}{{/link-to}}</th>
         <td class="sked-mall">{{#link-to 'cinema' cinema}}{{cinema.name}}{{/link-to}}</td>
         <td class="sked-room">{{room}}</td>
-        <td class="sked-price">{{ticketPrice}}</td>
+        <td class="sked-price">{{tieredPrice ticketPrice}}</td>
         <td class="sked-format">{{format}}</td>
         <td class="sked-actions"><a {{action 'deleteSchedule' this}} href="#" title="Delete this schedule."><i class="fa fa-trash"></i></a></td>
       </tr>

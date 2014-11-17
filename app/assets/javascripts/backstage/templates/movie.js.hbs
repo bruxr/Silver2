@@ -95,7 +95,7 @@
           {{else}}
           <td>{{cinema.name}}</td>
           {{/if}}
-          <td>{{#if ticketPrice}}&#8369; {{ticketPrice}}{{/if}}</td>
+          <td>{{#if ticketPrice}}&#8369; {{tieredPrice ticketPrice}}{{/if}}</td>
           <td><span class="format">{{format}}</span></td>
         </tr>
         {{/each}}

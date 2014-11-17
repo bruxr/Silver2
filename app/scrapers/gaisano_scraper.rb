@@ -62,8 +62,9 @@ class GaisanoScraper < Scraper
         
         data = {
           access_token: "#{ENV['FB_APP_ID']}|#{ENV['FB_APP_SECRET']}",
-          until: untl
         }
+        data[:until] = untl unless untl.empty?
+          
         response = get(ENDPOINT, data)
         return nil if response.nil?
         response = JSON.parse(response)
@@ -179,7 +180,7 @@ class GaisanoScraper < Scraper
           parsed[location][cinema] = []
         else
           next if location.nil? || cinema.nil?
-          parsed[location][cinema] << line
+          parsed[location][cinema] << line.strip
         end
 
       end
@@ -195,6 +196,30 @@ class GaisanoScraper < Scraper
             i += 1 if line == '' 
           end
           parsed[location][cinema] = movies
+        end
+      end
+
+      # Process "common ticket prices" which appear
+      # as a movie block with a single element containing the price.
+      price_block = []
+      price_block_index = nil
+      parsed.each do |mall, cinemas|
+        cinemas.each do |cinema, blocks|
+          
+          blocks.each_with_index do |block, index|
+            if block.length == 1 && block.first =~ /P\d+(\/P\d{3})?/
+              price_block = block 
+              price_block_index = index
+            end
+          end
+          
+          unless price_block_index.nil?
+            blocks.delete_at(price_block_index)
+            blocks.each do |block|
+              block.concat(price_block)
+            end
+          end
+          
         end
       end
 

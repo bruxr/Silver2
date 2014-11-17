@@ -16,3 +16,5 @@ Backstage = Ember.Application.create({
     return '/api/' + arguments.join('/')
   }
 });
+
+Quasar = {} || Quasar;
