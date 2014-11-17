@@ -104,8 +104,8 @@ class Movie < ActiveRecord::Base
     raise 'Missing movie title' if movie[:name].nil?
     
     # Try to fix the title.
-    title = Movie.fix_title(movie[:name])
-    title = movie[:name].downcase.titleize if title.nil?
+    title = Movie.fix_title(movie[:name].strip)
+    title = movie[:name].strip.downcase.titleize if title.nil?
     
     begin
       mov = Movie.find_or_create_by!(title: title) # Create immediately, to prevent race conditions
