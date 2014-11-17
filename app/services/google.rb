@@ -20,8 +20,14 @@ class Google < WebClient
       key: @api_key
     }
     params = params.merge(defaults)
-    response = get(@@endpoint, params)
-    JSON.parse(response)
+    
+    begin
+      response = get(@@endpoint, params)
+    rescue WebClient::HTTPError
+      raise Exceptions::QuotaReached.new(self.class.to_s)
+    else
+      JSON.parse(response)
+    end
 
   end
 

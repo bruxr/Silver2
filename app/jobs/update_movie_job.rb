@@ -27,7 +27,14 @@ class UpdateMovieJob
       end
 
     rescue Exceptions::QuotaReached => e
-      self.class.perform_in(5.seconds, movie_id) # If we reach the quota, back off for 5 seconds.
+      # Handle quotas
+      if e.service == 'RottenTomatoes'
+        self.class.perform_in(5.seconds, movie_id)
+      elsif e.service == 'Google'
+        self.class.perform_in(12.hours, movie_id)
+      else
+        raise "Don\'t know when to reschedule job when quota for %s is reached.", % [e.service]
+      end
     end
 
   end
