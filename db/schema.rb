@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116103355) do
+ActiveRecord::Schema.define(version: 20141117035420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20141116103355) do
     t.float   "score"
   end
 
+  add_index "sources", ["movie_id", "name"], name: "index_sources_on_movie_id_and_name", unique: true, using: :btree
   add_index "sources", ["movie_id"], name: "index_sources_on_movie_id", using: :btree
 
   create_table "users", force: true do |t|
