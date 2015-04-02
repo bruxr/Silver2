@@ -44,9 +44,6 @@ gem 'fog'
 gem 'rmagick', require: false
 gem 'carrierwave'
 
-# Clients for Web Services
-gem 'dropbox-sdk'
-
 # Background jobs
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', require: false
