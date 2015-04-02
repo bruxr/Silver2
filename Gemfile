@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '4.2.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -41,7 +41,7 @@ gem 'sanitize'
 
 # External storage
 gem 'fog'
-gem 'rmagick', require: false
+# gem 'rmagick', require: false (TODO: Replace with MiniMagick)
 gem 'carrierwave'
 
 # Background jobs
@@ -70,6 +70,9 @@ group :development, :test do
   
   # New rails web console
   gem 'web-console', '~> 2.0'
+  
+  # Byebug to stop execution anywhere and get a debugger console
+  gem 'byebug'
   
   # Old gems we used for testing but might still be
   # used for our new BDD rspec tests.
