@@ -68,6 +68,9 @@ group :development, :test do
   # Environment variables
   gem 'dotenv-rails'
   
+  # New rails web console
+  gem 'web-console', '~> 2.0'
+  
   # Old gems we used for testing but might still be
   # used for our new BDD rspec tests.
   gem 'vcr'
