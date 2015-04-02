@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 
-gem 'dotenv-rails', group: [:development, :test]
-
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -70,13 +68,15 @@ gem 'ember-rails'
 gem 'ember-source', '1.8.0'
 gem 'ember-data-source', '1.0.0.beta.11'
 
-# Dev gems
-gem 'awesome_print', group: [:development, :test]
-gem 'colorize', group: [:development, :test]
-
-# Testing gems
-group :test do
+group :development, :test do
+  
+  # Environment variables
+  gem 'dotenv-rails'
+  
+  # Old gems we used for testing but might still be
+  # used for our new BDD rspec tests.
   gem 'vcr'
   gem 'webmock'
   gem 'delorean'
+  
 end
