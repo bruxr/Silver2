@@ -80,4 +80,8 @@ group :development, :test do
   gem 'webmock'
   gem 'delorean'
   
+  # Rspec gems
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  
 end
