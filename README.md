@@ -1,8 +1,5 @@
-# Silver
+# Say Hello to Silver
+Aggregates Davao's movies in one place.
 
-## Development
-1. Download [Vagrant](http://vagrantup.com/downloads.html).
-2. Checkout Silver to a folder of your choice.
-3. Inside the Silver directory, do `vagrant up` to spin up the VM. This may take a long time as this will download all the stuff Silver needs.
-4. SSH into the VM by doing `vagrant ssh` then `rails s` to start the server.
-5. Profit!
+## :watch: Hiatus
+Development for Silver is currently on indefinite Hiatus as I'm planning to split Silver into API and frontend projects. Furthermore, I'm planning to reduce the aggregated data and just link to other APIs (like [TMDB](https://www.themoviedb.org) & [IMDB](http://www.imdb.com/)) instead.
